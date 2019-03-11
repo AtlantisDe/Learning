@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>json生成c#类</title>
+<link rel="stylesheet" href="http://js.chahuo.com/prettify/prettify.css">
+<script language="javascript" type="text/javascript" src="http://js.chahuo.com/prettify/prettify.js"></script>
+<script type="text/javascript" src="http://tool.oschina.net/js/jsbeautify.js"></script>
+</head>
+<body>
+    
+    <h1>json生成C#类小工具</h1>
+    <h5>JSON 字符串</h5>
+    <div>
+        <textarea style="width:600px;height:300px;margin-bottom:5px;" id="jsonStr"></textarea>
+        <br>
+        <button onclick="document.getElementById('jsonStr').value='';document.getElementById('class').innerHTML=''">清除</button>
+        <button onclick="do_js_beautify()">格式化代码</button>
+        <button onclick="startGen()">生成C#类</button>
+    </div>
+
+    <h5>C#类代码&nbsp;<button onclick="selectCode()">选中代码</button></h5>
+    
+    <pre class="prettyprint" id="class" style="border:1px solid #ccc; padding:10px; width:800px;"> 
+            
+    </pre>
+    
+    <script>
+    
+        String.prototype.format = function(){
+            var args = arguments;
+            return this.replace(/\{(\d+)\}/g,                
+                function(m,i){
+                    return args[i];
+            });
+        }
+        
+        String.prototype.trim=function(){
+             return this.replace(/(^\s*)|(\s*$)/g,"");
+        }
+        
+        JSON2CSharp={
+            _allClass:[],
+            _genClassCode:function(obj,name){
+                var clas="public class {0}\r\n{\r\n".format(name || "Root");
+                for(var n in obj){
+                    var v = obj[n];
+                    n = n.trim();
+                    clas += "    {0}    public {1} {2} { get; set; }\r\n\r\n".format(this._genComment(v),this._genTypeByProp(n,v),n);
+                }
+                clas += "}\r\n\r\n";
+                this._allClass.push(clas);
+                return this._allClass.join("\r\n\r\n");
+            },
+            _genTypeByProp:function(name,val){
+                switch(Object.prototype.toString.apply(val)){
+                    case "[object Boolean]" :{
+                        return "bool";
+                    }
+                    case "[object Number]" :{
+                        return val.toString().indexOf(".") > -1 ? "double" : "int";
+                    }
+                    case "[object Date]":{
+                        return "DateTime";
+                    }
+                    case "[object Object]":{
+                                                name =  name.substring(0,1).toUpperCase() + name.substring(1);
+                        this._genClassCode(val,name);
+                        return name;
+                    }
+                    case "[object Array]":{
+                        return "List&#60;{0}&#62;".format(this._genTypeByProp(name+"Item",val[0]));
+                    }
+                    default:{
+                        return "string";
+                    }
+                }   
+            },
+            _genComment:function(val){
+                return "";
+                //这里注释行去掉
+                var commm= typeof(val) == "string" && /.*[\u4e00-\u9fa5]+.*$/.test(val) ? val : "" ;
+                return "/// &#60;summary&#62;\r\n    /// "+commm+ "\r\n    /// &#60;/summary&#62;\r\n";
+            },
+            convert:function(jsonObj){
+                this._allClass=[];
+                return this._genClassCode(jsonObj);
+            }
+        }
+        
+        
+        
+        function do_js_beautify() {
+            var js_source =document.getElementById("jsonStr").value.replace(/^\s+/, '');
+            if(js_source.length==0)
+                return;
+            tabchar = ' ';
+            var fjs = js_beautify(js_source);
+            document.getElementById("jsonStr").value=fjs;
+        }
+
+        
+        function startGen(){
+            try{
+                var v = eval("("+document.getElementById("jsonStr").value+")");
+                document.getElementById("class").className ="prettyprint";
+                document.getElementById("class").innerHTML=JSON2CSharp.convert(v);
+                prettyPrint();  
+                document.getElementById("jsonStr").focus();
+            }catch(e){
+                alert(e.message);
+            }
+        }
+        
+        function selectCode() {
+            if (document.selection) {
+                var range = document.body.createTextRange();
+                range.moveToElementText(document.getElementById('class'));
+                range.select();
+            } else if (window.getSelection) {
+                var range = document.createRange();
+                range.selectNode(document.getElementById('class'));
+                window.getSelection().addRange(range);
+            }
+        }
+    </script>
+</body>
+</html>
