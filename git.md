@@ -31,3 +31,8 @@ git config --global  --list
 ```txt
 git config --local  --list
 ```
+git mingw64 界面直接进入 输入的windows路径
+```txt
+cd  $(echo 'D:\web\' |  sed "s/\\\/\//g")
+```
+ 
