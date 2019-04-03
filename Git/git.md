@@ -19,6 +19,11 @@
 * [Git撤销已经commit但是还没有push的代码](https://blog.csdn.net/weixin_42071874/article/details/83021670)
 * [git Bash 命令行大全（持续更新](https://blog.csdn.net/webfrontenddev/article/details/83182436)
 * [Git如何删除输入过的历史命令](https://bbs.csdn.net/topics/392021867)
+* [git 合并远程分支(带冲突)](https://blog.csdn.net/u013444177/article/details/19992509)
+* [git 拉取远程分支解决冲突问题](https://blog.csdn.net/qq_40190624/article/details/82981445)
+* [Git 解决合并到远程分支冲突问题](https://my.oschina.net/sdlvzg/blog/1589140)
+* [Git分支合并冲突解决](https://www.cnblogs.com/shuimuzhushui/p/9022549.html)
+* [Git出现|MERGING解决](https://blog.csdn.net/Dorisi_H_n_q/article/details/81663564)
 
 ## GIT配置
 
