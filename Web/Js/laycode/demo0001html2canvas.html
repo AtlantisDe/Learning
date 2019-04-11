@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>AtlantisHome</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            padding: 20px;
+            border: 5px solid black;
+        }
+
+        h2 {
+            background: #efefef;
+            margin: 10px;
+        }
+
+        .toPic {
+            display: none;
+        }
+    </style>
+    <h2>原始HTML</h2>
+    <div style="background:red;width: 600px;" class="test">
+        <div style="background:green;">
+            <div style="background:blue;">
+                <div style="background:yellow;">
+                    <div style="background:orange;">
+                        33333333333333333333333333333333
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <h2 class="toCanvas"> <a href="javascript:void(0);"> 转成canvas </a></h2>
+    <h2 class="toPic"><a href="javascript:void(0);"> 转成图片 </a></h2>
+    <h5>
+        <label for="imgW">宽度:</label>
+        <input type="number" value="" id="imgW" placeholder="默认是原图宽度" />
+        <label for="imgH">高度:</label>
+        <input type="number" value="" id="imgH" placeholder="默认是原图高度" />
+        <label for="imgFileName">文件名:</label>
+        <input type="text" placeholder="文件名" id="imgFileName" />
+        <select id="sel">
+            <option value="png">png</option>
+            <option value="jpeg">jpeg</option>
+            <option value="bmp">bmp</option>
+        </select>
+        <button id="save">保存</button>
+    </h5>
+
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.svg.min.js"></script>
+
+    <script type="text/javascript">
+        var pngdemo = null;
+        var test = $(".test").get(0); //将jQuery对象转换为dom对象
+        // 点击转成canvas
+        $('.toCanvas').click(function (e) {
+            // 调用html2canvas插件
+            html2canvas(test).then(function (canvas) {
+                // canvas宽度
+                var canvasWidth = canvas.width;
+                // canvas高度
+                var canvasHeight = canvas.height;
+                // 渲染canvas
+                $('.toCanvas').after(canvas);
+                // 显示‘转成图片’按钮
+                $('.toPic').show(1000);
+                // 点击转成图片
+                $('.toPic').click(function (e) {
+                    // 调用Canvas2Image插件
+                    var img = Canvas2Image.convertToImage(canvas, canvasWidth, canvasHeight);
+                    pngdemo =img;
+                    // 渲染图片
+                    $(".toPic").after(img);
+                    // 点击保存
+                    $('#save').click(function (e) {
+                        let type = $('#sel').val(); //图片类型
+                        let w = $('#imgW').val(); //图片宽度
+                        let h = $('#imgH').val(); //图片高度
+                        let f = $('#imgFileName').val(); //图片文件名
+                        w = (w === '') ? canvasWidth : w; //判断输入宽高是否为空，为空时保持原来的值
+                        h = (h === '') ? canvasHeight : h;
+                        // 调用Canvas2Image插件
+                           Canvas2Image.saveAsImage(canvas, w, h, type, f);
+                    });
+                });
+
+
+            });
+        });        
+    </script>
+</body>
+
+</html>

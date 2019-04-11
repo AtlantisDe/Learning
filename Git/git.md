@@ -1,31 +1,31 @@
 # GIT
 
-* [官方](https://www.git-scm.com/download/win)
-* [GIT开源](https://github.com/git)
-* [国内避免翻墙](https://github.com/waylau/git-for-win)
+- [官方](https://www.git-scm.com/download/win)
+- [GIT 开源](https://github.com/git)
+- [国内避免翻墙](https://github.com/waylau/git-for-win)
 
-## Git文章
+## Git 文章
 
-* [Git手册](https://git-scm.com/docs)
-* [Git 知识大全](https://gitee.com/help/categories/43)
-* [git - 简易指南](http://www.bootcss.com/p/git-guide/)
-* [Git使用详细教程](https://www.cnblogs.com/seven-ahz/p/7712125.html)
-* [Git远程分支与本地分支合并](https://blog.csdn.net/loongshawn/article/details/78864039)
-* [Git 如何删除本地分支和远程分支]([https://github.com/waylau/git-for-win](https://baijiahao.baidu.com/s?id=1596093203877347214&wfr=spider&for=pc))
-* [git 拉取远程分支到本地]([https://blog.csdn.net/carfge/article/details/79691360]))
-* [git版本控制器常用命令](https://www.cnblogs.com/lixiaoni/p/6899437.html)
-* [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
-* [Git分支模型](https://www.cnblogs.com/byeyear/archive/2012/11/28/2793374.html)
-* [Git撤销已经commit但是还没有push的代码](https://blog.csdn.net/weixin_42071874/article/details/83021670)
-* [git Bash 命令行大全（持续更新](https://blog.csdn.net/webfrontenddev/article/details/83182436)
-* [Git如何删除输入过的历史命令](https://bbs.csdn.net/topics/392021867)
-* [git 合并远程分支(带冲突)](https://blog.csdn.net/u013444177/article/details/19992509)
-* [git 拉取远程分支解决冲突问题](https://blog.csdn.net/qq_40190624/article/details/82981445)
-* [Git 解决合并到远程分支冲突问题](https://my.oschina.net/sdlvzg/blog/1589140)
-* [Git分支合并冲突解决](https://www.cnblogs.com/shuimuzhushui/p/9022549.html)
-* [Git出现|MERGING解决](https://blog.csdn.net/Dorisi_H_n_q/article/details/81663564)
+- [Git 手册](https://git-scm.com/docs)
+- [Git 知识大全](https://gitee.com/help/categories/43)
+- [git - 简易指南](http://www.bootcss.com/p/git-guide/)
+- [Git 使用详细教程](https://www.cnblogs.com/seven-ahz/p/7712125.html)
+- [Git 远程分支与本地分支合并](https://blog.csdn.net/loongshawn/article/details/78864039)
+- [Git 如何删除本地分支和远程分支](<[https://github.com/waylau/git-for-win](https://baijiahao.baidu.com/s?id=1596093203877347214&wfr=spider&for=pc)>)
+- [git 拉取远程分支到本地]([https://blog.csdn.net/carfge/article/details/79691360]))
+- [git 版本控制器常用命令](https://www.cnblogs.com/lixiaoni/p/6899437.html)
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [Git 分支模型](https://www.cnblogs.com/byeyear/archive/2012/11/28/2793374.html)
+- [Git 撤销已经 commit 但是还没有 push 的代码](https://blog.csdn.net/weixin_42071874/article/details/83021670)
+- [git Bash 命令行大全（持续更新](https://blog.csdn.net/webfrontenddev/article/details/83182436)
+- [Git 如何删除输入过的历史命令](https://bbs.csdn.net/topics/392021867)
+- [git 合并远程分支(带冲突)](https://blog.csdn.net/u013444177/article/details/19992509)
+- [git 拉取远程分支解决冲突问题](https://blog.csdn.net/qq_40190624/article/details/82981445)
+- [Git 解决合并到远程分支冲突问题](https://my.oschina.net/sdlvzg/blog/1589140)
+- [Git 分支合并冲突解决](https://www.cnblogs.com/shuimuzhushui/p/9022549.html)
+- [Git 出现|MERGING 解决](https://blog.csdn.net/Dorisi_H_n_q/article/details/81663564)
 
-## GIT配置
+## GIT 配置
 
 ```shell
  git config --global user.name "John Doe"
@@ -42,7 +42,7 @@ config 配置有system级别 global（用户级别） 和local（当前仓库）
  git config --global user.email johndoe@example.com
 ```
 
-### 查看系统config
+### 查看系统 config
 
 ```shell
 git config --system --list
@@ -54,14 +54,14 @@ git config --system --list
 git config --global  --list
 ```
 
-### 远程Github信息
+### 远程 Github 信息
 
 ```shell
 git config user.name "aaaa"
 git config user.email "aaaa@gmail.com"
 ```
 
-### 本地Gitlab信息
+### 本地 Gitlab 信息
 
 ```shell
 git config user.name "aaaa"
@@ -74,7 +74,7 @@ git config user.email "aaaa@qq.com"
 git config --local  --list
 ```
 
-### mingw64 界面直接进入 输入的windows路径
+### mingw64 界面直接进入 输入的 windows 路径
 
 ```shell
 cd  $(echo 'D:\web\' |  sed "s/\\\/\//g")
@@ -82,7 +82,7 @@ cd  $(echo 'D:\XX' |  sed "s/\\\/\//g")
 cd  $(echo 'D:\XX\aaa\.git' |  sed "s/\\\/\//g")
 ```
 
-#### 配置不同项目不同提交用户信息,先进入.git目录
+#### 配置不同项目不同提交用户信息,先进入.git 目录
 
 ```shell
 git config user.name "aaaa"
@@ -102,7 +102,7 @@ rm -rf  .git
 git clone git@www.aaa.com:atlantis/aaa.git
 ```
 
-#### Git常用
+#### Git 常用
 
 ```shell
 git log
@@ -124,15 +124,17 @@ gitk --all
 git log
 git reset --hard id
 git reset id
+git push -f  ”也可以提交，但是会将remote上第一个人的改动冲掉，太暴力了，不太好。下面说的是手动合并.
 ```
 
-#### git设置忽略文件和目录
+#### git 设置忽略文件和目录
 
 ```shell
 创建.gitignore
 vim .gitignore
 忽略bin文件和bin目录
 bin
+/obj
 ```
 
 #### 总结创建与合并分支命令如下：
@@ -150,7 +152,7 @@ bin
 git checkout -b dev-1.0.1 origin/dev-1.0.1
 ```
 
-#### git基本命令操作
+#### git 基本命令操作
 
 ```shell
 1.建立分支
