@@ -27,6 +27,19 @@ using (System.IO.FileStream fsWrite = new System.IO.FileStream(path, System.IO.F
 MessageBox.Show("保存成功");
 
 // 打开
+
+OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Excel文件(*.xls;*.xlsx)|*.xls;*.xlsx|所有文件|*.*";
+            ofd.ValidateNames = true;
+            ofd.CheckPathExists = true;
+            ofd.CheckFileExists = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string strFileName = ofd.FileName;
+                //其他代码
+            }
+
+
 using (FileStream fsRead = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
 {
 byte[] buffer = new byte[1024 * 1024 * 5];

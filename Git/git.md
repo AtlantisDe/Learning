@@ -9,6 +9,7 @@
 - [Git 手册](https://git-scm.com/docs)
 - [Git 知识大全](https://gitee.com/help/categories/43)
 - [git - 简易指南](http://www.bootcss.com/p/git-guide/)
+- [如何生成SSH key及查看SSH key](http://www.cnblogs.com/zheng577564429/p/8317524.html)
 - [Git 使用详细教程](https://www.cnblogs.com/seven-ahz/p/7712125.html)
 - [Git 远程分支与本地分支合并](https://blog.csdn.net/loongshawn/article/details/78864039)
 - [Git 如何删除本地分支和远程分支](<[https://github.com/waylau/git-for-win](https://baijiahao.baidu.com/s?id=1596093203877347214&wfr=spider&for=pc)>)

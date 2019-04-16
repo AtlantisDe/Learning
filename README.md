@@ -20,6 +20,10 @@
 - [全球云服务商对比：阿里云，太贵了](https://blog.csdn.net/ithomer/article/details/77825664)
 - [百度静态资源公共库怎么突然关闭了，大厂也不咋靠谱](https://www.v2ex.com/t/521190)
 
+## MSDN, 我告诉你
+
+-[MSDN, 我告诉你](https://msdn.itellyou.cn/)
+
 ## CDN 资源库
 
 - [BootCDN](http://www.bootcdn.cn/)

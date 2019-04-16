@@ -14,3 +14,27 @@
     }
 }
 ```
+
+## 代码2
+
+```c#
+namespace Demos
+{
+    public class Entity
+    {
+
+    }
+    public class Const
+    {
+
+    }
+    public class Method
+    {
+
+    }
+    public class UI
+    {
+
+    }
+}
+```
