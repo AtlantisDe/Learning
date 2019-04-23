@@ -26,6 +26,7 @@ namespace Demos
     }
     public class Const
     {
+        public const string aa = "aa";
 
     }
     public class Method

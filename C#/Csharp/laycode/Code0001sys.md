@@ -10,5 +10,12 @@ public static void Delay(int milliSecond)
     {
         Application.DoEvents();
     }
-}
+} 
 ```
+
+## 延时不卡界面
+
+```c#
+MessageBox.Show("aa", "title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+```
+

@@ -22,7 +22,7 @@
 
 ## MSDN, 我告诉你
 
--[MSDN, 我告诉你](https://msdn.itellyou.cn/)
+- [MSDN, 我告诉你](https://msdn.itellyou.cn/)
 
 ## CDN 资源库
 

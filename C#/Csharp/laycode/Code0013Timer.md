@@ -5,9 +5,12 @@
 ## 复制
 
 ```c#
+System.Threading.Timer
+
 static void Main()
 {
 　Timer t = new Timer(Test,null,0,1000);
+　var t = new System.Threading.Timer(Test, null, 0, 1000);
 　Console.ReadLine();
 }
 public static void Test(object o)
