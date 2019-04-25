@@ -24,6 +24,10 @@
 
 - [MSDN, 我告诉你](https://msdn.itellyou.cn/)
 
+## 源镜像
+
+- [阿里云开源镜像站](https://opsx.alibaba.com/mirror)
+
 ## CDN 资源库
 
 - [BootCDN](http://www.bootcdn.cn/)
@@ -36,57 +40,6 @@
 - [CDNJS GitHub](https://github.com/cdnjs/cdnjs)
 - [BootCDN](https://www.bootcdn.cn/)
 - [Content Delivery Network 稳定、快速的 CDN 加速服务](http://www.jq22.com/cdn/)
-
-## Visual Studio Code [插件]
-
-- [Visual Studio Code 最好的功能、插件和设置-WEB前端开发](https://www.html.cn/archives/8144)
-
-```text
-Beautiful UI
-HTML Snippets
-HTML Boilerplate
-Quick HTML Previewer
-Bracket Pair Colorizer
-c#
-C# for Visual Studio Code (powered by OmniSharp).
-Class Helper
-ESLint
-goTo
-JSHint
-Markdown All in One
-Markdown Preview Github Styling
-markdownlint
-Paste JSON as Code
-Prettier
-VS Code .csproj
-PHP Debug
-PHP IntelliSense
-PHP Intelephense
-phpcs
-Angular 7 Snippets
-Path Tools
-Path Autocomplete
-Copy Relative Path
-Current File Path
-PasteURL
-
-
-```
-
-## Visual Studio Code [插件GitHub]
-
-- [Path Tools](https://github.com/cg-cnu/vscode-path-tools)
-- [Path Autocomplete](https://github.com/ionutvmi/path-autocomplete)
-
-## Visual Studio [快捷键使用]
-
-- [vscode 如何设置 同时编辑多行](https://tieba.baidu.com/p/5542621594?red_tag=1010354508)
-
-## Visual Studio [快捷编辑]
-
-```text
-Alt 批量选择
-```
 
 ## Windows [优化]
 

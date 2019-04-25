@@ -1,0 +1,170 @@
+/*=========================================================================*/
+var mainMenu=CreatePopupMenu();
+mainMenu.Add("功能：编码转换",0);
+mainMenu.Add("", 0, eeMenuSeparator);
+mainMenu.Add("指定文件夹下所有文件存为指定编码文件",1);
+mainMenu.Add("", 0, eeMenuSeparator);
+mainMenu.Add("当前文档存为gb2312",2);
+mainMenu.Add("当前文档存为utf-8",3);
+mainMenu.Add("当前文档存为utf-8有签名",9);
+mainMenu.Add("当前文档存为指定编码文件",4);
+mainMenu.Add("", 0, eeMenuSeparator);
+mainMenu.Add("所有文档存为指定编码文件",5);
+mainMenu.Add("所有文档存为gb2312",6);
+mainMenu.Add("所有文档存为utf-8",7);
+mainMenu.Add("所有文档存为utf-8有签名",8);
+mainMenu.Add("", 0, eeMenuSeparator);
+mainMenu.Add("程序说明",100);
+var witchItem=mainMenu.Track();
+switch(witchItem){
+    case 1://此处还不能成功实现
+        var sPath = prompt("请输入要处理的文件所在的文件夹", "");
+        if(!FolderExits(sPath)){
+            alert("输入的文件夹不存在，退出？");
+            Quit();
+        }
+        var bSubFolder = confirm("包括子文件夹？");
+        var sExt = prompt("只处理这些后缀的文件：(为空表示处理所有文件，各后缀以“|”隔开)", "html|htm|asp|php|php4");
+        var NewCode = prompt("文档编码转换为：(936-->gb2312,65001-->utf-8)", "65001");
+        if(Number(NewCode)){
+            AllFiles=FilesTree(sPath);
+            /*Set re = New RegExp
+            re.Pattern = "([^|]+\.(" & sExt & "$))"
+            re.IgnoreCase = True
+            re.Global = True
+            Set Matches = re.Execute(AllFiles)
+            editor.NewFile
+            For Each oMatch In Matches
+                editor.OpenFile oMatch.SubMatches(0)
+                SaveFile oMatch.SubMatches(0), NewCode
+            Next
+            */
+            var matches=AllFiles.exec(/"([^|]+\.(" + sExt + "$))"/ig);
+            for(var i=0;i<matches.length;i++){
+             editor.OpenFile(matches[i].SubMatches(0));
+                SaveFile(matches[i].SubMatches(0), NewCode);
+            }
+            Close();
+        }
+        else{
+            alert("输入有误，必须输入数字，退出");
+            Quit();
+        }
+    break;
+    case 2:
+	//alert(witchItem);
+        SaveFile(document.FullName, 936);
+	break;
+    case 3:
+        SaveFile(document.FullName, 65001);
+    break;
+    case 4:
+        var NewCode = prompt("您要将当前文档编码转换为：(936-->gb2312,65001-->utf-8)", "936|65001");
+        if(Number(NewCode)){
+            SaveFile(document.FullName, NewCode);
+        }
+        else{
+            alert("输入有误，必须输入数字，退出");
+            Quit();
+        }
+	break;
+    case 5:
+        var NewCode = prompt("您要将所有文档编码转换为：(936-->gb2312,65001-->utf-8)", "936|65001");
+        if(Number(NewCode)){
+            var AllDocNum = editor.Documents.Count;
+            var NowFile = editor.ActiveDocument;
+            for( i = 0;i < AllDocNum;i++){
+                editor.ExecuteCommandByID(5376 + i);
+                SaveFile(document.FullName, NewCode);
+            }
+            NowFile.Activate();
+        }
+        else{
+            alert("输入有误，必须输入数字，退出");
+            Quit();
+        }
+	break;
+    case 6:
+        var AllDocNum = editor.Documents.Count;
+        var NowFile = editor.ActiveDocument;
+        for(i = 0;i<AllDocNum;i++){
+            editor.ExecuteCommandByID(5376+i);
+            SaveFile(document.FullName, 936);
+        }
+        NowFile.Activate();
+	break;
+    case 7:
+        var AllDocNum = editor.Documents.Count;
+        var NowFile = editor.ActiveDocument;
+        for(i = 0;i<AllDocNum;i++){
+            editor.ExecuteCommandByID(5376+i);
+            SaveFile(document.FullName, 65001);
+        }
+        NowFile.Activate();
+	break;
+	case 8:
+        var AllDocNum = editor.Documents.Count;
+        var NowFile = editor.ActiveDocument;
+        for(i = 0;i<AllDocNum;i++){
+            editor.ExecuteCommandByID(5376+i);
+            SaveFile(document.FullName, 65002);
+        }
+        NowFile.Activate();
+	break;
+	case 9:
+        SaveFile(document.FullName, 65002);
+	break;
+	case 100:
+        alert('请注意，此程序文件必须是GB2312格式！');
+	break;
+}
+function SaveFile(FileName, CodePage){
+	//alert(!FileName.match(/[^\\\/]+\.(cs|vb|aspx|web.config|asp)/i));
+    editor.ExecuteCommandByID(4105);// 'Save As vbCrLf
+    document.Encoding = CodePage;// 'Encoding gb2312-->936 utf-8-->65001 ...
+    if( CodePage == 65001 || CodePage == 65005 || CodePage == 65006) {
+     if(FileName.match(/[^\\\/]+\.(cs|vb|aspx|web.config|asp)/i)) document.UnicodeSignature = true;// 'BOM
+     else document.UnicodeSignature = false;// 'BOM
+	}
+	if(CodePage == 65002){
+		document.Encoding = 65001;
+		document.UnicodeSignature = true;// 'BOM
+	}
+	document.Save(FileName);
+}
+function FolderExits(Folder){
+    var FSO = new ActiveXObject("Scripting.FileSystemObject");
+    if(FSO.FolderExists(Folder)){
+        return true;
+	}
+	else
+	{
+	        return false;
+	}
+}
+function FilesTree(sPath){
+	//遍历一个文件夹下的所有文件夹文件夹
+    var Fso = new ActiveXObject("Scripting.FileSystemObject");
+    var Folder = oFso.GetFolder(sPath);
+    var SubFolders = oFolder.SubFolders;
+   
+    var Files = oFolder.Files;
+    var allFiles="";
+    for(oFile in oFiles){
+        //WScript.Echo(oFile.Path);
+        allFiles+=oFile.Path;
+        //oFile.Delete
+    }
+   
+    for(oSubFolder in oSubFolders){
+        //WScript.Echo(oSubFolder.Path);
+        allFiles+=oFile.Path;
+        //'oSubFolder.Delete
+        FilesTree(oSubFolder.Path);//'递归
+    }
+   
+    var Folder = null;
+    var SubFolders = null;
+    var Fso = null;
+    return allFiles;
+}
