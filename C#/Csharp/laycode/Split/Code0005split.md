@@ -1,6 +1,12 @@
 # C# Split
 
-- [C#中Split用法](https://www.cnblogs.com/wangfuyou/p/6101992.html)
+- [C#中 Split 用法](https://www.cnblogs.com/wangfuyou/p/6101992.html)
+
+## 常用代码示例
+
+```c#
+var arr = aa.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+```
 
 ## 1、用字符串分隔：
 

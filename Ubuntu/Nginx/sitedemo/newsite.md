@@ -1,5 +1,11 @@
 # newsite
 
+- [nginx环境中配置网站目录权限设置](https://blog.csdn.net/u013372487/article/details/51909624)
+- [nginx目录列表和目录访问权限设置](http://www.nginx.cn/692.html)
+- [设置网站目录权限](https://www.cnblogs.com/arist/p/4373675.html)
+- [linux下nginx默认使用www-data用户组](https://blog.csdn.net/gent__chen/article/details/50969781)
+- [如何解决nginx 504 Gateway Time-out错误](https://jingyan.baidu.com/article/1876c8524db6d1890b137694.html)
+
 ## 测试 Demo 网站配置信息
 
 ```shell
@@ -18,6 +24,13 @@ www.nginx.com/phpinfo.php
 
 ```shell
 /etc/nginx/sites-available
+```
+
+## nginx让目录中的文件以列表的形式展现只需要一条指令
+
+```shell
+autoindex on;
+# autoindex可以放在location中，只对当前location的目录起作用。你也可以将它放在server指令块则对整个站点都起作用。或者放到http指令块，则对所有站点都生效。
 ```
 
 ### www.phpmyadmin.com.conf
@@ -81,4 +94,24 @@ root /var/www/html;
 sudo /etc/init.d/nginx restart
 systemctl restart nginx.service
 sudo systemctl enable nginx
+```
+
+## 查看nginx的用户名及用户组
+
+```shell
+# nginx的用户名在/etc/nginx/nginx.conf配置文件中，有一个user参数，查看对应的就可以。下面是命令行
+ps axu|grep nginx
+```
+
+## 在配置nginx后新建php项目会发现即使是当前用户创建的文件也无法运行，原因是由于nginx的默认用户和用户组是www-data（在nginx.conf中配置）。这时需要我们对特定的文件进行拥有者修改
+
+```shell
+sudo chown -R www-data:www-data /site/www
+```
+
+## nginx 504 Gateway Time-out
+
+```shell
+# 在nginx.conf 配置文件里加入 fastcgi_buffers 8 128k  也就是把缓冲区大小改为 8 * 128k
+# 也可以增加超时参数 send_timeout 60  ，一般加大到60秒就差不多了
 ```

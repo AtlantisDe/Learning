@@ -15,7 +15,32 @@
 }
 ```
 
-## 代码2
+## 代码 2
+
+```c#
+namespace Demos
+{
+    public class Entity
+    {
+
+    }
+    public class Const
+    {
+        public const string aa = "aa";
+
+    }
+    public class Method
+    {
+
+    }
+    public class UI
+    {
+
+    }
+}
+```
+
+## 代码 3
 
 ```c#
 namespace Demos

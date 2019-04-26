@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule /demo.html  /demo.php
+RewriteRule /index\.html  \/index\.php
+RewriteRule /sitemap\.html  \/sitemap\.php
+RewriteRule /robots\.txt  \/robots\.php
+RewriteRule /(.*)\/$ \/index\.php\?page=$1
+RewriteRule /(.*)\/index\.html$ \/index\.php\?page=$1

@@ -13,6 +13,7 @@
 - [Markdown 扩展](https://www.vuepress.cn/guide/markdown.html#%E6%A0%87%E9%A2%98%E9%94%9A%E7%82%B9-header-anchors)
 - [Markdown 语法大全 包括设置字体 颜色](https://blog.csdn.net/qcx321/article/details/53780672)
 - [Markdown Syntax](https://sourceforge.net/p/colcmd/discussion/markdown_syntax)
+- [markdown 之项目目录文件结构展示](https://www.jianshu.com/p/f7d2e2621a6f)
 
 ## 代码示例
 
@@ -29,7 +30,7 @@
 ```
 
 ```css
-// code for coloring
+/* code for coloring */
 ```
 
 ```diff

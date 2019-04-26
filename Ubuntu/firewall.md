@@ -17,4 +17,5 @@ sudo ufw allow 'Nginx Full'
 sudo ufw allow 137
 sudo ufw allow 139
 sudo ufw allow 445
+sudo ufw allow 3306
 ```

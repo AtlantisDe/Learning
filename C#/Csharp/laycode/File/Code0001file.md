@@ -26,8 +26,11 @@ using (System.IO.FileStream fsWrite = new System.IO.FileStream(path, System.IO.F
 }
 MessageBox.Show("保存成功");
 
-// 打开
+```
 
+## C#打开文件
+
+```C#
 OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Excel文件(*.xls;*.xlsx)|*.xls;*.xlsx|所有文件|*.*";
             ofd.ValidateNames = true;
@@ -87,6 +90,13 @@ while ((line = sr.ReadLine()) != null)
             //清空缓冲区、关闭流
             fs.Flush();
             fs.Close();
+```
+
+## C#文本读取
+
+```c#
+File.ReadAllText(ofd.FileName);
+File.ReadAllText(ofd.FileName,Encoding.UTF8);
 ```
 
 ## C#文件/目录是否存在/操作

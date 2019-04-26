@@ -81,6 +81,7 @@ Vetur
 Sync:上传设置 "shift+alt+u"
 Past Url "ctrl+alt+p"
 删除行注释 "ctrl+k ctrl+u"
+复制文件路径打开文件 "ctrl+o"
 ```
 
 ## Visual Studio Code [插件 GitHub]

@@ -11,14 +11,6 @@
 - [Ubuntu 下 Nginx 启动、停止等常用命令](https://www.cnblogs.com/fireicesion/p/8457898.html)
 - [nginx 提示 Job for nginx.service failed because the control 的问题](https://www.cnblogs.com/skura23/p/7086447.html)
 - [如何在 Ubuntu18.04 上安装 Linux、Nginx、MySQL 和 PHP（LEMP stack）](https://blog.csdn.net/wudics/article/details/84073350)
-- [Mysql 在 18.04 中有一个大坑，你知道吗？](http://baijiahao.baidu.com/s?id=1605397136747327756&wfr=spider&for=pc)
-- [Ubuntu18.04 安装 MySQL](https://blog.csdn.net/weixx3/article/details/80782479)
-- [MySQL 官网](https://www.mysql.com/)
-- [mysql 如何退出](https://www.cnblogs.com/harrytc/p/6725778.html)
-- [开启 MySQL 远程访问权限 允许远程连接](https://www.cnblogs.com/weifeng1463/p/7941625.html)
-- [Ubuntu 安装 mysql 及设置远程访问方法](https://www.cnblogs.com/ruofengzhishang/p/5477502.html)
-- [Ubuntu 设置 MySQL 允许远程访问](https://www.cnblogs.com/wzwyc/p/10121409.html)
-- [ubuntu 查看 mysql 版本的几种方法](https://www.cnblogs.com/zlsgh/p/8645589.html)
 - [Gitlab 服务器 url 修改后，项目 path 的修改](https://blog.csdn.net/u013377887/article/details/73717729)
 - [gitlab 启用 https](https://www.cnblogs.com/xieshuang/p/8488458.html)
 - [gitlab 开启 https 加密 and 全站 https](https://blog.51cto.com/53cto/1775865)
@@ -51,45 +43,6 @@ systemctl restart nginx.service
 sudo systemctl enable nginx
 查询nginx进程
 ps -ef | grep nginx
-```
-
-## 安装 Mysql
-
-```shell
-sudo apt-get install mysql-server
-sudo apt install mysql-server-5.7
-sudo apt install mysql-server-5.7.25
-mysql -V
-
-mysql退出三种方法：
-mysql > exit;
-mysql > quit;
-mysql > \q;
-sudo service mysql restart 启数据库
-
-# # 通过该条命令使用MySQL自带的客户端连接数据库服务器，然后输入以下命令查看root的登陆验证方式。
-SELECT user,authentication_string,plugin,host FROM mysql.user;
-
-# # 可以看到，root账号使用的auto_socket登陆验证方式，需要将它改为mysql_native_password方式。
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root密码';
-
-# # 执行该条命令更新下配置，输入以下命令，再次查看root账号的登陆验证方式。
-FLUSH PRIVILEGES;
-
-# # 再次查看 OK
-SELECT user,authentication_string,plugin,host FROM mysql.user;
-```
-
-```sql
-# 注释bind-address = 127.0.0.1 Ubuntu设置MySQL允许远程访问
-sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-# bind-address= 127.0.0.1
-```
-
-```shell
-# # 实现远程连接（改表法）
-UPDATE `user` SET `Host` = '%' WHERE `user`.`Host` = 'localhost' AND `user`.`User` = 'root'
-# # 默认`Host` = 'localhost'
 ```
 
 ## 安装 PHP 和配置 Nginx 使用 PHP 处理器
