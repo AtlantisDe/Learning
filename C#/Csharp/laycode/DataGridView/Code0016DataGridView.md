@@ -43,4 +43,15 @@ dataGridView.Rows.Add(a, (i + 1), a.url, a.content);
 
 ```c#
 this.dt_domain.CellContentClick += Dt_domain_CellContentClick;
+
+private void Dt_domain_CellContentClick(object sender, DataGridViewCellEventArgs e)
+{
+    if (e.RowIndex < 0 || e.ColumnIndex < 0)    {return;}
+
+    var aa = dt_domain.Rows[e.RowIndex].Cells[e.ColumnIndex];
+    if (aa.OwningColumn.Name == "action")
+    {
+        var url = (string)dt_domain.Rows[e.RowIndex].Cells["aaa"].Value;
+    }
+}
 ```
