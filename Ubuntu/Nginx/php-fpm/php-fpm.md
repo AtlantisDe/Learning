@@ -59,4 +59,5 @@ sudo sed -i 's/listen.group.*/listen.group = www/' /etc/php/7.3/fpm/pool.d/www.c
 sudo sed -i 's/;listen.mode.*/listen.mode = 0666/' /etc/php/7.3/fpm/pool.d/www.conf
 
 sudo systemctl restart php7.3-fpm
+sudo systemctl restart php7.2-fpm
 ```

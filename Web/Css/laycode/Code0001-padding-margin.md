@@ -1,8 +1,9 @@
 # CSS margin padding
 
-- [CSS中margin和padding属性的区别](https://www.cnblogs.com/iwwenbo/p/3515400.html)
+- [CSS 中 margin 和 padding 属性的区别](https://www.cnblogs.com/iwwenbo/p/3515400.html)
+- [用 Margin 还是用 Padding](http://www.hicss.net/use-margin-or-padding/)
 
-## margin和padding的区别
+## margin 和 padding 的区别
 
 ```css
 /* 
@@ -14,10 +15,9 @@ padding是指自身边框到自身内部另一个容器边框之间的距离，�
 ## 设置 p 元素的 4 个内边距
 
 ```css
-p
-  {
-  padding:2cm 4cm 3cm 4cm;
-  }
+p {
+  padding: 2cm 4cm 3cm 4cm;
+}
 ```
 
 ## 例子 1

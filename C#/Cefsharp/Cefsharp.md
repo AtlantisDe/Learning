@@ -54,11 +54,11 @@ C:\\chrome-directory\chrome.exe --emulation-mode=iphone5
 main.ExecuteJavaScriptAsync(code, "about:blank", 0);
 googleBrower.beijingTime(function(res) {alert(res);})
 Task<CefSharp.JavascriptResponse> t;
-                t = main.EvaluateScriptAsync(code);
-                t.ConfigureAwait(false);
+t = main.EvaluateScriptAsync(code);
+t.ConfigureAwait(false);
 
-                t.Wait();
-                if (t.Result.Result != null) { return t.Result.Result.ToString(); }
+t.Wait();
+if (t.Result.Result != null) { return t.Result.Result.ToString(); }
 
 browser.RegisterAsyncJsObject("boundAsync", new AsyncBoundObject()); //Standard object rego
 browser.RegisterAsyncJsObject("bound", new AsyncBoundObject(), BindingOptions.DefaultBinder); //Use the default binder to serialize values into complex objects

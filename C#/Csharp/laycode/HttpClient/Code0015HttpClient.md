@@ -1,12 +1,12 @@
 # C# HttpClient
 
 - [HttpClient Class (System.Net.Http)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netframework-4.7.2)
-- [C#中HttpClient使用注意：预热与长连接](https://www.cnblogs.com/dudu/p/csharp-httpclient-attention.html)
-- [C# System.Net.Http.HttpClient使用说明](https://www.cnblogs.com/lh173110/p/7799698.html)
-- [C#使用HttpClient进行GET&POST](https://blog.csdn.net/wangyi1e/article/details/29204987?utm_source=blogxgwz3)
-- [C# 中使用System.Net.Http.HttpClient 模拟登录博客园 (GET/POST)](https://www.cnblogs.com/amosli/p/3918538.html)
+- [C#中 HttpClient 使用注意：预热与长连接](https://www.cnblogs.com/dudu/p/csharp-httpclient-attention.html)
+- [C# System.Net.Http.HttpClient 使用说明](https://www.cnblogs.com/lh173110/p/7799698.html)
+- [C#使用 HttpClient 进行 GET&POST](https://blog.csdn.net/wangyi1e/article/details/29204987?utm_source=blogxgwz3)
+- [C# 中使用 System.Net.Http.HttpClient 模拟登录博客园 (GET/POST)](https://www.cnblogs.com/amosli/p/3918538.html)
 - [C# 解决“请求被中止: 未能创建 SSL/TLS 安全通道”的问题](https://www.cnblogs.com/xuliangxing/p/8384821.html)
-- [C# HttpClient高并发时怎么解决TCP连接数过多](https://q.cnblogs.com/q/90727)
+- [C# HttpClient 高并发时怎么解决 TCP 连接数过多](https://q.cnblogs.com/q/90727)
 
 ## 请求被中止: 未能创建 SSL/TLS 安全通道
 
@@ -88,4 +88,22 @@ public async void HttpClientDoGet()
                 MessageBox.Show(responseString);
             }
         }
+```
+
+## Demo ReadAsStringAsync
+
+```c#
+var rst = response.Result;
+if (rst.IsSuccessStatusCode)
+{
+    var contxt = rst.Content;
+    var aaa = contxt.ReadAsStringAsync();
+    var ccc = aaa.Result;
+
+    if (ccc.Contains("SUCCESS") && ccc.Contains("接口调用成功"))
+    {
+
+        return "";
+    }
+}
 ```

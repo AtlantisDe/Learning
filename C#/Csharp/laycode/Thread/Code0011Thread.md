@@ -37,3 +37,9 @@ Thread oThread = new Thread(delegate(){});
 oThread.IsBackground = true;
 oThread.Start();
 ```
+
+```c#
+Thread t = new Thread(delegate(){});
+t.IsBackground = true;
+t.Start();
+```

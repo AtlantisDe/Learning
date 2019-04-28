@@ -20,28 +20,28 @@
 ## 安装 Nginx
 
 ```shell
-Nginx的软件包在Ubuntu默认软件仓库中可用。 安装非常简单，只需键入以下命令：
+# Nginx的软件包在Ubuntu默认软件仓库中可用。 安装非常简单，只需键入以下命令：
 
 sudo apt update
 sudo apt install nginx
 
-安装完成后，请检查Nginx服务的状态和版本：
+# 安装完成后，请检查Nginx服务的状态和版本：
 sudo systemctl status nginx
 
 sudo nginx -v
-配置防火墙
-如果您正在运行防火墙，则还需要打开端口80和443。
+# 配置防火墙
+# 如果您正在运行防火墙，则还需要打开端口80和443。
 sudo ufw allow 'Nginx Full'
 
-防火墙规则已更新 验证更改：
+# 防火墙规则已更新 验证更改：
 sudo ufw status
 
-重启nginx
+# 重启nginx
 sudo /etc/init.d/nginx restart
 /etc/init.d/nginx restart
 systemctl restart nginx.service
 sudo systemctl enable nginx
-查询nginx进程
+# 查询nginx进程
 ps -ef | grep nginx
 ```
 
