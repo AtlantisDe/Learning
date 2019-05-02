@@ -2,9 +2,9 @@
 
 - [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [Promise 在 JavaScript 的世界中，所有代码都是单线程执行的。](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/0014345008539155e93fc16046d4bb7854943814c4f9dc2000)
-- [使用控制台Tools for Web Developers Console](https://developers.google.com/web/tools/chrome-devtools/console/)
+- [使用控制台 Tools for Web Developers Console](https://developers.google.com/web/tools/chrome-devtools/console/)
 - [javascript – 如何删除所有最近的控制台命令](https://codeday.me/bug/20171214/108866.html)
-- [Chrome控制台的 提示历史 如何清除?](https://segmentfault.com/q/1010000004865618)
+- [Chrome 控制台的 提示历史 如何清除?](https://segmentfault.com/q/1010000004865618)
 - [初探 Promise](https://segmentfault.com/a/1190000007032448#articleHeader1)
 - [JS JQ 代码](https://www.cnblogs.com/bycnboy/p/10181633.html)
 - [Node.js](http://www.runoob.com/nodejs/nodejs-tutorial.html)
@@ -43,13 +43,13 @@
 - [jQuery 最简单的表单提交方式](https://www.cnblogs.com/sntetwt/p/4458845.html)
 - [jsonp 原理详解——终于搞清楚 jsonp 是啥了](https://blog.csdn.net/hansexploration/article/details/80314948)
 - [JSONP 详解](https://www.cnblogs.com/shijingjing07/p/5929016.html)
-- [jQuery操作Frame（iFrame）](https://blog.csdn.net/kingcruel/article/details/81073285)
-- [如何使iframe外部的超级链接的页面在iframe中打开](https://www.cnblogs.com/lingdublog/p/6438045.html)
-- [页面插入iframe嵌套](https://www.cnblogs.com/chaser-li/p/8080967.html)
+- [jQuery 操作 Frame（iFrame）](https://blog.csdn.net/kingcruel/article/details/81073285)
+- [如何使 iframe 外部的超级链接的页面在 iframe 中打开](https://www.cnblogs.com/lingdublog/p/6438045.html)
+- [页面插入 iframe 嵌套](https://www.cnblogs.com/chaser-li/p/8080967.html)
 - [jQuery 事件 - submit() 方法](http://www.w3school.com.cn/jquery/event_submit.asp)
-- [Chrome浏览器使用Console调试(一)](https://zhangzhaoaaa.iteye.com/blog/2247890)
-- [jQuery如何跳转到另一个网页 就这么简单](https://www.jb51.net/article/101493.htm)
-- [jquery 如何选取相同class里特定的一个?](https://zhidao.baidu.com/question/557219425.html)
+- [Chrome 浏览器使用 Console 调试(一)](https://zhangzhaoaaa.iteye.com/blog/2247890)
+- [jQuery 如何跳转到另一个网页 就这么简单](https://www.jb51.net/article/101493.htm)
+- [jquery 如何选取相同 class 里特定的一个?](https://zhidao.baidu.com/question/557219425.html)
 - [前端埋点的那些事](https://www.imooc.com/article/27151)
 - [CefSharp Change UserAgent in real time](https://stackoverflow.com/questions/54417756/cefsharp-change-useragent-in-real-time)
 
@@ -63,6 +63,7 @@ about:blank
 window.location.reload()，window.history.go(0)和document.execCommand(''Refresh'')
 window.location.replace("www.google.com");
 window.location.href = "www.google.com";
+window.location.href = "/demo.aspx";
 $(location).attr('href', 'www.google.com');
 $(window).attr('location','www.google.com');
 $(location).prop('href', 'www.google.com')
@@ -153,10 +154,10 @@ $("#items").parents(".parent1");
 $("#items1").closest(".parent1");
 $(selector).attr(attribute);
 $("img").attr("width", "180");
-$("form").submit(function(e){
+$("form").submit(function(e) {
   alert("Submitted");
 });
-$('form')[1].submit(function(e){
+$("form")[1].submit(function(e) {
   alert("Submitted");
 });
 ```
@@ -248,12 +249,4 @@ function loadScript(url, callback) {
     };
   }
 }
-```
-
-## Node.js
-
-```shell
-Ubuntu apt-get命令安装
-sudo apt-get install nodejs
-sudo apt-get install npm
 ```

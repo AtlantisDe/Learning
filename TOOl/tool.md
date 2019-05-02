@@ -10,8 +10,10 @@
 
 - [JSON 在线编辑器-JSON 中国](http://www.json.org.cn/tools/JSONEditorOnline/index.htm)
 - [JSON 压缩转义工具，JSON 转义，JSON 压缩一行](https://www.sojson.com/yasuo.html)
+- [JSON 转 C#实体类-BeJSON.com](https://www.bejson.com/convert/json2csharp/)
 - [Json 生成 C#类](https://atlantisde.github.io/MyWebOnlineTool/Web/convert/json2csharp/json2csharp.html)
 - [换行引号替换转义[原创]](https://atlantisde.github.io/MyWebOnlineTool/Web/convert/replace/replace.html)
+- [XML 编辑器 阅读器 - 在线工具](http://xmlgrid.net/cn/)
 - [The HTML5 test - How well does your browser support HTML5?](http://html5test.com/)
 - [时间戳(Unix timestamp)转换工具 - 在线工具](https://tool.lu/timestamp/)
 - [在线加密/解密，对称加密/非对称加密](https://www.sojson.com/encrypt.html)

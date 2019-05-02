@@ -1,6 +1,7 @@
 # English
 
 ```shell
+console 命令
 ulitily
 Module 模块
 model 模型
@@ -35,4 +36,21 @@ check 检查 审查
 database 数据库
 Redis 数据库
 Is Splitter Fixed 是固定的
+Syntax highlighting  语法高亮 语法突出显示
+Usage 用法
+属性property, attribute, characteristic, characteristical, virtue
+属性-定语attribute, adherent adjunct, attributive adjunct
+PHP DocBlocker PHP文档块
+Parse error 解析错误
+Permission 权限
+Unfiled 未归档
+[TestMethod] 调试方法
+applicationPool 应用程序池
+managedPipelineMode 托管模式
+Integrated 集成
+Classic 经典
+Running IIS Express from the Command Line 从命令行运行IIS Express
+CLI Config File CLI配置文件
+Success 成功
+async 异步
 ```

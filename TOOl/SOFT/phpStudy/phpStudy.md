@@ -3,7 +3,7 @@
 - [phpstudy 伪静态设置](https://jingyan.baidu.com/article/e9fb46e151a6557521f766d6.html)
 - [尘封的记忆-phpstudy 本地环境开启.htaccess 伪静态](http://www.scbzlx.com/post/19.html)
 - [phpstudy 配置伪静态的方法 - 心存善念 - 博客园](https://www.cnblogs.com/xcsn/p/6149080.html)
-- [（转）php .htaccess文件使用详解](https://www.cnblogs.com/yyl8781697/articles/php-htaccess.html)
+- [（转）php .htaccess 文件使用详解](https://www.cnblogs.com/yyl8781697/articles/php-htaccess.html)
 
 ## phpStudy 默认伪静态配置已经开启(高版本)
 
@@ -20,4 +20,10 @@ RewriteEngine on
 RewriteRule ([a-zA-Z]{1,})-([0-9]{1,}).html$index.php?action=$1&id=$2
 ([a-zA-Z]{1,})-([0-9]{1,}).html$是规则，index.php?action=$1&id=$2是要替换的格式，$1代表第
 # 一个括号匹配的值，$2代表第二个，如此类推！！
+```
+
+## 配置文件
+
+```shell
+D:\phpStudy\PHPTutorial\Apache\conf\vhosts.conf
 ```
