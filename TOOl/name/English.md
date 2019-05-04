@@ -1,6 +1,12 @@
 # English
 
 ```shell
+Solution Items 解决方案项目
+src
+Controllers 控制器
+Models 模型
+Terminal 终端
+Views 视图 查看
 console 命令
 ulitily
 Module 模块
@@ -53,4 +59,14 @@ Running IIS Express from the Command Line 从命令行运行IIS Express
 CLI Config File CLI配置文件
 Success 成功
 async 异步
+Controllers
+compilation 编译/汇编目标
+Razor Pages
+DbContext 数据库上下文
+IsRequired 是必须的
+Apache License 2.0  许可证2.0
+Official images for .NET Core and ASP.NET Core 官方镜像
+controller 控制器 调节器
+marketplace 市场
+Accessing Data with ASP.NET 使用ASP.NET访问数据
 ```

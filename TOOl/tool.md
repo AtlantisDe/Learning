@@ -2,6 +2,14 @@
 
 - [在线工具 TOOL 收藏 - 亚特凯瑟琳](https://www.cnblogs.com/bycnboy/p/9052228.html)
 
+## 性能测试
+
+- [TechEmpower Framework Benchmarks](https://www.techempower.com/benchmarks/)
+
+## JSON
+
+- [JSON 在线解析](https://c.runoob.com/front-end/53)
+
 ## GIF 录制
 
 - [GIPHY Capture](https://giphy.com/apps/giphycapture)
