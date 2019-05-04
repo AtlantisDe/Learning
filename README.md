@@ -1,6 +1,7 @@
-# [我们的征途是星辰大海]
+# 我们的征途是星辰大海,奋斗是青春最亮丽的底色
 
-## (WebOnlineTool MyKnowledge) [Our journey is the sea of stars]
+- Ocean of knowledge
+- Our journey is the sea of stars
 
 ```shell
 |-- 知识目录树
