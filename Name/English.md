@@ -2,6 +2,16 @@
 
 ```shell
 Solution Items 解决方案项目
+领域层（Domain）
+实体（Entity）
+仓储（Repository）
+领域服务（Domain service）
+领域事件（Domain Event）
+工作单元（Unit of Work）
+应用层（Application）
+基础设施层（Infrastructure）
+Web与展现层（Web&Presentation）
+ASP.NET Boilerplate  - Web Application Framework
 src
 Controllers 控制器
 Models 模型
@@ -9,6 +19,7 @@ Terminal 终端
 Views 视图 查看
 console 命令
 ulitily
+util Util是utiliy的缩写，是一个多功能、基于工具的包。
 Module 模块
 model 模型
 template 模板
@@ -69,4 +80,9 @@ Official images for .NET Core and ASP.NET Core 官方镜像
 controller 控制器 调节器
 marketplace 市场
 Accessing Data with ASP.NET 使用ASP.NET访问数据
+VISUALSVN SERVER 可视化的SVN服务
+core 核心
+Packs 包
+kendo UI 剑道UI
+Angular 角
 ```

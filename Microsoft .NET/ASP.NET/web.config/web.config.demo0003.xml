@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+  有关如何配置 ASP.NET 应用程序的详细信息，请访问
+  https://go.microsoft.com/fwlink/?LinkId=169433
+-->
+<configuration>
+  <system.web>
+    <compilation debug="true" targetFramework="4.0"/>
+    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID"/>
+
+
+
+    <authentication mode="Forms">
+      <forms
+          name=".ASPXAUTH"
+          loginUrl="login.aspx"
+          defaultUrl="login.aspx"
+          protection="All"
+          timeout="1400"
+          path="/"
+          requireSSL="false"
+          slidingExpiration="false"
+          enableCrossAppRedirects="false"
+          cookieless="UseDeviceProfile"
+          domain=""
+     />
+    </authentication>
+
+
+
+
+    <authorization>
+      <deny users="?"/>
+
+    </authorization>
+
+
+  </system.web>
+
+  <location path="token.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*"/>
+      </authorization>
+
+    </system.web>
+  </location>
+
+  <appSettings>
+    <add key="loginToken" value="11"/>
+  </appSettings>
+</configuration>

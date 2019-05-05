@@ -7,9 +7,20 @@
 - [ASP.NET Core 概述](https://baijiahao.baidu.com/s?id=1607601165004945962&wfr=spider&for=pc)
 - [ASP.NET Core 入门](https://docs.microsoft.com/zh-cn/aspnet/core/getting-started/?view=aspnetcore-2.2&tabs=macos)
 - [ASP.NET Core 开发 - Entity Framework (EF) Core - LineZero - 博客园](https://www.cnblogs.com/linezero/p/EntityFrameworkCore.html)
+- [使用.NET Core 快速开发一个较正规的命令行应用程序 - KAnts - 博客园](https://www.cnblogs.com/ants/p/8615958.html)
 
 ## Download .NET Core
 
 ## Github
 
 - [aspnet/AspNetCore](https://github.com/aspnet/AspNetCore)
+- [.NET Core Community](https://github.com/dotnetcore)
+- [OrchardCMS/OrchardCore](https://github.com/OrchardCMS/OrchardCore)
+- [OrchardCMS/OrchardCore](https://github.com/OrchardCMS/OrchardCore)
+- [SeriaWei/ZKEACMS](https://github.com/SeriaWei/ZKEACMS)
+- [dotnet/orleans](https://github.com/dotnet/orleans)
+- [XiaoFaye/WooCommerce.NET](https://github.com/XiaoFaye/WooCommerce.NET)
+- [MichaCo/CacheManager](https://github.com/MichaCo/CacheManager)
+- [ThreeMammals/Ocelot](https://github.com/ThreeMammals/Ocelot)
+- [StackExchange/Dapper](https://github.com/StackExchange/Dapper)
+- [NLog/NLog](https://github.com/NLog/NLog)

@@ -1,5 +1,7 @@
 # Visual Studio Code
 
+- 前端最好用的 IDE
+
 ## Visual Studio Code [插件]
 
 - [Visual Studio Code 最好的功能、插件和设置-WEB 前端开发](https://www.html.cn/archives/8144)

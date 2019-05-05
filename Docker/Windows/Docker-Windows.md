@@ -8,6 +8,8 @@
 ## issue
 
 - [解决 Docker for window 与 VMware 虚拟机同时安装，造成虚拟机网络不通以及无法启动问题](https://blog.csdn.net/csdn2193714269/article/details/83028772)
+- [第一次使用docker for windows 遇到的坑](https://blog.csdn.net/weixin_41536218/article/details/80417640)
+- [Docker for Windows使用简介](http://www.cnblogs.com/daxnet/p/5788972.html)
 
 ## 开启 Hyper-V
 
