@@ -180,6 +180,8 @@ layui.table.on("tool(test)", function(obj) {
 });
 
 //监听行工具事件 Demo
+// <table id="demo" lay-filter="test"></table>
+// 这个bar_do 是lay-filter
 layui.table.on("tool(bar_do)", function(obj) {
   var data = obj.data;
   //console.log(obj)
@@ -216,9 +218,9 @@ layui.use('table', function(){
 ## 开启头部工具栏
 
 ```js
-
+//表格内参数
 ,toolbar: '#toolbarDemo'
-
+//页面JS
 <script type="text/html" id="toolbar_Demo">
   <div class="layui-btn-container">
     <button class="layui-btn layui-btn-sm" lay-event="getCheckData">
@@ -249,5 +251,48 @@ layui.use('table', function(){
       验证是否全选
     </button>
   </div>
+</script>
+```
+
+## 监听头部工具栏事件
+
+- [table 数据表格文档 - layui](https://www.layui.com/doc/modules/table.html#ontoolbar)
+
+```js
+原始容器
+<table id="demo" lay-filter="test"></table>
+
+工具栏模板：
+<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+    <button class="layui-btn layui-btn-sm" lay-event="delete">删除</button>
+    <button class="layui-btn layui-btn-sm" lay-event="update">编辑</button>
+  </div>
+</script>
+
+<script;>
+//JS 调用：
+table.render({
+  elem: '#demo'
+  ,toolbar: '#toolbarDemo'
+  //,…… //其他参数
+});
+
+//监听事件
+table.on('toolbar(test)', function(obj){
+  var checkStatus = table.checkStatus(obj.config.id);
+  switch(obj.event){
+    case 'add':
+      layer.msg('添加');
+    break;
+    case 'delete':
+      layer.msg('删除');
+    break;
+    case 'update':
+      layer.msg('编辑');
+    break;
+  };
+});
 </script>
 ```

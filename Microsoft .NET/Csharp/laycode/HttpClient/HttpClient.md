@@ -14,6 +14,43 @@
 System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //加上这一句
 ```
 
+## Header 添加
+
+- 内容类型是内容的头部，而不是请求的头部，这就是失败的原因。AddWithoutValidation 正如 Robert Levy 所建议的那样，但是您也可以在创建请求内容时自己设置内容类型（请注意，代码片段在两个地方添加了“application / json”（对于 Accept 和 Content-Type 标头）
+- [[C#]如何给 HttpClient 添加 Accept:text/plain 的请求头*已解决*博问\_博客园](https://q.cnblogs.com/q/78951/)
+- [如何为 HttpClient 请求设置 Content-Type 头？ - 问答 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/ask/27305)
+
+```c#
+new HttpClient().DefaultRequestHeaders.Accept.Clear();
+new HttpClient().DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("text/plain");
+
+// 错误写法
+httpclient.DefaultRequestHeaders.Add("Content-Type", "application/json");
+// 错误写法
+
+// 正确写法
+httpclient.DefaultRequestHeaders.Add("Authorization", "signStr");
+httpclient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT heade
+```
+
+## Demo ReadAsStringAsync
+
+```c#
+var rst = response.Result;
+if (rst.IsSuccessStatusCode)
+{
+    var contxt = rst.Content;
+    var aaa = contxt.ReadAsStringAsync();
+    var ccc = aaa.Result;
+
+    if (ccc.Contains("SUCCESS") && ccc.Contains("接口调用成功"))
+    {
+
+        return "";
+    }
+}
+```
+
 ## GET Demo
 
 ```c#
@@ -68,7 +105,7 @@ public async void HttpClientDoGet()
         }
 ```
 
-## POST Demo1
+## POST Demo1 新版似乎有改动下面代码仅供参考
 
 ```c#
  public async void HttpClientDoPost()
@@ -88,22 +125,4 @@ public async void HttpClientDoGet()
                 MessageBox.Show(responseString);
             }
         }
-```
-
-## Demo ReadAsStringAsync
-
-```c#
-var rst = response.Result;
-if (rst.IsSuccessStatusCode)
-{
-    var contxt = rst.Content;
-    var aaa = contxt.ReadAsStringAsync();
-    var ccc = aaa.Result;
-
-    if (ccc.Contains("SUCCESS") && ccc.Contains("接口调用成功"))
-    {
-
-        return "";
-    }
-}
 ```

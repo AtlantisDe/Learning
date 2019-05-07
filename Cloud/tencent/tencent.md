@@ -10,3 +10,15 @@
 ## CDN
 
 - [https://console.cloud.tencent.com/cdn/refresh](https://console.cloud.tencent.com/cdn/refresh)
+
+## SDK
+
+- [tencentyun/image-donet-sdk](https://github.com/tencentyun/image-donet-sdk)
+
+## API
+
+### 拼接签名原文字符串
+
+- 签名原文串的拼接规则为: 请求方法 + 请求主机 +请求路径 + ? + 请求字符串
+
+= 请求被拒绝，请求重复, 请注意 Nonce 参数两次请求不能重复, Timestamp 与腾讯服务器相差不能超过 2 小时, 腾讯服务器 Timestamp = 1557125531

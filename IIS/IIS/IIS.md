@@ -39,3 +39,7 @@ C:\Windows\system32\inetsrv\config
 2. 安装扩展支持如ASP/ASPX/主要是.net框架,还有如CGI/ISAPI扩展等.
 
 ```
+
+## 无法在 Web 服务器上启动调试。IIS 未列出与打开的 URL 匹配的网站。
+
+- VS 开发遇到这个问题,是权限问题,直接用管理员运行 VS

@@ -85,3 +85,36 @@ var json = {
   id: 0
 };
 ```
+
+## ajax layui async: true
+
+```js
+function RefreshCdnUrlphp(obj) {
+  layer.load();
+  logincheck();
+
+  layui.$.ajax({
+    type: "POST",
+    url: "/demoui.php",
+    dataType: "Json",
+    data: "url=" + obj.data.url,
+    cache: false,
+    async: true,
+    success: function(data) {
+      if (data.codeDesc == "Success") {
+        layer.alert(
+          "提交成功!正常5分钟内生效!请勿频繁提交,修改一次,提交一次即可",
+          { icon: 6 }
+        );
+      } else {
+        layer.alert(data.message, { icon: 6 });
+      }
+      //{"code":0,"message":"","codeDesc":"Success","data":{"count":1,"task_id":"1557144469900757406"}}
+    },
+    complete: function(data) {
+      layer.closeAll("loading");
+      console.log("close");
+    }
+  });
+}
+```
