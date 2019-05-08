@@ -1,0 +1,5 @@
+# Hosts
+
+```shell
+/etc/hosts
+```

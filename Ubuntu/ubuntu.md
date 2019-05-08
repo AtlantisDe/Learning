@@ -12,7 +12,7 @@
 - [Ubuntu “Failed to fetch”错误的解决方法 404](https://blog.csdn.net/xueer767/article/details/72864777)
 - [Ubuntu 使用 root 帐号,并让 Xshell, Winscp 以 root 身份登录 - EnskDeCode - CSDN 博客](https://blog.csdn.net/tojohnonly/article/details/57184166)
 
-## Ubuntu
+## Ubuntu 查看
 
 ```shell
 cat /proc/version

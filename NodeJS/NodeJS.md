@@ -10,10 +10,16 @@ node --version
 npm -v
 ```
 
-## 安装
+## Ubuntu 安装
 
 ```shell
 Ubuntu apt-get命令安装
 sudo apt-get install nodejs
 sudo apt-get install npm
 ```
+
+## Windows 安装
+
+1. Windows Installer (.msi)/Windows Binary (.zip) And Run Binary
+
+   > [Download | Node.js](https://nodejs.org/en/download/)

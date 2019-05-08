@@ -1,0 +1,30 @@
+[Unit]
+Description=Caddy HTTP/2 web server
+Documentation=https://caddyserver.com/docs
+After=network-online.target
+Wants=network-online.target
+[Service]
+Restart=on-failure
+StartLimitInterval=86400
+StartLimitBurst=5
+User=www-data
+Group=www-data
+; Letsencrypt-issued certificates will be written to here in this directory
+Environment=CADDYPATH=/etc/ssl/caddy
+ExecStart=/usr/local/bin/caddy -log stdout -agree=true -conf=/etc/caddy/Caddyfile -root=/var/tmp
+ExecReload=/bin/kill -USR1 $MAINPID
+LimitNOFILE=1048576
+LimitNPROC=64
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=full
+ReadWriteDirectories=/etc/ssl/caddy
+; The following additional security directives only work with systemd v229 or later.
+; They further restrict privileges that can be gained by caddy. Uncomment if you want.
+; You may need to add capabilities required by the plugins in use.
+;CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+;AmbientCapabilities=CAP_NET_BIND_SERVICE
+;NoNewPrivileges=true
+[Install]
+WantedBy=multi-user.target

@@ -85,4 +85,20 @@ core 核心
 Packs 包
 kendo UI 剑道UI
 Angular 角
+Caddy 球童
+API Gateway API网关
+Cluster 集群
+ulimit 你限制
+Adapter 适配器
+Fork us on GitHub 在GitHub上
+Prerequisites 先决条件
+Consumers 消费者
+Developers 开发者
+Java (JRE) for Consumers
+Java (JDK) for Developers
+Unknown directive 未知指令
+Matrix （电影《黑客帝国》中虚拟程序）
+Download: binary-only or complete 下载二进制文件 完整包
+Minimum supported Gradle version is 4.10.1 最低支持版本
+Minimum 最低支持版本
 ```

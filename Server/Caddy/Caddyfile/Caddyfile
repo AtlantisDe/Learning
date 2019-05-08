@@ -1,0 +1,3 @@
+my-domain.com {
+    root /var/www/ www.hicaddy.com
+}

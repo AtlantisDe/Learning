@@ -7,8 +7,13 @@
 |-- 知识目录树
     |-- C-currentDirectory.Bat
     |-- C-mddir.Bat
+    |-- directoryList.md
     |-- README.md
     |-- _config.yml
+    |-- Algorithms
+    |   |-- HMAC-SHA1
+    |       |-- HMAC-SHA1.md
+    |       |-- SHA1.cs
     |-- Android
     |   |-- simulator.md
     |   |-- simulator
@@ -16,8 +21,6 @@
     |       |   |-- BlueStacks.md
     |       |-- yeshen
     |           |-- yeshen.md
-    |-- Apache
-    |   |-- Apache.md
     |-- API
     |   |-- GitHub Api
     |   |   |-- GitHub Api v3
@@ -30,6 +33,13 @@
     |   |-- laycode
     |       |-- code0001-attrib.md
     |       |-- code0001-demo-taskkill.md
+    |-- BSD
+    |   |-- BSD.md
+    |-- Build Tool
+    |   |-- Gradle
+    |   |   |-- Gradle.md
+    |   |-- Maven
+    |       |-- Maven.md
     |-- C++
     |   |-- C++.md
     |-- CDN
@@ -117,46 +127,42 @@
     |   |-- DockerHub.md
     |-- Docs
     |   |-- en-us
-    |   |   |-- demo1.md
-    |   |   |-- demo2.md
-    |   |   |-- dir
-    |   |   |   |-- demo3.md
-    |   |   |-- img
-    |   |       |-- brhtqqzh.jpeg
     |   |-- zh-cn
-    |       |-- demo1.md
-    |       |-- demo2.md
-    |       |-- dir
-    |       |   |-- demo3.md
-    |       |-- img
-    |           |-- brhtqqzh.jpeg
     |-- Framework
-    |   |-- AngleSharp
-    |   |   |-- AngleSharp.md
-    |   |-- Autofac
-    |   |   |-- Autofac.md
-    |   |-- AutoMapper
-    |   |   |-- AutoMapper.md
-    |   |-- Boilerplate
-    |   |   |-- Boilerplate.md
-    |   |-- CodeHub
-    |   |   |-- CodeHub.md
-    |   |-- IdentityServer4
-    |   |   |-- IdentityServer4.md
-    |   |-- Nancy
-    |   |   |-- Nancy.md
-    |   |-- NLog
-    |   |   |-- NLog.md
-    |   |-- nopCommerce
-    |   |   |-- nopCommerce.md
-    |   |-- OSharpNS
-    |   |   |-- OSharpNS.md
-    |   |-- Quartz.Net
-    |   |   |-- Quartz.Net.md
-    |   |-- RestSharp
-    |   |   |-- RestSharp.md
-    |   |-- Swashbuckle
-    |       |-- Swashbuckle.md
+    |   |-- .NET Core
+    |   |   |-- AngleSharp
+    |   |   |   |-- AngleSharp.md
+    |   |   |-- Autofac
+    |   |   |   |-- Autofac.md
+    |   |   |-- AutoMapper
+    |   |   |   |-- AutoMapper.md
+    |   |   |-- Boilerplate
+    |   |   |   |-- Boilerplate.md
+    |   |   |-- CodeHub
+    |   |   |   |-- CodeHub.md
+    |   |   |-- IdentityServer4
+    |   |   |   |-- IdentityServer4.md
+    |   |   |-- Nancy
+    |   |   |   |-- Nancy.md
+    |   |   |-- NLog
+    |   |   |   |-- NLog.md
+    |   |   |-- nopCommerce
+    |   |   |   |-- nopCommerce.md
+    |   |   |-- OSharpNS
+    |   |   |   |-- OSharpNS.md
+    |   |   |-- Quartz.Net
+    |   |   |   |-- Quartz.Net.md
+    |   |   |-- RestSharp
+    |   |   |   |-- RestSharp.md
+    |   |   |-- Swashbuckle
+    |   |       |-- Swashbuckle.md
+    |   |-- PHP
+    |       |-- CI
+    |       |   |-- CodeIgniter.md
+    |       |-- PHP-MySQLi-Database-Class
+    |       |   |-- MysqliDb.md
+    |       |-- WordPress
+    |           |-- WordPress.md
     |-- Git
     |   |-- git.md
     |   |-- GIT开发流程说明.docx
@@ -182,7 +188,12 @@
     |   |   |-- LiteIDE.md
     |   |-- revive
     |       |-- revive.md
+    |-- Hosts
+    |   |-- hostadvice
+    |       |-- hostadvice.md
     |-- IIS
+    |   |-- bt
+    |   |   |-- bt.md
     |   |-- IIS
     |   |   |-- Err.md
     |   |   |-- IIS.md
@@ -195,6 +206,8 @@
     |   |-- InetMgr
     |   |   |-- err.md
     |   |   |-- InetMgr.md
+    |   |-- PHP
+    |   |   |-- iis-php.md
     |   |-- WEB
     |       |-- .NET 2.0
     |       |-- device-simulators
@@ -202,6 +215,23 @@
     |       |   |-- err-0001-Permission.md
     |       |-- IIS Express
     |           |-- IIS Express.md
+    |-- IM
+    |   |-- Matrix
+    |   |   |-- Matrix.md
+    |   |-- Riot.im
+    |   |   |-- Riot.im.md
+    |   |-- Rocket.Chat
+    |       |-- Rocket.Chat.md
+    |-- Java
+    |   |-- Java.md
+    |   |-- Install
+    |   |   |-- JDinstall.md
+    |   |   |-- JDKinstall.bat
+    |   |   |-- JREinstall.bat
+    |   |-- Java 9
+    |   |   |-- Java 9.md
+    |   |-- Java8
+    |       |-- Java8.md
     |-- JavaStrcipt
     |   |-- JS.md
     |   |-- array
@@ -219,6 +249,8 @@
     |   |-- JSON
     |   |   |-- Code0004js-json.md
     |   |   |-- JSON.md
+    |   |-- PJAX
+    |   |   |-- PJAX.md
     |   |-- trycatch
     |   |   |-- trycatch.md
     |   |-- Unfiled
@@ -229,14 +261,25 @@
     |       |-- Code0002js-time.md
     |       |-- Code0003jq-classfind.md
     |       |-- demo0001html2canvas.html
+    |-- Kotlin
+    |   |-- Kotlin.md
     |-- license
     |   |-- license.md
+    |-- Linux
+    |   |-- Linux.md
+    |   |-- etc
+    |   |-- hosts
+    |   |   |-- hosts
+    |   |   |-- hosts.md
+    |   |-- under
     |-- Mac
     |   |-- etc
     |       |-- hosts.md
     |-- Markdown
     |   |-- Markdown.md
     |   |-- readme
+    |   |-- Template
+    |       |-- install.md
     |-- Microsoft .NET
     |   |-- .Net.md
     |   |-- Microsoft Docs.md
@@ -325,8 +368,9 @@
     |   |       |-- Format
     |   |       |   |-- Code0001format.md
     |   |       |-- HttpClient
-    |   |       |   |-- Code0015HTTP.md
-    |   |       |   |-- Code0015HttpClient.md
+    |   |       |   |-- HTTP.md
+    |   |       |   |-- HttpClient.md
+    |   |       |   |-- UrlEncode.md
     |   |       |-- Image
     |   |       |   |-- Image.md
     |   |       |-- Invoke
@@ -343,7 +387,8 @@
     |   |       |-- PictureBox
     |   |       |   |-- PictureBox.md
     |   |       |-- random
-    |   |       |   |-- code001.md
+    |   |       |   |-- random.md
+    |   |       |   |-- Randomnum.md
     |   |       |-- Split
     |   |       |   |-- Code0005split.md
     |   |       |-- StringBuilder
@@ -353,18 +398,21 @@
     |   |       |   |-- Code0011Parallel.md
     |   |       |   |-- Code0011Thread.md
     |   |       |   |-- Code0011ThreadAsync.md
+    |   |       |-- Time
+    |   |       |   |-- DateTime.md
+    |   |       |   |-- Timestamp.md
     |   |       |-- Unfiled
     |   |       |   |-- Code0001string.md
     |   |       |   |-- Code0001sys.md
     |   |       |   |-- Code0001try.md
     |   |       |   |-- Code0001Uri.md
+    |   |       |   |-- Code0001var.md
     |   |       |   |-- Code0002MetroFramework.md
     |   |       |   |-- Code0003json.md
     |   |       |   |-- Code0004cefsharp.md
     |   |       |   |-- Code0005regex.md
     |   |       |   |-- Code0006version.md
     |   |       |   |-- Code0007Program.md
-    |   |       |   |-- Code0009time.md
     |   |       |   |-- Code0012copy.md
     |   |       |   |-- Code0013Timer.md
     |   |       |   |-- Code0014const.md
@@ -409,12 +457,59 @@
     |   |-- PacketSniffers.md
     |   |-- Wireshark
     |       |-- Wireshark.md
+    |-- Plugin
+    |   |-- Enlighter
+    |       |-- Enlighter.md
+    |-- Python
+    |   |-- Python.md
+    |-- Server
+    |   |-- Apache
+    |   |   |-- Apache.md
+    |   |-- Caddy
+    |   |   |-- Caddy.md
+    |   |   |-- caddy-with-docker-and-php
+    |   |   |   |-- caddy-with-docker-and-php.md
+    |   |   |-- Caddyfile
+    |   |   |   |-- Caddyfile
+    |   |   |   |-- Caddyfile.md
+    |   |   |-- Configure Caddy
+    |   |   |   |-- caddy.service
+    |   |   |-- PHP
+    |   |       |-- PHP.md
+    |   |-- gossa
+    |   |-- Nginx
+    |   |   |-- Nginx.md
+    |   |   |-- phpMyAdmin.md
+    |   |   |-- Rewrite.md
+    |   |   |-- Mysql
+    |   |   |   |-- Mysql.md
+    |   |   |-- php-fpm
+    |   |   |   |-- php-fpm.md
+    |   |   |-- Port
+    |   |   |   |-- Port.md
+    |   |   |-- samba
+    |   |   |   |-- samba.md
+    |   |   |-- sitedemo
+    |   |   |   |-- newsite.md
+    |   |   |   |-- phpinfo.php
+    |   |   |   |-- sites-available
+    |   |   |       |-- www.phpmyadmin.com.conf
+    |   |   |-- siteManager
+    |   |       |-- sitemanager.md
+    |   |       |-- site_manager.sh
+    |   |-- Performance Testing
+    |   |   |-- PerformanceTesting.md
+    |   |-- SSLDocker
+    |       |-- SSLDocker.md
     |-- Src
     |-- SVN
     |   |-- Svn-code.md
     |   |-- Svn.md
-    |-- Tool
+    |-- Tool Box
     |   |-- TOOL.md
+    |   |-- Down load
+    |   |   |-- annie
+    |   |       |-- annie.md
     |   |-- Soft Ware
     |       |-- .NET Framework
     |       |   |-- .NET Framework.md
@@ -471,6 +566,8 @@
     |       |   |-- .htaccess
     |       |   |-- phpStudy.md
     |       |   |-- Rewrite.md
+    |       |-- Postman
+    |       |   |-- Postman.md
     |       |-- Redis
     |       |   |-- Redis.md
     |       |-- Speedpan
@@ -494,43 +591,38 @@
     |           |-- ZkeysPhp.md
     |-- Ubuntu
     |   |-- firewall.md
-    |   |-- nano.md
     |   |-- PermitRootLogin.md
     |   |-- SSH.md
     |   |-- ubuntu.md
     |   |-- Vi.md
+    |   |-- Config
+    |   |   |-- confignote.md
+    |   |-- curl
+    |   |   |-- curl.md
     |   |-- Docker
     |   |-- Gitlab
     |   |   |-- GitLab.md
+    |   |-- nano
+    |   |   |-- nano.md
     |   |-- netplan
     |   |   |-- netplan.md
     |   |   |-- netplan
     |   |       |-- 01-netcfg.yaml
     |   |       |-- 50-cloud-init.yaml
-    |   |-- Nginx
-    |   |   |-- Nginx.md
-    |   |   |-- phpMyAdmin.md
-    |   |   |-- Rewrite.md
-    |   |   |-- Mysql
-    |   |   |   |-- Mysql.md
-    |   |   |-- php-fpm
-    |   |   |   |-- php-fpm.md
-    |   |   |-- samba
-    |   |   |   |-- samba.md
-    |   |   |-- sitedemo
-    |   |   |   |-- newsite.md
-    |   |   |   |-- phpinfo.php
-    |   |   |   |-- sites-available
-    |   |   |       |-- www.phpmyadmin.com.conf
-    |   |   |-- siteManager
-    |   |       |-- sitemanager.md
-    |   |       |-- site_manager.sh
+    |   |-- Path
+    |   |   |-- path.md
     |   |-- Permission
     |   |   |-- Permission.md
+    |   |-- PHP
+    |   |   |-- php.md
     |   |-- PPA
     |   |   |-- PPA.md
     |   |-- sources.list
-    |       |-- sources.list.md
+    |   |   |-- sources.list.md
+    |   |-- systemd
+    |   |   |-- systemd.md
+    |   |-- Unfiled
+    |       |-- cp.md
     |-- UI Framework
     |   |-- UI.md
     |   |-- Angular
@@ -563,10 +655,12 @@
     |   |   |   |-- loading.md
     |   |   |   |-- prompt.md
     |   |   |-- laytpl
-    |   |   |   |-- Code0005js-layui-tpl.md
+    |   |   |   |-- templet.md
     |   |   |-- nav
-    |   |       |-- laycode
-    |   |           |-- nav001.md
+    |   |   |   |-- laycode
+    |   |   |       |-- nav001.md
+    |   |   |-- Tab
+    |   |       |-- tab.md
     |   |-- NG-ALAIN
     |   |   |-- NG-ALAIN.md
     |   |-- Vue
@@ -601,19 +695,30 @@
     |   |       |-- Token.md
     |   |-- PHP
     |   |   |-- laycode
+    |   |       |-- dateTime
+    |   |       |   |-- dateTime.md
     |   |       |-- error
     |   |       |   |-- err-001-Parse error.md
     |   |       |   |-- error.md
     |   |       |-- file
     |   |       |   |-- code0001-getTextcontent.md
     |   |       |   |-- code0001-replaceTarget.md
-    |   |       |-- fun
-    |   |       |   |-- code0001-array.md
-    |   |       |   |-- code0001-strpos.md
+    |   |       |-- JSON
+    |   |       |   |-- JSON.md
+    |   |       |-- PHP Warning
+    |   |       |   |-- PHP Warning.md
+    |   |       |-- POST
+    |   |       |   |-- POST.md
     |   |       |-- preg_match
     |   |       |   |-- code0001-ispassword.md
     |   |       |   |-- code0001-ispassword.php
+    |   |       |-- Unfiled
+    |   |       |   |-- array.md
+    |   |       |   |-- explode.md
+    |   |       |   |-- nl2br.md
+    |   |       |   |-- strpos.md
     |   |       |-- version
+    |   |           |-- phpinfo.php
     |   |           |-- version.md
     |   |-- Rewrite
     |   |   |-- Apache
@@ -628,6 +733,7 @@
     |   |   |-- MYDOMAIN.md
     |   |-- System
     |       |-- etc
+    |           |-- hosts.lnk
     |           |-- hosts.md
     |-- Windows PowerShell
     |-- YAML

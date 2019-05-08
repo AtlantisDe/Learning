@@ -8,6 +8,8 @@
 - [ASP.NET Core 入门](https://docs.microsoft.com/zh-cn/aspnet/core/getting-started/?view=aspnetcore-2.2&tabs=macos)
 - [ASP.NET Core 开发 - Entity Framework (EF) Core - LineZero - 博客园](https://www.cnblogs.com/linezero/p/EntityFrameworkCore.html)
 - [使用.NET Core 快速开发一个较正规的命令行应用程序 - KAnts - 博客园](https://www.cnblogs.com/ants/p/8615958.html)
+- [.NET Core 跨平台的奥秘[下篇]：全新的布局 - Artech - 博客园](https://www.cnblogs.com/artech/p/7812811.html)
+- [[讨论] .net core 软件也能反编译吗?](https://www.52pojie.cn/thread-740204-1-1.html)
 
 ## Download .NET Core
 
