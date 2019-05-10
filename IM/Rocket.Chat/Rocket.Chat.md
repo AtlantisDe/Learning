@@ -1,6 +1,9 @@
 # Rocket.Chat
 
+- 火箭聊天
+- [Rocket.Chat - Free, Open Source, Enterprise Team Chat](https://rocket.chat/)
 - [一个强大的多功能团队聊天室：Rocket.Chat 安装教程 - Rat's Blog](https://www.moerats.com/archives/530/)
+- [快速搭建流行的开源聊天系统](https://www.youtube.com/watch?v=iaAot5K2sps)
 
 ## 安装
 
@@ -10,6 +13,7 @@
 ## Blog
 
 - [部署企业内部聊天工具 Rocket.Chat 开源 IM 系统 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1333782)
+- [在 Ubuntu 上安装 Rocket.Chat](https://blog.biezhi.me/2018/11/installing-rocketchat-with-ubuntu.html)
 
 ## Engine versions
 
@@ -31,7 +35,14 @@
 
    > [RocketChat/Rocket.Chat.Android](https://github.com/RocketChat/Rocket.Chat.Android)
 
-## WEB 安装
+## Ubuntu 16.04 安装
+
+> apt-get update -y
+> snap install rocketchat-server
+> <http://IP:3000>
+> sudo snap refresh rocketchat-server
+
+## WEB
 
 > Node: 8.11.4
 > NPM: 6.4.1

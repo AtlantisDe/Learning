@@ -14,6 +14,10 @@
 
 - [GIPHY Capture](https://giphy.com/apps/giphycapture)
 
+## HTML5 测试
+
+- [The HTML5 test - How well does your browser support HTML5?](http://html5test.com/)
+
 ## 在线工具
 
 - [JSON 在线编辑器-JSON 中国](http://www.json.org.cn/tools/JSONEditorOnline/index.htm)
@@ -22,7 +26,6 @@
 - [Json 生成 C#类](https://atlantisde.github.io/MyWebOnlineTool/Web/convert/json2csharp/json2csharp.html)
 - [换行引号替换转义[原创]](https://atlantisde.github.io/MyWebOnlineTool/Web/convert/replace/replace.html)
 - [XML 编辑器 阅读器 - 在线工具](http://xmlgrid.net/cn/)
-- [The HTML5 test - How well does your browser support HTML5?](http://html5test.com/)
 - [时间戳(Unix timestamp)转换工具 - 在线工具](https://tool.lu/timestamp/)
 - [在线加密/解密，对称加密/非对称加密](https://www.sojson.com/encrypt.html)
 - [菜鸟教程](http://www.runoob.com/)

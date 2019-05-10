@@ -25,6 +25,10 @@ sub.mysite.com {
     gzip
     log ../access.log
 }
+
+localhost:80
+log access.log
+markdown /mk
 ```
 
 ## 配置文件示例 2

@@ -6,19 +6,46 @@
 - [在 Ubuntu18.04 安装 gitlab 国内镜像加速](http://ccimage.cn/2018-05/ubuntu18-04-install-gitlab-chinese-mirror.html#comment-115)
 - [ubuntu18.04 下安装 gitlab](https://blog.csdn.net/u012838045/article/details/80881243)
 
+## wiki
+
+- [GitLab - 维基百科](https://zh.wikipedia.org/wiki/GitLab)
+
+## 社区版
+
+- [Gitlab 社区版的源代码](https://gitlab.com/gitlab-org/gitlab-ce/)
+
+## Ubuntu-安装
+
+- 官方文档里的 ee 改成 ce。收费版和免费版的区别。gitlab-ee 属于企业版
+- 产品被拆分为：GitLab CE（社区版）和 GitLab EE（企业版），当时，GitLab CE 和 GitLab EE 的许可仍然是根据 MIT 许可分发的免费和开源软件。
+
+1. 安装依赖包，运行命令
+
 ```shell
-官方文档里的ee改成ce。收费版和免费版的区别。gitlab-ee属于企业版
+   > sudo apt-get update
+   > sudo apt-get install -y curl openssh-server ca-certificates
+   > sudo apt-get install -y postfix
+```
 
-sudo apt-get update
-sudo apt-get install -y curl openssh-server ca-certificates
-sudo apt-get install -y postfix
+> 执行完成后，出现邮件配置，选择 Internet 那一项（不带 Smarthost 的）
 
+1. 2.首先信任 GitLab 的 GPG 公钥
+
+```shell
+curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
+```
+
+```shell
 # 首先信任 GitLab 的 GPG 公钥:
 curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
 
 # 添加GitLab软件包存储库(下载安装脚本)
 # curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+
+## 社区版
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+## 企业版
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
 
 # 修改安装脚本
 # vim /etc/apt/sources.list.d/gitlab_gitlab-ee.list

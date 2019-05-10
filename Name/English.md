@@ -101,4 +101,10 @@ Matrix （电影《黑客帝国》中虚拟程序）
 Download: binary-only or complete 下载二进制文件 完整包
 Minimum supported Gradle version is 4.10.1 最低支持版本
 Minimum 最低支持版本
+Unable to locate package gitlab-ce 无法找到gitlab社区版包
+snap 快照
+Deploy from shell 从命令行安装
+Project Structure 项目结构
+Rechech now 现在重新开始
+Recheck now 现在重新检查
 ```

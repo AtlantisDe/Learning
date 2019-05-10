@@ -15,6 +15,16 @@ Caddy和我们常用的Nginx、Apache等Web服务器相比，最大的特点就�
 Caddy可以用于静态和动态网站，当然不少人看到了Caddy易于安装部署的特点，将Caddy与网盘、下载等各类应用整合，这样既发挥了Caddy部署配置简单的优势，同时又可以最大限度地节省服务器资源，专注于第三方应用的开发管理。
 ```
 
+## 常用命令
+
+```shell
+caddy -host example.com
+caddy -host example.com
+systemctl status caddy.service
+caddy -conf /etc/caddy/Caddyfile
+
+```
+
 ## 自动签发 HTTPS
 
 ```text
@@ -213,14 +223,6 @@ caddy
 
 -你可以使用 Ctrl+C 退出，caddy 将尽可能优雅中断。
 
-## 常用命令
-
-```shell
-caddy -host example.com
-caddy -host example.com
-systemctl status caddy.service
-```
-
 ## 报错修复 ulimit -n 8192
 
 ```shell
@@ -270,4 +272,74 @@ sudo chmod -R 555 /var/www/example.com
 ```shell
 caddy -host example.com
 caddy -host localhost
+```
+
+## caddy server 几个常用插件
+
+```text
+1.log日志
+
+log /var/www/log/example.log
+2.目录访问
+
+browse
+3.gzip压缩
+
+gzip
+4.自主ssl证书
+
+tls /path/ssl/example.com.crt /path/ssl/example.com.key
+5.git拉取功能(3600秒为间隔时间)
+
+git https://github.com/user/project.git /var/www/html/git/ {
+  interval 3600
+}
+6.访问口令认证（用户emiria，密码abc123）
+
+basicauth / emiria abc123
+7.cors跨域(下载时记得勾上)
+
+cors / {
+    origin            https://alleysakura.com
+    origin            http://alleysakura.pw https://alleysakura.pw
+    methods           POST,PUT
+    allow_credentials false
+    max_age           3600
+    allowed_headers   X-Custom-Header,X-Foobar
+    exposed_headers   X-Something-Special,SomethingElse
+}
+8.IP屏蔽(下载时记得勾上)
+
+ipfilter / {
+    rule       block
+    ip         212.10.15.0-255 202.10.15.0-10 59.43.247.103
+    blockpage  /var/www/html/403.html
+}
+9.跳转功能(目录重写功能也类似)
+
+redir http://example.com{url}
+而且不像nginx进行www重定向那么麻烦，把域名原域名（不限协议）写上，大括号里加上这个就可以，简直太赞了
+
+10.自定义错误页面
+
+errors {
+    404 404.html
+    500 /var/www/html/500.html
+}
+3:传统php+mysql建站
+包管理器安装mysql+php，然后添加
+
+fastcgi / 127.0.0.1:9000 php
+4:caddy特色markdown建站
+具体官方wiki上有示例，功能非常强大
+
+5:反向代理引入更多后端系统
+引入反向代理，只需一行
+
+proxy / localhost:4000
+负载均衡也是类似配置的23333
+
+proxy / 10.10.201.222:80 10.10.201.221:80 {
+        policy round_robin
+    }
 ```
