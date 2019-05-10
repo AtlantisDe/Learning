@@ -8,6 +8,11 @@
 /etc/nginx
 cd /etc/nginx
 ./site_manager.sh
+
+./site_manager.sh
+show
+remove
+removelink
 ```
 
 ## 使用命令帮助

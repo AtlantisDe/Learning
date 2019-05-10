@@ -107,4 +107,9 @@ Deploy from shell 从命令行安装
 Project Structure 项目结构
 Rechech now 现在重新开始
 Recheck now 现在重新检查
+restart 重启
+Meteor 流星
+manually 手动
+actually 其实
+indexing 索引
 ```

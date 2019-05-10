@@ -102,3 +102,9 @@ sudo nginx -s reload #重新加载配置
 ## 停止
 
 - [Nginx 的启动、停止与重启 - codingcloud - 博客园](https://www.cnblogs.com/codingcloud/p/5095066.html)
+
+## 禁用默认欢迎页 删除欢迎页
+
+```shell
+sudo rm /etc/nginx/sites-enabled/default
+```

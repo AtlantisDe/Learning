@@ -19,3 +19,9 @@ Release-Date: 2018-07-11
 Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp smb smbs smtp smtps telnet tftp
 Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP HTTP2 UnixSockets HTTPS-proxy PSL```
 ````
+
+## 用法示例
+
+```shell
+curl -I -m 10 -o /dev/null -s -w %{http_code}"＼n"  http://localhost:3000
+```
