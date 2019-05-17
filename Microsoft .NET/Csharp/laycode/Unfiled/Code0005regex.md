@@ -36,3 +36,27 @@ private static string GetRegexStr_codes_str(string reString)
             return aa;
         }
 ```
+
+## C#判断字符串是否只有数字和字母组成
+
+```C#
+// 正则表达式判断
+/*
+
+下面正则:满足数字或字母或者英文逗号
+"^[0-9a-zA-Z.]+$"
+
+下面正则:满足数字或字母
+"^[0-9a-zA-Z]+$"
+
+下面正则:满足必须包含数字和字母
+"^(?![0-9]+$)(?![a-zA-Z]+$)[0-9a-zA-Z]+$"
+
+
+*/
+if (System.Text.RegularExpressions.Regex.IsMatch("01123a.**aaS", "^[0-9a-zA-Z.]+$"))
+{
+    System.Diagnostics.Debug.WriteLine("是符合要求字符");
+}
+else System.Diagnostics.Debug.WriteLine("不是符合要求的字符");
+```

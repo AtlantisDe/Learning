@@ -16,6 +16,38 @@
 - [mysql 中“Table ‘’ is read only”的解决办法](https://www.cnblogs.com/jthb/p/3918874.html)
 - [mysql 中 Table is read only 的解决方法](https://www.cnblogs.com/rianley/p/9272561.html)
 
+## 查看版本
+
+```shell
+mysql -V
+```
+
+```text
+mysql  Ver 14.14 Distrib 5.7.26, for Linux (x86_64) using  EditLine wrapper
+```
+
+## 卸载方法
+
+- [Ubuntu18.04 彻底删除 MySQL 数据库 - FG 成长空间 - CSDN 博客](https://blog.csdn.net/iehadoop/article/details/82961264)
+- [Ubuntu 下 mysql 的卸载重装 - 杨少侠-ing - 博客园](https://www.cnblogs.com/y-rong/p/7727801.html)
+
+### 首先删除 mysql
+
+```shell
+sudo apt-get remove mysql-*
+```
+
+### 然后清理残留的数据
+
+```shell
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+```
+
+- 它会跳出一个对话框，你选择 yes 就好了 然后安装 mysql
+- sudo apt-get install mysql-client mysql-server 安装的时候会提示要设置 root 密码，如果你没有在卸载的时候去清理残留数据是不会提示你去设置 root 密码的
+- 检查 mysql 是不是在运行
+- sudo service mysql status
+
 ## mysql 及设置远程访问方法
 
 ```shell

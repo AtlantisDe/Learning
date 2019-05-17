@@ -166,6 +166,29 @@ public class apiresponsedemo
         }
 ```
 
+## 代理示例 6 类型问号
+
+```C#
+    public class Entity
+    {
+        public class Models
+        {
+            [SugarTable("t_Sites")]
+            public class Sites
+            {
+                [SugarColumn(IsPrimaryKey = true, IsIdentity = false, ColumnName = "Guid")]
+                public int Guid { get; set; }
+                public int? SchoolId { get; set; }
+                public string Name { get; set; }
+                public DateTime? CreateTime { get; set; }
+                [SugarColumn(IsIgnore = true)]
+                public int TestId { get; set; }
+            }
+        }
+    }
+
+```
+
 ```C#
 public class Root
 {

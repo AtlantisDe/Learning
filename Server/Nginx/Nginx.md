@@ -48,7 +48,10 @@ ps -ef | grep nginx
 ## 版本查询
 
 ```shell
-root@skyspace:~# sudo nginx -v
+sudo nginx -v
+```
+
+```text
 nginx version: nginx/1.15.5 (Ubuntu)
 ```
 

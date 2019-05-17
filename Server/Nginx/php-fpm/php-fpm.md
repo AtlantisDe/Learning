@@ -1,5 +1,18 @@
 # php-fpm
 
+## 查看版本号
+
+```shell
+sudo php -v
+```
+
+```text
+PHP 7.2.17-0ubuntu0.18.10.1 (cli) (built: Apr 18 2019 14:09:30) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+with Zend OPcache v7.2.17-0ubuntu0.18.10.1, Copyright (c) 1999-2018, by Zend Technologies
+```
+
 ## 安装注意事项
 
 - 注意版本号

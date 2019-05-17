@@ -1,5 +1,9 @@
 # laycode
 
+## Version
+
+- 1.0.1
+
 ```c#
 using System;
 using System.Collections.Generic;

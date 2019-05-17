@@ -1,8 +1,9 @@
 # asp.net.session
 
-- [ASP.NET Web Configuration Guidelines](https://docs.microsoft.com/en-us/previous-versions/ff400235(v=vs.100))
+- [ASP.NET Web Configuration Guidelines](<https://docs.microsoft.com/en-us/previous-versions/ff400235(v=vs.100)>)
 - [ASP.NET 中的 authentication(验证)与 authorization(授权) - 火地晋 - 博客园](https://www.cnblogs.com/yelaiju/p/3204298.html)
 - [asp.net 实现匿名访问控制\_asp.net 技巧 - 甜菜波波 - 博客园](https://www.cnblogs.com/tiancai/articles/2440257.html)
+- [web.config 中 authorization 下的 location 中的 path 的设置 - lingxyd 的专栏 - CSDN 博客](https://blog.csdn.net/lingxyd_0/article/details/6652213)
 
 ## 常见配置
 
@@ -96,4 +97,20 @@
 </body>
 </html>
 
+```
+
+## 代码配置示例
+
+```xml
+添加一个WEB.Config配置文件：
+<?xmlversion="1.0"encoding="utf-8"?>
+<configuration>
+< system.web >
+<! -- For authorization code -- >
+< authorization >
+< allow users ="wcb02h26\test" />
+< deny users ="*"/>
+</ authorization >
+</ system.web >
+</configuration>
 ```

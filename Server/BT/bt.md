@@ -16,3 +16,11 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash i
 # Fedora 安装脚本
 wget -O install.sh http://download.bt.cn/install/install_6.0.sh && bash install.sh
 ```
+
+## 解决方案
+
+```shell
+# ****解决方法：在SSH终端输入以下一种命令来解决
+# 1.查看面板入口：/etc/init.d/bt default
+# 2.关闭安全入口：rm -f /www/server/panel/data/admin_path.pl
+```

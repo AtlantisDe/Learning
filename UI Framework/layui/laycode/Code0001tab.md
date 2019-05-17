@@ -1,6 +1,6 @@
 # Tab
 
-## 代码 1
+## 代码 1 固定样式
 
 ```html
 <div class="layui-tab layui-tab-card">

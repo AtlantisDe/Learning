@@ -14,6 +14,10 @@
 
 - [GIPHY Capture](https://giphy.com/apps/giphycapture)
 
+## IP
+
+- [http://pv.sohu.com/cityjson?ie=utf-8](http://pv.sohu.com/cityjson?ie=utf-8)
+
 ## HTML5 测试
 
 - [The HTML5 test - How well does your browser support HTML5?](http://html5test.com/)

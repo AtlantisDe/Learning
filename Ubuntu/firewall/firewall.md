@@ -19,3 +19,13 @@ sudo ufw allow 139
 sudo ufw allow 445
 sudo ufw allow 3306
 ```
+
+## NFS
+
+```shell
+sudo ufw allow 8001
+sudo ufw allow 2049
+sudo ufw allow 892
+sudo ufw allow 32803
+sudo ufw allow 2769
+```

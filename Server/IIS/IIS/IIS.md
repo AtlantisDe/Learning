@@ -5,6 +5,7 @@
 - [IIS6、IIS7 和 IIS8](https://blog.csdn.net/zhangge3663/article/details/83539380)
 - [怎么查看 IIS 的版本](http://ask.zol.com.cn/x/5538655.html)
 - [asp.net 获取服务器信息 如:IIS 版本/.net 版本](https://blog.csdn.net/zhifeiya/article/details/41789659)
+- [C#解决IIS域名批量绑定-十有三博客](https://shiyousan.com/post/636022975388168065)
 
 ```shell
 # IIS 5 中，IIS的配置文件在：
@@ -18,6 +19,7 @@
 # IIS 7 中，IIS 的配置文件在：
 
 # C:\WINDOWS\system32\inetstr\config\applicationHost.config
+
 # 想修改这个文件需要把iis对应的服务关掉，这样才能修改这个文件，通过DirectoryEntry类可以修改此文件实现程序配置IIS。
 ```
 

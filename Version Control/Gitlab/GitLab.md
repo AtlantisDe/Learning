@@ -32,10 +32,6 @@
 1. 2.首先信任 GitLab 的 GPG 公钥
 
 ```shell
-curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
-```
-
-```shell
 # 首先信任 GitLab 的 GPG 公钥:
 curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
 
@@ -52,13 +48,17 @@ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.de
 vim /etc/apt/sources.list.d/gitlab_gitlab-ce.list
 
 # 把原来的两行删除或者注释（#是行注释），然后增加
-# ee版本镜像
+
+# ce版本镜像 社区版 [似乎已失效请官方拿这个地址]
+deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
+deb-src https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
+
+# ee版本镜像 企业版
 deb https://XX bionic main
 deb-src https://mirrors.XX bionic main
-# ce版本镜像
-# deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
 
+
+# 清华大学的镜像文件 ce 社区版
 deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu trusty main
 deb-src https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu trusty main
 
@@ -69,8 +69,16 @@ sudo apt-get update
 # sudo EXTERNAL_URL="http://aaa.com" apt-get install gitlab-ee
 sudo EXTERNAL_URL="http://aaa.com" apt-get install gitlab-ce
 
-# 常用命令:
+```
+
+## 查看版本
+
+```shell
 cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
+```
+
+```text
+11.10.4
 ```
 
 ## Gitlab 默认端口修改

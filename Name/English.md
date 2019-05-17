@@ -14,12 +14,13 @@ Web与展现层（Web&Presentation）
 ASP.NET Boilerplate  - Web Application Framework
 src
 Controllers 控制器
+Console 控制台
 Models 模型
 Terminal 终端
 Views 视图 查看
 console 命令
 ulitily
-util Util是utiliy的缩写，是一个多功能、基于工具的包。
+Util 是utiliy的缩写，是一个多功能、基于工具的包。
 Module 模块
 model 模型
 template 模板
@@ -55,7 +56,7 @@ Redis 数据库
 Is Splitter Fixed 是固定的
 Syntax highlighting  语法高亮 语法突出显示
 Usage 用法
-属性property, attribute, characteristic, characteristical, virtue
+属性 property, attribute, characteristic, characteristical, virtue
 属性-定语attribute, adherent adjunct, attributive adjunct
 PHP DocBlocker PHP文档块
 Parse error 解析错误
@@ -112,4 +113,32 @@ Meteor 流星
 manually 手动
 actually 其实
 indexing 索引
+sync 同步
+async 异步
+Unable to locate package gitlab-ce 无法找到gitlab-ce包
+Bourne shell (sh) 伯恩贝壳
+milliseconds Timeout 毫秒超时
+Remarks 备注 注释
+
 ```
+
+## MVC
+
+- MVC 全名是 Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写
+
+```text
+MVC 是一种使用 MVC（Model View Controller 模型-视图-控制器）设计创建 Web 应用程序的模式： [1]
+Model（模型）表示应用程序核心（比如数据库记录列表）。
+View（视图）显示数据（数据库记录）。
+Controller（控制器）处理输入（写入数据库记录）。
+MVC 模式同时提供了对 HTML、CSS 和 JavaScript 的完全控制。
+Model（模型）是应用程序中用于处理应用程序数据逻辑的部分。
+通常模型对象负责在数据库中存取数据。
+View（视图）是应用程序中处理数据显示的部分。
+通常视图是依据模型数据创建的。
+Controller（控制器）是应用程序中处理用户交互的部分。
+通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。
+
+```
+
+## Bash
