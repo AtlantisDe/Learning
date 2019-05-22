@@ -1,6 +1,7 @@
 # using
 
 - [C#-using 用法详解](https://www.cnblogs.com/hejoy91/p/5518987.html)
+- [using 关键字在 C#中的 3 种用法 - xiaobiexi - 博客园](https://www.cnblogs.com/xiaobiexi/p/6179127.html)
 
 ## using 关键字有两个主要用途：
 

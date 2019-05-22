@@ -1,11 +1,15 @@
 # layer
 
+- [layer 弹层组件开发文档 - layui](https://www.layui.com/doc/modules/layer.html)
+
 ## 常用信息框
 
 ```js
+layer.alert(data.message, { icon: 6 });
 layer.alert(data.apimsg.message, { icon: 6 });
 layer.msg(data.apimsg.message);
 layer.close(layer.index);
+layer.closeAll();
 ```
 
 ## 层类型
@@ -23,7 +27,7 @@ area: "500px",
 area: ['500px', '300px'],
 ```
 
-## 页面层
+## 输入层
 
 ```js
 // 如果是页面层
@@ -45,6 +49,14 @@ $.post("url", {}, function(str) {
 ```
 
 ````js
+//prompt层新定制的成员如下
+{
+  formType: 1, //输入框类型，支持0（文本）默认1（密码）2（多行文本）
+  value: '', //初始时的值，默认空字符
+  maxlength: 140, //可输入文本的最大长度，默认500
+}
+
+
     layer.prompt({ title: '输入任何口令，并确认', formType: 1 }, function (pass, index) {
         layer.close(index);
         layer.prompt({ title: '随便写点啥，并确认', formType: 2 }, function (text, index) {

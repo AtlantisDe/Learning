@@ -83,13 +83,13 @@ while ((line = sr.ReadLine()) != null)
 
 ```c#
  FileStream fs = new FileStream("E:\\ak.txt", FileMode.Create);
-            //获得字节数组
-            byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
-            //开始写入
-            fs.Write(data, 0, data.Length);
-            //清空缓冲区、关闭流
-            fs.Flush();
-            fs.Close();
+//获得字节数组
+byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
+//开始写入
+fs.Write(data, 0, data.Length);
+//清空缓冲区、关闭流
+fs.Flush();
+fs.Close();
 ```
 
 ## C#文本读取
@@ -105,6 +105,47 @@ File.ReadAllText(ofd.FileName,Encoding.UTF8);
 System.IO.File.WriteAllText("e:\\asp_1.txt", "I LOVE YOU!");
 System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!");
 System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!", Encoding.UTF8);
+
+
+
+
+//Link
+try { System.IO.File.WriteAllText(root.urllinkspath, "", Encoding.UTF8); } catch (Exception) { }
+try { System.IO.File.WriteAllText(root.fileslinkspath, "", Encoding.UTF8); } catch (Exception) { }
+
+using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.urllinkspath)) { aleDB.firstTimeinit(); }
+using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.fileslinkspath)) { aleDB.firstTimeinit(); }
+
+
+```
+
+## 文本按行写入
+
+```c#
+Console.WriteLine(root.pagepath);
+                System.IO.File.WriteAllText(root.pagepath, root.articlebody, Encoding.UTF8);
+
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(root.siteconfig.fileslinkspath, true))
+                {
+                    file.WriteLine(root.pagepath); file.Close();
+                }
+
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(root.siteconfig.urllinkspath, true))
+                {
+                    file.WriteLine(root.pageurl); file.Close();
+                }
+```
+
+## C#文本按行写入
+
+- [How to: Write to a Text File - C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
+- [How to: Write text to a file](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
+
+```c#
+using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
+{
+    file.WriteLine("Fourth line");
+}
 ```
 
 ## C#文件/目录是否存在/操作

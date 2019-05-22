@@ -33,3 +33,7 @@ using (var db = GetInstance())
         }, join1.Key, join1.Value, "join 1 Error");
 }
 ```
+
+## 依赖 dll 版本不一致
+
+- [常见问题汇总-SqlSugar4-文档园](http://www.codeisbug.com/Doc/8/1154)

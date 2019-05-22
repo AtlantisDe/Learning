@@ -1,0 +1,17 @@
+<!-- 默认首页 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <defaultDocument>
+            <files>
+                <remove value="default.aspx" />
+                <remove value="iisstart.htm" />
+                <remove value="index.html" />
+                <remove value="index.htm" />
+                <remove value="Default.asp" />
+                <remove value="Default.htm" />
+                <add value="login.html" />
+            </files>
+        </defaultDocument>
+    </system.webServer>
+</configuration>
