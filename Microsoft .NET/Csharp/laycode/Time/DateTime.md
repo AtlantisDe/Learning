@@ -3,6 +3,8 @@
 - [C# DateTime 日期格式化](https://www.cnblogs.com/arxive/p/6415312.html)
 - [C# TimeSpan 计算时间差(时间间隔)](https://www.cnblogs.com/999c/p/6170501.html)
 - [C# .Net 计算函数执行的时间](https://www.cnblogs.com/sntetwt/p/4612992.html)
+- [C#获取当前时区 - zhlinos 的博客 - CSDN 博客](https://blog.csdn.net/m0_37521785/article/details/79789058)
+- [C# 获取系统时间及时间格式 - xjtrab - 博客园](https://www.cnblogs.com/xjtrab/articles/1878353.html)
 
 ## 相关代码
 
@@ -13,6 +15,13 @@ DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:ffff dddd"); // => 2016/05/09 13:09:5
 // yyyy-MM-dd HH:mm:ss.ffff
 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+// DateTime格式化的时候，z代表时区
+DateTime.Now.ToString("%z")
+// 结果为 +8
+
+"yyyy-MM-ddTHH:mm:ssz" => 2018-02-03T23:33:33+8
+"yyyy-MM-ddTHH:mm:sszz" => 2018-02-03T23:33:33+08
+"yyyy-MM-ddTHH:mm:sszzz" => 2018-02-03T23:33:33+08:00
 
 ```
 
@@ -56,4 +65,26 @@ protected void StopwatchTest()
     double seconds = timeSpan.TotalSeconds;  //  秒数
     double milliseconds = timeSpan.TotalMilliseconds;  //  毫秒数
 }
+```
+
+## 下表列出了可被合并以构造自定义模式的模式。这些模式是区分大小写的
+
+```C#
+  d 月中的某一天。一位数的日期没有前导零。
+　dd 月中的某一天。一位数的日期有一个前导零。
+　ddd 周中某天的缩写名称，在 AbbreviatedDayNames 中定义。
+　dddd 周中某天的完整名称，在 DayNames 中定义。
+　M 月份数字。一位数的月份没有前导零。
+　MM 月份数字。一位数的月份有一个前导零。
+　MMM 月份的缩写名称，在 AbbreviatedMonthNames 中定义。
+　MMMM 月份的完整名称，在 MonthNames 中定义。
+　y 不包含纪元的年份。如果不包含纪元的年份小于 10，则显示不具有前导零的年份。
+　yy 不包含纪元的年份。如果不包含纪元的年份小于 10，则显示具有前导零的年份。
+　yyyy 包括纪元的四位数的年份。
+　gg 时期或纪元。如果要设置格式的日期不具有关联的时期或纪元字符串，则忽略该模式。
+
+  h 12 小时制的小时。一位数的小时数没有前导零。
+　hh 12 小时制的小时。一位数的小时数有前导零。
+　H 24 小时制的小时。一位数的小时数没有前导零。
+　HH 24 小时制的小时。一位数的小时数有前导零。
 ```

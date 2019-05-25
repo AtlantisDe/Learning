@@ -1,8 +1,11 @@
 # MetroFramework
 
 - [Metroframework](http://thielj.github.io/MetroFramework/)
+- [MetroFramework](https://github.com/AshishKilmist/MetroFramework)
 
-## 代码
+## MetroFramework 代码
 
-```C#
+```c#
+MetroTaskWindow.ShowTaskWindow(this,"SubControl in TaskWindow", new TaskWindowControl(), 10);
+
 ```

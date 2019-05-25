@@ -15,7 +15,7 @@
 }
 ```
 
-## 代码 1
+### 代码 1
 
 ```c#
 public class Entity
@@ -36,7 +36,7 @@ public class Entity
     }
 ```
 
-## 代码 2
+### 代码 2
 
 ```c#
 namespace Demos
@@ -61,7 +61,7 @@ namespace Demos
 }
 ```
 
-## 代码 3
+### 代码 3
 
 ```c#
 namespace Demos
@@ -86,7 +86,7 @@ namespace Demos
 }
 ```
 
-## 代码 4
+### 代码 4
 
 ```c#
 public class apiresponsedemo
@@ -135,7 +135,7 @@ public class apiresponsedemo
         }
 ```
 
-## 代码 5
+### 代码 5
 
 ```c#
 public class apiresponsedemo
@@ -166,7 +166,7 @@ public class apiresponsedemo
         }
 ```
 
-## 代理示例 6 类型问号
+### 代理示例 6 类型问号
 
 ```C#
     public class Entity
@@ -211,5 +211,18 @@ public class Root
     public int code { get; set; }
     public string message { get; set; }
     public string codeDesc { get; set; }
+}
+```
+
+## 报错继承问题
+
+- [未提供必须形参对应的实参怎样解决？ - OnTime 的博客 - CSDN 博客](https://blog.csdn.net/qq_38061677/article/details/81021646)
+
+### 代码示例 1
+
+```C#
+public aleDB(string INIPath, string _encodingName = "utf-8") : base(INIPath, _encodingName)
+{
+
 }
 ```

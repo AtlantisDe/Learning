@@ -124,6 +124,8 @@ IsIgnore 忽略
 Ignore 忽略
 compression 压缩
 Batch building 批量建站
+StringExtensionMethods 扩展方法
+Application Pool Identities 应用程序池标识
 ```
 
 ## MVC

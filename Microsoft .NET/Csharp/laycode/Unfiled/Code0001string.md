@@ -34,3 +34,16 @@
             return strmid;//返回中间字符串
         }
 ```
+
+## WIKi
+
+- [C#：替换字符串（文字），仅替换第 1 次出现的 - 鞠勇鸿的技术专栏 - CSDN 博客](https://blog.csdn.net/jyh_jack/article/details/86505579)
+- [Replace first occurrence of pattern in a string](https://stackoverflow.com/questions/8809354/replace-first-occurrence-of-pattern-in-a-string)
+
+## 替换字符串 仅替换第 1 次出现的
+
+```c#
+string s = "aaa";
+Regex r = new Regex("a");
+s=r.Replace(s,"b",1);
+```
