@@ -109,11 +109,6 @@ for (var i=0;i<cars.length;i++)
 {
 document.write(cars[i] + "<br>");
 }
-if(str.indexOf("o")==-1){ //等于-1表示这个字符串中没有o这个字符
-//do something
-}else{
-//do something
-}
 <input type="hidden" id="suppId" value="" />
 $(window.frames["frmHcInStorage"].document).find("#suppId").val(this.value());
 console.log("PPP:" + $(window.frames["frmHcInStorage"].document).find("#suppId").val());
@@ -249,4 +244,36 @@ function loadScript(url, callback) {
     };
   }
 }
+```
+
+## 常用片段代码示例
+
+### 判断字符串中是否存在某个字符
+
+```js
+if (str.indexOf("o") == -1) {
+  //等于-1表示这个字符串中没有o这个字符
+  //do something
+} else {
+  //do something
+}
+```
+
+### JS 文件中引入 JS 文件
+
+- [在一个 JS 文件中引用另一个 JS 文件(转) - 键盘鼠标 - 博客园](https://www.cnblogs.com/shubiao/p/4450879.html)
+
+```js
+jQuery = layui.$;
+document.write(
+  "<script language=javascript src='/static/base64/jquery.base64.js'></script>"
+);
+```
+
+## Windows
+
+### 代码 window.eval(data)
+
+```js
+window.eval(data);
 ```

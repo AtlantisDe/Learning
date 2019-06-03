@@ -11,5 +11,21 @@ JSON.parse(text[, reviver])
 ar obj = JSON.parse('{ "name":"runoob", "alexa":10000, "site":"www.runoob.com" }');
 
 JSON.stringify(value[, replacer[, space]])
+
 var myJSON = JSON.stringify(obj);
+
+tmpvalues.wsjson = JSON.parse(str);
+
+```
+
+## 常用代码
+
+### 系列化转为字符串
+
+```js
+tmpvalues.sitesbatchDelete = JSON.stringify(datasites);
+
+sconf_sitenameitems: JSON.stringify(
+  tmpvalues.checkStatus_sconf_sitenameitems.data
+);
 ```

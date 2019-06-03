@@ -39,6 +39,7 @@
 
 - [C#：替换字符串（文字），仅替换第 1 次出现的 - 鞠勇鸿的技术专栏 - CSDN 博客](https://blog.csdn.net/jyh_jack/article/details/86505579)
 - [Replace first occurrence of pattern in a string](https://stackoverflow.com/questions/8809354/replace-first-occurrence-of-pattern-in-a-string)
+- [C# 过滤特殊字符，保留中文，字母，数字，和- - 土豆爸爸 2016 - 博客园](https://www.cnblogs.com/wohexiaocai/p/9283309.html)
 
 ## 替换字符串 仅替换第 1 次出现的
 

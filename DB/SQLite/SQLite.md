@@ -50,4 +50,8 @@
 ## Nuget
 
 - [NuGet Gallery
-        | SQLite](https://www.nuget.org/profiles/SQLite)
+  | SQLite](https://www.nuget.org/profiles/SQLite)
+
+## 常常遇到的错误
+
+### SQL logic error or missing database no such table: T_logs

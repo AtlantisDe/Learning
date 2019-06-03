@@ -1,8 +1,67 @@
 # ajax
 
+## official
+
+### wiki url
+
+- [jQuery.ajax() | jQuery API Documentation](http://api.jquery.com/jquery.ajax/)
+
+### search url
+
 - [一个简单的 ajax 获取 json 的例子](https://www.cnblogs.com/liangxiaoli/p/7183607.html)
 
+### Shorthand Methods
+
+- [Shorthand Methods | jQuery API Documentation](https://api.jquery.com/category/ajax/shorthand-methods/)
+- [jQuery.post() | jQuery API Documentation](https://api.jquery.com/jQuery.post/)
+
+```text
+jQuery.getJSON()
+jQuery.get()
+jQuery.getScript()
+jQuery.post()
+.load()
+```
+
+## ajax 经常遇到的问题与解决方案
+
+### Wiki
+
+- [JQ-AJAX 执行成功不执行 success 方法解决 - wang704987562 的博客 - CSDN 博客](https://blog.csdn.net/wang704987562/article/details/82559467)
+- [ajax()不执行 success 也不执行 error 的分析和解决 - qq_42118231 的博客 - CSDN 博客](https://blog.csdn.net/qq_42118231/article/details/82851167)
+- [jquery ajax 后台响应成功，返回正确 json 但不执行 success 方法，执行 error 的问题](https://www.cnblogs.com/lijinwen/p/6066842.html)
+- [ajax中dataType="json"，执行后却进入error函数中，无法解析json - zwk199024的专栏 - CSDN博客](https://blog.csdn.net/zwk199024/article/details/53032621)
+
+### 解决方案
+
+```shell
+# 解决方案：
+# 1、服务端设置response.setContentType("application/json;charset=utf-8")；
+# 2、或者页面端ajax设置dataType为“json”，指定服务器返回的数据类型。
+
+# jquery 1.4以后对json格式变严格了,也就是说必须要这种格式的{"键":"值","键":"值"};像原来的{键:值，键:值}和{'键':'值','键':'值'}这种都是错误的，不合标准，所以jquery返回error。
+
+# 我的问题是 发送的 POST数据包导致这个报错,不走success 走error 不知道为什么
+```
+
+## ajax 常用
+
+### 代码示例 1
+
 ```js
+$.ajax({
+  type: "get",
+  url: "http://localhost:8080/test/ok",
+  //期望服务端返回的数据类型
+  dataType: "json",
+  success: function(data) {
+    console.log("success");
+  },
+  error: function(e) {
+    console.log("error");
+  }
+});
+
 function myFunction() {
   alert("Hello World!");
 }
@@ -59,7 +118,7 @@ $.ajax({
 // beforeSend：（Function）发送ajax请求前被触发，如果返回false则取消本次请求。如果异步请求需要显示gif动画，那应当在这里设置相应<img>的可见。
 ```
 
-## ajax 文档类型
+### ajax 文档类型
 
 ```js
 context: document.body,
@@ -70,14 +129,14 @@ cache: false,//缓存true/false
 async:false,//默认是true：异步        false：同步。
 ```
 
-## ajax POST
+### ajax POST
 
 ```js
 data:  'username='+username+'&password='+password,
 data: 'JSON=' + JSON.stringify(json),
 ```
 
-## ajax Data
+### ajax Data
 
 ```js
 var json = {
@@ -86,7 +145,31 @@ var json = {
 };
 ```
 
-## ajax layui async: true
+### 用户定义的 callback 函数
+
+```js
+$.ajax({
+  async: false,
+  url: "",
+  type: "post",
+  dataType: "jsonp",
+  jsonp: "callbackparam",
+  jsonpClaaback: "success_jsonpCallback", //用户定义的callback函数，没有定义的话会jQuery会自动生成以jQuery开头的函数
+  data: {},
+  error: function(XMLHttpReuqest, textStautus, errothrown) {
+    console.log(XMLHttpRequest.status);
+    console.log(XMLHttpReuqest.readyState);
+    console.log(XMLHttpRequest.responseText);
+    console.log(textStautus);
+    console.log(errothrown);
+  },
+  success: function(json) {
+    alert(json);
+  }
+});
+```
+
+### ajax layui async: true 同步请求
 
 ```js
 function RefreshCdnUrlphp(obj) {

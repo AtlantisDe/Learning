@@ -9,6 +9,7 @@
 ## JSON
 
 - [JSON 在线解析](https://c.runoob.com/front-end/53)
+- [Json 生成 C#类](https://atlantisde.github.io/Learning/Web/convert/json2csharp/json2csharp.html)
 
 ## GIF 录制
 
@@ -27,7 +28,6 @@
 - [JSON 在线编辑器-JSON 中国](http://www.json.org.cn/tools/JSONEditorOnline/index.htm)
 - [JSON 压缩转义工具，JSON 转义，JSON 压缩一行](https://www.sojson.com/yasuo.html)
 - [JSON 转 C#实体类-BeJSON.com](https://www.bejson.com/convert/json2csharp/)
-- [Json 生成 C#类](https://atlantisde.github.io/MyWebOnlineTool/Web/convert/json2csharp/json2csharp.html)
 - [换行引号替换转义[原创]](https://atlantisde.github.io/MyWebOnlineTool/Web/convert/replace/replace.html)
 - [XML 编辑器 阅读器 - 在线工具](http://xmlgrid.net/cn/)
 - [时间戳(Unix timestamp)转换工具 - 在线工具](https://tool.lu/timestamp/)
@@ -78,6 +78,8 @@
 - [CDNJS GitHub](https://github.com/cdnjs/cdnjs)
 - [BootCDN](https://www.bootcdn.cn/)
 - [Content Delivery Network 稳定、快速的 CDN 加速服务](http://www.jq22.com/cdn/)
+- [API - cdnjs.com - The best FOSS CDN for web related libraries to speed up your websites!](https://cdnjs.com/api)
+- [前端的一些插件和框架的 CDN 引用 - 感恩、奋进、自信 - CSDN 博客](https://blog.csdn.net/tangxiujiang/article/details/76711213)
 
 ## Windows [优化]
 
@@ -87,3 +89,13 @@
 ## Windows [相关]
 
 - [谷歌浏览器 Software Reporter Tool 长时间占用 CPU 解决办法](https://www.cnblogs.com/ShaYeBlog/p/10224349.html)
+
+## 换算类
+
+### 存储单位换算
+
+- [存储换算器 - 文件大小转换 - 电脑容量换算](https://cunchu.51240.com/)
+
+### 单位换算表
+
+- [单位换算表](http://www.columbia.edu/~zz2111/unitexchange.htm)

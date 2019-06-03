@@ -37,7 +37,7 @@ private static string GetRegexStr_codes_str(string reString)
         }
 ```
 
-## C#判断字符串是否只有数字和字母组成
+### C#判断字符串是否只有数字和字母组成
 
 ```C#
 // 正则表达式判断
@@ -59,4 +59,15 @@ if (System.Text.RegularExpressions.Regex.IsMatch("01123a.**aaS", "^[0-9a-zA-Z.]+
     System.Diagnostics.Debug.WriteLine("是符合要求字符");
 }
 else System.Diagnostics.Debug.WriteLine("不是符合要求的字符");
+```
+
+### 字符串中如何删除掉“特殊字符”
+
+```C#
+// 特殊字符包含下划线的话用这个
+string 结果 = Regex.Replace(字符串, "[^0-9A-Za-z]", "");
+// 不包含下划线用这个
+Regex.Replace(字符串, "\W", "")
+//经过测试似乎有bug 满足常规使用
+ var a = Regex.Replace("asdfas@!#$^(&**&)*(_)❤❥웃유♋☮✌☏☢☠✔☑♚▲♪✈✞÷↑↓◆◇⊙■□△▽¿─│♥❣♂♀☿Ⓐ✍✉☣☤✘☒♛▼♫⌘☪≈←→◈◎☉★☆⊿※¡━┃♡ღツ☼☁❅♒✎©®™Σ✪✯☭➳卐√↖↗●◐Θ◤◥︻〖〗┄┆℃℉°✿ϟ☃☂✄¢€£∞✫★½✡×↙↘○◑⊕◣◢︼【】┅┇☽☾✚〓▂▃▄▅▆▇█▉▊▋▌▍▎▏↔↕☽☾の•▸◂(*_235234 你好我的世界 @#$%@#$^%#$^ -asd 你", @"\W", "");
 ```
