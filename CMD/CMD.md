@@ -11,3 +11,11 @@
 netstat -ano | findstr "8088"
 netstat -ano | findstr "8989"
 ```
+
+## 电脑设备是否支持睡眠唤醒
+
+- [电脑从待机唤醒后显示器没法唤醒](http://ask.zol.com.cn/x/1321603.html)
+
+```c#
+powercfg -a
+```

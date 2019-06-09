@@ -23,12 +23,12 @@ finally
 try
 {
 }
-catch (Exception ex)
+[catch (Exception ex)
 {
     var exErr = string.Format("异常[{0}]:{1}", System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
     Console.WriteLine(exErr);
 }
 finally
 {
-}
+}](getbuzhongfu())
 ```

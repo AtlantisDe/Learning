@@ -112,6 +112,7 @@
 <input type="checkbox" name="yyy" lay-skin="switch" lay-text="ON|OFF" checked />
 <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|关闭" />
 <input type="checkbox" name="aaa" lay-skin="switch" disabled />
+
 <!-- 表单方框风格 -->
 <div class="layui-form-item" pane>
   <label class="layui-form-label">开关</label>

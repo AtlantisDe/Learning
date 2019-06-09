@@ -57,6 +57,11 @@ table.render({
 ```js
 templet: '<div><a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a></div>';
 
+'<div><a href="{{d.url}}" class="layui-table-link">{{d.title}}</a></div>'
+
+'<div><a href="{{d.url}}" title="{{d.description}}" target="_blank" class="layui-table-link">{{d.title}}</a></div>'
+
+<a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a>
 // 注意：这里一定要被一层 <div></div> 包裹，否则无法读取到模板
 ```
 

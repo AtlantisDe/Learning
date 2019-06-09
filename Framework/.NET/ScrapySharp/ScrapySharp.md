@@ -150,3 +150,19 @@ if (f_center != null) { f_center.Remove(); }
 if (at_item != null) { at_item.Remove(); }
 if (epsourcecDGray != null) { epsourcecDGray.Remove(); }
 ```
+
+### 添加一个元素 Append Child
+
+-[Append Child | Html Agility Pack](https://html-agility-pack.net/append-child)
+
+```C#
+ //delete
+var htmlDoc = new HtmlDocument();
+htmlDoc.LoadHtml(html);
+
+var htmlBody = htmlDoc.DocumentNode.SelectSingleNode("//body");
+
+HtmlNode h2Node = HtmlNode.CreateNode("<h2> This is h2 heading</h2>");
+
+htmlBody.AppendChild(h2Node);
+```

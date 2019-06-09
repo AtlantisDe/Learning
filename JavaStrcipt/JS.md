@@ -88,6 +88,11 @@ parseInt("12") //Return 12.
 Math.abs(-1);  //1
 Math.abs(-2);  //2
 
+//INT判断
+if (parseInt("abc")>0){console.log('yes')}else{console.log('no');}
+if (parseInt("abc9999")>0){console.log('yes')}else{console.log('no');}
+if (parseInt("6666")>0){console.log('yes')}else{console.log('no');}
+
 myArray.push(44,55);
 a.data.push(b);//数组最后加一条记录
 a.data.push(c);
