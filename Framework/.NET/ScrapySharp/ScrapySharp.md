@@ -2,9 +2,12 @@
 
 - [ScrapySharp 3.0.0](https://www.nuget.org/packages/ScrapySharp)
 - [Scrapy 入门教程 &mdash; Scrapy 0.24.6 文档](https://scrapy-chs.readthedocs.io/zh_CN/0.24/intro/tutorial.html)
+- [使用 ScrapySharp 快速从网页中采集数据 - 天方 - 博客园](https://www.cnblogs.com/TianFang/p/4804289.html)
 
 ## Official
 
+- 主页
+- [Html Agility pack | Html Agility Pack](https://html-agility-pack.net/)
 - [rflechner / ScrapySharp / wiki / Home &mdash; Bitbucket](https://bitbucket.org/rflechner/scrapysharp/wiki/Home)
 - [rflechner/ScrapySharp](https://github.com/rflechner/ScrapySharp)
 
@@ -21,6 +24,25 @@ Install-Package ScrapySharp -Version 3.0.0
 - [HtmlAgilityPack obtain Title and meta](https://stackoverflow.com/questions/17606247/htmlagilitypack-obtain-title-and-meta)
 
 ## 使用示例
+
+### 示例代码 1
+
+```c#
+// From File
+var doc = new HtmlDocument();
+doc.Load(filePath);
+
+// From String
+var doc = new HtmlDocument();
+doc.LoadHtml(html);
+
+// From Web
+var url = "http://html-agility-pack.net/";
+var web = new HtmlWeb();
+var doc = web.Load(url);
+```
+
+### 示例代码 2
 
 ```C#
 // Html下载
@@ -109,6 +131,25 @@ var emptyElements = doc.DocumentNode
 emptyElements.ForEach(node => {
     if (node != null){ node.Remove();}
 });
+
+```
+
+- 错误移除方法
+
+```c#
+foreach (var item in lis)
+{
+item.Remove();
+}
+```
+
+- 正确移除方法
+
+```c#
+foreach (var item in lis)
+{
+item.Remove();
+}
 ```
 
 ### 使用 classname 选择一个元素

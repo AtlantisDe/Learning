@@ -114,36 +114,71 @@
 </li>
 ```
 
-### 标签 4 : <固定栏目 1 链接> <固定栏目 1 名称> 其中数字可以模板重定义
+### 标签 4 : <固定栏目 1 链接> <固定栏目 1 名称> 其中数字可以模板重定义 [废弃]
 
 - 固定栏目标签 写法与用法 格式
 
 ```html
-<li class="">
-  <a
-    href="<固定栏目1链接>"
-    data-type="mip"
-    data-title="<固定栏目1名称>"
-    title="首页"
-    ><随机栏目1名称></a
-  >
-</li>
-<li>
-  <a
-    href="<固定栏目2链接>"
-    data-type="mip"
-    data-title="<固定栏目2名称>"
-    title="<固定栏目2名称>"
-    ><随机栏目2名称></a
-  >
-</li>
-<li>
-  <a
-    href="<固定栏目3链接>"
-    data-type="mip"
-    data-title="<固定栏目3名称>"
-    title="<固定栏目3名称>"
-    ><随机栏目3名称></a
-  >
-</li>
+<ul class="mipmb-menu list-unstyled d-lg-flex">
+  <li class="">
+    <a
+      href="<固定栏目1链接>"
+      data-type="mip"
+      data-title="<固定栏目1名称>"
+      title="首页"
+    >
+      <固定栏目1名称>
+    </a>
+  </li>
+  <li>
+    <a
+      href="<固定栏目2链接>"
+      data-type="mip"
+      data-title="<固定栏目2名称>"
+      title="<固定栏目2名称>"
+    >
+      <固定栏目2名称>
+    </a>
+  </li>
+  <li>
+    <a
+      href="<固定栏目3链接>"
+      data-type="mip"
+      data-title="<固定栏目3名称>"
+      title="<固定栏目3名称>"
+    >
+      <固定栏目3名称>
+    </a>
+  </li>
+  <li>
+    <a
+      href="<固定栏目4链接>"
+      data-type="mip"
+      data-title="<固定栏目4名称>"
+      title="<固定栏目4名称>"
+    >
+      <固定栏目4名称>
+    </a>
+  </li>
+  <li>
+    <a
+      href="<固定栏目5链接>"
+      data-type="mip"
+      data-title="<固定栏目5名称>"
+      title="<固定栏目5名称>"
+    >
+      <固定栏目5名称>
+    </a>
+  </li>
+  <li>
+    <a
+      href="<固定栏目6链接>"
+      data-type="mip"
+      data-title="<固定栏目6名称>"
+      title="<固定栏目6名称>"
+    >
+      <固定栏目6名称>
+    </a>
+  </li>
+</ul>
 ```

@@ -19,6 +19,15 @@
 
 - [http://pv.sohu.com/cityjson?ie=utf-8](http://pv.sohu.com/cityjson?ie=utf-8)
 
+## 在线中文汉字转拼音工具 有带声调和不带声调
+
+- [在线中文汉字转拼音工具 有带声调和不带声调](http://www.fuhaoku.com/tool/pinyin.html)
+
+## 实时删除文本中的新行、制表键、空格、回车、换行
+
+- [在线去掉文本中所有空格](http://www.txttool.com/wenben_alltrim.asp)
+- [实时删除文本中的新行、制表键、空格、回车、换行](http://www.5ixuexiwang.com/str/compress.php)
+
 ## HTML5 测试
 
 - [The HTML5 test - How well does your browser support HTML5?](http://html5test.com/)

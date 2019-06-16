@@ -8,9 +8,9 @@
 try
 {
 }
-catch (Exception Ex)
+catch (Exception ex)
 {
-Console.WriteLine(string.Format("异常[{0}]:{1}", System.Reflection.MethodBase.GetCurrentMethod().Name, Ex.Message));
+    Console.WriteLine(string.Format("异常[{0}]:{1}", System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName, ex.Message));
 }
 finally
 {
@@ -23,12 +23,12 @@ finally
 try
 {
 }
-[catch (Exception ex)
+catch (Exception ex)
 {
     var exErr = string.Format("异常[{0}]:{1}", System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message);
     Console.WriteLine(exErr);
 }
 finally
 {
-}](getbuzhongfu())
+}
 ```

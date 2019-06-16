@@ -519,3 +519,38 @@ class="layui-input-inline"：定义内层行内
 ```html
 
 ```
+
+### 隐藏文本框 同时去掉效验
+
+```html
+<input
+  type="text"
+  name="username"
+  class="layui-input layui-hide"
+/>
+```
+
+## 表单层
+
+### 方框风格的表单
+
+```html
+<div
+  class="layui-form layui-form-pane"
+  lay-filter="Div_createsite_addtodb_form"
+>
+  <div class="layui-form-item">
+    <label class="layui-form-label">本次生成页面数量:</label>
+    <div class="layui-input-inline">
+      <input
+        type="text"
+        name="username"
+        lay-verify="required"
+        placeholder="请输入"
+        autocomplete="off"
+        class="layui-input"
+      />
+    </div>
+  </div>
+</div>
+```

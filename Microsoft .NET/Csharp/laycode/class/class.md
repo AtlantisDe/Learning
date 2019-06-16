@@ -218,11 +218,24 @@ public class Root
 
 - [未提供必须形参对应的实参怎样解决？ - OnTime 的博客 - CSDN 博客](https://blog.csdn.net/qq_38061677/article/details/81021646)
 
-### 代码示例 1
+### 继承代码示例 1
 
 ```C#
 public aleDB(string INIPath, string _encodingName = "utf-8") : base(INIPath, _encodingName)
 {
 
 }
+```
+
+### 继承代码示例 2
+
+```C#
+ public class muluclassdb : Aleseocore.Module.Aledb.Class.aleDB
+    {
+        public muluclassdb(string INIPath, string _encodingName = "utf-8") : base(INIPath, _encodingName)
+        {
+
+
+        }
+    }
 ```

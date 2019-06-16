@@ -65,10 +65,23 @@ layui.$("div[lay-id=sites] .layui-laypage-btn")[0];
 
 layui.$("div[lay-id=sites]").length;
 
-layui.$("div[lay-filter=Div_sitesbatchdeploy_form] button[lay-filter=Btn_Domainconfig_close]")[0];
-layui.$(layui.$("div[lay-filter=Div_sitesbatchdeploy_form] button[lay-filter=Btn_Domainconfig_close]")[0]).addClass("layui-btn-disabled");
-layui.$(layui.$("div[lay-filter=Div_sitesbatchdeploy_form] button[lay-filter=Btn_Domainconfig_close]")[0]).removeClass("layui-btn-disabled");
-
+layui.$(
+  "div[lay-filter=Div_sitesbatchdeploy_form] button[lay-filter=Btn_Domainconfig_close]"
+)[0];
+layui
+  .$(
+    layui.$(
+      "div[lay-filter=Div_sitesbatchdeploy_form] button[lay-filter=Btn_Domainconfig_close]"
+    )[0]
+  )
+  .addClass("layui-btn-disabled");
+layui
+  .$(
+    layui.$(
+      "div[lay-filter=Div_sitesbatchdeploy_form] button[lay-filter=Btn_Domainconfig_close]"
+    )[0]
+  )
+  .removeClass("layui-btn-disabled");
 ```
 
 ## 常用初始代码
@@ -215,7 +228,7 @@ function sitesbatchdeployForselect() {
 
 ## 表格常用细节事项
 
-### 头工具栏事件toolbar 或者 监听行工具事件tool 参数[均是表格 lay-filter]
+### 头工具栏事件 toolbar 或者 监听行工具事件 tool 参数[均是表格 lay-filter]
 
 ```html
 <table class="layui-hide" id="test" lay-filter="test"></table>
@@ -541,4 +554,41 @@ function siteconfigsresourcesinit() {
 ```js
 var checkStatus = layui.table.checkStatus("sites"),
   datasites = checkStatus.data;
+```
+
+```js
+layui.table.checkStatus("sites").data;
+tableIns.sconf_tplitems.config.data[0].LAY_CHECKED = false;
+```
+
+### layui 表格复选框自动选中
+
+- 在返回的 json 中设置 LAY_CHECKED 为 true，页面上的 checkbox 就是选中状态了
+- [layui 表格复选框自动选中](https://www.jianshu.com/p/f08e7827916b)
+
+- 方法一
+
+```js
+// 在返回的json中设置LAY_CHECKED为true，页面上的checkbox就是选中状态了
+
+data":[
+  {"name":"北京市","areaType":"省/直辖市","id":"110000","LAY_CHECKED":true},
+  {"name":"市辖区","areaType":"地市","id":"110100","LAY_CHECKED":true},
+  {"name":"县","areaType":"地市","id":"110200","LAY_CHECKED":false}
+]
+```
+
+- 方法二
+
+```js
+layui.use('table', function(){
+    var $ = layui.$;
+    var table = layui.table;
+
+    //在使用table之前加上下面这句就可以了
+    table =  $.extend(table, {config: {checkName: 'checked'}});
+    table.render({
+        ...
+    });
+});
 ```

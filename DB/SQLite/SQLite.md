@@ -55,3 +55,11 @@
 ## 常常遇到的错误
 
 ### SQL logic error or missing database no such table: T_logs
+
+### 压缩 Sqlite 数据文件大小，解决数据删除后占用空间不变的问题
+
+- [压缩 Sqlite 数据文件大小，解决数据删除后占用空间不变的问题 - Sam Lin - 博客园](https://www.cnblogs.com/samlin/p/5580191.html)
+
+### sqlite 文件被占用，如何解决
+
+- [sqlite文件被占用，如何解决 - 张云勇 - CSDN博客](https://blog.csdn.net/xiaoyong_net/article/details/25036631)

@@ -1,5 +1,9 @@
 # Google Chrome
 
+## 安装
+
+- [Google Chrome 网络浏览器](https://www.google.cn/intl/zh-CN/chrome/)
+
 ## 插件
 
 - [Charset](https://chrome.google.com/webstore/detail/charset/oenllhgkiiljibhfagbfogdbchhdchml?utm_source=chrome-ntp-icon)
