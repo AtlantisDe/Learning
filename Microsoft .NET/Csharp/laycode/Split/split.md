@@ -5,10 +5,23 @@
 ## 常用代码示例
 
 ```c#
-var arr = aa.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+var arrlines = body.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+var arr = body.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
 ```
 
-## 1、用字符串分隔：
+### 常用两次分割代码
+
+```c#
+var body = File.ReadAllText(path, Encoding.UTF8);
+var arrlines = body.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+for (int i = 0; i < arrlines.Length; i++)
+{
+    var item = arrlines[i];
+    var arr = item.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+}
+```
+
+## 1、用字符串分隔
 
 ```c#
 using System.Text.RegularExpressions;
@@ -17,7 +30,7 @@ string[] sArray=Regex.Split(str,"js",RegexOptions.IgnoreCase);
 foreach (string i in sArray) Response.Write(i.ToString() + "<br>");
 ```
 
-## 2、用多个字符来分隔：
+## 2、用多个字符来分隔
 
 ```c#
 string str="aaajbbbscccjdddseee";
@@ -25,7 +38,7 @@ string[] sArray=str.Split(new char[2] {'j','s'});
 foreach(string i in sArray) Response.Write(i.ToString() + "<br>");
 ```
 
-## 3、用单个字符来分隔：
+## 3、用单个字符来分隔
 
 ```c#
 string str="aaajbbbjccc";

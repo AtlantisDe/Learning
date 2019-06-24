@@ -1,7 +1,9 @@
 # Html Agility Pack
 
+- [Online Example | Html Agility Pack](https://html-agility-pack.net/online-examples)
 - [Html Agility pack | Html Agility Pack](https://html-agility-pack.net/)
 - [zzzprojects/html-agility-pack](https://github.com/zzzprojects/html-agility-pack)
+- [get text of all &lt;p&gt; in div htmlagilitypack](https://html-agility-pack.net/knowledge-base/11045186/get-text-of-all--p--in-div-htmlagilitypack)
 
 ## HTML Parser
 

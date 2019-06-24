@@ -30,6 +30,8 @@ SELECT [ID],[Name] FROM [Student] ORDER BY [ID] ASC
 其它数据库类似
 */
 
+// .OrderBy(it => it.createtime, OrderByType.Desc)
+
 var getAllOrder = db.Queryable<Student>().OrderBy(it => it.ID, OrderByType.Desc).ToList(); //收到设置为DESC排序
 /*
 生成SQL:
@@ -101,4 +103,10 @@ Sqlite:
 SELECT `ID`,`Name` FROM `Student`  WHERE (( `ID` = @ID0 ) OR ( `Name` = @Name1 ))
 其中@ID0值为1, @Name1值为a
 */
+```
+
+### 随机查询出 10 条数据
+
+```c#
+var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Where(it => it.linktype == Aleseocore.Module.siteitem.Main.Const.urlitemtype.article).OrderBy(it => SqlFunc.GetRandom()).Take(50).ToList();
 ```

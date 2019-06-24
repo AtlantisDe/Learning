@@ -1,0 +1,35 @@
+<head>
+    <title>CodeMirror: HTML completion demo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://codemirror.net/doc/docs.css">  
+    <link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
+    <link rel="stylesheet" href="https://codemirror.net/addon/hint/show-hint.css">
+    <script src="https://codemirror.net/lib/codemirror.js"></script>
+    <script src="https://codemirror.net/addon/hint/show-hint.js"></script>
+    <script src="https://codemirror.net/addon/hint/xml-hint.js"></script>
+    <script src="https://codemirror.net/addon/hint/html-hint.js"></script>
+    <script src="https://codemirror.net/mode/xml/xml.js"></script>
+    <script src="https://codemirror.net/mode/javascript/javascript.js"></script>
+    <script src="https://codemirror.net/mode/css/css.js"></script>
+    <script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+    <style>
+      .CodeMirror {border-top: 1px solid #888; border-bottom: 1px solid #888;}
+    </style>
+  </head>
+  
+  <body>
+     
+  
+    <div id="code"></div>
+  
+    <script>
+      window.onload = function() {
+        editor = CodeMirror(document.getElementById("code"), {
+          mode: "text/html",
+          extraKeys: {"Ctrl-Space": "autocomplete"},
+          value: ""
+        });
+      };
+    </script>
+  
+  </body>

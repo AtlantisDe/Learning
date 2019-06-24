@@ -23,6 +23,8 @@ DateTime.Now.ToString("%z")
 "yyyy-MM-ddTHH:mm:sszz" => 2018-02-03T23:33:33+08
 "yyyy-MM-ddTHH:mm:sszzz" => 2018-02-03T23:33:33+08:00
 
+DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffff");
+
 ```
 
 ```text

@@ -62,4 +62,16 @@
 
 ### sqlite 文件被占用，如何解决
 
-- [sqlite文件被占用，如何解决 - 张云勇 - CSDN博客](https://blog.csdn.net/xiaoyong_net/article/details/25036631)
+- [sqlite 文件被占用，如何解决 - 张云勇 - CSDN 博客](https://blog.csdn.net/xiaoyong_net/article/details/25036631)
+
+### 错误提示
+
+#### SQl 重复列名
+
+```c#
+SQL logic error or missing database
+duplicate column name: linktype
+
+SQL逻辑错误或缺少数据库
+重复的列名：linktype
+```

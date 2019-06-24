@@ -81,6 +81,8 @@
 
 ### 富文本框
 
+#### 常规
+
 ```html
 <textarea
   name="cdnurls"
@@ -90,6 +92,54 @@
   class="layui-textarea"
   style="height: 350px;"
 ></textarea>
+```
+
+#### 示例 1
+
+```html
+<div class="layui-form-item layui-form-text">
+  <label class="layui-form-label">友情链接列表/一行一个</label>
+  <div class="layui-input-block">
+    <textarea
+      name="weixinusers"
+      placeholder="一行一个友情链接,不要有特殊符号"
+      class="layui-textarea"
+    ></textarea>
+  </div>
+</div>
+```
+
+#### 示例 2
+
+```html
+<div class="layui-form layui-form-pane" lay-filter="Div_links_form">
+  <!-- begin -->
+
+  <div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">友情链接列表/一行一个</label>
+    <div class="layui-input-block">
+      <textarea
+        name="links"
+        placeholder="一行一个友情链接,不要有特殊符号"
+        class="layui-textarea"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-btn-group">
+      <button
+        class="layui-btn"
+        lay-submit=""
+        lay-filter="createsite_addtodb_tasksave"
+      >
+        保存
+      </button>
+    </div>
+  </div>
+
+  <!-- end -->
+</div>
 ```
 
 ### 单选框
@@ -103,6 +153,55 @@
     <input type="radio" name="sex" value="女" title="女" checked />
   </div>
 </div>
+```
+
+### 方框风格常用的代码 包含自定义宽度的示例
+
+```html
+<!-- begin -->
+
+<div class="layui-form-pane">
+  <div class="layui-form-item" style="width: 288px;" pane>
+    <label class="layui-form-label" style="width: 188px;"
+      >是否开启生成关键文章</label
+    >
+    <div class="layui-input-block" style="margin-left: 188px;">
+      <input
+        type="checkbox"
+        name="isOpenCreatekeywordContent"
+        value="true"
+        lay-skin="switch"
+        lay-text="开启|关闭"
+      />
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label" style="width: 188px;"
+        >每次生成关键词文章数</label
+      >
+      <div class="layui-input-inline" style="width: 200px;">
+        <input
+          type="text"
+          name="CreatekeywordContentTotalTextminmax"
+          placeholder="标准格式如: [1,3]"
+          autocomplete="off"
+          class="layui-input"
+        />
+      </div>
+    </div>
+    <div class="layui-btn-group">
+      <button
+        class="layui-btn layui-btn-normal layui-btn-sm"
+        onclick="layui.form.val('Div_siteconfig_form', { CreatekeywordContentTotalTextminmax: '[5,10]' });"
+      >
+        粘贴常用关键词数量配置参数
+      </button>
+    </div>
+  </div>
+</div>
+<!-- end -->
 ```
 
 ### 开关
@@ -120,6 +219,63 @@
     <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|关闭" />
   </div>
 </div>
+
+<!-- 表单方框风格 自定义宽度样式-->
+<div class="layui-form-item" style="width: 288px;" pane>
+  <label class="layui-form-label" style="width: 188px;"
+    >是否开启生成关键文章</label
+  >
+  <div class="layui-input-block" style="margin-left: 188px;">
+    <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|关闭" />
+  </div>
+</div>
+```
+
+```js
+if (data.field.sysData == "1") {
+  data.field.sysData = "1";
+} else {
+  data.field.sysData = "0";
+}
+```
+
+```html
+<!-- 表单方框风格 自定义宽度样式 加默认值-->
+<div class="layui-form-item" style="width: 288px;" pane>
+  <label class="layui-form-label" style="width: 188px;"
+    >是否开启生成关键文章</label
+  >
+  <div class="layui-input-block" style="margin-left: 188px;">
+    <input
+      type="checkbox"
+      name="isOpenCreatekeywordContent"
+      value="true"
+      lay-skin="switch"
+      lay-text="开启|关闭"
+    />
+  </div>
+</div>
+```
+
+- 用于判断真假类型
+
+```js
+console.log(data.field.isOpenCreatekeywordContent);
+
+if (data.field.isOpenCreatekeywordContent == "true") {
+  data.field.isOpenCreatekeywordContent = "true";
+} else {
+  data.field.isOpenCreatekeywordContent = "false";
+}
+console.log(data.field.isOpenCreatekeywordContent);
+```
+
+- 用于再次赋值时候渲染上去的细节操作
+
+````js
+if (json_sconf_texts.isOpenCreatekeywordContent == "false") {
+                    json_sconf_texts.isOpenCreatekeywordContent = null;
+                }
 ```
 
 ### 按钮
@@ -146,7 +302,7 @@
 <button class="layui-btn layui-btn-normal">默认按钮</button>
 <button class="layui-btn layui-btn-sm layui-btn-normal">小型按钮</button>
 <button class="layui-btn layui-btn-xs layui-btn-normal">迷你按钮</button>
-```
+````
 
 ### 表单初始赋值
 
@@ -523,11 +679,7 @@ class="layui-input-inline"：定义内层行内
 ### 隐藏文本框 同时去掉效验
 
 ```html
-<input
-  type="text"
-  name="username"
-  class="layui-input layui-hide"
-/>
+<input type="text" name="username" class="layui-input layui-hide" />
 ```
 
 ## 表单层
