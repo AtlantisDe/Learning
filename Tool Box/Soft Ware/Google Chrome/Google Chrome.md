@@ -13,3 +13,9 @@
 ```shell
 Charset 修改网站的默认编码
 ```
+
+### 下载安装
+
+#### 语言版本选择
+
+- [Google Chrome Web Browser](https://www.google.com/intl/en_uk/chrome/)

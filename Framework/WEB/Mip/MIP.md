@@ -10,3 +10,5 @@
 
 - [全新织梦通用手机 MIP 模板 全独立功能 不影响原站*织梦模板下载*小菜说](http://www.xiaocaishuo.com/archives/1624.html)
 - [百度 mip 模板免费下载\_mip 演示【php 中文网源码】](http://www.php.cn/xiazai/code/mip)
+- [MIP 模板网-MIP 建站系统官方旗下平台](http://www.mipmb.com/)
+- [MIP 建站系统-基于百度 MIP 开发的建站系统](http://001.demo.mipmb.com/)

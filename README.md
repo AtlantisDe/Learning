@@ -5,8 +5,8 @@
 
 ```shell
 |-- 知识目录树
-    |-- C-currentDirectory.Bat
     |-- C-mddir.Bat
+    |-- Cmd-CurrentDirectory.Bat
     |-- README.md
     |-- _config.yml
     |-- Algorithms
@@ -47,7 +47,10 @@
     |   |-- Gradle
     |   |   |-- Gradle.md
     |   |-- Maven
-    |       |-- Maven.md
+    |   |   |-- Maven.md
+    |   |-- Windows installer
+    |       |-- Advanced Installer
+    |           |-- Advanced Installer.md
     |-- C++
     |   |-- C++.md
     |-- CDN
@@ -70,7 +73,18 @@
     |   |-- Baidu
     |   |   |-- su.baidu.md
     |   |-- google
+    |   |   |-- apis.md
     |   |   |-- google.md
+    |   |   |-- developers
+    |   |   |   |-- developers.md
+    |   |   |-- google-translate-api
+    |   |   |   |-- google-translate-api.md
+    |   |   |-- GoogleTranslateFreeApi
+    |   |   |   |-- GoogleTranslateFreeApi.md
+    |   |   |-- Gpay
+    |   |   |   |-- Gpay.md
+    |   |   |-- Translate
+    |   |       |-- Translate.md
     |   |-- huaweicloud
     |   |   |-- huaweicloud.md
     |   |-- TaobaoOpenPlatform
@@ -95,6 +109,8 @@
     |   |       |-- code0001-mssql-page.md
     |   |       |-- code0001-mssql.md
     |   |       |-- code0002-mssql-hanzi2pinyin.md
+    |   |-- Microsoft SQL Server 2012 Express
+    |   |   |-- Microsoft SQL Server 2012 Express.md
     |   |-- MongoDB
     |   |   |-- MongoDB.md
     |   |-- MySQL
@@ -106,6 +122,7 @@
     |   |-- Postgres
     |   |   |-- Npgsql.md
     |   |-- PostgreSQL
+    |   |   |-- PostgreSQL.md
     |   |-- Redis
     |   |   |-- Redis.md
     |   |   |-- class
@@ -118,9 +135,18 @@
     |   |   |-- RedisDesktopManager
     |   |       |-- RedisDesktopManager.md
     |   |-- SQL Server Compact Edition
+    |   |-- Sql Server LocalDB
+    |   |   |-- Sql Server LocalDB.md
+    |   |   |-- SqlLocalDB.md
+    |   |-- SqlBulkCopy
+    |   |   |-- SqlBulkCopy.md
     |   |-- SQLite
+    |   |   |-- Insert.md
+    |   |   |-- Repair.md
+    |   |   |-- SQL.md
     |   |   |-- SQLite-GUI tool.md
     |   |   |-- SQLite.md
+    |   |   |-- Thread.md
     |   |-- SqlLocalDB
     |-- Doc
     |   |-- Docsite
@@ -128,7 +154,10 @@
     |   |-- MarkdownHttpHandler
     |   |   |-- MarkdownHttpHandler.md
     |   |-- MkDocs
-    |       |-- MkDocs.md
+    |   |   |-- MkDocs.md
+    |   |-- Online
+    |       |-- kancloud
+    |           |-- kancloud.md
     |-- Docker
     |   |-- Docker.md
     |   |-- Boot2Docker
@@ -155,12 +184,19 @@
     |   |   |-- Html Agility Pack
     |   |   |   |-- css.md
     |   |   |   |-- Html Agility Pack.md
+    |   |   |   |-- style.md
+    |   |   |-- PhantomJS
+    |   |   |   |-- PhantomJS.md
     |   |   |-- ScrapySharp
     |   |   |   |-- HtmlDocument.md
     |   |   |   |-- img.md
+    |   |   |   |-- javascript.md
+    |   |   |   |-- ScrapingBrowser.md
     |   |   |   |-- ScrapySharp.md
     |   |   |   |-- tihuan.md
+    |   |   |   |-- using.md
     |   |   |-- SqlSugar
+    |   |       |-- Insert.md
     |   |       |-- Select.md
     |   |       |-- SqlSugar.md
     |   |       |-- TruncateTable.md
@@ -285,6 +321,7 @@
     |   |       |-- children.md
     |   |       |-- jq-btn.md
     |   |       |-- jq-css.md
+    |   |       |-- parent.md
     |   |       |-- setInterval.md
     |   |-- JSON
     |   |   |-- js-json.md
@@ -299,6 +336,7 @@
     |       |-- html2canvas.html
     |       |-- html2canvas.md
     |       |-- jq-classfind.md
+    |       |-- js-class.md
     |       |-- js-findIndex.md
     |       |-- js-Json2url.md
     |       |-- js-QueryString.md
@@ -327,6 +365,9 @@
     |   |-- readme
     |   |-- Template
     |       |-- install.md
+    |       |-- issue.md
+    |       |-- issue.txt
+    |       |-- issue1.txt
     |       |-- README.md
     |       |-- table.md
     |-- Microsoft .NET
@@ -409,6 +450,8 @@
     |   |       |-- class
     |   |       |   |-- class.md
     |   |       |   |-- laycode.md
+    |   |       |-- CsharpLazycode
+    |   |       |   |-- CsharpLazycode.md
     |   |       |-- DataGridView
     |   |       |   |-- Code0016DataGridView.md
     |   |       |-- Delegate
@@ -422,15 +465,22 @@
     |   |       |   |-- enum.md
     |   |       |-- File
     |   |       |   |-- file.md
+    |   |       |   |-- filelimit.md
     |   |       |   |-- Path.md
     |   |       |-- FileProviders
     |   |       |   |-- FileProviders.md
+    |   |       |-- Firewall
+    |   |       |   |-- Firewall.md
     |   |       |-- Form
     |   |       |   |-- Form.md
     |   |       |   |-- SplitContainer
     |   |       |       |-- SplitContainer.md
     |   |       |-- Format
     |   |       |   |-- Format.md
+    |   |       |-- GC
+    |   |       |   |-- GC.md
+    |   |       |-- Hashtable
+    |   |       |   |-- Hashtable.md
     |   |       |-- HttpClient
     |   |       |   |-- HTTP.md
     |   |       |   |-- HttpClient-Get.md
@@ -446,6 +496,8 @@
     |   |       |   |-- Linq.md
     |   |       |-- List
     |   |       |   |-- List.md
+    |   |       |-- lock
+    |   |       |   |-- lock.md
     |   |       |-- msgbox
     |   |       |   |-- msgwinform.md
     |   |       |-- Newtonsoft
@@ -455,6 +507,8 @@
     |   |       |   |-- path.md
     |   |       |-- PictureBox
     |   |       |   |-- PictureBox.md
+    |   |       |-- Queue
+    |   |       |   |-- Queue.md
     |   |       |-- random
     |   |       |   |-- random-list.md
     |   |       |   |-- random.md
@@ -463,6 +517,8 @@
     |   |       |   |-- requireAdministrator.md
     |   |       |-- Split
     |   |       |   |-- split.md
+    |   |       |-- Stopwatch
+    |   |       |   |-- Stopwatch.md
     |   |       |-- StringBuilder
     |   |       |   |-- StringBuilder.md
     |   |       |-- Thread
@@ -550,6 +606,9 @@
     |       |   |-- websocket-client.md
     |       |-- websocket-sharp
     |           |-- websocket-sharp.md
+    |-- Microsoft Visual C++
+    |   |-- McRip VC Redist Installer.md
+    |   |-- Microsoft Visual C++.md
     |-- Name
     |   |-- English.md
     |   |-- Namde.md
@@ -578,9 +637,12 @@
     |-- SEO
     |   |-- SEO.md
     |   |-- Baidu
+    |   |   |-- baidu.md
     |   |-- Google
     |   |-- Knowledge
     |   |   |-- canonical.md
+    |   |   |-- Robots.md
+    |   |   |-- seoknowledge.md
     |   |-- My engine system
     |   |   |-- My engine system.md
     |   |   |-- neiye
@@ -590,7 +652,9 @@
     |   |   |-- Resource
     |   |       |-- Resource.md
     |   |-- Tool Box
-    |       |-- weiyuanchuang.md
+    |   |   |-- weiyuanchuang.md
+    |   |-- Wiki
+    |       |-- sitemap.md
     |-- Server
     |   |-- Apache
     |   |   |-- Apache.md
@@ -610,6 +674,8 @@
     |   |   |       |-- caddy.service
     |   |   |-- PHP
     |   |       |-- PHP.md
+    |   |-- FTP
+    |   |   |-- Microsoft FTP Service.md
     |   |-- gossa
     |   |-- IIS
     |   |   |-- DirectoryEntry
@@ -767,6 +833,7 @@
     |       |   |-- phpStudy.md
     |       |   |-- Rewrite.md
     |       |-- Postman
+    |       |   |-- HEAD.md
     |       |   |-- Postman.md
     |       |-- ProcessExplorer
     |       |   |-- ProcessExplorer.md
@@ -1010,4 +1077,5 @@
     |-- Windows PowerShell
     |-- YAML
         |-- YAML.md
+
 ```

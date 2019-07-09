@@ -86,3 +86,15 @@ layer.msg("灵活运用offset", {
 //更多例子
 layer.msg("Hi");
 ```
+
+## 信息常用
+
+```js
+layer.alert(
+  data.message,
+  { skin: "layui-layer-molv", closeBtn: 0 },
+  function() {
+    layer.close(layer.index);
+  }
+);
+```

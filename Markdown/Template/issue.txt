@@ -1,0 +1,47 @@
+### Description
+Loads the HTML document from the specified string.
+ then after  document.DocumentNode.InnerHtml;
+The source code has changed
+In the title tag section
+
+### before
+- LoadHtml(string html);
+- here is html 
+```html
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><google></title>
+</head>
+<body>
+</body>
+</html>
+```
+
+### after
+- document.DocumentNode.OuterHtml;
+- here is html 
+```html
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><google></google></title>
+</head>
+<body>
+</body>
+</html>
+```
+
+
+### Was changed
+- Title content has been changed
+```html
+<title><google></google></title>
+```
+
+
+### pls help me 
+ 
+```html
+tks very much
+```

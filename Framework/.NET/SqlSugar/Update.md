@@ -11,3 +11,12 @@
 ```c#
 var t3 = db.Updateable(updateObj).UpdateColumns(it => new { it.Name }).ExecuteCommand();
 ```
+
+### 更新代码 1
+
+```c#
+db.Utilities.PageEach(urlsguiditems_PageEach, 200, list =>
+{
+    var t2 = db.Updateable(list).UpdateColumns(it => new { it.status }).ExecuteCommand();
+});
+```

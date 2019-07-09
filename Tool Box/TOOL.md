@@ -46,6 +46,11 @@
 - [XML 编辑器 阅读器 - 在线工具](http://xmlgrid.net/cn/)
 - [XML 压缩、格式化-BeJSON.com](http://www.bejson.com/otherformat/xml/)
 
+## JSON Editor Online
+
+- [JSON Editor Online - view, edit and format JSON online](https://jsoneditoronline.org/)
+- [Json Parser Online](http://json.parser.online.fr/)
+
 ## 在线工具
 
 - [JSON 在线编辑器-JSON 中国](http://www.json.org.cn/tools/JSONEditorOnline/index.htm)
@@ -120,3 +125,9 @@
 ### 单位换算表
 
 - [单位换算表](http://www.columbia.edu/~zz2111/unitexchange.htm)
+
+## 源码编程类
+
+### CSharp
+
+- [C# (CSharp) Code Examples - HotExamples](https://csharp.hotexamples.com/)

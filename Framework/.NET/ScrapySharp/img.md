@@ -30,5 +30,9 @@ if (imgs.Count() > 0)
 {
 
 }
+
+ var tagitems = ale[0].ParentNode.Descendants(tage).ToList();
+var tagitemsa = ale[0].ParentNode.ChildNodes.Where(e => e.Name == tage);
+var tagitems = ale[0].ParentNode.ChildNodes.Where(e => e.Name == tage).ToList();
 //end
 ```

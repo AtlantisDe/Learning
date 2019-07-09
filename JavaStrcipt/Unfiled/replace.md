@@ -83,3 +83,34 @@ string.replace(new RegExp(key, "g"), "b");
 ```js
 tmpvalues.json_sconf_Seritexts.replace(new RegExp("\\+", "g"), "%2B");
 ```
+
+### js 实体转化
+
+- [js 实体转化 - Soler_lia 的博客 - CSDN 博客](https://blog.csdn.net/soler_lia/article/details/80323501)
+
+```js
+function convert(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+```
+
+```js
+function convert(str) {
+  var entitys = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+  var regexp = new RegExp("[" + Object.keys(entitys).join("") + "]", "g");
+  return str.replace(regexp, function(matched) {
+    return entitys[matched];
+  });
+}
+```

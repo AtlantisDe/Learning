@@ -32,15 +32,15 @@ MessageBox.Show("保存成功");
 
 ```C#
 OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel文件(*.xls;*.xlsx)|*.xls;*.xlsx|所有文件|*.*";
-            ofd.ValidateNames = true;
-            ofd.CheckPathExists = true;
-            ofd.CheckFileExists = true;
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                string strFileName = ofd.FileName;
-                //其他代码
-            }
+ofd.Filter = "Excel文件(*.xls;*.xlsx)|*.xls;*.xlsx|所有文件|*.*";
+ofd.ValidateNames = true;
+ofd.CheckPathExists = true;
+ofd.CheckFileExists = true;
+if (ofd.ShowDialog() == DialogResult.OK)
+{
+    string strFileName = ofd.FileName;
+    //其他代码
+}
 
 
 using (FileStream fsRead = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
@@ -77,12 +77,13 @@ while ((line = sr.ReadLine()) != null)
 {
     Console.WriteLine(line.ToString());
 }
+sr.Close();
 ```
 
-## C#文件的写入
+## 文件的写入字节集
 
 ```c#
- FileStream fs = new FileStream("E:\\ak.txt", FileMode.Create);
+FileStream fs = new FileStream("E:\\ak.txt", FileMode.Create);
 //获得字节数组
 byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
 //开始写入
@@ -99,6 +100,16 @@ File.ReadAllText(ofd.FileName);
 File.ReadAllText(ofd.FileName,Encoding.UTF8);
 ```
 
+### C# 使用 List 泛型读取和保存文本文件
+
+- [C# 使用 List 泛型读取和保存文本文件 - 曾祥展 - 博客园](https://www.cnblogs.com/zengxiangzhan/archive/2010/01/30/1659674.html)
+
+```c#
+List<string> list = mgr.ReadTextFileToList(@"C:\test.txt");//记取字符串
+foreach (string s in list) Console.WriteLine(s); //显示出来′
+Console.ReadKey(); //按′任一键关闭Console
+```
+
 ## C#文本写入
 
 ```c#
@@ -106,17 +117,12 @@ System.IO.File.WriteAllText("e:\\asp_1.txt", "I LOVE YOU!");
 System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!");
 System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!", Encoding.UTF8);
 
-
-
-
 //Link
 try { System.IO.File.WriteAllText(root.urllinkspath, "", Encoding.UTF8); } catch (Exception) { }
 try { System.IO.File.WriteAllText(root.fileslinkspath, "", Encoding.UTF8); } catch (Exception) { }
 
 using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.urllinkspath)) { aleDB.firstTimeinit(); }
 using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.fileslinkspath)) { aleDB.firstTimeinit(); }
-
-
 ```
 
 ## 文本按行写入
@@ -182,3 +188,8 @@ Task.Static.WebRes.Add("/static/clipboard/clipboard.js", Resread("aa.Resources.s
 Task.Static.WebRes.Add("/static/layui/layui.all.js", Resread("aa.Resources.static.layui.layui.all.js"));
 
 ```
+
+## C#多线程读写同一文件处理
+
+- [C#多线程读写同一文件处理 - 天马 3798 - 博客园](https://www.cnblogs.com/tianma3798/p/8252553.html)
+- [6 秒完成 50 万条多线程并发日志文件写入](http://www.ibcibc.com/thread-8060-1-1.html)
