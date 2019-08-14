@@ -126,3 +126,43 @@ public async void HttpClientDoGet()
             }
         }
 ```
+
+## 编码
+
+```c#
+var c = System.Web.HttpUtility.UrlEncode(a);
+
+
+try
+{
+    var aa = tyorder001;
+    IDictionary<string, string> para = new Dictionary<string, string>();
+    para.Add("id", Bmm.urlEn(aa.id, false));
+    para.Add("no", Bmm.urlEn(aa.no, false));
+    para.Add("BuyInfo", Bmm.urlEnJson(aa.BuyInfo));
+    postpackage.poststr = Bmm.poststr(para);
+
+
+
+}
+catch (Exception Ex)
+{
+    Console.WriteLine("异常[]:" + Ex.Message);
+}
+
+public static string urlEn(object obj, bool b = true)
+{
+    var a = Convert.ToString(obj);
+    var c = System.Web.HttpUtility.UrlEncode(a);
+    return c;
+
+}
+public static string urlEnJson(object obj)
+{
+    var a = Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+    var c = System.Web.HttpUtility.UrlEncode(a);
+    return c;
+
+}
+
+```

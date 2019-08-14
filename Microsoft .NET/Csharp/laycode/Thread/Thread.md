@@ -6,6 +6,10 @@
 - [c#多线程总结（纯干货）](https://www.cnblogs.com/wyt007/p/9486752.html)
 - [C# 多线程](http://www.runoob.com/csharp/csharp-multithreading.html)
 
+## 线程安全
+
+- [多线程下 C#如何保证线程安全? - 心灵智者 - 博客园](https://www.cnblogs.com/janghe/p/7875093.html)
+
 ## 相关代码
 
 ```c#
@@ -36,10 +40,28 @@ thread.start(obj);
 Thread oThread = new Thread(delegate(){});
 oThread.IsBackground = true;
 oThread.Start();
+
+
+
+var oThread = new System.Threading.Thread(delegate () { });
+oThread.IsBackground = true;
+oThread.Start();
+
 ```
 
 ```c#
 Thread t = new Thread(delegate(){});
 t.IsBackground = true;
 t.Start();
+```
+
+```c#
+Thread thread_ui = new Thread(delegate ()
+{
+    while (true)
+    {
+    }
+});
+thread_ui.IsBackground = true;
+thread_ui.Start();
 ```

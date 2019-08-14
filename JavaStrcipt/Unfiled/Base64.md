@@ -56,6 +56,11 @@ enc.val($.base64.atob(this.value, true));
 ### jquery-base64 我改造的支持 Layui 用法
 
 - 改造
+- 先决条件:
+
+```js
+jQuery = layui.$;
+```
 
 ```js
 layui.$.base64("encode", "你好,我需要编码", true);

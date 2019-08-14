@@ -1,6 +1,25 @@
 # Js
 
-- [Jquery对当前日期的操作(格式化当前日期)](https://blog.csdn.net/qq_34313263/article/details/72654177)
+- [Jquery 对当前日期的操作(格式化当前日期)](https://blog.csdn.net/qq_34313263/article/details/72654177)
+
+## JS 延迟
+
+```js
+timecount = timecount + 500;
+setTimeout(function() {
+  console.log("en 英文翻译加载中");
+  go_step_2(3);
+}, timecount);
+// demo
+
+setTimeout(function() {
+  console.log("en 英文翻译加载中");
+  go_step_2(3);
+}, 1000 * 5);
+
+
+
+```
 
 ## 时间
 
@@ -27,15 +46,15 @@ Date.prototype.Format = function (fmt) { //author: meizz
 var time1 = new Date().Format("yyyy-MM-dd");
 var time2 = new Date().Format("yyyy-MM-dd HH:mm:ss");
 var nowTime=new Date();
-nowTime.setMonth(nowTime.getMonth()-1);  
+nowTime.setMonth(nowTime.getMonth()-1);
 alert(nowTime.Format("yyyy-MM-dd HH:mm:ss");)//上月当前时间
 ```
 
-## Layui时间
+## Layui 时间
 
 ```js
-layui.util.toDateString(d.evtdatetime,"yyyy-MM-dd HH:mm:ss");
-layui.util.toDateString(d.evtdatetime,"yyyy-MM-dd HH:mm:ss.ffff");
-layui.util.toDateString(d.evtdatetime,"yyyy-MM-dd HH:mm:ss.fff");
-layui.util.toDateString(d.evtdatetime,"yyyy-MM-dd HH:mm:ss:fff");
+layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss");
+layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss.ffff");
+layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss.fff");
+layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss:fff");
 ```

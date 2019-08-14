@@ -26,6 +26,15 @@ logincheck();
 //信息框-例1
 
 layer.alert("见到你真的很高兴", { icon: 6 });
+layer.alert("请先勾选要删除的站点!", { icon: 6, title: "操作提示" });
+
+layer.alert(
+  "清空模板引擎数据,重建模板库索引,新增模板或者改动后,这里来刷新一下!",
+  { skin: "layui-layer-molv", closeBtn: 0, title: "操作提示" },
+  function() {
+    layer.close(layer.index);
+  }
+);
 
 //信息框-例2
 
@@ -51,6 +60,24 @@ layer.msg("不开心。。", { icon: 5 });
 layer.msg("玩命卖萌中", function() {
   //关闭后的操作
 });
+```
+
+### 确认取消信息框
+
+```js
+// 绿色图标
+layer.confirm("真的删除预设配置吗?", { icon: 6, title: "操作提示" }, function(
+  index
+) {
+  siteconfigdelete(obj);
+});
+
+// 无图标
+layer.confirm("真的删除预设配置吗?", function(index) {
+  siteconfigdelete(obj);
+});
+
+
 ```
 
 ### 加载层信息框操作层
@@ -134,7 +161,7 @@ area: ['500px', '300px'],
 
 ## prompt 输入层
 
-### 常用代码
+### prompt 常用代码
 
 ```js
 // 如果是页面层
@@ -164,22 +191,23 @@ $.post("url", {}, function(str) {
 }
 
 
-    layer.prompt({ title: '输入任何口令，并确认', formType: 1 }, function (pass, index) {
+layer.prompt({ title: '输入任何口令，并确认', formType: 1 }, function (pass, index) {
+    layer.close(index);
+    layer.prompt({ title: '随便写点啥，并确认', formType: 2 }, function (text, index) {
         layer.close(index);
-        layer.prompt({ title: '随便写点啥，并确认', formType: 2 }, function (text, index) {
-            layer.close(index);
-            layer.msg('演示完毕！您的口令：' + pass + '<br>您最后写下了：' + text);
-        });
+        layer.msg('演示完毕！您的口令：' + pass + '<br>您最后写下了：' + text);
     });
+});
 ```
 
-### WIKI
+### prompt 常用
 
 - [layer.prompt 添加多个输入框](https://www.jianshu.com/p/65fea33e6750)
 - [layer.prompt 怎么设置为禁用 - Fly 社区](https://fly.layui.com/jie/33944/)
 - [layer 自定义 prompt 弹出框内容只读,并选中](https://www.jianshu.com/p/9273e192ba44)
 
 ```js
+// 有关闭bug
 layer.prompt(
   {
     formType: 2,
@@ -196,4 +224,45 @@ layer.prompt(
     layer.close(index);
   }
 );
+```
+
+```js
+//正式版代码
+// begin
+layerindexs.prompt_demo = layer.prompt(
+  {
+    formType: 2,
+    value: hosts,
+    maxlength: 10000,
+    id: "promptId" + "demo",
+    title: "请确认即将被删除的数据",
+    area: ["188px", "299px"],
+    btn: ["确认", "取消"],
+    closeBtn: 1,
+    // , '取消'
+    offset: "auto",
+    // area: ['300px', '350px']
+    success: function(layero, index) {
+      layui
+        .$("#" + "promptId" + "batchdelete" + " textarea")
+        .attr("readOnly", "readOnly");
+    },
+    btn2: function(index, layero) {
+      // layer.msg("取消");
+      layer.close(index);
+      return false;
+    },
+    cancel: function(index) {
+      //右上角关闭回调
+      // layer.msg("右上角关闭回调");
+      layer.close(index);
+      return false;
+    }
+  },
+  function(value, index, elem) {
+    //确认按钮事件
+    layer.close(index);
+  }
+);
+// end
 ```

@@ -53,7 +53,24 @@ title: "新建预设配置项", //不显示标题栏
 closeBtn: 1,
 // area: "1200px",
 area: ["1200px", "80%"],
+//  area: ["90%", "80%"],
 shadeClose: true,
 maxmin: true,
 shade: 0.3,
+```
+
+### 配置弹出宽高参数 同时包含最大化最小化窗口属性 代码一
+
+```js
+function open_demo(host) {
+  layer.open({
+    type: 2,
+    title: "部署日志",
+    shadeClose: true,
+    shade: 0.8,
+    area: ["1200px", "80%"],
+    maxmin: true,
+    content: "/demo.aspx?host=" + host
+  });
+}
 ```

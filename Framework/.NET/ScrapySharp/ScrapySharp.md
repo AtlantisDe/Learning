@@ -1,5 +1,7 @@
 # ScrapySharp
 
+- 这个只是一个简单的示例，实际上 ScrapingBrowser 的功能还是非常全面的，常见的功能如：Charset 探测，AutoRedirect、Cache、 Proxy、Cookie、UserAgent、表单提交等都支持得非常好，用它来获取网页比 HttClient 要方便很多。
+
 - [ScrapySharp 3.0.0](https://www.nuget.org/packages/ScrapySharp)
 - [Scrapy 入门教程 &mdash; Scrapy 0.24.6 文档](https://scrapy-chs.readthedocs.io/zh_CN/0.24/intro/tutorial.html)
 - [使用 ScrapySharp 快速从网页中采集数据 - 天方 - 博客园](https://www.cnblogs.com/TianFang/p/4804289.html)

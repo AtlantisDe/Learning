@@ -7,14 +7,14 @@
 
 ```c#
 public class Enum
-        {
-            public enum logitemStates
-            {
-                normal = 0,
-                error = 1,
-                unknown = 404
+{
+    public enum logitemStates
+    {
+        normal = 0,
+        error = 1,
+        unknown = 404
 
 
-            }
-        }
+    }
+}
 ```

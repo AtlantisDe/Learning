@@ -176,15 +176,20 @@ layui.use('table', function(){
 
 ```
 
-### 常用解析 少量静态动态数据
+### 内存分页 常用解析 少量静态动态数据
 
 ```js
 <script>
 function sitesbatchdeployForselect() {
   if (tmpvalues.issitesbatchdeployForselectinit == true) {
-    tableIns.sitesbatchdeployForselect.re[Getting Title at 57:58](http://window.open(articleItem.url, '_blank');)load({});
+    tableIns.sitesbatchdeployForselect.reload({data: tmpvalues.tplitems });
     return;
   }
+
+  if (tableIns.aitems != null) {
+      tableIns.aitems.reload({});
+      return;
+    }
 
   tableIns.sitesbatchdeployForselect = layui.table.render({
     elem: "#sitesbatchdeployForselect",
@@ -211,6 +216,52 @@ function sitesbatchdeployForselect() {
 }
 </script>
 
+```
+
+#### 内存分页代码示例一
+
+```js
+function fun_tplitems() {
+  if (tableIns.tplitems != null) {
+    tableIns.tplitems.reload({});
+    return;
+  }
+
+  tableIns.tplitems = layui.table.render({
+    elem: "#tpls",
+    // url: "/Module/Consol/api.aspx?Action=sitesconfigsclassnames",
+    // toolbar: "#toolbar_aitems",
+    title: "沙箱调试",
+    totalRow: false,
+    cols: [
+      [
+        {
+          field: "id",
+          width: 66,
+          title: "编号",
+          sort: false,
+          templet: function(d) {
+            return d.LAY_TABLE_INDEX + 1;
+          }
+        },
+        { field: "name", title: "英文标识", width: 160 },
+        { field: "path", title: "模块地址", width: 100 },
+        { field: "tags", title: "标签预览", width: 100 },
+        // { field: "version", title: "版本号", width: 100 },
+        { field: "beizhu", title: "备注", width: 100 },
+        {
+          fixed: "right",
+          title: "操作",
+          toolbar: "#bar_tpls",
+          width: 500
+        }
+      ]
+    ],
+    page: true,
+    limit: 10,
+    data: tmpvalues.aitems
+  });
+}
 ```
 
 ## barDemo 行工具按钮
@@ -552,13 +603,50 @@ function siteconfigsresourcesinit() {
 ## 开启复选框 获取选中行数据
 
 ```js
+ ,cols: [[
+      {type:'checkbox'}
+      ,{field:'id', width:80, title: 'ID', sort: true}
+      ,{field:'username', width:80, title: '用户名'}
+      ,{field:'sex', width:80, title: '性别', sort: true}
+      ,{field:'city', width:80, title: '城市'}
+      ,{field:'sign', title: '签名', minWidth: 100}
+      ,{field:'experience', width:80, title: '积分', sort: true}
+      ,{field:'score', width:80, title: '评分', sort: true}
+      ,{field:'classify', width:80, title: '职业'}
+      ,{field:'wealth', width:135, title: '财富', sort: true}
+    ]]
+```
+
+```js
 var checkStatus = layui.table.checkStatus("sites"),
   datasites = checkStatus.data;
+
+layui.table.checkStatus("apidatas").data;
 ```
 
 ```js
 layui.table.checkStatus("sites").data;
 tableIns.sconf_tplitems.config.data[0].LAY_CHECKED = false;
+```
+
+### 复选框 获取某列选中值
+
+```js
+//只读取但一列 返回换行文本字符串
+function API_apidatas_for_checkbox_getSinglecolumnText(column) {
+  var datas = layui.table.checkStatus("apidatas").data;
+
+  if (datas.length == 0) {
+    console.log("无选中项!");
+    return "";
+  } else {
+    var Texts = "";
+    for (var i = 0; i < datas.length; i++) {
+      Texts = Texts + datas[i][column] + (i < datas.length ? "\r\n" : "");
+    }
+    return Texts;
+  }
+}
 ```
 
 ### layui 表格复选框自动选中

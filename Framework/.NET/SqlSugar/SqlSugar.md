@@ -24,8 +24,7 @@ using (var db = GetInstance())
 // 代码
 using (var db = GetInstance())
 {
-    var join1 = db.Queryable<Student, School>((st, sc) => new object[] {
-                JoinType.Left,st.SchoolId==sc.Id
+    var join1 = db.Queryable<Student, School>((st, sc) => new object[] {JoinType.Left,st.SchoolId==sc.Id
     }).Where(st => st.Id > 0).Select<Student>("*").ToSql();
     base.Check(@"SELECT * FROM `STudent` st Left JOIN `School` sc ON ( `st`.`SchoolId` = `sc`.`Id` )   WHERE ( `st`.`ID` > @Id0 ) ",
         new List<SugarParameter>() {

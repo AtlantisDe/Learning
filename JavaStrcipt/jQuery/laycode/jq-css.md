@@ -53,3 +53,19 @@ $(this).removeClass("hover_s");
 5.获取标签的所有class
 var classname_module = $(".lv").attr("class");
 ```
+
+## style 操作
+
+### style 移除
+
+```js
+$("#aaaa").removeAttr("style");
+```
+
+###
+
+```js
+$("#show").removeAttr("style"); //ie,ff均支持
+
+$("#show").attr("style", ""); //firefox支持，ie不支持
+```

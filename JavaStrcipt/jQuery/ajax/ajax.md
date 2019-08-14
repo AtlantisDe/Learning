@@ -30,7 +30,7 @@ jQuery.post()
 - [JQ-AJAX 执行成功不执行 success 方法解决 - wang704987562 的博客 - CSDN 博客](https://blog.csdn.net/wang704987562/article/details/82559467)
 - [ajax()不执行 success 也不执行 error 的分析和解决 - qq_42118231 的博客 - CSDN 博客](https://blog.csdn.net/qq_42118231/article/details/82851167)
 - [jquery ajax 后台响应成功，返回正确 json 但不执行 success 方法，执行 error 的问题](https://www.cnblogs.com/lijinwen/p/6066842.html)
-- [ajax中dataType="json"，执行后却进入error函数中，无法解析json - zwk199024的专栏 - CSDN博客](https://blog.csdn.net/zwk199024/article/details/53032621)
+- [ajax 中 dataType="json"，执行后却进入 error 函数中，无法解析 json - zwk199024 的专栏 - CSDN 博客](https://blog.csdn.net/zwk199024/article/details/53032621)
 
 ### 解决方案
 
@@ -132,6 +132,8 @@ async:false,//默认是true：异步        false：同步。
 ### ajax POST
 
 ```js
+data:  "username="+username+"&password="+password,
+data: "JSON=" + JSON.stringify(json),
 data:  'username='+username+'&password='+password,
 data: 'JSON=' + JSON.stringify(json),
 ```

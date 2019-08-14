@@ -16,4 +16,17 @@ if (this.IsHandleCreated)
 // 先判断if (this.IsHandleCreated) 才能invoke
 Control.Invoke：在拥有此控件的线程上先进先出顺序执行委托
 Control.BeginInvoke:在拥有此控件线程上异步执行委托，也就是可能并非顺序执行，这个有点熟悉，貌似说过了
+
+
+if (this.IsHandleCreated)
+{
+    this.Invoke((EventHandler)delegate
+    {
+
+        this.T_YunClientService_status.Text = yun_message;
+
+    });
+}
+
+
 ```

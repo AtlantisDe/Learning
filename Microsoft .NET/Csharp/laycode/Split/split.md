@@ -9,6 +9,13 @@ var arrlines = body.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntrie
 var arr = body.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
 ```
 
+### 字符串 new 用法
+
+```c#
+rq.Qs = new[] { "您好,我来自外太空!" };
+rq.Qs = new[] { body };
+```
+
 ### 常用两次分割代码
 
 ```c#

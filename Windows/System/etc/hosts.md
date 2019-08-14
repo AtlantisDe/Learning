@@ -13,3 +13,11 @@ C:\Windows\System32\drivers\etc\hosts
 ```txt
 
 ```
+
+## 别名使用
+
+```c#
+[::1]:1120
+http://localhost:1120
+http://[::1]:1120
+```

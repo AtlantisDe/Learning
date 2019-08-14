@@ -131,6 +131,14 @@ Having 有
 constraint failed 约束失败
 WAIT until the dynamic text is set 等到动态文本设置完毕
 database disk image is malformed 数据库磁盘映像格式错误
+ignoreCache 忽略缓存
+AutoDetectEncoding
+Auto Detect Encoding 自动检测编码
+Mark component as 64 bit 将组件标记为64位
+investigate only 仅调查
+instrumentation 仪器仪表
+merge runtime 合并运行时
+apply pattern to files and folders 应用到文件夹和文件
 ```
 
 ## MVC
@@ -721,4 +729,7 @@ template explicit specialization 模板显式特化（版本） 模板显式特�
 template parameter 模板叁数 模板叁数
 temporary object 暂时物件 临时对象
 text 文字 文本
+Request Entity Too Large 请求的实体太大
+Partial 局部
+Authorize 授权
 ```

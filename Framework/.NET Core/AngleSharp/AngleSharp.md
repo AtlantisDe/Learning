@@ -2,6 +2,8 @@
 
 - [AngleSharp - Home](http://anglesharp.github.io/)
 - [AngleSharp/AngleSharp](https://github.com/AngleSharp/AngleSharp)
+- [.NET Core 网络数据采集 -- 使用 AngleSharp 做 html 解析 - solenovex - 博客园](https://www.cnblogs.com/cgzl/p/8970582.html)
+- [AngleSharp - Example Code](https://anglesharp.github.io/docs/Examples.html)
 
 ## Documentation
 

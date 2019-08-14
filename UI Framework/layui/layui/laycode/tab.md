@@ -1,5 +1,7 @@
 # Tab
 
+- layui.element.init();
+
 ## 代码 1 固定样式
 
 ```html
@@ -42,4 +44,12 @@
     <div class="layui-tab-item">6</div>
   </div>
 </div>
+```
+
+## JS 操作代码
+
+### 切换选项卡
+
+```php
+<button class="layui-btn layui-btn-normal" lay-submit="" onclick="layui.element.tabChange('webcrawlerconfigs_work', 'Sandbox');">  一键转到沙箱环境调试 </button>
 ```

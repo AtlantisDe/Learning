@@ -1,8 +1,10 @@
 # C++
 
+- 如果是 stdcall 调用，就是由 dll 释放
+- 如果是 cdecl 调用，就是谁调用谁释放
 - [C++ 基本语法](http://www.runoob.com/cplusplus/cpp-basic-syntax.html)
 - [MFC](https://baike.baidu.com/item/MFC/2530850?fr=aladdin)
-- [使用NuGet管理C++项目的依赖库](https://blog.csdn.net/china_jeffery/article/details/86247494)
+- [使用 NuGet 管理 C++项目的依赖库](https://blog.csdn.net/china_jeffery/article/details/86247494)
 
 ## C++ UI
 

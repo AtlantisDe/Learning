@@ -41,3 +41,9 @@ style="display: none"
 ```css
 <p><img style="width: 100%;" src="http://dingyue.ws.126.net/2019/06/27/5c95f1d5b37a4a40b7084ca5a9d5ab6e.jpeg"></p>
 ```
+
+#### 圆形图片
+
+```css
+<img src="/App/images/loading2.gif" style="width: 21px; height: 19px; margin-right:19px;border-radius:50%;" />
+```

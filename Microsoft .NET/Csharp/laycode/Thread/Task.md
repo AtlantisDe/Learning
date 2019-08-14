@@ -21,3 +21,18 @@ using (var client = new Websocket.Client.WebsocketClient(url))
     Task.Run(() => client.Send("{ message }"));
 }
 ```
+
+## Task For 并发
+
+```c#
+for (int i = 0; i < list.Count; i++)
+{
+
+    Task<bool>.Run(() =>
+    {
+        go_exe_WaitForExit();
+        return true;
+    });
+
+}
+```

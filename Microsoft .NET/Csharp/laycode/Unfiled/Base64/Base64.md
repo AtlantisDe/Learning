@@ -22,6 +22,10 @@ strPath = Encoding.Default.GetString(outputb);
 System.Text.Encoding encode = System.Text.Encoding.ASCII;
 byte[]  bytedata = encode.GetBytes("test");
 string strPath = Convert.ToBase64String(bytedata,0,bytedata.Length);
+
+System.Text.Encoding encode = System.Text.Encoding.UTF8;
+byte[] bytedata = encode.GetBytes("test");
+string strPath = Convert.ToBase64String(bytedata, 0, bytedata.Length);
 ```
 
 ### 常遇到问题与解决方案

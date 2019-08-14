@@ -13,3 +13,12 @@ templet: function (d) {return layui.util.toDateString(d.createTime, "yyyy-MM-dd 
 </script>
 {title: '序号',templet: '#xuhao'}
 ```
+
+### 时间模板
+
+```js
+layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss");
+templet: function (d) {return layui.util.toDateString(d.createTime, "yyyy-MM-dd HH:mm:ss");},
+templet: function (d) {return layui.util.toDateString(d.updatetime, "yyyy-MM-dd HH:mm:ss");},
+
+```
