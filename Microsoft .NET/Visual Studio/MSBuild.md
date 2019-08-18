@@ -13,6 +13,7 @@
 ## 常用
 
 - [使用 devenv/MSBuild 在命令行编译单个 project - iTech - 博客园](https://www.cnblogs.com/itech/archive/2011/12/22/2297587.html)
+- [细说VS MSBuild 和 Framework 的区别 - 不忘初心 - CSDN博客](https://blog.csdn.net/playermaker57/article/details/80190580)
 
 ### 知识点
 
@@ -25,6 +26,9 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\
 "C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" "D:\demo.sln" /p:DeployOnBuild=true /p:PublishProfile="D:\demo1\Properties\PublishProfiles\Release.x64.pubxml"
 
 "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe" "D:\demo.sln" /p:DeployOnBuild=true /p:PublishProfile="D:\demo1\Properties\PublishProfiles\Release.x64.pubxml"
+
+
+
 ```
 
 #### 9. 帮助文档

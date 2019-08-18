@@ -5,7 +5,7 @@
 
 ## 常用信息框
 
-### 信息框 弹出关闭
+### 1. 信息框 弹出关闭
 
 ```js
 layer.alert(data.message, { icon: 6 });
@@ -20,7 +20,7 @@ layer.load();
 logincheck();
 ```
 
-### 信息框
+### 2. 信息框
 
 ```js
 //信息框-例1
@@ -62,7 +62,7 @@ layer.msg("玩命卖萌中", function() {
 });
 ```
 
-### 确认取消信息框
+### 3. 确认取消信息框
 
 ```js
 // 绿色图标
@@ -70,14 +70,13 @@ layer.confirm("真的删除预设配置吗?", { icon: 6, title: "操作提示" }
   index
 ) {
   siteconfigdelete(obj);
+  layer.close(index);
 });
 
 // 无图标
 layer.confirm("真的删除预设配置吗?", function(index) {
   siteconfigdelete(obj);
 });
-
-
 ```
 
 ### 加载层信息框操作层

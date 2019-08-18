@@ -1,10 +1,13 @@
 # Authorize
 
 - [YouTube](https://www.youtube.com/watch?v=7m6pY8Bpxj4)
+- [ASP.NET MVC 使用 Authorize 过滤器验证用户登录 - pan_junbiao 的博客 - CSDN 博客](https://blog.csdn.net/pan_junbiao/article/details/84561056)
+- [初识 MVC 登陆过滤器 Authorize - KeithPro 的博客 - CSDN 博客](https://blog.csdn.net/a1191835397/article/details/83411072)
+- [MVC 用户登陆验证 - 淼寒儿 的博客 - CSDN 博客](https://blog.csdn.net/rickykay/article/details/51732985)
 
 ## .Net
 
-### MVC 自带过滤器：[Authorize]
+### 1. MVC 自带过滤器：[Authorize]
 
 ```c#
 // 1.只要将过滤器置于相关的action之前，action运行的时候，Authorize过滤器会先运行。
@@ -43,4 +46,55 @@ public ActionResult test()
 {
     View();
 }
+```
+
+### 2. 登陆验证 1
+
+```c#
+
+
+        [Route("api/Token/logincheck")]
+        [HttpPost]
+        [HttpGet]
+        public Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish logincheck(Aleseocore.Module.Aleseo.Host.Main.Entity.apirequestpackageTokenlogin apirequestpackageTokenlogin)
+        {
+            var root = new Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish();
+            if (ModelState.IsValid)
+            {
+                root.code = 200;
+                root.message = "会话正常!";
+            }
+            else
+            {
+                root.code = 403;
+                root.message = "登录已超时，请重新登陆！";
+            }
+            return root;
+        }
+
+
+```
+
+### 3. 登陆验证 1
+
+```c#
+        [Route("api/Token/logincheck")]
+        [HttpPost]
+        [HttpGet]
+        public Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish logincheck(Aleseocore.Module.Aleseo.Host.Main.Entity.apirequestpackageTokenlogin apirequestpackageTokenlogin)
+        {
+            var root = new Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish();
+            if (System.Web.Security.FormsAuthentication.IsAuthenticated)
+            {
+                root.code = 200;
+                root.message = "会话正常!";
+            }
+            else
+            {
+                root.code = 403;
+                root.message = "登录已超时，请重新登陆！";
+            }
+            return root;
+        }
+
 ```

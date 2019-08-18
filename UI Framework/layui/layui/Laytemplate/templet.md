@@ -1,5 +1,7 @@
 # layui
 
+- [求求你们，把这个掐掉把，我真的太难了 - Fly 社区](https://fly.layui.com/jie/56578/)
+
 ## layui 代码
 
 ```js

@@ -1,5 +1,8 @@
 # class
 
+- margin 是指从自身边框到另一个容器边框之间的距离，就是容器外距离。（外边距
+- padding 是指自身边框到自身内部另一个容器边框之间的距离，就是容器内距离。（内边距
+
 ```css
 .demo {
   font-family: "MS Serif", "New York", serif;

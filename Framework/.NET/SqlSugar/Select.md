@@ -145,7 +145,7 @@ T_urls.url LIKE '%/NH79X/%'
 
 ### SqlSugar 常用查询实例-拉姆达表达式
 
-#### 查询列表
+#### 1. 查询列表
 
 ```c#
 //查询列表
@@ -170,7 +170,7 @@ T_urls.url LIKE '%/NH79X/%'
     Console.WriteLine(tList.First().tbirthday.Value.ToString("yyyy-MM-dd"));
 ```
 
-#### 常用查询
+#### 2. 常用查询
 
 ```c#
 //查询单条
@@ -240,7 +240,7 @@ Console.WriteLine("minDegree:" + minDegree);
 //var list = db.Queryable<InsertTest>().Where("id=@id and name=@name", new { id = 1, name = xxx }).ToList();
 ```
 
-#### 分页查询
+#### 3. 分页查询
 
 ```c#
 //分页查询处理
@@ -273,7 +273,7 @@ Console.WriteLine("list2-count:" + allCount2);
 Console.WriteLine("list2:" + list2.ToJsonString());
 ```
 
-#### 汇总查询 2
+#### 4. 汇总查询 2
 
 ```c#
 //分组，查询汇总
@@ -294,7 +294,7 @@ string result2 = db.Queryable<score>()
 Console.WriteLine(result2);
 ```
 
-#### 关联表查询
+#### 5. 关联表查询
 
 ```c#
 static void QueryFive()
@@ -365,4 +365,46 @@ public class Score_Student
     public decimal degree { get; set; }
     public string cno { get; set; }
 }
+```
+
+#### 6. Between 查询 尝试时间查询失败记录
+
+```c#
+// it.createtime >= DateTime.Now.AddMinutes(-1) && it.createtime <= DateTime.Now
+bool exists2 = db.Queryable<demo>().Any(it => it.UniqueId == apirequestpackagetaskqueueinstanttask.websiteNewsUpdate.host && SqlFunc.Between(it.createtime, DateTime.Now.AddMinutes(-1), DateTime.Now));
+```
+
+#### 7. 根据主键查询
+
+```c#
+var getByPrimaryKey = db.Queryable<Student>().InSingle(2);
+```
+
+#### 8. 是否存在这条记录
+
+```c#
+var isAny = db.Queryable<Student>().Where(it => it.Id == -1).Any();
+var isAny2 = db.Queryable<Student>().Any(it => it.Id == -1);
+```
+
+#### 9. 查询返回值
+
+- [.Select 用法-SqlSugar4-文档园](http://www.codeisbug.com/Doc/8/1159)
+
+```c#
+var isAny = db.Queryable<Student>().Where(it => it.Id == -1).Any();
+var isAny2 = db.Queryable<Student>().Any(it => it.Id == -1);
+```
+
+##### 1. 返回指定类集合
+
+- [.Select 用法-SqlSugar4-文档园](http://www.codeisbug.com/Doc/8/1159)
+
+```c#
+List<ResultModel> data = db.Queryable<Student>()
+    .Select(f => new ResultModel
+    {
+      ID = f.ID,
+      StudentName = f.Name
+    }).ToList();
 ```

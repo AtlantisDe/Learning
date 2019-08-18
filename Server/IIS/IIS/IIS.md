@@ -5,7 +5,7 @@
 - [IIS6、IIS7 和 IIS8](https://blog.csdn.net/zhangge3663/article/details/83539380)
 - [怎么查看 IIS 的版本](http://ask.zol.com.cn/x/5538655.html)
 - [asp.net 获取服务器信息 如:IIS 版本/.net 版本](https://blog.csdn.net/zhifeiya/article/details/41789659)
-- [C#解决IIS域名批量绑定-十有三博客](https://shiyousan.com/post/636022975388168065)
+- [C#解决 IIS 域名批量绑定-十有三博客](https://shiyousan.com/post/636022975388168065)
 
 ```shell
 # IIS 5 中，IIS的配置文件在：
@@ -45,3 +45,7 @@ C:\Windows\system32\inetsrv\config
 ## 无法在 Web 服务器上启动调试。IIS 未列出与打开的 URL 匹配的网站。
 
 - VS 开发遇到这个问题,是权限问题,直接用管理员运行 VS
+
+## IIS 服务器 SSL 证书安装
+
+- [IIS服务器SSL证书安装 - 星畔 - 博客园](https://www.cnblogs.com/raincedar/p/10129717.html)

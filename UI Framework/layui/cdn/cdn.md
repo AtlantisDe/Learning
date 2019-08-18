@@ -5,17 +5,16 @@
 
 ## Layui 2.4.5
 
-```html
-https://cdn.90so.net/layui/2.4.5/css/layui.css
-https://cdn.90so.net/layui/2.4.5/layui.all.js
-https://cdn.90so.net/layui/2.4.5/layui.js
-```
+- [Layui免费CDN静态库](https://www.layuicdn.com/)
 
-```html
-https://cdn.90so.net/layui/2.4.5/css/layui.css
-https://cdn.90so.net/layui/2.4.5/layui.all.js
-https://cdn.90so.net/layui/2.4.5/layui.js
-```
+````html
+https://www.layuicdn.com/layui-v2.5.4/css/layui.css
+https://www.layuicdn.com/layui-v2.5.4/layui.all.js
+https://www.layuicdn.com/layui-v2.5.4/layui.js ```html
+https://www.layuicdn.com/layui-v2.5.4/css/layui.css
+https://www.layuicdn.com/layui-v2.5.4/layui.all.js
+https://www.layuicdn.com/layui-v2.5.4/layui.js
+````
 
 ## 当你的静态资源 CDN 挂掉了该怎么办？
 

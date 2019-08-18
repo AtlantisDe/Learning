@@ -70,6 +70,20 @@ msbuild "D:\demo.sln" /p:DeployOnBuild=true /p:PublishProfile="D:\demo1\Properti
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\
 Demo Description
 
+// 2019
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\amd64
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin
+
+devenv.com
+devenv.com "D:\demo.sln" /Build "Release|x64" /project "D:\demo.csproj"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\
+Demo Description
+
+MSBuild.exe
+msbuild "D:\demo.sln" /p:DeployOnBuild=true /p:PublishProfile="D:\demo1\Properties\PublishProfiles\Release.x64.pubxml"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\
+Demo Description
+
 
 ```
 

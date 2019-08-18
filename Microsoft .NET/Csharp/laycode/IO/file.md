@@ -120,6 +120,8 @@ fs.Close();
 ```c#
 File.ReadAllText(ofd.FileName);
 File.ReadAllText(ofd.FileName,Encoding.UTF8);
+System.IO.File.ReadAllText("", System.Text.Encoding.UTF8);
+ ViewBag.main = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"/Views/1.html", System.Text.Encoding.UTF8);
 ```
 
 ## C# StreamReader / OpenText
