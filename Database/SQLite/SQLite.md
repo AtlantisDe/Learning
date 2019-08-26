@@ -4,7 +4,7 @@
 - 本教程帮助您了解什么是 SQLite，它与 SQL 之间的不同，为什么需要它，以及它的应用程序数据库处理方式。
 - SQLite 是一个软件库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。SQLite 是一个增长最快的数据库引擎，这是在普及方面的增长，与它的尺寸大小无关。SQLite 源代码不受版权限制。
 - [SQLite 的并发处理 - Ming Tong - CSDN 博客](https://blog.csdn.net/cuit/article/details/21975807)
-- [Sqlite3并发读写注意事项](http://www.bubuko.com/infodetail-765226.html)
+- [Sqlite3 并发读写注意事项](http://www.bubuko.com/infodetail-765226.html)
 
 ```txt
 总结
@@ -27,6 +27,10 @@
 ## Official
 
 - [SQLite Download Page](https://www.sqlite.org/download.html)
+
+## x64 / x86
+
+- [sunkaixuan/SqlSugar](https://github.com/sunkaixuan/SqlSugar/tree/a095ed39a68f461ad4999ee89d8e0395a5f4d636/Src/Asp.Net/SqliteTest)
 
 ## Wiki
 

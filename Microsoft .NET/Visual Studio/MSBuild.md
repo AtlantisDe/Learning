@@ -20,6 +20,10 @@
 #### 1. MSBuild.exe 路径
 
 ```c#
+where MSBuild
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
+
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe
 

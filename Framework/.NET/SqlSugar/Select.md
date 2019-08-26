@@ -22,6 +22,13 @@ SELECT  [ID] AS [ID] , [Name] AS [Name]  FROM [Student]
 ### 排序
 
 ```c#
+// - SQL 语句中, asc 是指定列按升序排列，desc 则是指定列按降序排列。
+// desc 降序
+// Asc 升序
+
+var getAllOrder = db.Queryable<Student>().OrderBy(it => it.ID, OrderByType.Desc).ToList(); //收到设置为DESC排序
+var getAllOrder = db.Queryable<Student>().OrderBy(it => it.ID, OrderByType.Asc).ToList(); //收到设置为Asc排序
+
 var getAllOrder = db.Queryable<Student>().OrderBy(it => it.ID).ToList(); //默认为ASC排序
 /*
 生成SQL:

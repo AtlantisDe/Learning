@@ -2,6 +2,15 @@
 
 ## 百科
 
+```C#
+where sn
+C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools\sn.exe
+
+SignTool.exe
+where SignTool.exe
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\signtool.exe
+```
+
 ### 文档说明
 
 ```txt

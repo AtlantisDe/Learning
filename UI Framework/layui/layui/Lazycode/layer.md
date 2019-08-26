@@ -73,6 +73,17 @@ layer.confirm("真的删除预设配置吗?", { icon: 6, title: "操作提示" }
   layer.close(index);
 });
 
+layer.msg("你确定删除？", {
+  time: 0, //不自动关闭
+  btn: ["确定", "取消"],
+  icon: 6,
+  title: "确认提交",
+  yes: function(index) {
+    layer.close(index);
+    // 这里Go DO
+  }
+});
+
 // 无图标
 layer.confirm("真的删除预设配置吗?", function(index) {
   siteconfigdelete(obj);

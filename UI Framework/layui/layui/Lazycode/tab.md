@@ -53,3 +53,16 @@
 ```php
 <button class="layui-btn layui-btn-normal" lay-submit="" onclick="layui.element.tabChange('webcrawlerconfigs_work', 'Sandbox');">  一键转到沙箱环境调试 </button>
 ```
+
+```js
+parent.layer.close(parent.layer.getFrameIndex(window.name));
+
+function goto_taskqueues() {
+  
+  parent.layui.element.tabChange("Tab_DEMO", "Demo_look");
+  parent.taskqueues_reload();
+
+  parent.layer.close(parent.layer.getFrameIndex(window.name));
+}
+
+```

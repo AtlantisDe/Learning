@@ -8,22 +8,22 @@
 
 ## 常用知识点
 
-### App-V Context Menu Shortcuts
+### 1. App-V Context Menu Shortcuts
 
 - [App-V Context Menu Shortcuts](https://www.advancedinstaller.com/app-v-context-menu-shortcuts.html)
 - [Import Registry File (Advanced)](https://www.advancedinstaller.com/user-guide/registry-import-file-advanced.html)
 
-### logo
+### 2. logo
 
 - [Removing this banner? - Advanced Installer](https://www.advancedinstaller.com/forums/viewtopic.php?t=19509)
 
-### Install Sequence 安装顺序
+### 3. Install Sequence 安装顺序
 
-### 添加忽略文件
+### 4. 添加忽略文件
 
 - [Advanced Installer 添加忽略文件 - 小数点儿的博客 - CSDN 博客](https://blog.csdn.net/qq_33074817/article/details/97245547)
 
-### 卸载保留文件
+### 5. 卸载保留文件
 
 - [How do I prevent a file or registry entry from being uninstalled or&#xA; repaired?](https://www.advancedinstaller.com/user-guide/qa-keep-file.html)
 - [advanced installer 卸载软件时保留一些文件-CSDN 论坛](https://bbs.csdn.net/topics/390792061/)
@@ -32,27 +32,27 @@
 to prevent it from being uninstalled check the "Permanent" attribute
 ```
 
-### 安装区间 删除文件
+### 6. 安装区间 删除文件
 
 - [How to remove a file or a folder during installation](https://www.advancedinstaller.com/user-guide/qa-remove-file-or-folder.html)
 - [File Removal Dialog](https://www.advancedinstaller.com/user-guide/file-removal-dialog.html)
 
-### LZMA Compression
+### 7. LZMA Compression
 
 - [LZMA Compression](https://www.advancedinstaller.com/user-guide/lzma-compression.html)
 - [Unzip 7zip while installing - Advanced Installer](https://www.advancedinstaller.com/forums/viewtopic.php?t=30632)
 
-### Extract Archive Dialog
+### 8. Extract Archive Dialog
 
 - [Extract Archive Dialog](https://www.advancedinstaller.com/user-guide/extract-archive-dialog.html)
+- Remove archive after extraction 提取后删除存档
+- Remove extracted files on uninstall 在卸载时删除提取的文件
 
-### 安装成功后执行
+### 9. 安装成功后执行
 
 - [AdvanceInstaller 打包安装及完成后调用 .bat 文件方法 - Microchen2008 的专栏 - CSDN 博客](https://blog.csdn.net/Microchen2008/article/details/47293491)
 
-### Windows Installer Custom Actions
-
-### Command line
+### 10. Command line
 
 ```c#
 devenv.com
@@ -87,7 +87,7 @@ Demo Description
 
 ```
 
-### 语言包 中文
+### 11. 语言包 中文
 
 ```c#
 Wizard
@@ -157,6 +157,7 @@ Repair
 Fix missing or corrupt files
 修复丢失或损坏的文件
 
+// MaintTypeDlgRemoveLabel
 Uninstall
 卸载
 
@@ -164,6 +165,14 @@ Uninstall
 Remove [ProductName]
 删除 [ProductName]
 
+
+// PreparePrereqDlgSubTitle
+Please wait while the [Wizard] prepares to guide you through the installation.
+请等待[Wizard]准备引导您完成安装。
+
+ProgressPrereqDlgSubTitle
+Please wait while the [Wizard] [Progress2] prerequisites for [ProductName].  This may take several minutes.
+请等待[ProductName]的[Wizard] [Progress2]先决条件。 这可能会需要几分钟。
 
 // VerifyRemoveDlgDescription
 Click Remove to remove [ProductName] from your computer.  If you want to review or change any of your installation settings, click Back.  Close the window to exit the wizard.
@@ -237,7 +246,7 @@ Are you sure you want to uninstall [ProductName]?
 
 ```
 
-### 中文注解
+### 12. 中文注解
 
 ```c#
 launch 运行 发起 发射
@@ -257,10 +266,44 @@ upgrade 升级
 Merge Modules 合并模块
 MainFeature 主要特征
 New File Removal 新文件删除
+features and components 功能和组件
 ```
 
-### 注册表
+### 13. 注册表
 
 ```reg
 [WindowsFolder]regedit.exe
+```
+
+### 14. Windows Installer Custom Actions
+
+### 15. 复制执行 CMD Demo CODE
+
+- 要点:注意/c 后不能直接跟随& 一定是跟随一条执行 CMD 命令才不会报错
+
+```c#
+// protect
+"C:\Program Files (x86)\LogicNP Software\Crypto Obfuscator For .Net 2018\co.exe" projectfile="D:\Work\DemoRelease\InstallPackage\SaveProject\Protect-Regmanagement.obproj"
+
+// design
+del "D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\*.pdb"
+
+/c
+xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\Democore.dll"
+"D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\Democore.dll" /y
+& xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\DemoRegcore.dll"
+"D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\DemoRegcore.dll" /y
+& xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\DemoRegmanagement.dll"
+"D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\DemoRegmanagement.dll" /y
+& xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\DeviceId.dll"
+"D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\DeviceId.dll" /y
+& exit
+& pause
+
+// code
+
+/c xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\Democore.dll" "D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\Democore.dll" /y & xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\DemoRegcore.dll" "D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\DemoRegcore.dll" /y & xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\DemoRegmanagement.dll" "D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\DemoRegmanagement.dll" /y & xcopy "D:\Work\DemoRelease\InstallPackage\SaveProject\Dotfuscated\Regmanagement\DeviceId.dll" "D:\Work\DemoRelease\MainRoot\DemoSoft\WebSoft\wwwroot\Regmanagement\bin\DeviceId.dll" /y & exit
+
+
+
 ```

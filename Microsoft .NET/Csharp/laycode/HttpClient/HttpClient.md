@@ -105,29 +105,29 @@ public async void HttpClientDoGet()
         }
 ```
 
-## POST Demo1 新版似乎有改动下面代码仅供参考
+## POST Demo1 新版似乎有改动下面代码仅供参考 [已废弃]
 
 ```c#
- public async void HttpClientDoPost()
-        {
-            var uri = "http://api.wsncloud.com/sensor/v1/list?";
-            var handler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.None };
-            using (var httpclient = new HttpClient(handler))
+public async void HttpClientDoPost()
+{
+    var uri = "http://api.wsncloud.com/sensor/v1/list?";
+    var handler = new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.None };
+    using (var httpclient = new HttpClient(handler))
+    {
+        httpclient.BaseAddress = new Uri(uri);
+        var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
-                httpclient.BaseAddress = new Uri(uri);
-                var content = new FormUrlEncodedContent(new Dictionary<string, string>()
-                   {
-                       {"ak", "65fc7ca4fc441d26f71bf3d691b278c2"},
-                       {"deviceId", "537eb34be4b022b7fbe19471"}
-                   });
-                var response = await httpclient.PostAsync(uri, content);
-                string responseString = await response.Content.ReadAsStringAsync();
-                MessageBox.Show(responseString);
-            }
-        }
+                {"ak", "65fc7ca4fc441d26f71bf3d691b278c2"},
+                {"deviceId", "537eb34be4b022b7fbe19471"}
+            });
+        var response = await httpclient.PostAsync(uri, content);
+        string responseString = await response.Content.ReadAsStringAsync();
+        MessageBox.Show(responseString);
+    }
+}
 ```
 
-## 编码
+## 2. 编码
 
 ```c#
 var c = System.Web.HttpUtility.UrlEncode(a);

@@ -62,4 +62,6 @@ parent.selectsiteconfig(JSON.stringify(obj.data));
 layer.close(index);
 var parentindex = parent.layer.getFrameIndex(window.name);
 parent.layer.close(parentindex);
+
+parent.layer.close(parent.layer.getFrameIndex(window.name));
 ```

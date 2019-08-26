@@ -5,6 +5,7 @@
 ## DB Browser for SQLite
 
 - [DB Browser for SQLite](https://sqlitebrowser.org/)
+- [Downloads - DB Browser for SQLite](https://sqlitebrowser.org/dl/)
 
 ## SQLiteStudio
 

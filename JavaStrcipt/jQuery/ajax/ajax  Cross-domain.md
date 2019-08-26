@@ -1,8 +1,9 @@
 # ajax Cross-domain(Cors)
 
-- [ASP.NET MVC &amp; WebApi 中实现Cors来让Ajax可以跨域访问 （转载） - PowerCoder - 博客园](https://www.cnblogs.com/OpenCoder/p/6890703.html)
+- [ASP.NET MVC &amp; WebApi 中实现 Cors 来让 Ajax 可以跨域访问 （转载） - PowerCoder - 博客园](https://www.cnblogs.com/OpenCoder/p/6890703.html)
 - [ajax 跨域，这应该是最全的解决方案了 - 程序生涯 - SegmentFault 思否](https://segmentfault.com/a/1190000012469713)
 - [jquery ajax 跨域访问 webservice 配置 - Ace001 - 博客园](https://www.cnblogs.com/xuejianxiyang/p/5369346.html)
+- [Calling ASP NET Web API service in a cross domain using jQuery ajax](https://www.youtube.com/watch?v=WKZLVqwpoiE)
 
 ## 配置跨域
 
