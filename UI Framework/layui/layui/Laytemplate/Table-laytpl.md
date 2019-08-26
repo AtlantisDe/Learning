@@ -8,7 +8,7 @@
 
 ## 方式一：绑定模版选择器
 
-```c#
+```js
 <script type="text/html" id="titleTpl">
   <a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a>
 </script>
@@ -17,13 +17,13 @@
 //      序号：{{ d.LAY_INDEX }} （该额外字段为 layui 2.2.0 新增）
 
 // 由于模板遵循 laytpl 语法（建议细读 laytpl文档 ），因此在模板中你可以写任意脚本语句（如 if else/for等）：
-<script type="text/html" id="titleTpl">
-  {{#  if(d.id < 100){ }}
-    <a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a>
-  {{#  } else { }}
-    {{d.title}}(普通用户)
-  {{#  } }}
-</script>
+// <script type="text/html" id="titleTpl">
+//   {{#  if(d.id < 100){ }}
+//     <a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a>
+//   {{#  } else { }}
+//     {{d.title}}(普通用户)
+//   {{#  } }}
+// </script>
 ```
 
 ## 方式二：函数转义
