@@ -9,6 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="https://atlantisde.github.io/Web-Package/Static/layui/css/layui.css" media="all" />
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+
+    <style mip-custom>
+        .textarea_min {
+            min-height: 200px;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -25,9 +33,9 @@
                     <div class="layui-card-body">
                         <div class="layui-form" lay-filter="formTest">
                             <textarea name="text1" lay-verify="required" placeholder="请输入"
-                                class="layui-textarea"></textarea>
+                                class="layui-textarea textarea_min"></textarea>
                             <button class="layui-btn" lay-submit lay-filter="zhuanhuan">转换</button>
-                            <textarea name="text2" placeholder="请输入" class="layui-textarea"></textarea>
+                            <textarea name="text2" placeholder="请输入" class="layui-textarea textarea_min"></textarea>
                         </div>
                     </div>
                 </div>

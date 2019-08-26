@@ -24,3 +24,23 @@ wget -O install.sh http://download.bt.cn/install/install_6.0.sh && bash install.
 # 1.查看面板入口：/etc/init.d/bt default
 # 2.关闭安全入口：rm -f /www/server/panel/data/admin_path.pl
 ```
+
+## 常用操作命令
+
+### 1. 命令
+
+```c#
+bt
+```
+
+### 2. Linux 3.X/4.x/5.x/6.x 宝塔面板密码的解决方案
+
+```c#
+// 密码:testpasswd
+// 执行后命令行结果:红框即面板账户
+cd /www/server/panel && python tools.py panel testpasswd
+```
+
+### 3. 命令行汇总
+
+- [宝塔linux面板重启、重置等命令-学派吧](https://www.xp8.net/server/392.html)

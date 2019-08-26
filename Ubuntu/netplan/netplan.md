@@ -6,8 +6,8 @@
 - [Ubuntu 网卡多设置](https://blog.csdn.net/wv_feng/article/details/78504624)
 - [Examples | netplan.io](https://netplan.io/examples)
 - [Ubuntu 17.10 Server static IP netplan - how to set netmask](https://askubuntu.com/questions/972955/ubuntu-17-10-server-static-ip-netplan-how-to-set-netmask)
-- [ubuntu18.04 server配置静态ip](https://blog.csdn.net/mossan/article/details/80381679)
-- [Ubuntu重启网卡的三种方法](https://blog.csdn.net/marc07/article/details/62885872)
+- [ubuntu18.04 server 配置静态 ip](https://blog.csdn.net/mossan/article/details/80381679)
+- [Ubuntu 重启网卡的三种方法](https://blog.csdn.net/marc07/article/details/62885872)
 - [How To Disable IPV6 on Linux/Ubuntu?](https://support.purevpn.com/how-to-disable-ipv6-linuxubuntu)
 
 ```shell
@@ -26,18 +26,62 @@
 # Ubuntu 18.04 采用netplan作为网络配置管理，与16.04及之前的版本区别很大
 ```
 
-## IP 配置 [Ubuntu 18.04 Server]
+## IP 配置
 
-```shell
+### 0. IP 配置 [Ubuntu 18.04 Server]
+
+```c#
 cd /etc/netplan/
 vi 50-cloud-init.yaml
+
+// 1. 查看配置文件
 ls /etc/netplan/
-sudo vi /etc/netplan/50-cloud-init.yaml
+
+// 2. 查到配置文件 编辑查看
+
 sudo vi /etc/netplan/01-netcfg.yaml
-sudo nano /etc/netplan/50-cloud-init.yaml
+sudo vi /etc/netplan/50-cloud-init.yaml
+
+// 以编辑为例
+sudo vi /etc/netplan/50-cloud-init.yaml
+vi /etc/netplan/50-cloud-init.yaml
+// sudo nano /etc/netplan/50-cloud-init.yaml
+
+// 编辑内容如:
+//  [192.168.3.20/24] 配置最后/这个值测试未23-24成功不知道为啥?暂时没去研究
+
+// 内网
+network:
+   ethernets:
+      eth0:
+         addresses: [192.168.3.20/24]
+         gateway4: 192.168.3.1
+         dhcp4: no
+         nameservers:
+            addresses: [1.1.1.1,1.0.0.1]
+   version: 2
+
+// NET DEMO
+network:
+   ethernets:
+      eth0:
+         addresses: [192.168.251.100/23]
+         gateway4: 192.168.251.2
+         dhcp4: no
+         nameservers:
+                 addresses: [8.8.8.8,8.8.4.4]
+   version: 2
+
+
+// 3. 检查启用
+sudo netplan apply
+sudo netplan --debug apply
+
+// 4. 重启
+
 ```
 
-### 禁用和启用网卡
+### 1. 禁用和启用网卡
 
 ```shell
 # ifconfig -a (不加-a参数，只能查启用的网卡)
@@ -47,7 +91,7 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 # 验证了 suse系统/redhat系统/ubuntu系统/Frdora系统/CentOS系统，均能使用。
 ```
 
-### 查看已有物理网卡
+### 2. 查看已有物理网卡
 
 ```shell
 ifconfig -a
@@ -55,7 +99,7 @@ ifconfig -a
 ip addr show
 ```
 
-### 可查看缺省网关
+### 3. 可查看缺省网关
 
 - [Ubuntu 下的多网卡配置](https://yiding-he.iteye.com/blog/244943)
 
@@ -69,25 +113,25 @@ route
 # eth1 - 172.16.33.*/172.16.33.254
 ```
 
-### 要添加缺省网关
+### 4. 要添加缺省网关
 
 ```shell
 sudo route add default gw 192.168.1.1
 ```
 
-### 要删除多余的缺省网关，可以用类似下面的命令
+### 5. 要删除多余的缺省网关，可以用类似下面的命令
 
 ```shell
 sudo route del default gw 192.168.0.1
 ```
 
-### 给服务器配置外网IP
+### 6. 给服务器配置外网 IP
 
 ```shell
 vi /etc/network/interfaces
 ```
 
-### 默认是以DHCP方式配置网卡自动分配IP 我们要将默认的注释掉或删除
+### 7. 默认是以 DHCP 方式配置网卡自动分配 IP 我们要将默认的注释掉或删除
 
 ```shell
 auto eth0
@@ -95,7 +139,7 @@ iface eth0 inet dhcp
 ## 默认是以DHCP方式配置网卡自动分配IP 我们要将默认的注释掉或删除
 ```
 
-### 我们需要修改为静态IP(老版本配置)
+### 8. 我们需要修改为静态 IP(老版本配置)
 
 ```shell
 auto eth0
@@ -106,7 +150,7 @@ gateway 1921.168.1.1 #网关
 dns-nameservers 114.114.114.114 8.8.8.8 #这里设置了两个DNS
 ```
 
-### 直接配置netplan
+### 9. 直接配置 netplan
 
 ```shell
 network:
@@ -120,14 +164,22 @@ network:
    version: 2
 ```
 
-### 启用生效
+### 10. 启用生效
 
 ```shell
 sudo netplan apply
 sudo netplan --debug apply
 ```
 
-### DNS配置
+## 11. DNS
+
+### 1. DNS 配置
+
+```shell
+sudo vim /etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
 
 ```shell
 sudo vi /etc/resolv.conf
@@ -138,15 +190,7 @@ nameserver 1.1.1.1
 nameserver 1.0.0.1
 ```
 
-## DNS
-
-```shell
-sudo vim /etc/resolv.conf
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-```
-
-## DNS无法解析
+### 2. DNS 无法解析
 
 ```shell
 ping: archive.ubuntu.com: Temporary failure in name resolution

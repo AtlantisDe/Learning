@@ -27,5 +27,6 @@
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  min-height: 10px;
 }
 ```

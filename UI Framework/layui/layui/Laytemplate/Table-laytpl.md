@@ -8,7 +8,7 @@
 
 ## 方式一：绑定模版选择器
 
-```js
+```c#
 <script type="text/html" id="titleTpl">
   <a href="/detail/{{d.id}}" class="layui-table-link">{{d.title}}</a>
 </script>
@@ -113,21 +113,20 @@ return vue
 ### 模板方法 switch int
 
 ```js
-,
-          templet: function(d) {
-            var guid = d.collected;
-            var vue = "";
-            switch (guid) {
-              case 0:
-                vue = '<font color="#FF0000">未采集</font>';
-                break;
-              case 1:
-                vue = '<font color="#8000ff">OK</font>';
-                break;
-              case 2:
-                vue = '<font color="#FF0000">异常抛弃</font>';
-                break;
-            }
-            return vue;
-          }
+,templet: function(d) {
+  var guid = d.collected;
+  var vue = "";
+  switch (guid) {
+    case 0:
+      vue = '<font color="#FF0000">未采集</font>';
+      break;
+    case 1:
+      vue = '<font color="#8000ff">OK</font>';
+      break;
+    case 2:
+      vue = '<font color="#FF0000">异常抛弃</font>';
+      break;
+  }
+  return vue;
+}
 ```
