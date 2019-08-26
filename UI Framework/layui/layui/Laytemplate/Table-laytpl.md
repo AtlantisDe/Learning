@@ -69,7 +69,7 @@ laytpl.fn = function(){
 
 // 模板中调用：
 
-{{# laytpl.fn(); }
+{{# laytpl.fn(); }}
 ```
 
 ## 模板方法
