@@ -6,15 +6,15 @@
 - [在 Ubuntu18.04 安装 gitlab 国内镜像加速](http://ccimage.cn/2018-05/ubuntu18-04-install-gitlab-chinese-mirror.html#comment-115)
 - [ubuntu18.04 下安装 gitlab](https://blog.csdn.net/u012838045/article/details/80881243)
 
-## wiki
+## 1. wiki
 
 - [GitLab - 维基百科](https://zh.wikipedia.org/wiki/GitLab)
 
-## 社区版
+## 2. 社区版
 
 - [Gitlab 社区版的源代码](https://gitlab.com/gitlab-org/gitlab-ce/)
 
-## Gitlab
+## 3. Gitlab
 
 ### 1. Ubuntu-安装
 

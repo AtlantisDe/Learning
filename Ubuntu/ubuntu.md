@@ -18,6 +18,17 @@
 cat /proc/version
 uname -a
 lsb_release -a
+
+```
+
+```shell
+# 命令: lsb_release -a 查看示例
+root@skyspace:~# lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.10
+Release:        18.10
+Codename:       cosmic
 ```
 
 ## 更新源[注意 IPv4 或者 IPv6]
