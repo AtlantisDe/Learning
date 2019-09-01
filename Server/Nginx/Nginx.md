@@ -1,5 +1,7 @@
 # Nginx
 
+## 1. Wiki
+
 - [如何在 Ubuntu 18.04 上安装 Nginx](https://www.linuxidc.com/Linux/2018-05/152257.htm)
 - [http://hg.nginx.org/nginx/](http://hg.nginx.org/nginx/)
 - [nginx: Linux packages](http://nginx.org/en/linux_packages.html)
@@ -17,7 +19,9 @@
 - [NGINX setting 官方](https://docs.gitlab.com/omnibus/settings/nginx.html#manually-configuring-https)
 - [nginx 配置 ssl 证书实现 https 访问](https://www.cnblogs.com/tianhei/p/7726505.html)
 
-## 安装 Nginx
+## 2. 常用
+
+### 1. 安装 Nginx
 
 ```shell
 # Nginx的软件包在Ubuntu默认软件仓库中可用。 安装非常简单，只需键入以下命令：
@@ -41,11 +45,12 @@ sudo /etc/init.d/nginx restart
 /etc/init.d/nginx restart
 systemctl restart nginx.service
 sudo systemctl enable nginx
+
 # 查询nginx进程
 ps -ef | grep nginx
 ```
 
-## 版本查询
+### 2. 版本查询
 
 ```shell
 sudo nginx -v
@@ -55,13 +60,13 @@ sudo nginx -v
 nginx version: nginx/1.15.5 (Ubuntu)
 ```
 
-## 安装 PHP 和配置 Nginx 使用 PHP 处理器
+### 3. 安装 PHP 和配置 Nginx 使用 PHP 处理器
 
 ```shell
 sudo apt install php-fpm php-mysql
 ```
 
-## Nginx 配置新项目加域名 Nginx 常用命令
+### 4. Nginx 配置新项目加域名 Nginx 常用命令
 
 ```shell
 复制配置文件
@@ -102,12 +107,70 @@ sudo nginx -s reload #重新加载配置
 
 ```
 
-## 停止
+### 5. nginx 的停止有三种方式
 
 - [Nginx 的启动、停止与重启 - codingcloud - 博客园](https://www.cnblogs.com/codingcloud/p/5095066.html)
 
-## 禁用默认欢迎页 删除欢迎页
+```shell
+# nginx的停止有三种方式
+# 1. 从容停止
+# 查看进程号 杀死进程
+ps -ef|grep nginx
+kill -QUIT 2072
+
+# 2. 快速停止 查看进程号 杀死进程
+ps -ef|grep nginx
+kill -TERM 2132
+# 或
+kill -INT 2132
+
+
+# 3. 强制停止
+pkill -9 nginx
+
+
+sudo rm /etc/nginx/sites-enabled/default
+```
+
+### 6. 重启
 
 ```shell
-sudo rm /etc/nginx/sites-enabled/default
+sudo service nginx start #启动
+sudo service nginx stop #停止
+sudo service nginx restart #重新启动
+sudo service nginx reload #重新加载配置
+
+sudo nginx -t #检查Nginx配置是否正确
+sudo nginx -s start #启动
+sudo nginx -s stop #停止
+sudo nginx -s restart #重新启动
+sudo nginx -s reload #重新加载配置
+启动：sudo nginx
+重启：sudo service nginx reload
+关闭：sudo nginx -s stop
+查看版本：sudo nginx -v
+检查配置文件：sudo nginx -t
+```
+
+### 7. 验证 nginx 配置文件是否正确
+
+```shell
+nginx -t
+```
+
+### 10. 禁用默认欢迎页 删除欢迎页
+
+## 3. 语言包
+
+```c#
+nginx: [emerg] bind() to 0.0.0.0:800 failed (98: Address already in use)
+nginx：[emerg] bind（）到0.0.0.0:800失败（98：地址已经在使用中）
+```
+
+## 4. 问题与解决方案
+
+- [nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)](https://www.cnblogs.com/daipianpian/p/9551820.html)
+
+```c#
+
 ```

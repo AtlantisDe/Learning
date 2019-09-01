@@ -2,21 +2,25 @@
 
 - [C#中 Split 用法](https://www.cnblogs.com/wangfuyou/p/6101992.html)
 
-## 常用代码示例
+## 1. 常用代码示例
+
+### 1. 常用
 
 ```c#
 var arrlines = body.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntries);
 var arr = body.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+var arr = line.Split(",".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+var arr = line.Split("    ".ToArray(), StringSplitOptions.RemoveEmptyEntries);
 ```
 
-### 字符串 new 用法
+### 2. 字符串 new 用法
 
 ```c#
 rq.Qs = new[] { "您好,我来自外太空!" };
 rq.Qs = new[] { body };
 ```
 
-### 常用两次分割代码
+### 3. 常用两次分割代码
 
 ```c#
 var body = File.ReadAllText(path, Encoding.UTF8);
@@ -28,7 +32,7 @@ for (int i = 0; i < arrlines.Length; i++)
 }
 ```
 
-## 1、用字符串分隔
+### 4. 用字符串分隔
 
 ```c#
 using System.Text.RegularExpressions;
@@ -37,7 +41,7 @@ string[] sArray=Regex.Split(str,"js",RegexOptions.IgnoreCase);
 foreach (string i in sArray) Response.Write(i.ToString() + "<br>");
 ```
 
-## 2、用多个字符来分隔
+### 5. 用多个字符来分隔
 
 ```c#
 string str="aaajbbbscccjdddseee";
@@ -45,13 +49,26 @@ string[] sArray=str.Split(new char[2] {'j','s'});
 foreach(string i in sArray) Response.Write(i.ToString() + "<br>");
 ```
 
-## 3、用单个字符来分隔
+### 6. 用单个字符来分隔
 
 ```c#
 string str="aaajbbbjccc";
 string[] sArray=str.Split('j');
 foreach(string i in sArray) Response.Write(i.ToString() + "<br>");
 ```
+
+### 7. 逐字分割
+
+```c#
+var te = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~！＂＃＄％＆＇（）＊＋，－．／：；＜＝＞？＠［＼］＾＿｀｛｜｝～";
+var arr = te.ToArray();
+foreach (var item in arr)
+{
+    Console.WriteLine(item);
+}
+```
+
+### 99. 其它汇总示例
 
 ```c#
 // String.Split 方法有6个重载函数：

@@ -63,7 +63,9 @@ Enter same passphrase again:
 
 ```
 
-### 2. 添加多个 ssh key
+### 2. 多个 KEY 与 Config 配置
+
+#### 1. 添加 ssh key
 
 - PS 命令执行
 
@@ -107,4 +109,28 @@ C:\Users\Sky\.ssh\GitDeveloper
 // 4. 删除卸载
 // 一键删除所有
 rm -rf $shh_folder\
+```
+
+#### 2. 创建 config 文件并配置
+
+```shell
+# github
+Host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/id_rsa
+    User git
+
+# gitlab
+Host gitlab.example.com
+    HostName gitlab.example.com
+    IdentityFile ~/.ssh/gitlab
+    User git
+```
+
+#### 3. 测试配置结果
+
+```shell
+ssh -T git@github.com
+ssh -T git@git.oschina.net
+ssh -T git@gitlab.example.com
 ```

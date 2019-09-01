@@ -4,7 +4,11 @@
 - [EventHandler 委托的使用](https://www.cnblogs.com/hshuai/p/3585064.html)
 - [关于 EventHandler 的使用](https://www.cnblogs.com/lc-ant/p/4225746.html)
 
-## 简单委托 Demo
+## 委托
+
+### 1. 简单委托 Demo
+
+#### 1. 代码示例 1
 
 ```C#
 // 1. 声明委托结构 2.创建委托对象 3.实例化委托 简单三步
@@ -35,7 +39,40 @@ static void Main(string[] args)
 }
 ```
 
-## 声明委托（Delegate）
+#### 2. 代码示例 2
+
+```C#
+//Demo
+public class actionitem
+{
+   public string  Action { get; set; }
+   public bool autoexit { get; set; }
+
+   //demo
+   public delegate void RunCode();
+   public RunCode myDelegate { get; set; }
+}
+
+// 匿名方法
+actionitem = new AleseoTool.Module.RunAction.Main.Entity.actionitem()
+{
+      Action = "",
+      autoexit = true,
+      autoexittimeout = 15000,
+      myDelegate = new Module.RunAction.Main.Entity.actionitem.RunCode
+      (
+         delegate ()
+         {
+            System.Console.Write("Hello, ");
+            System.Console.WriteLine("World!");
+         }
+      )
+};
+actionitems.Add(actionitem);
+
+```
+
+### 2. 声明委托（Delegate）
 
 ```C#
 // 委托声明决定了可由该委托引用的方法。委托可指向一个与其具有相同标签的方法。
@@ -47,7 +84,7 @@ public delegate int MyDelegate (string s);
 delegate <return type> <delegate-name> <parameter list>
 ```
 
-## 实例化委托（Delegate）
+### 3. 实例化委托（Delegate）
 
 ```C#
 public delegate void printString(string s);
@@ -56,7 +93,7 @@ printString ps1 = new printString(WriteToScreen);
 printString ps2 = new printString(WriteToFile);
 ```
 
-## 下面的实例演示了委托的声明、实例化和使用，该委托可用于引用带有一个整型参数的方法，并返回一个整型值。
+### 4. 下面的实例演示了委托的声明、实例化和使用，该委托可用于引用带有一个整型参数的方法，并返回一个整型值
 
 ```C#
 using System;
@@ -103,7 +140,7 @@ Value of Num: 175
 
 ```
 
-## Demo 使用一
+### 5. Demo 使用一
 
 ```C#
 class Program

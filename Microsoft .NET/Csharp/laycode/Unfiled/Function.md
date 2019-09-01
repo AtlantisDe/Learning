@@ -2,7 +2,7 @@
 
 ## 常用
 
-## 代码 1
+### 1. 代码 1
 
 ```c#
 go_Demo_001();
@@ -24,7 +24,7 @@ finally
 }
 ```
 
-## 异常抓取代码 2
+### 2. 异常抓取代码 2
 
 ```c#
 try
@@ -38,4 +38,17 @@ catch (Exception ex)
 finally
 {
 }
+```
+
+### 3. 委托中的匿名方法
+
+```c#
+myDelegate = new Module.RunAction.Main.Entity.actionitem.RunCode
+(
+    delegate ()
+    {
+    System.Console.Write("Hello, ");
+    System.Console.WriteLine("World!");
+    }
+)
 ```

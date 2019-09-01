@@ -1,6 +1,6 @@
 # C#正则相关
 
-## 正则代码
+## 1. 正则代码
 
 ```c#
 private static string GetRegexStr_codes_str(string reString)
@@ -37,7 +37,7 @@ private static string GetRegexStr_codes_str(string reString)
         }
 ```
 
-### C#判断字符串是否只有数字和字母组成
+### 1. 判断字符串是否只有数字和字母组成
 
 ```C#
 // 正则表达式判断
@@ -61,7 +61,7 @@ if (System.Text.RegularExpressions.Regex.IsMatch("01123a.**aaS", "^[0-9a-zA-Z.]+
 else System.Diagnostics.Debug.WriteLine("不是符合要求的字符");
 ```
 
-### 字符串中如何删除掉“特殊字符”
+### 2. 字符串中如何删除掉“特殊字符”
 
 ```C#
 // 特殊字符包含下划线的话用这个

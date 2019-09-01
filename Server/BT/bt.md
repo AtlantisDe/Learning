@@ -43,4 +43,14 @@ cd /www/server/panel && python tools.py panel testpasswd
 
 ### 3. 命令行汇总
 
-- [宝塔linux面板重启、重置等命令-学派吧](https://www.xp8.net/server/392.html)
+- [宝塔 linux 面板重启、重置等命令-学派吧](https://www.xp8.net/server/392.html)
+
+## 语言包
+
+```c#
+Warning:
+If you cannot access the panel,
+release the following port (8888|888|80|443|20|21) in the security group
+
+
+```

@@ -65,3 +65,16 @@ Thread thread_ui = new Thread(delegate ()
 thread_ui.IsBackground = true;
 thread_ui.Start();
 ```
+
+## 线程间 UI 操作
+
+```c#
+if (this.IsHandleCreated)
+{
+    this.Invoke((EventHandler)delegate
+    {
+
+
+    });
+}
+```

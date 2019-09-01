@@ -24,4 +24,5 @@ Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL 
 
 ```shell
 curl -I -m 10 -o /dev/null -s -w %{http_code}"＼n"  http://localhost:3000
+curl -X POST https://dnsapi.cn/Domainshare.Modify -d 'login_token=LOGIN_TOKEN&format=json&domain_id=2059079&email=yizerowu@dnspod.com&mode=r'
 ```

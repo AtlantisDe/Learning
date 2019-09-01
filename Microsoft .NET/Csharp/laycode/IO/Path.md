@@ -7,7 +7,7 @@
 - [C#的 path.GetFullPath 获取上级目录实现方法](https://www.jb51.net/article/56773.htm)
 - [C# 获取文件名及扩展名 - Mr.石 - 博客园](https://www.cnblogs.com/shiyh/p/8657152.html)
 
-## 常用代码
+## 1. 常用代码
 
 ```c#
 var root = Path.GetPathRoot(runpath);
@@ -15,7 +15,7 @@ var pathroot = new DirectoryInfo(runpath);
 var Parent = pathroot.Parent.FullName;
 ```
 
-## C#遍历指定文件夹中的所有文件和子文件夹
+### 1. 遍历指定文件夹中的所有文件和子文件夹
 
 - [C#遍历指定文件夹中的所有文件和子文件夹 - 华山青竹 - 博客园](http://www.cnblogs.com/huashanqingzhu/p/6046861.html)
 
@@ -29,22 +29,22 @@ foreach(DirectoryInfo NextFolder in TheFolder.GetDirectories())
 foreach(FileInfo NextFile in TheFolder.GetFiles())
    this.listBox2.Items.Add(NextFile.Name);
 
----------------------------------------------------------------------------------------------------------------
+// 如何获取指定目录包含的文件和子目录
+DirectoryInfo.GetFiles()：获取目录中（不包含子目录）的文件，返回类型为FileInfo[]，支持通配符查找；
+DirectoryInfo.GetDirectories()：获取目录（不包含子目录）的子目录，返回类型为DirectoryInfo[]，支持通配符查找；
+DirectoryInfo. GetFileSystemInfos()：获取指定目录下（不包含子目录）的文件和子目录，返回类型为FileSystemInfo[]，支持通配符查找
 
-如何获取指定目录包含的文件和子目录
-    1. DirectoryInfo.GetFiles()：获取目录中（不包含子目录）的文件，返回类型为FileInfo[]，支持通配符查找；
-    2. DirectoryInfo.GetDirectories()：获取目录（不包含子目录）的子目录，返回类型为DirectoryInfo[]，支持通配符查找；
-    3. DirectoryInfo. GetFileSystemInfos()：获取指定目录下（不包含子目录）的文件和子目录，返回类型为FileSystemInfo[]，支持通配符查找；
-如何获取指定文件的基本信息；
-    FileInfo.Exists：获取指定文件是否存在；
-    FileInfo.Name，FileInfo.Extensioin：获取文件的名称和扩展名；
-    FileInfo.FullName：获取文件的全限定名称（完整路径）；
-    FileInfo.Directory：获取文件所在目录，返回类型为DirectoryInfo；
-    FileInfo.DirectoryName：获取文件所在目录的路径（完整路径）；
-    FileInfo.Length：获取文件的大小（字节数）；
-    FileInfo.IsReadOnly：获取文件是否只读；
-    FileInfo.Attributes：获取或设置指定文件的属性，返回类型为FileAttributes枚举，可以是多个值的组合
-    FileInfo.CreationTime、FileInfo.LastAccessTime、FileInfo.LastWriteTime：分别用于获取文件的创建时间、访问时间、修改时间；
+
+// 如何获取指定文件的基本信息；
+FileInfo.Exists：获取指定文件是否存在；
+FileInfo.Name，FileInfo.Extensioin：获取文件的名称和扩展名；
+FileInfo.FullName：获取文件的全限定名称（完整路径）；
+FileInfo.Directory：获取文件所在目录，返回类型为DirectoryInfo；
+FileInfo.DirectoryName：获取文件所在目录的路径（完整路径）；
+FileInfo.Length：获取文件的大小（字节数）；
+FileInfo.IsReadOnly：获取文件是否只读；
+FileInfo.Attributes：获取或设置指定文件的属性，返回类型为FileAttributes枚举，可以是多个值的组合
+FileInfo.CreationTime、FileInfo.LastAccessTime、FileInfo.LastWriteTime：分别用于获取文件的创建时间、访问时间、修改时间；
 ```
 
 ## C#获取当前目录、上级目录

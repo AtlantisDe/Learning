@@ -3,7 +3,24 @@
 - [C# byte[]数组和 string 的互相转化 (四种方法)](https://www.cnblogs.com/hbtmwangjin/articles/9141275.html)
 - [C#：文件、byte[]、Stream 相互转换 - Cch。 - 博客园](https://www.cnblogs.com/Cchblogs/p/6946709.html)
 
-## C#文件保存读取
+## 1. 对话框操作
+
+### 0. 编码读取
+
+```c#
+var encoding = CsharpLazycode.Module.FileEncoding.Util.EncodingType.GetType("E:\\ak.txt");
+```
+
+### 0. 扩展名
+
+```c#
+if (txtfinfo.Extension != ".txt")
+{
+return false;
+}
+```
+
+### 1. 文件保存读取
 
 ```c#
 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -29,7 +46,7 @@ MessageBox.Show("保存成功");
 
 ```
 
-## C#打开文件
+### 2. 打开文件
 
 ```C#
 OpenFileDialog ofd = new OpenFileDialog();
@@ -54,7 +71,7 @@ fsRead.Close();
 
 ```
 
-## C#文件目录选择
+### 3. 文件目录选择
 
 ```c#
 FolderBrowserDialog path = new FolderBrowserDialog();
@@ -67,9 +84,38 @@ foreach (string file in files)
 {
     Console.WriteLine(file);
 }
+
+FolderBrowserDialog path = new FolderBrowserDialog();
+path.Description = "测试描述";
+path.ShowNewFolderButton = true;
+path.RootFolder = System.Environment.SpecialFolder.Desktop;
 ```
 
-## C#一行一行读文件
+### 4. 窗体弹出选择目录或文件 的对话框
+
+```c#
+//弹出一个选择目录的对话框
+
+privatevoid btnSelectPath_Click(object sender, EventArgs e) //弹出一个选择目录的对话框
+ {
+    FolderBrowserDialog path = new FolderBrowserDialog();
+    path.ShowDialog();
+    this.txtPath.Text = path.SelectedPath;
+ }
+
+//弹出一个选择文件的对话框
+
+privatevoid btnSelectFile_Click(object sender, EventArgs e) //弹出一个选择文件的对话框
+ {
+    OpenFileDialog file = new OpenFileDialog();
+    file.ShowDialog();
+    this.txtFile.Text = file.SafeFileName;
+ }
+```
+
+## 2. 读写文件操作
+
+### 1. 一行一行读文件
 
 ```c#
 StreamReader sr = new StreamReader(@"D:\1.aa", System.Text.Encoding.UTF8);
@@ -79,15 +125,26 @@ while ((line = sr.ReadLine()) != null)
     Console.WriteLine(line.ToString());
 }
 sr.Close();
+
+using (var sr = new StreamReader(@"D:\1.aa", System.Text.Encoding.UTF8))
+{
+    String line;
+    while ((line = sr.ReadLine()) != null)
+    {
+        Console.WriteLine(line.ToString());
+    }
+    sr.Close();
+    sr.Dispose();
+}
 ```
 
-### 代码一 一行一行读文件
+### 2. 一行一行读文件
 
 ```c#
  //一行一行读文件
 var rcount = 0;
 
-StreamReader sr = new StreamReader(Aleseocore.Module.Aleseo.Host.Main.Method.Collectiontmp_articlepathok_path, System.Text.Encoding.UTF8);
+StreamReader sr = new StreamReader(@"D:\1.aa", System.Text.Encoding.UTF8);
 String line;
 while ((line = sr.ReadLine()) != null)
 {
@@ -102,7 +159,7 @@ sr.Close();
 
 ```
 
-## 文件的写入字节集
+### 3. 文件写入字节集
 
 ```c#
 FileStream fs = new FileStream("E:\\ak.txt", FileMode.Create);
@@ -115,7 +172,57 @@ fs.Flush();
 fs.Close();
 ```
 
-## C#文本读取
+### 4. 文本按行写入
+
+```c#
+Console.WriteLine(root.pagepath);
+System.IO.File.WriteAllText(root.pagepath, root.articlebody, Encoding.UTF8);
+
+using (System.IO.StreamWriter file = new System.IO.StreamWriter(root.siteconfig.fileslinkspath, true))
+{
+    file.WriteLine(root.pagepath); file.Close();
+}
+
+using (System.IO.StreamWriter file = new System.IO.StreamWriter(root.siteconfig.urllinkspath, true))
+{
+    file.WriteLine(root.pageurl); file.Close();
+}
+```
+
+### 5. 文本按行写入
+
+- [How to: Write to a Text File - C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
+- [How to: Write text to a file](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
+
+```c#
+using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
+{
+    file.WriteLine("Fourth line");
+}
+
+
+System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true);
+file.WriteLine("Fourth line");
+file.Close();
+file.Dispose();
+```
+
+### 6. 文本写入[常用]
+
+```c#
+System.IO.File.WriteAllText("e:\\asp_1.txt", "I LOVE YOU!");
+System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!");
+System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!", Encoding.UTF8);
+
+//Link
+try { System.IO.File.WriteAllText(root.urllinkspath, "", Encoding.UTF8); } catch (Exception) { }
+try { System.IO.File.WriteAllText(root.fileslinkspath, "", Encoding.UTF8); } catch (Exception) { }
+
+using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.urllinkspath)) { aleDB.firstTimeinit(); }
+using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.fileslinkspath)) { aleDB.firstTimeinit(); }
+```
+
+### 7. 文本读取
 
 ```c#
 File.ReadAllText(ofd.FileName);
@@ -124,7 +231,7 @@ System.IO.File.ReadAllText("", System.Text.Encoding.UTF8);
  ViewBag.main = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"/Views/1.html", System.Text.Encoding.UTF8);
 ```
 
-## C# StreamReader / OpenText
+## 3. StreamReader / OpenText
 
 - [Adding progress bar monitoring for StreamReader?](https://stackoverflow.com/questions/37344558/adding-progress-bar-monitoring-for-streamreader)
 
@@ -139,7 +246,7 @@ while (line_new != null)
 reader.Close();
 ```
 
-### 进度条
+### 0. 操作与进度条
 
 ```c#
 private void button_Load_Int_Click(object sender, EventArgs e)
@@ -166,10 +273,10 @@ private void button_Load_Int_Click(object sender, EventArgs e)
     }
 ```
 
-### 代码二
+### 1. StreamReader 读操作
 
 ```c#
-using (StreamReader sr = new StreamReader(AleseoTool.Module.DBini.Util.runfilepath, encoding))
+using (StreamReader sr = new StreamReader(@"D:\1.aa", encoding))
 {
     Stream baseStream = sr.BaseStream;
     long length = baseStream.Length;
@@ -183,7 +290,7 @@ using (StreamReader sr = new StreamReader(AleseoTool.Module.DBini.Util.runfilepa
 }
 ```
 
-### C# 使用 List 泛型读取和保存文本文件
+### 2. List 泛型读取和保存文本文件
 
 - [C# 使用 List 泛型读取和保存文本文件 - 曾祥展 - 博客园](https://www.cnblogs.com/zengxiangzhan/archive/2010/01/30/1659674.html)
 
@@ -193,11 +300,11 @@ foreach (string s in list) Console.WriteLine(s); //显示出来′
 Console.ReadKey(); //按′任一键关闭Console
 ```
 
-### C# 以独占的方式读写文件
+### 66. 以独占的方式读写文件
 
 - [c#通过 FileStream 读取、写入文件 - chenyangsocool - 博客园](https://www.cnblogs.com/chenyangsocool/p/7597601.html)
 
-#### C# System.IO.FileMode
+#### 2. System.IO.FileMode
 
 - [C# System.IO.FileMode - 帅胡 - 博客园](https://www.cnblogs.com/hushaojun/p/10598970.html)
 
@@ -219,7 +326,7 @@ FileStream objFileStream = new FileStream(fileName, FileMode.Append, FileAccess.
 // FileShare.None 标识是独占
 ```
 
-#### FileStream 读写完美示例
+#### 3. FileStream 读写完美示例
 
 ```c#
 var onlyrw_path = @"D:\Tmp\getarticleItem_guid.txt";
@@ -252,7 +359,7 @@ using (FileStream fsRead = new FileStream(onlyrw_path, FileMode.Open, FileAccess
 }
 ```
 
-#### FileStream 写
+#### 4. FileStream 写
 
 ```c#
 using (System.IO.FileStream fsWrite = new System.IO.FileStream(path, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write))
@@ -264,7 +371,7 @@ using (System.IO.FileStream fsWrite = new System.IO.FileStream(path, System.IO.F
 
 ```
 
-#### FileStream 读
+#### 5. FileStream 读
 
 ```c#
 using (FileStream fsRead = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
@@ -276,7 +383,22 @@ fsRead.Close();
 }
 ```
 
-#### byte[]数组和 string 的互相转化
+#### 6. StreamWriter 写
+
+```c#
+System.IO.StreamWriter file = new System.IO.StreamWriter(path_new, true, Encoding.UTF8);
+for (int i = 0; i < Countlist.Count; i++)
+{
+    var geoItem = Countlist[i];
+    var newline = string.Format("{0},{1},{2},{3},{4}", geoItem.v1, geoItem.v2, geoItem.v3, geoItem.v4, geoItem.count);
+    file.WriteLine(newline);
+}
+
+file.Close();
+file.Dispose();
+```
+
+#### 1. byte[]数组和 string 的互相转化
 
 - [C# byte[]数组和 string 的互相转化 (四种方法) - 无网不进 - 博客园](https://www.cnblogs.com/hbtmwangjin/articles/9141275.html)
 - [C# byte[]与 string 互转 - s_Silencer 的博客 - CSDN 博客](https://blog.csdn.net/s_Silencer/article/details/83536308)
@@ -392,67 +514,24 @@ return bytes;
  }
 ```
 
-## C#文本写入
-
-```c#
-System.IO.File.WriteAllText("e:\\asp_1.txt", "I LOVE YOU!");
-System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!");
-System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!", Encoding.UTF8);
-
-//Link
-try { System.IO.File.WriteAllText(root.urllinkspath, "", Encoding.UTF8); } catch (Exception) { }
-try { System.IO.File.WriteAllText(root.fileslinkspath, "", Encoding.UTF8); } catch (Exception) { }
-
-using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.urllinkspath)) { aleDB.firstTimeinit(); }
-using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.fileslinkspath)) { aleDB.firstTimeinit(); }
-```
-
-## 文本按行写入
-
-```c#
-Console.WriteLine(root.pagepath);
-System.IO.File.WriteAllText(root.pagepath, root.articlebody, Encoding.UTF8);
-
-using (System.IO.StreamWriter file = new System.IO.StreamWriter(root.siteconfig.fileslinkspath, true))
-{
-    file.WriteLine(root.pagepath); file.Close();
-}
-
-using (System.IO.StreamWriter file = new System.IO.StreamWriter(root.siteconfig.urllinkspath, true))
-{
-    file.WriteLine(root.pageurl); file.Close();
-}
-```
-
-## C#文本按行写入
-
-- [How to: Write to a Text File - C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
-- [How to: Write text to a file](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
-
-```c#
-using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
-{
-    file.WriteLine("Fourth line");
-}
-
-
-System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true);
-file.WriteLine("Fourth line");
-file.Close();
-file.Dispose();
-```
-
-## C#文件/目录是否存在/操作
+## 5. 文件/目录是否存在判断
 
 ```c#
 if (Directory.Exists(path))//判断目录是否存在
 {}
 if(File.Exists(filepath))//如果是文件的话
-{}
+{
 File.Delete(pa);
+}
+
+if (System.IO.File.Exists(OutPath))
+{
+System.IO.File.Delete(OutPath);
+}
+
 ```
 
-## C#文件资源
+## 6. 文件资源
 
 ```c#
 System.Reflection.Assembly Asmb = System.Reflection.Assembly.GetExecutingAssembly();
@@ -477,12 +556,12 @@ Task.Static.WebRes.Add("/static/layui/layui.all.js", Resread("aa.Resources.stati
 
 ```
 
-## C#多线程读写同一文件处理
+## 4. 多线程读写同一文件处理
 
 - [C#多线程读写同一文件处理 - 天马 3798 - 博客园](https://www.cnblogs.com/tianma3798/p/8252553.html)
 - [6 秒完成 50 万条多线程并发日志文件写入](http://www.ibcibc.com/thread-8060-1-1.html)
 
-### 文本多线程
+### 1. 文本多线程
 
 ```c#
   //go_Parallel_file_lockObj_Demo_001();

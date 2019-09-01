@@ -7,7 +7,11 @@
 - netstat -ap
 
 - 查看指定端口 查看指定端口，可以结合 grep 命令：
-- netstat -ap | grep 8080
+
+```c#
+netstat -ap | grep 8080
+netstat -ap | grep 80
+```
 
 - 也可以使用 lsof 命令：
 - lsof -i:8080
@@ -25,4 +29,6 @@ ps：kill就是给某个进程id发送了一个信号。默认发送的信号是
 netstat -ap | grep 80
 netstat -ap | grep 8080
 netstat -ap | grep 8080
+netstat -ap | grep 800
+
 ```

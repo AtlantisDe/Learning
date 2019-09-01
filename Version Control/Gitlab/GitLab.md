@@ -5,6 +5,7 @@
 - [阿里云 GitLab 的安装及使用](https://blog.csdn.net/anaitudou/article/details/80388161)
 - [在 Ubuntu18.04 安装 gitlab 国内镜像加速](http://ccimage.cn/2018-05/ubuntu18-04-install-gitlab-chinese-mirror.html#comment-115)
 - [ubuntu18.04 下安装 gitlab](https://blog.csdn.net/u012838045/article/details/80881243)
+- [GitLab 安装后修改 IP/域名 - LiShiChao - 博客园](https://www.cnblogs.com/root0/p/10191418.html)
 
 ## 1. wiki
 
@@ -126,12 +127,47 @@ reboot
 # Gitlab 服务器url修改后，项目path的修改
 
 cd /opt/gitlab/embedded/service/gitlab-rails/config
-修改 gitlab.yml
+# 修改 gitlab.yml
 host: www.aaa.com
     port: 9091
     https: true
 
-gitlab启用https ;修改配置文件  生成秘钥与证书 参考上面文章链接
+# gitlab启用https ;修改配置文件  生成秘钥与证书 参考上面文章链接
 ./ssl_genKey.sh
 openssl req -nodes -newkey rsa:2048 -keyout gitlab.domain.com.key -out gitlab.domain.com.csr
+```
+
+### 4. 项目地址域名或 IP 更改方法
+
+- [修改 gitlab 上 git 服务器的地址 - 我不想秃头的博客 - CSDN 博客](https://blog.csdn.net/qq_41838901/article/details/95349670)
+
+```shell
+# 进入安装目录
+cd /opt/gitlab/embedded/service/gitlab-rails/config
+
+# 修改 gitlab.yml 文件
+vi gitlab.yml
+
+# .将gitlab节点下的host改成对应的ip/域名
+  ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: gitlab.example.com
+    port: 9091
+    https: false
+```
+
+### 5. 重启服务,就可以了
+
+```shell
+gitlab-ctl restart
+gitlab-ctl status
+```
+
+## 4. 中文语言包
+
+```c#
+The Auto DevOps pipeline has been enabled and will be used if no alternative CI configuration file is found. More information
+Auto DevOps管道已启用，如果未找到备用CI配置文件，将使用该管道。 更多信息
+
 ```

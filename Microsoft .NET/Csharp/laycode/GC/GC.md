@@ -30,6 +30,6 @@ var gc_count_urls = 0;
 while (true)
 {
     CsharpLazycode.Module.Laycode.sys.WaitDelay(2 * 1000, true);
-    gc_count_urls++; if (gc_count_urls > 5) { gc_count_urls = 0; GC.Collect(); } 
+    gc_count_urls++; if (gc_count_urls > 5) { gc_count_urls = 0; GC.Collect(); }
 }
 ```

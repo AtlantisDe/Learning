@@ -28,3 +28,13 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install dotnet-sdk-2.2
 ```
+
+#### 3. 查看安装状态
+
+```shell
+# 直接看版本：
+dotnet --version
+
+# 使用yum查看info
+yum info dotnet-sdk-2.2
+```

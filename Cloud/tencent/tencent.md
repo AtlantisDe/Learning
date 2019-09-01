@@ -1,7 +1,8 @@
 # tencent
 
 - [内容分发网络 刷新 URL - API 文档 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/228/3946)
-- [数字生态，钜惠来袭，云计算产品新购3折起-腾讯云](https://cloud.tencent.com/act/mid-year?from=10688#cdn)
+- [数字生态，钜惠来袭，云计算产品新购 3 折起-腾讯云](https://cloud.tencent.com/act/mid-year?from=10688#cdn)
+- [DNSPod](https://www.dnspod.cn/console/dashboard)
 
 ## 接口鉴权
 
