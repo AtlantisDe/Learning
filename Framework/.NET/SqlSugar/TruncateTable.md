@@ -11,7 +11,7 @@
 {
     try
     {
-        using (var db = Module.Aleseo.Database.Main.Base.GetInstance())
+        using (var db = Module.DemoTest.Database.Main.Base.GetInstance())
         {
             db.Ado.GetInt("VACUUM");
             return true;

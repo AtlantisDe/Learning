@@ -1,5 +1,7 @@
 # phpStudy
 
+- [phpStudy - 让天下没有难配的服务器环境！](https://www.xp.cn/)
+- [Windows版phpstudy下载 - phpStudy](https://www.xp.cn/download.html)
 - [phpstudy 伪静态设置](https://jingyan.baidu.com/article/e9fb46e151a6557521f766d6.html)
 - [尘封的记忆-phpstudy 本地环境开启.htaccess 伪静态](http://www.scbzlx.com/post/19.html)
 - [phpstudy 配置伪静态的方法 - 心存善念 - 博客园](https://www.cnblogs.com/xcsn/p/6149080.html)

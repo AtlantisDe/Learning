@@ -139,6 +139,7 @@ investigate only 仅调查
 instrumentation 仪器仪表
 merge runtime 合并运行时
 apply pattern to files and folders 应用到文件夹和文件
+proto 原始; 原型; 原始的;
 ```
 
 ## MVC

@@ -29,6 +29,10 @@ for (int i = 0; i < arrlines.Length; i++)
 {
     var item = arrlines[i];
     var arr = item.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+    if (arr.Length >= 3)
+    {
+
+    }
 }
 ```
 

@@ -99,7 +99,7 @@ else
 var doc = new HtmlAgilityPack.HtmlDocument();
 doc.LoadHtml(retString);
 
-var articleItem = new Module.Aleseo.Collection.Main.Entity.Article.articleItem();
+var articleItem = new Module.DemoTest.Collection.Main.Entity.Article.articleItem();
 
 var title = doc.DocumentNode.Element("html").Element("head").Element("title");
 var description = doc.DocumentNode.SelectSingleNode("//meta[@name='description']");

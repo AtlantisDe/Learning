@@ -34,9 +34,9 @@ public string para_get_base(string id, string name)
 ```c#
 [Route("api/Links/linkitems_newadd")]
 [HttpPost]
-public Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish linkitemAdd([FromBody]string host)
+public DemoCore.Module.DemoTest.Host.Main.Entity.apipublish linkitemAdd([FromBody]string host)
 {
-    var root = Aleseocore.Module.siteitem.Util.linkitemAdd(host);
+    var root = DemoCore.Module.siteitem.Util.linkitemAdd(host);
     return root;
 }
 ```

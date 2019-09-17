@@ -91,4 +91,15 @@ function open_demo(host) {
     content: "/demo.aspx?host=" + host
   });
 }
+
+layer.open({
+  type: 2,
+  title:
+    "百度链接批量提交在线工具V1.0 (单词提交网址数量不能超过5万条,具体看官方说明)",
+  shadeClose: true,
+  shade: 0.8,
+  area: ["90%", "80%"],
+  maxmin: true,
+  content: "/App/Console/BaiduUrlsPush"
+});
 ```

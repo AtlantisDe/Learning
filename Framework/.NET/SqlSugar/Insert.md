@@ -9,12 +9,12 @@
 ```c#
 var t2 = db.Insertable(insertObj).ExecuteCommand();
 
-db.Insertable<Aleseo.Database.Main.Entity.Models.demo_guiditem>(item).AddQueue();
+db.Insertable<DemoTest.Database.Main.Entity.Models.demo_guiditem>(item).AddQueue();
 
 db.Insertable(demo_Guiditems);
 
 
-db.Insertable<Aleseo.Database.Main.Entity.Models.urlsguiditem>(item).AddQueue();
+db.Insertable<DemoTest.Database.Main.Entity.Models.urlsguiditem>(item).AddQueue();
 
 ```
 

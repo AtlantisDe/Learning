@@ -56,9 +56,9 @@ public ActionResult test()
         [Route("api/Token/logincheck")]
         [HttpPost]
         [HttpGet]
-        public Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish logincheck(Aleseocore.Module.Aleseo.Host.Main.Entity.apirequestpackageTokenlogin apirequestpackageTokenlogin)
+        public DemoCore.Module.DemoTest.Host.Main.Entity.apipublish logincheck(DemoCore.Module.DemoTest.Host.Main.Entity.apirequestpackageTokenlogin apirequestpackageTokenlogin)
         {
-            var root = new Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish();
+            var root = new DemoCore.Module.DemoTest.Host.Main.Entity.apipublish();
             if (ModelState.IsValid)
             {
                 root.code = 200;
@@ -81,9 +81,9 @@ public ActionResult test()
         [Route("api/Token/logincheck")]
         [HttpPost]
         [HttpGet]
-        public Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish logincheck(Aleseocore.Module.Aleseo.Host.Main.Entity.apirequestpackageTokenlogin apirequestpackageTokenlogin)
+        public DemoCore.Module.DemoTest.Host.Main.Entity.apipublish logincheck(DemoCore.Module.DemoTest.Host.Main.Entity.apirequestpackageTokenlogin apirequestpackageTokenlogin)
         {
-            var root = new Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish();
+            var root = new DemoCore.Module.DemoTest.Host.Main.Entity.apipublish();
             if (System.Web.Security.FormsAuthentication.IsAuthenticated)
             {
                 root.code = 200;

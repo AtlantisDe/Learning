@@ -11,6 +11,12 @@
 
 ViewBag.error = @"<h6 style=""color: red"">错误</h6>";
 // 前台：
+@{
+ViewBag.Title = "DEMO";
+ViewBag.Eml = "@";
+}
 
 @Html.Raw(ViewBag.error)
+@Html.Raw('@')
+@Html.Raw(ViewBag.Eml)
 ```

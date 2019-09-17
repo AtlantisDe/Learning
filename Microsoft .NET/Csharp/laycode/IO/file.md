@@ -122,7 +122,8 @@ StreamReader sr = new StreamReader(@"D:\1.aa", System.Text.Encoding.UTF8);
 String line;
 while ((line = sr.ReadLine()) != null)
 {
-    Console.WriteLine(line.ToString());
+    var item = line.ToString();
+    Console.WriteLine(item);
 }
 sr.Close();
 
@@ -131,7 +132,8 @@ using (var sr = new StreamReader(@"D:\1.aa", System.Text.Encoding.UTF8))
     String line;
     while ((line = sr.ReadLine()) != null)
     {
-        Console.WriteLine(line.ToString());
+        var item = line.ToString();
+        Console.WriteLine(item);
     }
     sr.Close();
     sr.Dispose();
@@ -175,6 +177,10 @@ fs.Close();
 ### 4. 文本按行写入
 
 ```c#
+var file = new System.IO.StreamWriter(demo_path, true);
+file.WriteLine(antonym_item);
+file.Close();
+
 Console.WriteLine(root.pagepath);
 System.IO.File.WriteAllText(root.pagepath, root.articlebody, Encoding.UTF8);
 
@@ -218,8 +224,8 @@ System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!", Encoding.UTF
 try { System.IO.File.WriteAllText(root.urllinkspath, "", Encoding.UTF8); } catch (Exception) { }
 try { System.IO.File.WriteAllText(root.fileslinkspath, "", Encoding.UTF8); } catch (Exception) { }
 
-using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.urllinkspath)) { aleDB.firstTimeinit(); }
-using (var aleDB = new Aleseocore.Module.Aledb.Class.aleDB(root.fileslinkspath)) { aleDB.firstTimeinit(); }
+using (var aleDB = new DemoCore.Module.Aledb.Class.aleDB(root.urllinkspath)) { aleDB.firstTimeinit(); }
+using (var aleDB = new DemoCore.Module.Aledb.Class.aleDB(root.fileslinkspath)) { aleDB.firstTimeinit(); }
 ```
 
 ### 7. 文本读取
@@ -616,7 +622,7 @@ Task.Static.WebRes.Add("/static/layui/layui.all.js", Resread("aa.Resources.stati
                     Thread Th_txt_3 = new Thread(delegate ()
                     {
                         CsharpLazycode.Module.Laycode.sys.WaitDelay(3 * 1000, true);
-                        StreamReader sr_textdmo = new StreamReader(Aleseocore.Module.Aleseo.Host.Main.Method.Collectiontmp_articlepathok_path, System.Text.Encoding.UTF8);
+                        StreamReader sr_textdmo = new StreamReader(DemoCore.Module.DemoTest.Host.Main.Method.Collectiontmp_articlepathok_path, System.Text.Encoding.UTF8);
                         String line_textdmo;
                         while ((line_textdmo = sr_textdmo.ReadLine()) != null)
                         {

@@ -15,10 +15,6 @@
 
 - [GIPHY Capture](https://giphy.com/apps/giphycapture)
 
-## IP
-
-- [http://pv.sohu.com/cityjson?ie=utf-8](http://pv.sohu.com/cityjson?ie=utf-8)
-
 ## 在线中文汉字转拼音工具 有带声调和不带声调
 
 - [在线中文汉字转拼音工具 有带声调和不带声调](http://www.fuhaoku.com/tool/pinyin.html)
@@ -36,11 +32,6 @@
 
 - [在线代码格式化](http://tool.oschina.net/codeformat/html)
 - [HTML 在线转义，HTML 在线转义工具 —在线工具](https://www.sojson.com/rehtml)
-
-## 原创-换行引号替换转义
-
-- [换行引号替换转义[原创]](https://atlantisde.github.io/Learning/Web/convert/replace/replace.html)
-- [换行替换[原创]](https://atlantisde.github.io/Learning/Web/convert/replace/replaceNorn.html)
 
 ## XML
 

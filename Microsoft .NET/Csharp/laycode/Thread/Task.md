@@ -8,6 +8,11 @@ Task<string> ReadAsStringAsync()
 var contxt = rst.Content;
 var aaa = contxt.ReadAsStringAsync();
 var ccc = aaa.Result;
+
+
+var Down = new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
+var Result = Down.Result;
+
 ```
 
 ## 可等待 超时

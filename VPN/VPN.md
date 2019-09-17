@@ -4,6 +4,10 @@
 - [七款适用于企业的开源 VPN 工具 - 小叶樟 - CSDN 博客](https://blog.csdn.net/xinfei1969/article/details/81117345)
 - [window server2008 开启 VPN 服务器 - xiaoxuetu\_的博客 - CSDN 博客](https://blog.csdn.net/xiaoxuetu_/article/details/74783548)
 
+## Buy VPN
+
+- [无日志的VPN服务提供商](https://whoer.net/zh/vpn)
+
 ## SoftEther VPN
 
 - [SoftEther VPN Project - SoftEther VPN Project](https://www.softether.org/)

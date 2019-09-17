@@ -8,6 +8,9 @@
 CsharpLazycode.Module.Laycode.sys.WaitDelay(1000, true);
 CsharpLazycode.Module.Laycode.sys.WaitDelay(CsharpLazycode.Module.Laycode.random.NextIncludeMax(3, 5) * 1000, true);
 
+var rid = CsharpLazycode.Module.Laycode.random.Next(0, ips.Length);
+var rid = CsharpLazycode.Module.Laycode.random.Next(0, ips.Count);
+var rid = CsharpLazycode.Module.Laycode.random.NextIncludeMax(20, 100);
 var ridv = CsharpLazycode.Module.Laycode.random.NextIncludeMax(20, 100);
 var ridv = CsharpLazycode.Module.Laycode.random.NextIncludeMax(Convert.ToInt32(arrleng[0]), Convert.ToInt32(arrleng[1]));
 var port = CsharpLazycode.Module.Laycode.random.NextIncludeMax(1200, 65535);
@@ -70,9 +73,9 @@ var count = CsharpLazycode.Module.Laycode.str.GetChineseCharactersCount(socure);
 ### 文本编码
 
 ```c#
- if (AleseoTool.Module.DBini.Util.candoit == false) { return; }
+ if (DemoTestTool.Module.DBini.Util.candoit == false) { return; }
 
-var encoding = CsharpLazycode.Module.FileEncoding.Util.EncodingType.GetType(AleseoTool.Module.DBini.Util.runfilepath);
+var encoding = CsharpLazycode.Module.FileEncoding.Util.EncodingType.GetType(DemoTestTool.Module.DBini.Util.runfilepath);
 if (encoding.EncodingName == Encoding.UTF8.EncodingName || encoding.EncodingName == CsharpLazycode.Module.encode.Util.GB2312.EncodingName)
 {
 }

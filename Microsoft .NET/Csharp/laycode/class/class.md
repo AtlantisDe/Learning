@@ -235,7 +235,7 @@ public aleDB(string INIPath, string _encodingName = "utf-8") : base(INIPath, _en
 ### 继承代码示例 2
 
 ```C#
- public class muluclassdb : Aleseocore.Module.Aledb.Class.aleDB
+ public class muluclassdb : DemoCore.Module.Aledb.Class.aleDB
     {
         public muluclassdb(string INIPath, string _encodingName = "utf-8") : base(INIPath, _encodingName)
         {

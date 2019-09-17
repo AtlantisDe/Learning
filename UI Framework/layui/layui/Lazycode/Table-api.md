@@ -75,7 +75,7 @@ table.on("tool(edit)", function(obj) {
 });
 ```
 
-#### 4.表格单元格开关数据同步
+#### 4. 表格单元格开关数据同步
 
 ```js
 function dataSynTablerowSwitch(obj) {
@@ -89,4 +89,12 @@ function dataSynTablerowSwitch(obj) {
     [obj.elem.name]: obj.elem.checked
   });
 }
+```
+
+#### 5. 表格分页显示
+
+```js
+tableIns.smarttags.config.page.limit = 10;
+tableIns.smarttags.reload({});
+tableIns.smarttags.reload({page:{curr:1,limit:50}});
 ```

@@ -9,6 +9,8 @@ Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 
 System.IO.File.WriteAllText(ccc, Newtonsoft.Json.JsonConvert.SerializeObject(articleItem), Encoding.UTF8);
 
+var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Main.Entity.tpl.tplitem>>(System.IO.File.ReadAllText("", System.Text.Encoding.UTF8));
+
 var jobj = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JArray>(rdata);
 
 异常[无法将类型为“Newtonsoft.Json.Linq.JObject”的对象强制转换为类型“Newtonsoft.Json.Linq.JArray”。]
@@ -27,7 +29,7 @@ guid = jobj["guid"].ToString();
 
 ```
 
-## Version (AssemblyVersion) (Runtime)
+## 1. Version (AssemblyVersion) (Runtime)
 
 ```c#
 9.0.0.0
@@ -39,7 +41,24 @@ guid = jobj["guid"].ToString();
 
 - [assembly: TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName = ".NET Framework 4.5")]
 
-## Newtonsoft.Json 通过 JObject 读取 json 对像 超简单
+## 2. Util
+
+```c#
+public class Util
+{
+    public static string SerializeObject(object value)
+    {
+        return Newtonsoft.Json.JsonConvert.SerializeObject(value);
+    }
+
+    public static T DeserializeObject<T>(string jsonstext)
+    {
+        return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonstext); ;
+    }
+}
+```
+
+## 3. Newtonsoft.Json 通过 JObject 读取 json 对像 超简单
 
 - [Newtonsoft.Json 通过 JObject 读取 json 对像 超简单 - WebEnh - 博客园](https://www.cnblogs.com/webenh/p/5745355.html)
 

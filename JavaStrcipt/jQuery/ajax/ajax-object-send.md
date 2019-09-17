@@ -48,13 +48,13 @@ layui.$.ajax({
 
 ```c#
 
-public class api_s2c_Regkeyitem : Module.Aleseo.Api.Main.Entity.ApiBase.Root
+public class api_s2c_Regkeyitem : Module.DemoTest.Api.Main.Entity.ApiBase.Root
 {
     public Module.Regmanagement.Main.Entity.DB.Models.regkeyitem regkeyitem { get; set; }
 
 
 }
-public class api_c2s_Regkeyitem : Module.Aleseo.Api.Main.Entity.ApiRequestPackageBase.Root
+public class api_c2s_Regkeyitem : Module.DemoTest.Api.Main.Entity.ApiRequestPackageBase.Root
 {
     public Module.Regmanagement.Main.Entity.DB.Models.regkeyitem regkeyitem { get; set; }
 

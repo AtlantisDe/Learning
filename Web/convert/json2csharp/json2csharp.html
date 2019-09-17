@@ -39,8 +39,8 @@
                                 <button class="layui-btn" lay-submit lay-filter="zhuanhuan">转换</button>
                                 <button class="layui-btn" lay-submit lay-filter="Clear"
                                     onclick="layui.form.val('formTest', { text1: '',text2: ''  });">清空</button>
-                                <button class="layui-btn btn_copy" lay-submit lay-filter="btn_copy" data-clipboard-action="copy"
-                                    data-clipboard-target="#text2">复制</button>
+                                <button class="layui-btn btn_copy" lay-submit lay-filter="btn_copy"
+                                    data-clipboard-action="copy" data-clipboard-target="#text2">复制</button>
                             </div>
 
 
@@ -91,6 +91,8 @@
         JSON2CSharp = {
             _allClass: [],
             _genClassCode: function (obj, name) {
+                
+
                 var clas = "public class {0}\r\n{\r\n".format(name || "Root");
                 for (var n in obj) {
                     var v = obj[n];
@@ -103,6 +105,8 @@
                 return this._allClass.join("\r\n\r\n");
             },
             _genTypeByProp: function (name, val) {
+
+                
                 switch (Object.prototype.toString.apply(val)) {
                     case "[object Boolean]": {
                         return "bool";
@@ -119,7 +123,7 @@
                         return name;
                     }
                     case "[object Array]": {
-                        return "List&#60;{0}&#62;".format(this._genTypeByProp(name + "Item", val[0]));
+                        return "List<{0}>".format(this._genTypeByProp(name + "Item", val[0]));
                     }
                     default: {
                         return "string";
@@ -130,7 +134,7 @@
                 return "";
                 //这里注释行去掉
                 var commm = typeof (val) == "string" && /.*[\u4e00-\u9fa5]+.*$/.test(val) ? val : "";
-                return "/// &#60;summary&#62;\r\n    /// " + commm + "\r\n    /// &#60;/summary&#62;\r\n";
+                return "/// <summary>\r\n    /// " + commm + "\r\n    /// </summary>\r\n";
             },
             convert: function (jsonObj) {
                 this._allClass = [];
@@ -147,7 +151,7 @@
                 var v = eval("(" + document.getElementById("jsonStr").value + ")");
                 // document.getElementById("class").className = "prettyprint";
                 layui.form.val("formTest", {
-                    "text2": JSON2CSharp.convert(v)
+                    "text2": JSON2CSharp.convert(v).replace(/-/g,"_")
                 })
 
                 // document.getElementById("class").innerHTML = JSON2CSharp.convert(v);

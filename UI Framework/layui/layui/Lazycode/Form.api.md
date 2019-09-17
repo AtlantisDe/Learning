@@ -2,7 +2,7 @@
 
 ## 操作
 
-### 1. SET
+### 1. SET 赋值可实体类
 
 ```js
 //时间控件必须格式化
@@ -23,7 +23,7 @@ layui.form.val("Div_regkeyitems_form", {
 });
 ```
 
-### 2. 表格数据赋值到目标实体数据封装方法
+### 2. GET 表格数据赋值到目标实体数据封装方法
 
 ```js
 layuiFormdatafield2targetfiled(data.field, regkeyitem);

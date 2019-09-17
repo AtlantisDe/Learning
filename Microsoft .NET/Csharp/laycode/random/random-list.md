@@ -11,14 +11,14 @@
             var a = "数据库随机检查抽取网站名称失败";
             try
             {
-                using (var db = Module.Aleseo.Database.Main.Base.GetInstance())
+                using (var db = Module.DemoTest.Database.Main.Base.GetInstance())
                 {
                     var sitenametmp = GetoneSitenameforbuild();
                     var count = 0;
-                    var hostitems = new List<Module.Aleseo.Database.Main.Entity.Models.hostitem>();
+                    var hostitems = new List<Module.DemoTest.Database.Main.Entity.Models.hostitem>();
                     while (true)
                     {
-                        try { hostitems = db.Queryable<Module.Aleseo.Database.Main.Entity.Models.hostitem>().Where(it => it.name == sitenametmp).ToList(); }
+                        try { hostitems = db.Queryable<Module.DemoTest.Database.Main.Entity.Models.hostitem>().Where(it => it.name == sitenametmp).ToList(); }
                         catch (Exception) { return sitenametmp; }
                         count++; if (count > 1000) { Console.WriteLine("网站名称随机提取失败!"); break; }
                     }

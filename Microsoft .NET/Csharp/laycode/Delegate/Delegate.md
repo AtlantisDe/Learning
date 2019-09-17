@@ -54,7 +54,7 @@ public class actionitem
 }
 
 // 匿名方法
-actionitem = new AleseoTool.Module.RunAction.Main.Entity.actionitem()
+actionitem = new DemoTestTool.Module.RunAction.Main.Entity.actionitem()
 {
       Action = "",
       autoexit = true,

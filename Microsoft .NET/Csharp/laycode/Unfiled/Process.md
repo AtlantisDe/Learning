@@ -18,6 +18,7 @@ taskkill /im WerFault.exe /f
 taskkill /im csrss.exe /f
 taskkill /im CefSharp.BrowserSubprocess.exe /f
 taskkill /pid 928 -t -f
+taskkill /im chrome.exe /f
 ```
 
 ### 运行程序

@@ -72,12 +72,12 @@ unless you first disable automatic obfuscation for this project from Crypto Obfu
 除非您首先从Crypto Obfuscator的“项目”菜单中禁用此项目的自动模糊处理 - >“启用/禁用Visual Studio集成”并在Visual Studio中重建您的解决方案以生成未经模糊处理的程序集。
 
 
-The assembly 'Aleseocore' was NOT originally signed but was signed after obfuscation. The assembly may not run correctly!
+The assembly 'DemoCore' was NOT originally signed but was signed after obfuscation. The assembly may not run correctly!
  -->Solution: Select this assembly in the list above, then via the 'Signing / Authenticode' tab, remove the key file specified for this assembly.
 Loading assembly 'D:\a.dll'
 Detected Assembly Target Framework: Normal
 
-装配'Aleseocore'最初没有签署，但在混淆后签署。 装配可能无法正常运行！
+装配'DemoCore'最初没有签署，但在混淆后签署。 装配可能无法正常运行！
    - >解决方案：在上面的列表中选择此程序集，然后通过“签名/验证码”选项卡，删除为此程序集指定的密钥文件。
 加载程序集'D：\ a.dll'
 检测到的装配目标框架：正常

@@ -10,7 +10,7 @@
                     Thread Th3 = new Thread(delegate ()
                     {
                         //批量写入测试
-                        List<Aleseo.Database.Main.Entity.Models.demo_guiditem> demo_Guiditems = new List<Aleseo.Database.Main.Entity.Models.demo_guiditem>();
+                        List<DemoTest.Database.Main.Entity.Models.demo_guiditem> demo_Guiditems = new List<DemoTest.Database.Main.Entity.Models.demo_guiditem>();
 
 
                         Parallel.For(0, 0, new ParallelOptions() { MaxDegreeOfParallelism = 1000 }, (i, loopState) =>
@@ -19,7 +19,7 @@
                             {
                                 lock (lockObj_dbsqlite)
                                 {
-                                    demo_Guiditems.Add(new Aleseo.Database.Main.Entity.Models.demo_guiditem() { guid = i.ToString(), body = File.ReadAllText(@"D:\wwwrootRes\.....c4150a1b8b8005af3ad0127adb125fae.txt", Encoding.UTF8) });
+                                    demo_Guiditems.Add(new DemoTest.Database.Main.Entity.Models.demo_guiditem() { guid = i.ToString(), body = File.ReadAllText(@"D:\wwwrootRes\.....c4150a1b8b8005af3ad0127adb125fae.txt", Encoding.UTF8) });
                                 }
 
                             }
@@ -37,7 +37,7 @@
                         stopwatch.Reset();
                         stopwatch.Start();
 
-                        using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                        using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                         {
 
 
@@ -78,9 +78,9 @@
                         {
                             try
                             {
-                                using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                                using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                                 {
-                                    var urlitems = db.Queryable<Aleseo.Database.Main.Entity.Models.demo_guiditem>().OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(50).ToList();
+                                    var urlitems = db.Queryable<DemoTest.Database.Main.Entity.Models.demo_guiditem>().OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(50).ToList();
                                 }
                             }
                             catch (Exception)

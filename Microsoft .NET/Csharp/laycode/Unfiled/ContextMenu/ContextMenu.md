@@ -11,14 +11,14 @@ CsharpLazycode.Module.Laycode.ContextMenu.AddFileContextMenuItem("一键转换SE
 ```
 
 ```C#
-AleseoTool.Module.DBini.Util.runfilepath = "";
+DemoTestTool.Module.DBini.Util.runfilepath = "";
 if (args.Length > 0)
 {
     var path = args[0];
     var ext = Path.GetExtension(path);
     if (ext.ToLower() == ".txt")
     {
-        AleseoTool.Module.DBini.Util.runfilepath = path;
+        DemoTestTool.Module.DBini.Util.runfilepath = path;
     }
     else
     {

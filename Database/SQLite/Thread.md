@@ -31,9 +31,9 @@
                        {
                            lock (lockObj)
                            {
-                               using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                               using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                                {
-                                   var demo_guiditem = new Aleseo.Database.Main.Entity.Models.demo_guiditem();
+                                   var demo_guiditem = new DemoTest.Database.Main.Entity.Models.demo_guiditem();
                                    demo_guiditem.guid = i.ToString();
                                    demo_guiditem.body = System.Guid.NewGuid().ToString("N");
                                    var t2 = db.Insertable(demo_guiditem).ExecuteCommand();
@@ -58,9 +58,9 @@
                    {
                        try
                        {
-                           using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                           using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                            {
-                               var urlitems = db.Queryable<Aleseo.Database.Main.Entity.Models.demo_guiditem>().OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(50).ToList();
+                               var urlitems = db.Queryable<DemoTest.Database.Main.Entity.Models.demo_guiditem>().OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(50).ToList();
                            }
                        }
                        catch (Exception)
@@ -86,7 +86,7 @@
                 Thread Th3 = new Thread(delegate ()
                 {
                     //批量写入测试
-                    List<Aleseo.Database.Main.Entity.Models.demo_guiditem> demo_Guiditems = new List<Aleseo.Database.Main.Entity.Models.demo_guiditem>();
+                    List<DemoTest.Database.Main.Entity.Models.demo_guiditem> demo_Guiditems = new List<DemoTest.Database.Main.Entity.Models.demo_guiditem>();
 
 
 
@@ -96,7 +96,7 @@
                        {
                            lock (lockObj)
                            {
-                               demo_Guiditems.Add(new Aleseo.Database.Main.Entity.Models.demo_guiditem() { guid = i.ToString(), body = File.ReadAllText(@"D:\wwwrootRes\AleseoTemp\Articles\c4150a1b8b8005af3ad0127adb125fae.txt", Encoding.UTF8) });
+                               demo_Guiditems.Add(new DemoTest.Database.Main.Entity.Models.demo_guiditem() { guid = i.ToString(), body = File.ReadAllText(@"D:\wwwrootRes\DemoTestTemp\Articles\c4150a1b8b8005af3ad0127adb125fae.txt", Encoding.UTF8) });
                            }
 
                        }
@@ -116,7 +116,7 @@
                     stopwatch.Reset();
                     stopwatch.Start();
 
-                    using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                    using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                     {
 
                         var t2 = db.Insertable(demo_Guiditems).ExecuteCommand();
@@ -146,12 +146,12 @@
 
                     Thread Th_insert_1 = new Thread(delegate ()
                     {
-                        using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                        using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                         {
                             for (int i = 0; i < 2500; i++)
                             {
                                 var item = demo_Guiditems[i];
-                                db.Insertable<Aleseo.Database.Main.Entity.Models.demo_guiditem>(item).AddQueue();
+                                db.Insertable<DemoTest.Database.Main.Entity.Models.demo_guiditem>(item).AddQueue();
                             }
                             var more = db.SaveQueuesAsync();
                         }
@@ -163,12 +163,12 @@
                     Thread Th_insert_2 = new Thread(delegate ()
                     {
 
-                        using (var db = Aleseocore.Module.Aleseo.Database.Main.Base.GetInstance_demo_guid())
+                        using (var db = DemoCore.Module.DemoTest.Database.Main.Base.GetInstance_demo_guid())
                         {
                             for (int i = 2500 - 1; i < 5000; i++)
                             {
                                 var item = demo_Guiditems[i];
-                                db.Insertable<Aleseo.Database.Main.Entity.Models.demo_guiditem>(item).AddQueue();
+                                db.Insertable<DemoTest.Database.Main.Entity.Models.demo_guiditem>(item).AddQueue();
                             }
                             var more = db.SaveQueuesAsync();
                         }

@@ -116,7 +116,9 @@ SELECT `ID`,`Name` FROM `Student`  WHERE (( `ID` = @ID0 ) OR ( `Name` = @Name1 )
 ### 统计
 
 ```c#
-root.allcount = db.Queryable<Module.Aleseo.Database.Main.Entity.Models.urlitem>().Count();
+root.allcount = db.Queryable<Module.DemoTest.Database.Main.Entity.Models.urlitem>().Count();
+SELECT COUNT (*)   as   总计   FROM "main"."T_urls_guid"
+
 ```
 
 ### 判断是否存根据主键查询
@@ -128,14 +130,14 @@ root.allcount = db.Queryable<Module.Aleseo.Database.Main.Entity.Models.urlitem>(
 ### 判断记录是否存
 
 ```c#
-bool exists1 = db.Queryable<Module.Aleseo.Database.Main.Entity.Models.urlitem>().Any(it => it.guid == aitem.hrefmd5);
-return db.Queryable<Module.Aleseo.Database.Main.Entity.Models.urlitem>().Any(it => it.guid == aitem.hrefmd5);
+bool exists1 = db.Queryable<Module.DemoTest.Database.Main.Entity.Models.urlitem>().Any(it => it.guid == aitem.hrefmd5);
+return db.Queryable<Module.DemoTest.Database.Main.Entity.Models.urlitem>().Any(it => it.guid == aitem.hrefmd5);
 ```
 
 ### 随机查询出 10 条数据
 
 ```c#
-var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Where(it => it.linktype == Aleseocore.Module.siteitem.Main.Const.urlitemtype.article).OrderBy(it => SqlFunc.GetRandom()).Take(50).ToList();
+var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Where(it => it.linktype == DemoCore.Module.siteitem.Main.Const.urlitemtype.article).OrderBy(it => SqlFunc.GetRandom()).Take(50).ToList();
 ```
 
 ### 特殊符号查询
@@ -414,4 +416,22 @@ List<ResultModel> data = db.Queryable<Student>()
       ID = f.ID,
       StudentName = f.Name
     }).ToList();
+```
+
+#### 10. 执行 SQL
+
+```c#
+var t12 = db.SqlQueryable<Student>("select * from student").Where(it=>it.id>0).ToPageList(1, 2);
+var t12 = db.SqlQueryable<dynamic>("select * from student").ToPageList(1, 2);
+```
+
+##### 1. Like
+
+```c#
+
+// Sqlite like
+SELECT * FROM T_urls_guid WHERE T_urls_guid.url LIKE '%163.com%' AND
+T_urls_guid.url LIKE '%.html%' AND
+T_urls_guid.url LIKE '%/%'
+
 ```

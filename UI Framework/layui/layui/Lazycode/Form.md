@@ -69,6 +69,10 @@
 
 ```js
 <script>
+    layui.form.on("submit(Div_demo_form)", function(data) {
+      return false;
+    });
+
     layui.form.on('submit(zhuanhuan)', function (data) {
         console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
         console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回

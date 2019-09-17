@@ -1,5 +1,9 @@
 # Application_Error
 
+## 百科
+
+### 1. 代码示例
+
 ```c#
         protected void Application_Error(object sender, EventArgs e)
         {
@@ -55,7 +59,7 @@
             }
 
 
-            var root = new Aleseocore.Module.Aleseo.Host.Main.Entity.apipublish();
+            var root = new DemoCore.Module.DemoTest.Host.Main.Entity.apipublish();
             root.code = 0;
             root.message = error;
 
