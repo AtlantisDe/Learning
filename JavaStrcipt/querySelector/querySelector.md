@@ -65,8 +65,17 @@ function createElementFromHTML(htmlString) {
   return div.firstChild;
 }
 
-document.querySelector("#id_selectedsiteconfigitemClassname").appendChild(createElementFromHTML('<a class="layui-btn layui-btn-xs" id="id_selectedsiteconfigitemClassname">已选中</a>'));
+document
+  .querySelector("#id_selectedsiteconfigitemClassname")
+  .appendChild(
+    createElementFromHTML(
+      '<a class="layui-btn layui-btn-xs" id="id_selectedsiteconfigitemClassname">已选中</a>'
+    )
+  );
+```
 
+### 文档 body 对象
 
-
+```js
+document.querySelector("body");
 ```

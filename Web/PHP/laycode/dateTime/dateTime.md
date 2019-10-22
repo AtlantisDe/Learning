@@ -32,6 +32,13 @@ echo "<br>";
 echo "当前2时间是 " . $t2;
 exit;
 ?>
+
+
+function nowtime()
+{
+    $date=date("Y-m-d.G:i:s");
+    return $date;
+}
 ```
 
 ## 获得时区

@@ -1,6 +1,7 @@
 # Redis
 
 - Redis 是一个开源（BSD 许可），内存数据结构存储，用作数据库，缓存和消息代理。它支持数据结构，如字符串，散列，列表，集合，带有范围查询的排序集，位图，超级日志，具有半径查询和流的地理空间索引。Redis 具有内置复制，Lua 脚本，LRU 驱逐，事务和不同级别的磁盘持久性，并通过 Redis Sentinel 提供高可用性并使用 Redis Cluster 自动分区。
+- [Redis 常用命令](https://blog.csdn.net/hanjun0612/article/details/93513640)
 
 ## official
 
@@ -9,6 +10,23 @@
 ## Redis 教程
 
 - [Redis 简介 | 菜鸟教程](http://www.runoob.com/redis/redis-intro.html)
+
+```c#
+1 运行cmd
+
+到redis安装目录，cmd输入redis-cli.exe -h 127.0.0.1 -p 6379
+
+2 密码登录
+
+auth 输入密码
+
+3 设置和获取 set "hello"   get "hello"
+
+4 清空  flushall
+
+5 选择数据库  select 1
+
+```
 
 ## Redis 优势
 

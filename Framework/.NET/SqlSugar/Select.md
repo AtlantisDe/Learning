@@ -137,7 +137,11 @@ return db.Queryable<Module.DemoTest.Database.Main.Entity.Models.urlitem>().Any(i
 ### 随机查询出 10 条数据
 
 ```c#
-var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Where(it => it.linktype == DemoCore.Module.siteitem.Main.Const.urlitemtype.article).OrderBy(it => SqlFunc.GetRandom()).Take(50).ToList();
+urlitems = db.Queryable<urlitem>().OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(3).ToList();
+
+urlitems = db.Queryable<urlitem>().Where(it => it.used == 0).OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(3).ToList();
+
+var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Where(it => it.linktype == DemoCore.Module.siteitem.Main.Const.urlitemtype.article).OrderBy(it => SqlSugar.SqlFunc.GetRandom()).Take(50).ToList();
 ```
 
 ### 特殊符号查询
@@ -416,6 +420,25 @@ List<ResultModel> data = db.Queryable<Student>()
       ID = f.ID,
       StudentName = f.Name
     }).ToList();
+```
+
+##### 2. 使用字符串代替 Lambda 表达进行查询
+
+##### 3. 只查询某列
+
+- [.Select 用法-SqlSugar4-文档园](http://www.codeisbug.com/Doc/8/1159)
+
+```c#
+List<Student> list = db.Queryable<Student>().Select("guid").ToList();
+
+List<Student> list = db.Queryable<Student>().Select("*").ToList(); //查询所有列, 并返回List<Student>
+
+List<ResultModel> list = db.Queryable<Student>().Select<ResultModel>("ID, Name").ToList(); //查询ID和Name两个列, 并转成List<ResultModel>
+/*
+ResultModel里面的属性无需和Select方法里面的列名字符串一一对应, 只会映射对应的列和属性
+如ResultModel里面只有一个ID属性, 则只会匹配ID, Name不会引发异常
+同时, 如果ResultModel里面的属性多, 只会是默认值, 也不会引发异常
+*/
 ```
 
 #### 10. 执行 SQL

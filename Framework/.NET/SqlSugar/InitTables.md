@@ -98,6 +98,9 @@ public string supporttag { get; set; }
 ```c#
 [SugarColumn(IsNullable = false)]
 public DateTime? createtime { get; set; }
+
+[SugarColumn(IsNullable = false)]
+public DateTime createtime { get; set; }
 ```
 
 ### SugarColumn INT

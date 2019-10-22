@@ -13,6 +13,8 @@
 
 ```c#
 System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12; //加上这一句
+
+使用httpclient还有两点经验，一个是创建的MultiThreadedHttpConnectionManager 实例最好是全局的，否则会有多个连接池，而HttpClient是线程安全的，可以多个实例。另一个是，在处理请求的最后，也就是finnaly里中，要调用method.releaseConnection();回收连接，否则连接池就可能会爆了。
 ```
 
 ## Header 添加
@@ -52,7 +54,7 @@ if (rst.IsSuccessStatusCode)
 }
 ```
 
-## GET Demo
+## GET GetAsync
 
 ```c#
 using (HttpClient client = new HttpClient())
@@ -78,7 +80,7 @@ using (HttpClient client = new HttpClient())
 }
 ```
 
-## GET Demo1
+## GET HttpClientDoGet
 
 ```c#
 public async void HttpClientDoGet()

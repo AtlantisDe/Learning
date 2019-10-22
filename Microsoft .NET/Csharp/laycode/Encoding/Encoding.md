@@ -5,6 +5,12 @@
 ## 0. UrlEncode,UrlDecode
 
 ```c#
+public static void saveTest(string path, string content, System.Text.Encoding encoding = null)
+{
+      if (encoding == null) { encoding = System.Text.Encoding.UTF8; }
+      System.IO.File.WriteAllText(path, content, encoding);
+}
+
 HttpUtility.UrlEncode(text);  //utf-8 编码
 HttpUtility.UrlDecode(text);  //utf-8 解码
 HttpUtility.UrlEncode(text, System.Text.Encoding.GetEncoding(936));  //gb2312编码

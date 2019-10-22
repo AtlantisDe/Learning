@@ -7,6 +7,8 @@
 Newtonsoft.Json.JsonConvert.DeserializeObject<T>(config);
 Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 
+Newtonsoft.Json.JsonConvert.DeserializeObject<System.Dynamic.ExpandoObject>(get.value);
+
 System.IO.File.WriteAllText(ccc, Newtonsoft.Json.JsonConvert.SerializeObject(articleItem), Encoding.UTF8);
 
 var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Main.Entity.tpl.tplitem>>(System.IO.File.ReadAllText("", System.Text.Encoding.UTF8));
@@ -78,6 +80,11 @@ public class Util
 
 <assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" />
 <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="6.0.0.0" />
+
+<assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed" />
+<bindingRedirect oldVersion="0.0.0.0-9.0.0.0" newVersion="9.0.0.0" />
+
+
 ```
 
 ```c#
@@ -147,3 +154,21 @@ public class Util
 ### 2. 的不同版本间存在无法解决的冲突。当日志详细信息设置为“详细”时，这些引用冲突将会在生成日志中列出
 
 - [发现同一依赖程序集的不同版本间存在无法解决的冲突 - 世事一场大梦,人生几度秋凉 - CSDN 博客](https://blog.csdn.net/ao123056/article/details/86238871)
+
+## 动态对象灵活使用
+
+### 1. 例子示范
+
+```c#
+public async static Task<Newtonsoft.Json.Linq.JObject> Demo(this Uri uri)
+{
+    return await Task.Run(() =>
+    {
+        var json = Newtonsoft.Json.JsonConvert.SerializeObject(DemoExtenions.demo(uri).Result);
+        var jobj = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(json);
+        return jobj;
+    });
+
+}
+
+```

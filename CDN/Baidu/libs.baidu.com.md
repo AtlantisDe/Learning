@@ -5,10 +5,7 @@
 - 选择协议：自适应 http https
 
 ```js
-<script
-  crossorigin="anonymous"
-  src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"
-></script>
+<script src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 ```
 
 ### 1. jquery

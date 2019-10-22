@@ -6,6 +6,10 @@
 - “sqlite 虽然有不足，但是却为我们省去了很多工作”
 - [SQLite 的并发处理 - Ming Tong - CSDN 博客](https://blog.csdn.net/cuit/article/details/21975807)
 - [Sqlite3 并发读写注意事项](http://www.bubuko.com/infodetail-765226.html)
+- [sqlite-Sqlite 操作数据库释放资源后，文件依然处于占用状态——CSDN 问答频道](https://ask.csdn.net/questions/152178)
+- [SQLite connection strings - ConnectionStrings.com](https://www.connectionstrings.com/sqlite/)
+- [Using SQLite in your C# Application](https://www.codeproject.com/Articles/22165/Using-SQLite-in-your-C-Application)
+- [SQLite 多线程读写实践及常见问题总结 - 新手酱油 - 博客园](https://www.cnblogs.com/penghuster/p/4979964.html)
 
 ```txt
 总结
@@ -18,6 +22,8 @@
 4.当开启事务时，在提交事务之前，其他事务请求会被驳回
 5.当有读操作时，其他写操作会被驳回
 6.读操作之间能够并发执行
+
+接触过数据库的人，对事务这个概念一定不陌生，它是原子性的，要么执行成功，执行一半失败后会回滚，这样就能保证数据的完整性。SQLiteDatabase也提供了Transaction的相关方法
 ```
 
 ```txt

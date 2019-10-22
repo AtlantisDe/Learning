@@ -11,3 +11,9 @@
 // 解决方案: IIS上建立对应调试站点即可
 
 ```
+
+#### 2. VS 重置开发环境的方法
+
+```c#
+devenv.exe /setup /resetuserdata /resetsettings，重置Visual Studio 即可
+```

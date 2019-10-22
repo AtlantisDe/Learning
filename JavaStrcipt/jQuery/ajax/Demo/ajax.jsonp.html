@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script>
+        function sendAjax() {
+            $.getJSON("http://www.baidu.com/api/Product/para_post_base?callBack=?", "uid=111",
+                function (data) {
+                    var str = JSON.stringify(data);
+                    alert(str);
+                });
+        }
+
+
+        function Ajax() {
+            $.ajax({
+                type: "get",
+                url: "http://www.baidu.com/api/Product/para_post_base",
+                //期望服务端返回的数据类型
+                dataType: "json",
+                success: function (data) {
+                    console.log("success");
+                },
+                error: function (e) {
+                    console.log("error");
+                }
+            });
+
+        }
+
+
+        //post方式多参数传参
+        function para_post_base() {
+            var uri = 'http://www.baidu.com/api/Product/para_post_base';
+            
+            var para = {
+                id: "111",
+                name: "namesadsa"
+            };
+            para = JSON.stringify(para); //js对象转化为字符传递
+            $.ajax({
+                url: uri,
+                type: 'post',
+                async: true,
+                data: para,
+                dataType: 'text',
+                contentType: "application/json",
+                success: function (r) {
+                    $('#get_result_post').html(r);
+                },
+                error: function (r) {
+                    console.log(r);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <a href="javascript:sendAjax()">sendAjax</a>
+    <a href="javascript:Ajax()">Ajax</a>
+    <a href="javascript:para_post_base()">para_post_base</a>
+</body>
+
+</html>

@@ -733,4 +733,13 @@ text 文字 文本
 Request Entity Too Large 请求的实体太大
 Partial 局部
 Authorize 授权
+public 公共, 公众, 公开, 公, 国有, 国立
+common 共同, 常见, 普通, 公共, 普遍, 共
+community 公共, 公有的, 社会的
+```
+
+## 常用语句
+
+```c#
+Please don't crack
 ```

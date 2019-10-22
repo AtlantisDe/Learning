@@ -11,13 +11,39 @@
 Directory.Move(@"d:\textddd", @"d:\textAAA");
 ```
 
+### 枚举
+
+```c#
+DirectoryInfo TheFolder = new DirectoryInfo(ResTemplatepath);
+
+var directoryInfo = new System.IO.DirectoryInfo(Templates);
+var getDirectories = directoryInfo.GetDirectories();
+for (int i = 0; i < getDirectories.Count(); i++)
+{
+    var item = getDirectories[i];
+    var b = item.FullName + "/config.json";
+    var c = item.FullName + "/beizhu.txt";
+    var d = item.FullName + "/version.json";
+}
+
+var TheFolder = new System.IO.DirectoryInfo(ResTemplatepath);
+var aaa = TheFolder.GetDirectories();
+for (int i = 0; i < aaa.Count(); i++)
+{
+var a = aaa[i];
+var b = a.FullName + "/config.json";
+var c = a.FullName + "/beizhu.txt";
+var d = a.FullName + "/version.json";
+}
+```
+
 ### 创建
 
 ```c#
 if (false == System.IO.Directory.Exists(subPath))
 {
-//创建pic文件夹
-System.IO.Directory.CreateDirectory(subPath);
+    //创建pic文件夹
+    System.IO.Directory.CreateDirectory(subPath);
 }
 ```
 

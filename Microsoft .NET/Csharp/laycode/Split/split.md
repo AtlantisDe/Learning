@@ -31,8 +31,13 @@ for (int i = 0; i < arrlines.Length; i++)
     var arr = item.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
     if (arr.Length >= 3)
     {
-
     }
+}
+
+var tmp = "";
+for (int i = 0; i < list.Count; i++)
+{
+    tmp = tmp + list[i] + (i < list.Count - 1 ? "\r\n" : "");
 }
 ```
 
@@ -69,6 +74,12 @@ var arr = te.ToArray();
 foreach (var item in arr)
 {
     Console.WriteLine(item);
+}
+
+var arr = str.ToArray();
+for (int i = 0; i < arr.Length; i++)
+{
+    var item = arr[i];
 }
 ```
 

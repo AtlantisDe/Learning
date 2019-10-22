@@ -16,9 +16,16 @@ var ridv = CsharpLazycode.Module.Laycode.random.NextIncludeMax(Convert.ToInt32(a
 var port = CsharpLazycode.Module.Laycode.random.NextIncludeMax(1200, 65535);
 
 newname = CsharpLazycode.Module.Laycode.random.GetRandomString(8, 20, true, true, true, false, "");
-
+subname = CsharpLazycode.Module.Laycode.random.GetRandomString(5, 10, true, true, false, false, "");
 CsharpLazycode.Module.Laycode.random.GetRandomString(5, 20, true, true, true, false, "____")
 
+var fnameleng = CsharpLazycode.Module.Laycode.random.NextIncludeMax(3, 6);
+var fname = CsharpLazycode.Module.Laycode.random.GetRandomString(fnameleng, true, true, false, false, "");
+fname = CsharpLazycode.Module.Laycode.words.Util.GenerateSurname().ToLower();
+
+if (6 == CsharpLazycode.Module.Laycode.random.NextIncludeMax(1, 6))
+{
+}
 
 var configurationNobase64 = CsharpLazycode.Module.base64.Util.afterDecodeRspace(configuration);
 ```
@@ -45,7 +52,7 @@ System.Environment.Exit(0);
 
 ```
 
-### window路径
+### window 路径
 
 ```c#
 CsharpLazycode.Module.Laycode.Path.Util.toWindowsstyle(hostPath + href);

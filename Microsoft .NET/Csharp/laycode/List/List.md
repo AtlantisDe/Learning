@@ -160,3 +160,25 @@ List<string> li4 = new List<string> { "12", "18", "19", "19", "10", "19" };
 ```c#
 HashSet<string> hs = new HashSet<string>(li1); //此时已经去掉重复的数据保存在hashset中
 ```
+
+### 7. 中 list 的 count 方法计算满足条件的个数
+
+- [c#中 list 的 count 方法计算满足条件的个数](https://zhidao.baidu.com/question/1238273045268654059.html)
+
+```c#
+bool Predicate(string item) {
+    return item == "北京";
+}
+
+//基于委托的写法
+List<string> tmp=new List<string>();
+Func<string, bool> fun = new Func<string, bool>(Predicate);
+int count = tmp.Count(fun);
+
+//基于匿名函数的写法
+int count = tmp.Count(delegate(string item) { return item == "北京"; });
+
+//基于lambda表达式的写法
+int count = tmp.Count(s=>s=="北京");
+
+```

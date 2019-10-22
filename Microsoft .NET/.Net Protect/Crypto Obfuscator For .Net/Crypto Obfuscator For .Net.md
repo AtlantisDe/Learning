@@ -3,12 +3,23 @@
 - [light, Windows Phone 7 and ASP.Net Websites - Features](https://www.ssware.com/cryptoobfuscator/features.htm)
 - [Version history - Crypto Obfuscator For .Net](https://www.ssware.com/cryptoobfuscator/versionsnet.htm)
 
+## 基本配置
+
 ```c#
+// 当前使用环境
+C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\signtool.exe
+//配置会自动配置在工程文档内,只需要一次
+
 where sn
+
+C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe
 C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools\sn.exe
 
 SignTool.exe
 where SignTool.exe
+
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\signtool.exe
 C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\signtool.exe
 ```
 
@@ -82,4 +93,34 @@ Detected Assembly Target Framework: Normal
 加载程序集'D：\ a.dll'
 检测到的装配目标框架：正常
 
+```
+
+### 3. 常用调试命令
+
+```c#
+// ** Obfuscation completed successfully. **
+C:\Program Files (x86)\LogicNP Software\Crypto Obfuscator For .Net 2018\co.exe projectfile="D:\demo\admin.obproj"
+```
+
+### 4. 秘钥文件提示
+
+```c#
+Error occurred while obfuscation:  - Unable to load specified key file for assembly 'Aleseocore' - the path may be incorrect or password for pfx file may be incorrect.
+
+混淆时发生错误：-无法为程序集“ Aleseocore”加载指定的密钥文件-路径可能不正确，或者pfx文件的密码可能不正确。
+```
+
+### 5. SN.exe 文件找不到 在升级 VS 以后情况
+
+```c#
+// sn.exe utility not found for signing assembly.
+
+// You will now be prompted to specify the full path of sn.exe on your machine.
+
+// 找不到用于签名程序集的sn.exe实用工具。
+
+// 现在将提示您指定计算机上sn.exe的完整路径。
+
+
+C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe
 ```

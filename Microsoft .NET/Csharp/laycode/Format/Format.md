@@ -8,6 +8,7 @@
 ### D-十进制数
 
 ```c#
+Console.WriteLine(1.ToString("D5"));
 25.ToString("D5");//结果：00025
 ```
 

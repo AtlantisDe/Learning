@@ -7,3 +7,4 @@
 ## 常用入口
 
 - [dns](https://dcc.godaddy.com/manage/baidu.com/dns)
+- [管理全部域名](https://dcc.godaddy.com/domains/)

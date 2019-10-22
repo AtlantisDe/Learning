@@ -6,13 +6,33 @@
 - [C# Path 用法解析 - u011976734 的博客 - CSDN 博客](https://blog.csdn.net/u011976734/article/details/79654399)
 - [C#的 path.GetFullPath 获取上级目录实现方法](https://www.jb51.net/article/56773.htm)
 - [C# 获取文件名及扩展名 - Mr.石 - 博客园](https://www.cnblogs.com/shiyh/p/8657152.html)
+- [Naming Files, Paths, and Namespaces - Windows applications](https://docs.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)
 
 ## 1. 常用代码
 
 ```c#
+// 1、文件名长度最大为255个英文字符，其中包括文件扩展名在内。一个汉字相当于两个英文字符。
+// 2、文件的全路径名长度最大为260个英文字符，包含扩展名在内。如路径为C:\Program Files\filename.txt，那么这28个字符都包含在此字符数值中。一个汉字相当于两个英文字符。
+
+// 调试运行
+var pathroot = new System.IO.DirectoryInfo(@"D:\Work\tp_1");
+Console.WriteLine(pathroot.Name);
+tp_1
+
 var root = Path.GetPathRoot(runpath);
 var pathroot = new DirectoryInfo(runpath);
 var Parent = pathroot.Parent.FullName;
+
+//空间路径带斜杆参考示例
+System.AppDomain.CurrentDomain.BaseDirectory
+D:\Tmp\
+
+//不带斜杠
+var CurrentPath = Environment.CurrentDirectory;
+var CurrentPath = System.Environment.CurrentDirectory;
+c:\windows\system32\inetsrv
+
+
 ```
 
 ### 1. 遍历指定文件夹中的所有文件和子文件夹

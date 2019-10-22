@@ -1,6 +1,7 @@
 # Stopwatch
 
 - [【C#】记录程序耗时方法 - 青春本就不靠谱 - 博客园](https://www.cnblogs.com/on-fire/p/9522878.html)
+- [C# Stopwatch 详解 - 君莫笑&#183;秋 - 博客园](https://www.cnblogs.com/vaevvaev/p/6929967.html)
 
 ## 耗时
 
@@ -32,4 +33,6 @@ stopwatch.Start();
 stopwatch.Stop();
 Console.WriteLine("成功导入{0}条数据 ，用时{1}秒。", demo_Guiditems.Count, stopwatch.Elapsed.TotalSeconds);
 
+
+Console.WriteLine("流程运行用时{0}秒。", stopwatch.Elapsed.TotalSeconds);
 ```

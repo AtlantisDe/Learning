@@ -571,70 +571,70 @@ Task.Static.WebRes.Add("/static/layui/layui.all.js", Resread("aa.Resources.stati
 
 ```c#
   //go_Parallel_file_lockObj_Demo_001();
-                bool go_Parallel_file_lockObj_Demo_001()
+bool go_Parallel_file_lockObj_Demo_001()
+{
+
+    //文本多线程
+    object lockObj_txt = new object();
+    var threadtxtpath = @"D:\Tmp\ThreadTextt.txt";
+
+    Thread Th_txt_1 = new Thread(delegate ()
+    {
+        Parallel.For(0, 0, new ParallelOptions() { MaxDegreeOfParallelism = 1000 }, (i, loopState) =>
+        {
+            lock (lockObj_txt)
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(threadtxtpath, true, Encoding.UTF8))
                 {
-
-                    //文本多线程
-                    object lockObj_txt = new object();
-                    var threadtxtpath = @"D:\Tmp\ThreadTextt.txt";
-
-                    Thread Th_txt_1 = new Thread(delegate ()
-                    {
-                        Parallel.For(0, 0, new ParallelOptions() { MaxDegreeOfParallelism = 1000 }, (i, loopState) =>
-                        {
-                            lock (lockObj_txt)
-                            {
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(threadtxtpath, true, Encoding.UTF8))
-                                {
-                                    var line_1 = string.Format("{0} {1}", "工作线程1: ", i);
-                                    file.WriteLine(line_1);
-                                    file.Close();
-                                }
-                            }
-
-
-                        });
-                    });
-                    Th_txt_1.IsBackground = true;
-                    Th_txt_1.Start();
-
-                    Thread Th_txt_2 = new Thread(delegate ()
-                    {
-                        Parallel.For(0, 0, new ParallelOptions() { MaxDegreeOfParallelism = 1000 }, (i, loopState) =>
-                        {
-                            lock (lockObj_txt)
-                            {
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(threadtxtpath, true, Encoding.UTF8))
-                                {
-                                    var line_1 = string.Format("{0} {1}", "工作线程2: ", i);
-                                    file.WriteLine(line_1);
-                                    file.Close();
-                                }
-                            }
-
-                        });
-                    });
-                    Th_txt_2.IsBackground = true;
-                    Th_txt_2.Start();
-
-
-
-                    Thread Th_txt_3 = new Thread(delegate ()
-                    {
-                        CsharpLazycode.Module.Laycode.sys.WaitDelay(3 * 1000, true);
-                        StreamReader sr_textdmo = new StreamReader(DemoCore.Module.DemoTest.Host.Main.Method.Collectiontmp_articlepathok_path, System.Text.Encoding.UTF8);
-                        String line_textdmo;
-                        while ((line_textdmo = sr_textdmo.ReadLine()) != null)
-                        {
-
-                        }
-                        sr_textdmo.Close();
-
-                    });
-                    Th_txt_3.IsBackground = true;
-                    Th_txt_3.Start();
-
-                    return true;
+                    var line_1 = string.Format("{0} {1}", "工作线程1: ", i);
+                    file.WriteLine(line_1);
+                    file.Close();
                 }
+            }
+
+
+        });
+    });
+    Th_txt_1.IsBackground = true;
+    Th_txt_1.Start();
+
+    Thread Th_txt_2 = new Thread(delegate ()
+    {
+        Parallel.For(0, 0, new ParallelOptions() { MaxDegreeOfParallelism = 1000 }, (i, loopState) =>
+        {
+            lock (lockObj_txt)
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(threadtxtpath, true, Encoding.UTF8))
+                {
+                    var line_1 = string.Format("{0} {1}", "工作线程2: ", i);
+                    file.WriteLine(line_1);
+                    file.Close();
+                }
+            }
+
+        });
+    });
+    Th_txt_2.IsBackground = true;
+    Th_txt_2.Start();
+
+
+
+    Thread Th_txt_3 = new Thread(delegate ()
+    {
+        CsharpLazycode.Module.Laycode.sys.WaitDelay(3 * 1000, true);
+        StreamReader sr_textdmo = new StreamReader(DemoCore.Module.DemoTest.Host.Main.Method.Collectiontmp_articlepathok_path, System.Text.Encoding.UTF8);
+        String line_textdmo;
+        while ((line_textdmo = sr_textdmo.ReadLine()) != null)
+        {
+
+        }
+        sr_textdmo.Close();
+
+    });
+    Th_txt_3.IsBackground = true;
+    Th_txt_3.Start();
+
+    return true;
+}
 
 ```
