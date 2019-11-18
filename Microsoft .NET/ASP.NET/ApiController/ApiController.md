@@ -1,6 +1,9 @@
 # ApiController
 
-- [asp.net实现阻止用户直接通过url访问文件，实现通过权限访问文件](https://blog.csdn.net/asdfghjkl110292/article/details/96829704)
+- [asp.net 实现阻止用户直接通过 url 访问文件，实现通过权限访问文件](https://blog.csdn.net/asdfghjkl110292/article/details/96829704)
+- [Content Negotiation in ASP.NET Web API - ASP.NET 4.x](https://docs.microsoft.com/en-us/aspnet/web-api/overview/formats-and-model-binding/content-negotiation)
+- [Format response data in ASP.NET Core Web API](https://docs.microsoft.com/en-us/aspnet/core/web-api/advanced/formatting?view=aspnetcore-3.0)
+- [Add custom header to all responses in Web API](https://stackoverflow.com/questions/20349447/add-custom-header-to-all-responses-in-web-api)
 
 ## 常用代码示例
 
@@ -51,6 +54,53 @@ public string para_get_base(string id, string name)
 }
 ```
 
+```js
+// 请求接口
+// AJAX GET 写法
+
+layui.$.ajax({
+  type: "GET",
+  url: "/api/demo/edit",
+  dataType: "Json",
+  data: "guid=" + guid,
+  cache: false,
+  async: true,
+  success: function(data) {
+    if (data.code == 200) {
+      WebSiteconfig = data.Expando.Demo;
+      layui.form.val("Div_Demo_form", WebSiteconfig);
+
+      btn_for_divform("Div_Demo_form", "btn_save", true);
+
+      layer.alert(
+        data.message,
+        {
+          skin: "layui-layer-molv",
+          closeBtn: 0
+        },
+        function() {
+          layer.close(layer.index);
+        }
+      );
+    } else {
+      layer.alert(
+        data.message,
+        {
+          skin: "layui-layer-molv",
+          closeBtn: 0
+        },
+        function() {
+          layer.close(layer.index);
+        }
+      );
+    }
+  },
+  complete: function(data) {
+    layer.closeAll("loading");
+  }
+});
+```
+
 #### 2. POST 单个参数
 
 - [webapi-2 接口参数 - eye_like - 博客园](https://www.cnblogs.com/eye-like/p/9338191.html)
@@ -59,9 +109,9 @@ public string para_get_base(string id, string name)
 
 ```js
 
-通过dynamic动态类型能顺利得到多个参数，省掉了[FromBody]这个累赘，并且ajax参数的传递不用使用"无厘头"的{"":"value"}这种写法，有没有一种小清新的感觉~~有一点需要注意的是这里在ajax的请求里面需要加上参数类型为Json，即contentType: 'application/json',这个属性。
+// 通过dynamic动态类型能顺利得到多个参数，省掉了[FromBody]这个累赘，并且ajax参数的传递不用使用"无厘头"的{"":"value"}这种写法，有没有一种小清新的感觉~~有一点需要注意的是这里在ajax的请求里面需要加上参数类型为Json，即contentType: 'application/json',这个属性。
 
- data: { '': host },
+data: { '': host },
 
 ```
 
@@ -129,4 +179,119 @@ function fun_dynamicDemoGo() {
 }
 
 // POSTman 调试请用Request Payload 发送
+```
+
+#### 4. dynamic 设计应用
+
+```js
+// 请求接口
+
+        [Route("api/demo/get")]
+        [HttpGet]
+        [HttpPost]
+        public async Task<Newtonsoft.Json.Linq.JObject> GetDynamic()
+        {
+            return await Task.Run(() =>
+            {
+                return DemoMain.FunTest().Result.ObjToJObject();
+            });
+        }
+
+
+    //刷新通行域名
+    public async static Task<ApiPublishDynamic> FunTest()
+    {
+
+        return await Task.Run(() =>
+        {
+            var root = new ApiPublishDynamic
+            {
+                Expando = new ExpandoObject(),
+                code = -1,
+                message = "结果未知!"
+            };
+
+            try
+            {
+
+                using (HttpClient client = new HttpClient())
+                {
+                    try
+                    {
+                        Task<HttpResponseMessage> response = client.GetAsync("http://127.0.0.1:61515/FunTest");
+                        response.Wait();
+                        if (response.Result != null)
+                        {
+                            var rst = response.Result;
+                            if (rst.IsSuccessStatusCode)
+                            {
+                                root.code = 200;
+                                root.message = string.Format("刷新通行证成功![{0}]", rst.Content.ReadAsStringAsync().Result);
+                            }
+                        }
+                    }
+                    catch (HttpRequestException e)
+                    {
+                        Console.WriteLine("\nException Caught!");
+                        Console.WriteLine("Message :{0} ", e.Message);
+
+                        root.code = 3;
+                        root.message = e.Message;
+
+                    }
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(string.Format("异常包: [{0}] [{1}] 异常消息:{2}", System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName, System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message));
+
+                root.code = 100;
+                root.message = string.Format("异常[{0}]", ex.Message + "\r\n");
+
+
+            }
+            finally
+            {
+            }
+
+
+            return root;
+
+
+
+        });
+
+
+
+    }
+
+
+// JS应用
+
+if (data.code == 200)
+{
+    DemoConfig = data.Expando.DemoConfig;
+    layui.form.val("Div_Demo_form", DemoConfig);
+    layer.msg(data.message, function() {});
+}
+else
+{
+    layer.alert(data.message, { icon: 6 });
+}
+
+```
+
+#### 5. Specify a format
+
+```C#
+[ApiController]
+[Route("[controller]")]
+[Produces("application/json")]
+public class WeatherForecastController : ControllerBase
+{
+}
 ```

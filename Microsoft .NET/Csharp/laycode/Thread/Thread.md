@@ -37,6 +37,12 @@ thread.start(obj);
 ## 匿名
 
 ```c#
+Thread oThread = new Thread(delegate () { })
+{
+    IsBackground = true
+};
+oThread.Start();
+
 Thread oThread = new Thread(delegate(){});
 oThread.IsBackground = true;
 oThread.Start();
@@ -77,4 +83,11 @@ if (this.IsHandleCreated)
 
     });
 }
+```
+
+## IDE0017 可以简化对象初始化
+
+```c#
+Thread oThread = new Thread(delegate(){}){IsBackground = true};
+oThread.Start();
 ```

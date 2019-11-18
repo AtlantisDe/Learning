@@ -53,6 +53,7 @@
 - [菜鸟教程](http://www.runoob.com/)
 - [教程列表](http://www.runoob.com/w3cnote)
 - [SVG 在线编辑器](https://c.runoob.com/more/svgeditor/)
+- [svg to jpg - CloudConvert](https://cloudconvert.com/svg-to-jpg)
 - [WEB 在线编辑器](https://c.runoob.com/front-end/61)
 - [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/search/index?q=.ico)
 - [Staticfile CDN](http://staticfile.org/)

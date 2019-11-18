@@ -103,3 +103,9 @@ layer.open({
   content: "/App/Console/BaiduUrlsPush"
 });
 ```
+
+### 本窗口关闭,父窗口执行
+
+```js
+parent.layer.close(parent.layer.getFrameIndex(window.name));
+```

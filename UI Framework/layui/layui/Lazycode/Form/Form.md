@@ -684,6 +684,7 @@ class="layui-input-inline"：定义内层行内
 
 ```html
 <input type="text" name="username" class="layui-input layui-hide" />
+<input type="text" name="guid" class="layui-input layui-hide" />
 ```
 
 ## 表单层

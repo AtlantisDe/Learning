@@ -1,5 +1,7 @@
 # MSBuild
 
+- [MSBuild - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019)
+- [MicrosoftDocs/visualstudio-docs](https://github.com/MicrosoftDocs/visualstudio-docs/blob/master/docs/msbuild/how-to-build-specific-targets-in-solutions-by-using-msbuild-exe.md)
 - 如果你的机器上没有装有 VisualStudio，那么可以使用 MSBuild 来 build .sln 或 project。MSBuild 可以通过安装.NETFramework 来安装，一般的安装路径为 C:\Windows\Microsoft.NET\Framework。其实 devenv 执行 build 时候，后台也是调用 MSBuild 来 build 的。
 
 ```c#
@@ -13,7 +15,7 @@
 ## 常用
 
 - [使用 devenv/MSBuild 在命令行编译单个 project - iTech - 博客园](https://www.cnblogs.com/itech/archive/2011/12/22/2297587.html)
-- [细说VS MSBuild 和 Framework 的区别 - 不忘初心 - CSDN博客](https://blog.csdn.net/playermaker57/article/details/80190580)
+- [细说 VS MSBuild 和 Framework 的区别 - 不忘初心 - CSDN 博客](https://blog.csdn.net/playermaker57/article/details/80190580)
 
 ### 知识点
 

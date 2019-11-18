@@ -1,6 +1,7 @@
 # C# Split
 
 - [C#中 Split 用法](https://www.cnblogs.com/wangfuyou/p/6101992.html)
+- [C#中 Split 分隔字符串的应用（C#、split、分隔、字符串）](https://www.cnblogs.com/canfengfeixue/p/8269263.html)
 
 ## 1. 常用代码示例
 
@@ -11,6 +12,7 @@ var arrlines = body.Split("\r\n".ToArray(), StringSplitOptions.RemoveEmptyEntrie
 var arr = body.Split("|".ToArray(), StringSplitOptions.RemoveEmptyEntries);
 var arr = line.Split(",".ToArray(), StringSplitOptions.RemoveEmptyEntries);
 var arr = line.Split("    ".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+var arrlines = tmp.Split(new string[] { "[--分割线--]" }, StringSplitOptions.RemoveEmptyEntries);
 ```
 
 ### 2. 字符串 new 用法

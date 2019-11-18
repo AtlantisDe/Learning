@@ -24,7 +24,13 @@ public class Enum
 
 ### 2. string to enum
 
-```c# 
+```c#
+// 整数型转回去DEMO
+var FrameworkType1 = (Enum.PcoreFrameworkType)0;
+var FrameworkType2 = (Enum.PcoreFrameworkType)10000;
+var FrameworkType3 = (Enum.PcoreFrameworkType)0;
+
+
 DomainsCreteTypes =  (Enum.DomainsCreteTypes)Enum.DomainsCreteTypes.Parse(typeof(Enum.DomainsCreteTypes), "Red", true);
 
 ```

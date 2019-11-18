@@ -19,6 +19,12 @@ if (tableIns.linkitems != null) {
 }
 
 
-    url: "/api/Links/linkitems",
-    where: { host: host },
+url: "/api/Links/linkitems",
+where: { host: host },
+
+
+
+tableIns.Demo = layui.table.render({
+elem: "#Demo",
+method: "get",
 ```

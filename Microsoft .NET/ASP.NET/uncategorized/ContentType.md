@@ -2,6 +2,7 @@
 
 - [ASP.NET 中 ContentType 类型 - 风飘零 - 博客园](https://www.cnblogs.com/lf6112/archive/2010/05/04/1727358.html)
 - [【ASP.NET Core】根据 Content-Type 头部来筛选 Action - weixin_34343689 的博客 - CSDN 博客](https://blog.csdn.net/weixin_34343689/article/details/86399234)
+- [Get MIME type from filename extension](https://stackoverflow.com/questions/1029740/get-mime-type-from-filename-extension)
 
 ```c#
 // 在ASP.NET中使用Response.ContentType="类型名";来确定输出格式
@@ -203,4 +204,10 @@ Response.AddHeader("Content-Disposition", "attachment; filename=...");
 
 ```c#
 <% Response.ContentType = "application/json;charset=utf-8";%>
+```
+
+### ApiController 中配置
+
+```c#
+this.Request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
 ```

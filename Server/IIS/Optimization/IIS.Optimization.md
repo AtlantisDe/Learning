@@ -2,6 +2,8 @@
 
 - [解决 ASP.Net 第一次访问慢的处理（IIS8） - 魔力大王 - 博客园](https://www.cnblogs.com/mldw/p/6259450.html)
 - [ASP.NET 网站第一次访问慢的解决方法](https://www.jb51.net/article/110492.htm)
+- [IIS：连接数、并发连接数 - Agoly - 博客园](https://www.cnblogs.com/qmfsun/p/4997307.html)
+- IIS：连接数、并发连接数、最大并发工作线程数、应用程序池的队列长度、应用程序池的最大工作进程数详解
 
 ## 优化
 

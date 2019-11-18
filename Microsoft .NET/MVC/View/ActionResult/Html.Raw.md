@@ -19,4 +19,21 @@ ViewBag.Eml = "@";
 @Html.Raw(ViewBag.error)
 @Html.Raw('@')
 @Html.Raw(ViewBag.Eml)
+
+// 错误用法读取模板文件导致程序卡
+@Html.Raw("Demo/table.cshtml")
+```
+
+### 2. 获取视图层 View 与前端模板传值
+
+```c#
+public ActionResult SelectsiteconfigItem()
+{
+    ViewBag.main = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"/Views/Console/Demo/table.cshtml", System.Text.Encoding.UTF8);
+
+    return View();
+
+}
+
+@Html.Raw(ViewBag.main)
 ```

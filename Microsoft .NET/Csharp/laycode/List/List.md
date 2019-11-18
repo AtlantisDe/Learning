@@ -17,19 +17,19 @@
 
 ```c#
 //Name是传入的参数值
-   List<Test> list = new List<Test>();
-   list = list.Where(a => a.testName.Contains(Name)).ToList();
+List<Test> list = new List<Test>();
+list = list.Where(a => a.testName.Contains(Name)).ToList();
 ```
 
 - 2、多个条件合并查询
 
 ```c#
 //Number_Name是传入的参数值
-  List<Test> list = new List<Test>();
-  list = list.Where(a => a.testNumber.Contains(Number_Name) || a.testName.Contains(Number_Name)).ToList();
-  //
-  List<Test> list = new List<Test>();
-  list = list.Where(a => a.testNumber.Contains(Number_Name) && a.testName.Contains(Number_Name)).ToList();
+List<Test> list = new List<Test>();
+list = list.Where(a => a.testNumber.Contains(Number_Name) || a.testName.Contains(Number_Name)).ToList();
+//
+List<Test> list = new List<Test>();
+list = list.Where(a => a.testNumber.Contains(Number_Name) && a.testName.Contains(Number_Name)).ToList();
 ```
 
 ### 2. 集合已修改；可能无法执行枚举操作
@@ -43,10 +43,10 @@
 ```c#
  static object lockObj = new object();
 
- lock (lockObj)
-  {
-      list.Add(i);
-  }
+lock (lockObj)
+{
+    list.Add(i);
+}
 ```
 
 ### 4. Thread Parallel 加锁线程安全 (一定要 加锁 加锁 加锁 加锁 不然 add 数据肯定会丢失 )
@@ -155,7 +155,7 @@ List<string> li3 = new List<string> { "A", "A", "C", "A", "C", "D" };
 List<string> li4 = new List<string> { "12", "18", "19", "19", "10", "19" };
 ```
 
-#### 1. 方法一 与 其它 5 种解决方案请参考上面这个链接
+#### 1. count 统计
 
 ```c#
 HashSet<string> hs = new HashSet<string>(li1); //此时已经去掉重复的数据保存在hashset中
@@ -180,5 +180,27 @@ int count = tmp.Count(delegate(string item) { return item == "北京"; });
 
 //基于lambda表达式的写法
 int count = tmp.Count(s=>s=="北京");
+
+```
+
+#### 2. list 中查找元素是否存在，如果存在返回索引
+
+```c#
+//不存在：返回-1，存在：返回位置。
+
+List<db> ls = new List<db> { };
+ls.Add(new db() { id = 1, Name = "张三" });
+ls.Add(new db() { id = 1, Name = "李四" });
+ls.Add(new db() { id = 2, Name = "王五" });
+string str = "李四";
+Console.WriteLine(ls.FindIndex(x => x.Name == str));    //不存在：返回-1，存在：返回位置。
+Console.ReadKey();
+
+```
+
+#### 3. list 排序
+
+```c#
+muluclassitems.OrderBy(it => it.BindingFolder.Length);
 
 ```

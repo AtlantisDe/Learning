@@ -3,6 +3,7 @@
 - [Robots.txt 的妙用 - zhouchangshun_666 的博客 - CSDN 博客](https://blog.csdn.net/zhouchangshun_666/article/details/81564878)
 - [网站 robots.txt 使用中常见的误区](http://www.chinaz.com/web/2012/0428/248613.shtml)
 - [网站 robots.txt 如何设置?-MetInfo](https://www.metinfo.cn/faq/2363.html)
+- [设置 robots.txt，还是会被百度蜘蛛抓取 - 搜外问答](https://ask.seowhy.com/question/23740)
 
 ## 工具
 
@@ -62,7 +63,7 @@ User-agent: *
 Disallow: /
 
 5）禁止搜索引擎访问某些目录
-
+[Getting Title at 0:36](http://Hashtable)
 User-agent: *
 
 Disallow: /cgi-bin/
@@ -99,4 +100,48 @@ Disallow: /*/list*.html
 Allow: /img/
 
 Sitemap: https://域名/sitemap.xml
+```
+
+```txt
+实例分析：淘宝网的 Robots.txt文件
+
+User-agent: Baiduspider
+
+Disallow: /
+
+User-agent: *
+User-agent: Googlebot
+Disallow: /
+```
+
+- [在线 robots 文件生成-在线网站 robots.txt 文件生成器](http://www.jsons.cn/robots/)
+- [robots 文件生成 在线网站 robots.txt 文件生成器](http://tool.ip138.com/robots/)
+
+```txt
+User-agent: Baiduspider
+Disallow:
+User-agent: Sosospider
+Disallow:
+User-agent: sogou spider
+Disallow:
+User-agent: YodaoBot
+Disallow:
+User-agent: Googlebot
+Disallow: /
+User-agent: Slurp
+Disallow: /
+User-agent: googlebot-image
+Disallow: /
+User-agent: googlebot-mobile
+Disallow: /
+User-agent: yahoo-mmcrawler
+Disallow: /
+User-agent: yahoo-blogs/v3.9
+Disallow: /
+User-agent: psbot
+Disallow: /
+User-agent: *
+Disallow:
+Crawl-delay: 10
+Disallow: /
 ```

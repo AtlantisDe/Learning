@@ -16,3 +16,31 @@ var md52 = "a".Md5();
 
 
 ```
+
+## PHP 代码
+
+```php
+public function value_with_string($string, $file)
+{
+    if (!file_exists($file)) {
+        return '文件不存在：' . $file;
+    }
+    if (!md5($string)) {
+        return '散列计算错误：' . $string;
+    }
+    $str_md5      = str_replace(array('a', 'b', 'c', 'd', 'e', 'f'), array(1, 2, 3, 4, 5), md5($string));
+    $arr_keywords = explode(PHP_EOL, mb_convert_encoding(file_get_contents($file), 'UTF-8', 'UTF-8,GBK,GB2312,BIG5'));
+    $count        = count($arr_keywords) - 1;
+    $sublen       = strlen($count);
+    $i            = 0;
+    $index        = substr($str_md5, substr($str_md5, $i, 1), $sublen);
+    while ($index > $count) {
+        $i++;
+        if ($i > 17) {
+            $sublen--;
+        }
+        $index = substr($str_md5, substr($str_md5, $i, 1), $sublen);
+    }
+    return $arr_keywords[(int) $index];
+}
+```

@@ -109,6 +109,23 @@ static string GetFileNameFromUrl(string url)
 
 ```c#
 
+
+var uri1 = new Uri("http://1006.baidu.com");
+
+var uri2 = new Uri("http://1006.baidu.com/");
+
+var uri3 = new Uri("http://1006.baidu.com//");
+
+var uri4 = new Uri("http://1006.baidu.com//guoji");
+
+var uri5 = new Uri("http://1006.baidu.com/guoji/");
+
+var uri6 = new Uri("http://1006.baidu.com/guoji//");
+
+var uri7 = new Uri("http://1006.baidu.com");
+
+
+
 string filename1 = System.IO.Path.GetFileName(new Uri("http://www.baidu.com/").AbsolutePath);
 string filename2 = System.IO.Path.GetFileName(new Uri("http://www.baidu.com/lucky").AbsolutePath);
 string filename3 = System.IO.Path.GetFileName(new Uri("http://www.google.com/aa.html/lucky/1.html").AbsolutePath);
@@ -129,4 +146,32 @@ mulutemp = mulutemp.Substring(2, mulutemp.Length - 2);
 
 mulutemp = dirfullPath2;
 mulutemp = mulutemp.Substring(2, mulutemp.Length - 2);
+```
+
+### 2. 路径
+
+```c#
+var aaaa = this.Request.Url.OriginalString.Substring(0, this.Request.Url.AbsoluteUri.Length - this.Request.Url.AbsolutePath.Length);
+var cc = string.Format("/Request/ApiContentIndex?href={0}", new Uri(aaaa));
+
+Context.RewritePath(cc);
+```
+
+### 3. 路径
+
+```c#
+//当前网站网址
+public static string GetThisSiteLink(this Uri href)
+{
+    var ThisSiteLink = string.Format(
+                    "{0}{1}{2}{3}{4}"
+                    , href.Scheme
+                    , "://"
+                    , href.Host
+                    , (href.Port == 80 ? "" : ":")
+                    , (href.Port == 80 ? "" : href.Port.ToString())
+                    );
+
+    return ThisSiteLink;
+}
 ```

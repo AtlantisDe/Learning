@@ -96,6 +96,11 @@ function dataSynTablerowSwitch(obj) {
 ```js
 tableIns.smarttags.config.page.limit = 10;
 tableIns.smarttags.reload({});
-tableIns.smarttags.reload({page:{curr:1,limit:50}});
-tableIns.sites.reload({page:{curr:1,limit:50}});
+tableIns.smarttags.reload({ page: { curr: 1, limit: 50 } });
+tableIns.sites.reload({ page: { curr: 1, limit: 50 } });
+
+tableIns.sites.reload({
+  where: { value1: tmpvalues.Classname },
+  page: { curr: 1 }
+});
 ```

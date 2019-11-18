@@ -79,3 +79,21 @@ Action action = () =>
 // Start 4 concurrent consuming actions.
 Parallel.Invoke(action, action, action, action);
 ```
+
+### Parallel.ForEach
+
+```c#
+Parallel.ForEach(this.LoopBlockItems, new ParallelOptions { MaxDegreeOfParallelism = 4 }, LoopBlockItem =>
+{
+
+});
+
+Parallel.ForEach(this.LoopBlockItems, new ParallelOptions { MaxDegreeOfParallelism = 4 }, webpage => { });
+
+
+Parallel.ForEach(
+    listOfWebpages,
+    new ParallelOptions { MaxDegreeOfParallelism = 4 },
+    webpage => { Download(webpage); }
+);
+```

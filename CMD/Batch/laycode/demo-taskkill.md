@@ -13,3 +13,9 @@ taskkill /f /im explorer.exe
 echo 重启UI..
 start Explorer.exe
 ```
+
+## 代码 2
+
+```bat
+taskkill /f /im chrome.exe
+```

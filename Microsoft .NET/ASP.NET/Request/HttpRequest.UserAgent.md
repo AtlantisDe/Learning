@@ -23,3 +23,12 @@ if (userAgent.IndexOf("MSIE 6.0") > -1)
 ```c#
 navigator.userAgent
 ```
+
+## Page
+
+```c#
+if(this.Request.UserAgent.ContainsCase("bot") == true)
+{
+
+}
+```

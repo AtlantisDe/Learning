@@ -10,4 +10,9 @@ param = null;
 var key = "user";
 var value = "John";
 param[key] = value; //这里的key才能是动态生成的
+
+param = null;
+var key = "user";
+var value = "John";
+param[key] = value;
 ```

@@ -22,14 +22,30 @@ logincheck();
 
 ### 2. 信息框
 
+```c#
+// 常用弹出信息框点击按钮关闭类型
+layer.alert(  '弹出信息框',  { skin: 'layui-layer-molv', closeBtn: 0, title: '操作提示' },  function() {    layer.close(layer.index);  });
+
+layer.alert(  '弹出信息框',  { skin: 'layui-layer-molv', closeBtn: 0, title: '操作提示' , area: ["1200px", "80%"]},  function() {    layer.close(layer.index);  });
+
+
+layer.alert(  '弹出信息框',  { skin: 'layui-layer-molv', closeBtn: 0, title: '操作提示' , area: ["90%", "80%"]},  function() {    layer.close(layer.index);  });
+
+// 用法 容易把整个视图区域挤满
+layer.alert(  '弹出信息框',  { skin: 'layui-layer-molv', closeBtn: 0, title: '操作提示' , area: ["auto", "auto"]},  function() {    layer.close(layer.index);  });
+
+
+```
+
 ```js
 //信息框-例1
 
 layer.alert("见到你真的很高兴", { icon: 6 });
+
 layer.alert("请先勾选要删除的站点!", { icon: 6, title: "操作提示" });
 
 layer.alert(
-  "清空模板引擎数据,重建模板库索引,新增模板或者改动后,这里来刷新一下!",
+  "弹出信息框",
   { skin: "layui-layer-molv", closeBtn: 0, title: "操作提示" },
   function() {
     layer.close(layer.index);
@@ -162,11 +178,14 @@ function wsclose() {
 }
 ```
 
-## area - 宽高
+## 宽高
+
+- [layer.msg 自定义设置宽度，高度默认](https://blog.csdn.net/qq_30123829/article/details/81563126)
 
 ```shell
 area: "500px",
 area: ['500px', '300px'],
+area: ["1200px", "80%"],
 ```
 
 ## prompt 输入层

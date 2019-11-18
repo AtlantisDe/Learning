@@ -6,6 +6,8 @@
 ## 全球唯一标识符
 
 ```C#
+GuidExtenions.N;
+
 // - 数据库长度字段定义长度32位常用
 System.Guid.NewGuid().ToString("N");
 

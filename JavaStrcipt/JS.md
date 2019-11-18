@@ -122,7 +122,6 @@ console.log("PPP:" + $(window.frames["frmHcInStorage"].document).find("#suppId")
 ## jQuery 代码一
 
 ```js
-
 var test = $(".test").get(0); //将jQuery对象转换为dom对象
 try {
   $.fn.jquery;
@@ -257,6 +256,10 @@ function loadScript(url, callback) {
 ### 判断字符串中是否存在某个字符
 
 ```js
+if (str.indexOf("o") == -1) {
+} else {
+}
+
 if (str.indexOf("o") == -1) {
   //等于-1表示这个字符串中没有o这个字符
   //do something

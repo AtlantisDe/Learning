@@ -26,3 +26,15 @@ Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL 
 curl -I -m 10 -o /dev/null -s -w %{http_code}"＼n"  http://localhost:3000
 curl -X POST https://dnsapi.cn/Domainshare.Modify -d 'login_token=LOGIN_TOKEN&format=json&domain_id=2059079&email=yizerowu@dnspod.com&mode=r'
 ```
+
+## 使用 Cookie
+
+- [linux 使用 curl 命令访问 url 并模拟 cookie - 为程序员服务](http://ju.outofmemory.cn/entry/340201)
+
+```c#
+// 可以使用-b参数来完成，具体使用如下：
+curl – b “key1=val1;key2=val2;”
+// 或直接使用文件
+curl -b ./cookie.txt
+
+```

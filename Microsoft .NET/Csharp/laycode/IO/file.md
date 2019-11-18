@@ -113,6 +113,50 @@ privatevoid btnSelectFile_Click(object sender, EventArgs e) //弹出一个选择
  }
 ```
 
+### 5. 文件保存路径选择功能
+
+- [C# winform 中 选择文件和保存文件 - 露夕逝 - 博客园](https://www.cnblogs.com/luxishi/p/9253021.html)
+
+```c#
+//选择保存路径
+        private string ShowSaveFileDialog()
+        {
+            string localFilePath = "";
+            //string localFilePath, fileNameExt, newFileName, FilePath;
+            SaveFileDialog sfd = new SaveFileDialog();
+            //设置文件类型
+            sfd.Filter = "Excel表格（*.xls）|*.xls";
+
+            //设置默认文件类型显示顺序
+            sfd.FilterIndex = 1;
+
+            //保存对话框是否记忆上次打开的目录
+            sfd.RestoreDirectory = true;
+
+            //点了保存按钮进入
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                localFilePath = sfd.FileName.ToString(); //获得文件路径
+                string fileNameExt =localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1); //获取文件名，不带路径
+
+                //获取文件路径，不带文件名
+                //FilePath = localFilePath.Substring(0, localFilePath.LastIndexOf("\\"));
+
+                //给文件名前加上时间
+                //newFileName = DateTime.Now.ToString("yyyyMMdd") + fileNameExt;
+
+                //在文件名里加字符
+                //saveFileDialog1.FileName.Insert(1,"dameng");
+
+                //System.IO.FileStream fs = (System.IO.FileStream)sfd.OpenFile();//输出文件
+
+                ////fs输出带文字或图片的文件，就看需求了
+            }
+
+            return localFilePath;
+        }
+```
+
 ## 2. 读写文件操作
 
 ### 1. 一行一行读文件

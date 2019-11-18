@@ -62,11 +62,11 @@ arr -> ['new', 'element']
 ### 3. 遍历对象数组及对象属性
 
 ```js
-for (var item = 0; item < regkeyitem.length; item++) {
+for (var item = 0; item < DemoItems.length; item++) {
   //遍历对象数组，item表示某个具体的对象
   for (var i in item) {
     //使用for in 遍历对象属性
-    console.log(regkeyitem[item][i]); //objectList[item][i]表示某个对象的某个
+    console.log(DemoItems[item][i]); //objectList[item][i]表示某个对象的某个
     //具体属性值，i表示属性名，可以打印出来看一下；
   }
 }

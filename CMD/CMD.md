@@ -1,6 +1,7 @@
 # CMD
 
 - [CMD：[1]在当前文件夹下打开 cmd 命令 - hhj187 - 博客园](https://www.cnblogs.com/hhj187/p/4721596.html)
+- [bat 批处理修改 cmd 窗口大小、标题、字体、背景颜色](https://blog.csdn.net/zj0910/article/details/46942861?utm_source=blogxgwz8)
 
 ## 常用命令
 

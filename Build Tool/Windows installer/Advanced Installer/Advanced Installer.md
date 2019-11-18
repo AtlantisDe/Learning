@@ -47,6 +47,7 @@ to prevent it from being uninstalled check the "Permanent" attribute
 - [Extract Archive Dialog](https://www.advancedinstaller.com/user-guide/extract-archive-dialog.html)
 - Remove archive after extraction 提取后删除存档
 - Remove extracted files on uninstall 在卸载时删除提取的文件
+- [Always overwrite existing file - Advanced Installer](https://www.advancedinstaller.com/forums/viewtopic.php?t=34290)
 
 ### 9. 安装成功后执行
 

@@ -111,7 +111,9 @@
     |-- CLI
     |   |-- CLI.md
     |   |-- dotnet
-    |       |-- dotnet.md
+    |   |   |-- dotnet.md
+    |   |-- PHP
+    |       |-- php.exe.cli.md
     |-- Cloud
     |   |-- Aliyun
     |   |   |-- aliyun.md
@@ -152,6 +154,7 @@
     |   |   |-- TaobaoOpenPlatform.md
     |   |-- Tencent
     |   |   |-- COS.md
+    |   |   |-- developer.md
     |   |   |-- dnspod.md
     |   |   |-- tencent.md
     |   |   |-- tencent.Net.md
@@ -172,6 +175,7 @@
     |       |-- copy.md
     |       |-- IO.md
     |       |-- Path.md
+    |       |-- systeminfo.md
     |-- Community
     |   |-- stackoverflow.com
     |       |-- chat.stackoverflow.com.md
@@ -208,7 +212,7 @@
     |   |   |-- PostgreSQL.md
     |   |-- Redis
     |   |   |-- Redis.md
-    |   |   |-- class
+    |   |   |-- Class
     |   |   |   |-- Demo1
     |   |   |       |-- redis.php
     |   |   |       |-- redis_config1.php
@@ -217,6 +221,9 @@
     |   |   |   |-- phpRedisAdmin.md
     |   |   |-- RedisDesktopManager
     |   |       |-- RedisDesktopManager.md
+    |   |-- SQL
+    |   |   |-- Select.md
+    |   |   |-- Select.Rand.md
     |   |-- SQL Server Compact Edition
     |   |-- Sql Server LocalDB
     |   |   |-- Sql Server LocalDB.md
@@ -224,6 +231,7 @@
     |   |-- SqlBulkCopy
     |   |   |-- SqlBulkCopy.md
     |   |-- SQLite
+    |   |   |-- ClearAllPools.md
     |   |   |-- Insert.md
     |   |   |-- Optimizer.md
     |   |   |-- Repair.md
@@ -326,6 +334,8 @@
     |   |   |   |-- Jumony.md
     |   |   |-- Microsoft.ClearScript
     |   |   |   |-- Microsoft.ClearScript.md
+    |   |   |-- NewLifeX
+    |   |   |   |-- NewLifeX.md
     |   |   |-- PhantomJS
     |   |   |   |-- PhantomJS.md
     |   |   |-- PuppeteerSharp
@@ -489,6 +499,7 @@
     |   |   |   |-- ajax  Cross-domain.md
     |   |   |   |-- ajax-object-send.md
     |   |   |   |-- ajax.Access-Control-Allow-Origin.md
+    |   |   |   |-- ajax.async.md
     |   |   |   |-- ajax.c2s.md
     |   |   |   |-- ajax.md
     |   |   |   |-- ajax.post.param.md
@@ -502,12 +513,16 @@
     |   |   |   |-- Frame.md
     |   |   |   |-- jq-btn.md
     |   |   |   |-- jq-css.md
+    |   |   |   |-- jq.div.md
+    |   |   |   |-- jq.prev.md
     |   |   |   |-- jq.selector.md
     |   |   |   |-- jquery-Version.md
     |   |   |   |-- parent.md
     |   |   |   |-- setInterval.md
     |   |   |-- jQuery-contextMenu
     |   |       |-- jQuery-contextMenu.md
+    |   |-- Js.Demo
+    |   |   |-- js.navigator.md
     |   |-- PJAX
     |   |   |-- PJAX.md
     |   |-- querySelector
@@ -532,6 +547,7 @@
     |   |   |-- js.Extenions.md
     |   |   |-- js.json.md
     |   |   |-- js.links.md
+    |   |   |-- js.location.md
     |   |   |-- js.md
     |   |   |-- js.mobile.md
     |   |   |-- js.obj.md
@@ -573,6 +589,7 @@
     |   |-- Template
     |       |-- block.md
     |       |-- Demo.md
+    |       |-- images.md
     |       |-- img.md
     |       |-- install.md
     |       |-- issue.md
@@ -669,6 +686,7 @@
     |   |   |       |-- Web.config
     |   |   |-- uncategorized
     |   |   |   |-- alert.md
+    |   |   |   |-- Content Type.MIME.md
     |   |   |   |-- ContentType.md
     |   |   |   |-- value.md
     |   |   |-- web.config
@@ -804,6 +822,12 @@
     |   |       |   |-- Shared memory.md
     |   |       |   |-- Compression
     |   |       |   |   |-- Compression.md
+    |   |       |   |   |-- ZipFile.Class.md
+    |   |       |   |-- Dialog
+    |   |       |   |   |-- Dialog.md
+    |   |       |   |   |-- Ookii.Dialogs.md
+    |   |       |   |-- MemoryMappedFile
+    |   |       |   |   |-- MemoryMappedFile.md
     |   |       |   |-- Uncover
     |   |       |       |-- File.Move.md
     |   |       |-- Laycode
@@ -820,6 +844,7 @@
     |   |       |   |   |-- BlockingCollection.md
     |   |       |   |-- ConcurrentBag
     |   |       |   |   |-- ConcurrentBag.md
+    |   |       |   |   |-- Production and consumption mode.md
     |   |       |   |-- ConcurrentQueue
     |   |       |   |   |-- ConcurrentQueue.md
     |   |       |   |-- IEnumerable
@@ -833,6 +858,7 @@
     |   |       |-- msgbox
     |   |       |   |-- MessageBox.md
     |   |       |-- Newtonsoft
+    |   |       |   |-- Extensions.md
     |   |       |   |-- Newtonsoft.Json.Linq.JObject.md
     |   |       |   |-- Newtonsoft.md
     |   |       |-- Path
@@ -887,6 +913,7 @@
     |   |       |   |-- Boolean.md
     |   |       |   |-- cefsharp.md
     |   |       |   |-- char.md
+    |   |       |   |-- Console.md
     |   |       |   |-- const.md
     |   |       |   |-- Contains.md
     |   |       |   |-- copy.md
@@ -903,11 +930,13 @@
     |   |       |   |-- json.md
     |   |       |   |-- lambda.md
     |   |       |   |-- long.md
+    |   |       |   |-- Math.Round.md
     |   |       |   |-- Memory.md
     |   |       |   |-- object.md
     |   |       |   |-- Obsolete.md
     |   |       |   |-- params.md
     |   |       |   |-- PerformanceCounter.md
+    |   |       |   |-- port.exist.md
     |   |       |   |-- Process.md
     |   |       |   |-- Program.md
     |   |       |   |-- sizeof.md
@@ -920,6 +949,7 @@
     |   |       |   |-- TcpClient.md
     |   |       |   |-- Timer.md
     |   |       |   |-- Try.md
+    |   |       |   |-- Tuple.md
     |   |       |   |-- Uri.md
     |   |       |   |-- user.md
     |   |       |   |-- var.md
@@ -933,19 +963,25 @@
     |   |       |   |-- dynamic
     |   |       |   |   |-- dynamic.err.md
     |   |       |   |   |-- dynamic.md
+    |   |       |   |   |-- fun.md
     |   |       |   |-- GUID
     |   |       |   |   |-- GUID.md
     |   |       |   |-- IDisposable
+    |   |       |   |   |-- Close.md
+    |   |       |   |   |-- Dispose.md
     |   |       |   |   |-- IDisposable.md
     |   |       |   |-- MD5
     |   |       |   |   |-- GetHashCode.md
     |   |       |   |   |-- MD5.md
     |   |       |   |-- Regex
+    |   |       |   |   |-- regex.demo.md
     |   |       |   |   |-- regex.md
     |   |       |   |-- ScanEnterFile
     |   |       |   |   |-- ScanEnterFile.md
     |   |       |   |-- ServiceProcess
     |   |       |   |   |-- ServiceProcess.md
+    |   |       |   |-- String
+    |   |       |   |   |-- Replace.md
     |   |       |   |-- using
     |   |       |   |   |-- exErr.md
     |   |       |   |   |-- get-set.md
@@ -970,7 +1006,13 @@
     |   |   |-- Crc32.NET
     |   |   |   |-- Crc32.NET.md
     |   |   |-- Microsoft.AspNet.WebApi.Cors
-    |   |       |-- Microsoft.AspNet.WebApi.Cors.md
+    |   |   |   |-- Microsoft.AspNet.WebApi.Cors.md
+    |   |   |-- Microsoft.PowerShell.5
+    |   |       |-- System.Management.Automation.Powershell.md
+    |   |       |-- LazyCode
+    |   |           |-- Get-Process.md
+    |   |           |-- get-service.md
+    |   |           |-- get-wmiobject.md
     |   |-- Marketplace
     |   |   |-- Marketplace.md
     |   |-- Microsoft Windows SDK
@@ -1009,16 +1051,6 @@
     |   |   |-- roslyn.md
     |   |-- UWP
     |   |   |-- UWP.md
-    |   |-- Visual Studio
-    |   |   |-- Build and Run.md
-    |   |   |-- devenv.md
-    |   |   |-- MSBuild.md
-    |   |   |-- pre-build-event.md
-    |   |   |-- slnANDcsproj.md
-    |   |   |-- sn.md
-    |   |   |-- VS.FAQ.md
-    |   |   |-- lazycode
-    |   |       |-- BatchBuildTest.bat
     |   |-- WCF
     |   |   |-- WCF.md
     |   |-- WebSocket
@@ -1060,6 +1092,8 @@
     |-- Plugin
     |   |-- Enlighter
     |       |-- Enlighter.md
+    |-- PowerShell Core
+    |   |-- PowerShell Core.md
     |-- Proxy
     |   |-- Proxy Server
     |   |   |-- Reverse proxy.md
@@ -1093,6 +1127,7 @@
     |   |-- keywordtool
     |   |   |-- keywordtool.md
     |   |-- Knowledge
+    |   |   |-- auto.push.md
     |   |   |-- canonical.md
     |   |   |-- reptile.md
     |   |   |-- Robots.md
@@ -1116,6 +1151,8 @@
     |-- Server
     |   |-- Apache
     |   |   |-- Apache.md
+    |   |-- AppNode
+    |   |   |-- AppNode.md
     |   |-- BT
     |   |   |-- bt.md
     |   |   |-- APP
@@ -1143,9 +1180,14 @@
     |   |   |   |-- DirectoryEntry.md
     |   |   |   |-- IIS.md
     |   |   |-- IIS
+    |   |   |   |-- CLI.md
     |   |   |   |-- Err.md
     |   |   |   |-- IIS.md
     |   |   |   |-- version.vbs
+    |   |   |   |-- LazyCode
+    |   |   |       |-- UpdateWebsite
+    |   |   |           |-- Restart.For.Update.bat
+    |   |   |           |-- Stop.For.Update.bat
     |   |   |-- IIS Express
     |   |   |   |-- IIS Express.md
     |   |   |   |-- Doc
@@ -1317,6 +1359,7 @@
     |   |   |   |-- Notepad++.md
     |   |   |-- NuGet
     |   |   |   |-- NuGet.md
+    |   |   |   |-- PackageSources.md
     |   |   |-- phpStudy
     |   |   |   |-- .htaccess
     |   |   |   |-- phpStudy.md
@@ -1351,6 +1394,18 @@
     |   |   |   |-- WndEye.md
     |   |   |   |-- Xoreax IncrediBuild.md
     |   |   |-- Visual Studio
+    |   |   |   |-- Visual Studio
+    |   |   |   |   |-- sn.md
+    |   |   |   |   |-- VS.FAQ.md
+    |   |   |   |   |-- lazycode
+    |   |   |   |   |   |-- BatchBuildTest.bat
+    |   |   |   |   |-- MSBuild
+    |   |   |   |       |-- Build and Run.md
+    |   |   |   |       |-- devenv.md
+    |   |   |   |       |-- MSBuild.Example.md
+    |   |   |   |       |-- MSBuild.md
+    |   |   |   |       |-- pre-build-event.md
+    |   |   |   |       |-- slnANDcsproj.md
     |   |   |   |-- Visual Studio 2019
     |   |   |   |   |-- Visual Studio 2019.md
     |   |   |   |-- Visual Studio Code
@@ -1365,6 +1420,7 @@
     |   |   |-- VMware
     |   |   |   |-- net.md
     |   |   |   |-- vgdisplay.md
+    |   |   |   |-- vmdk.md
     |   |   |   |-- VMware.md
     |   |   |   |-- Installation
     |   |   |   |   |-- F.A.Q.md
@@ -1391,8 +1447,10 @@
     |   |   |-- PUSH Video Wallpaper.md
     |   |   |-- Wallpaper.md
     |   |-- Web Tools
+    |       |-- AI.word.md
     |       |-- chajiechi.md
     |       |-- crack.md
+    |       |-- get.md
     |       |-- Internet speed.md
     |       |-- IP.md
     |       |-- json.yasuo.md
@@ -1400,6 +1458,7 @@
     |       |-- MarkDown.md
     |       |-- original work.md
     |       |-- pinyin.md
+    |       |-- SQL Formatter.md
     |-- Ubuntu
     |   |-- PermitRootLogin.md
     |   |-- SSH.md
@@ -1496,7 +1555,6 @@
     |   |       |   |-- Table-laytpl.md
     |   |       |   |-- templet.md
     |   |       |-- Lazycode
-    |   |           |-- checkbox.md
     |   |           |-- collapse.md
     |   |           |-- div.md
     |   |           |-- elm.md
@@ -1505,9 +1563,6 @@
     |   |           |-- iframe.md
     |   |           |-- Jsinit.md
     |   |           |-- laydate.md
-    |   |           |-- layer.md
-    |   |           |-- Layer.open.md
-    |   |           |-- layer.tips.md
     |   |           |-- layui-nav-1.md
     |   |           |-- layui-tab.md
     |   |           |-- layuiJQ.md
@@ -1519,18 +1574,31 @@
     |   |           |   |-- button.md
     |   |           |-- Form
     |   |           |   |-- Form.api.md
+    |   |           |   |-- form.checkbox.md
     |   |           |   |-- Form.md
     |   |           |   |-- form.render.md
+    |   |           |   |-- Form.select.md
     |   |           |   |-- Form.textarea.md
+    |   |           |   |-- LazyCode
+    |   |           |       |-- Form.1.md
+    |   |           |       |-- Form.input.btn.md
+    |   |           |-- Msg
+    |   |           |   |-- layer.md
+    |   |           |   |-- Layer.open.md
+    |   |           |   |-- layer.tips.md
+    |   |           |   |-- msg.md
     |   |           |-- tab
     |   |           |   |-- tab.md
     |   |           |-- Table
-    |   |               |-- cols.type.md
-    |   |               |-- Table-api.md
-    |   |               |-- Table-event.md
-    |   |               |-- table-GetHeader.md
-    |   |               |-- Table-html.md
-    |   |               |-- Table.md
+    |   |           |   |-- cols.type.md
+    |   |           |   |-- Table-api.md
+    |   |           |   |-- Table-event.md
+    |   |           |   |-- table-GetHeader.md
+    |   |           |   |-- Table-html.md
+    |   |           |   |-- Table.md
+    |   |           |-- Un
+    |   |               |-- page.top.md
+    |   |               |-- util.fixbar.md
     |   |-- NG-ALAIN
     |   |   |-- NG-ALAIN.md
     |   |-- Vue
@@ -1593,6 +1661,7 @@
     |   |-- Html
     |   |   |-- HTML 5 Comments Tag.md
     |   |   |-- HTML a.md
+    |   |   |-- HTML meta.md
     |   |   |-- HTML Tags.md
     |   |   |-- HTML Templates.md
     |   |   |-- HTML.iframe.md
@@ -1662,6 +1731,7 @@
     |       |-- Bash.md
     |-- Windows
     |   |-- Run.md
+    |   |-- Windows PE.md
     |   |-- Windows.ISO.md
     |   |-- Windows.md
     |   |-- Control
@@ -1724,13 +1794,30 @@
     |   |   |-- developer mode.md
     |   |   |-- windows.Reset.md
     |   |-- Windows Server
-    |       |-- Windows Server.md
-    |       |-- Windows Sever 2019.md
+    |   |   |-- Windows Server.md
+    |   |   |-- Windows Sever 2019.md
+    |   |-- WMI
+    |       |-- WMI.md
+    |       |-- WMIC
+    |           |-- wmic.cli.md
+    |           |-- WMIC.md
+    |           |-- LazyCode
+    |               |-- Percentage of memory.bat
+    |               |-- Percentage of memory.md
     |-- Windows PowerShell
     |   |-- PowerShell.md
+    |   |-- cmdlet
+    |   |   |-- cmdlet.md
     |   |-- LazyCode
+    |       |-- Clear-history.md
+    |       |-- cpu.md
     |       |-- del.demo.md
     |       |-- Env.md
+    |       |-- Get memory.md
+    |       |-- Get memory.ps
+    |       |-- Get-CimInstance.md
+    |       |-- Get-Process.md
+    |       |-- Hard disk usage.md
     |       |-- open.md
     |       |-- user.md
     |-- YAML

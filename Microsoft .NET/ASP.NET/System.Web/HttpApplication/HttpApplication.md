@@ -2,6 +2,7 @@
 
 - 全局类
 - 事件查看 System.Web.HttpApplication
+- [Global.asax 中的方法 - pinko - 博客园](https://www.cnblogs.com/pinko/archive/2013/05/02/3053965.html)
 
 ```c#
 namespace AleEngine
@@ -45,4 +46,12 @@ namespace AleEngine
         }
     }
 }
+```
+
+## 事件
+
+```c#
+再说这两个无顺序的
+Application_PreSendRequestHeaders：向客户端发送Http标头之前执行。
+Application_PreSendRequestContent：向客户端发送Http正文之前执行。
 ```

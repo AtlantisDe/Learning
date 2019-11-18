@@ -6,24 +6,24 @@
 
 ```c#
 CsharpLazycode.Module.Laycode.sys.WaitDelay(1000, true);
-CsharpLazycode.Module.Laycode.sys.WaitDelay(CsharpLazycode.Module.Laycode.random.NextIncludeMax(3, 5) * 1000, true);
+CsharpLazycode.Module.Laycode.sys.WaitDelay(CsharpLazycode.Module.Laycode.Random.NextIncludeMax(3, 5) * 1000, true);
 
-var rid = CsharpLazycode.Module.Laycode.random.Next(0, ips.Length);
-var rid = CsharpLazycode.Module.Laycode.random.Next(0, ips.Count);
-var rid = CsharpLazycode.Module.Laycode.random.NextIncludeMax(20, 100);
-var ridv = CsharpLazycode.Module.Laycode.random.NextIncludeMax(20, 100);
-var ridv = CsharpLazycode.Module.Laycode.random.NextIncludeMax(Convert.ToInt32(arrleng[0]), Convert.ToInt32(arrleng[1]));
-var port = CsharpLazycode.Module.Laycode.random.NextIncludeMax(1200, 65535);
+var rid = CsharpLazycode.Module.Laycode.Random.Next(0, ips.Length);
+var rid = CsharpLazycode.Module.Laycode.Random.Next(0, ips.Count);
+var rid = CsharpLazycode.Module.Laycode.Random.NextIncludeMax(20, 100);
+var ridv = CsharpLazycode.Module.Laycode.Random.NextIncludeMax(20, 100);
+var ridv = CsharpLazycode.Module.Laycode.Random.NextIncludeMax(Convert.ToInt32(arrleng[0]), Convert.ToInt32(arrleng[1]));
+var port = CsharpLazycode.Module.Laycode.Random.NextIncludeMax(1200, 65535);
 
-newname = CsharpLazycode.Module.Laycode.random.GetRandomString(8, 20, true, true, true, false, "");
-subname = CsharpLazycode.Module.Laycode.random.GetRandomString(5, 10, true, true, false, false, "");
-CsharpLazycode.Module.Laycode.random.GetRandomString(5, 20, true, true, true, false, "____")
+newname = CsharpLazycode.Module.Laycode.Random.GetRandomString(8, 20, true, true, true, false, "");
+subname = CsharpLazycode.Module.Laycode.Random.GetRandomString(5, 10, true, true, false, false, "");
+CsharpLazycode.Module.Laycode.Random.GetRandomString(5, 20, true, true, true, false, "____")
 
-var fnameleng = CsharpLazycode.Module.Laycode.random.NextIncludeMax(3, 6);
-var fname = CsharpLazycode.Module.Laycode.random.GetRandomString(fnameleng, true, true, false, false, "");
+var fnameleng = CsharpLazycode.Module.Laycode.Random.NextIncludeMax(3, 6);
+var fname = CsharpLazycode.Module.Laycode.Random.GetRandomString(fnameleng, true, true, false, false, "");
 fname = CsharpLazycode.Module.Laycode.words.Util.GenerateSurname().ToLower();
 
-if (6 == CsharpLazycode.Module.Laycode.random.NextIncludeMax(1, 6))
+if (6 == CsharpLazycode.Module.Laycode.Random.NextIncludeMax(1, 6))
 {
 }
 

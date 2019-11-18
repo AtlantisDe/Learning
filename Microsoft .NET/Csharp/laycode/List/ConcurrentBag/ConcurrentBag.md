@@ -5,6 +5,7 @@
 - [如何：使用 ConcurrentBag 创建目标池](https://docs.microsoft.com/zh-cn/dotnet/standard/collections/thread-safe/how-to-create-an-object-pool)
 - [c#集合类的线程安全（整理）](https://blog.csdn.net/wlanye/article/details/8668089)
 - [C# 并发安全集合 ConcurrentBag 取代 List](https://blog.csdn.net/boonya/article/details/80541460)
+- [Production and consumption mode 生产消费模式](https://blog.csdn.net/u011109589/article/details/80519863)
 
 ```c#
 // 本示例演示如何使用并发包来实现对象池。 在需要某个类的多个实例并且创建或销毁该类的成本很高的情况下，对象池可以改进应用程序性能。 客户端程序请求新对象时，对象池先尝试提供一个已创建并返回到该池的对象。 仅在没有可用对象时，才会创建一个新对象。

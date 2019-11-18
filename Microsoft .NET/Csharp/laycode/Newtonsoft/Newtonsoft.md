@@ -7,6 +7,8 @@
 Newtonsoft.Json.JsonConvert.DeserializeObject<T>(config);
 Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 
+// Expando
+var jobj = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(config);
 Newtonsoft.Json.JsonConvert.DeserializeObject<System.Dynamic.ExpandoObject>(get.value);
 
 System.IO.File.WriteAllText(ccc, Newtonsoft.Json.JsonConvert.SerializeObject(articleItem), Encoding.UTF8);

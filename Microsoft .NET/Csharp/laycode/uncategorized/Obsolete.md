@@ -14,3 +14,9 @@ public override void OpenBox()
     Debug.LogError("你应该调用本类的 OpenMessageBox 方法");
 }
 ```
+
+## 使用丢弃
+
+```c#
+ _ = new List<wordsaledbitem>();
+```

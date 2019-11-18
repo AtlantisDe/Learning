@@ -116,6 +116,7 @@ SELECT `ID`,`Name` FROM `Student`  WHERE (( `ID` = @ID0 ) OR ( `Name` = @Name1 )
 ### 统计
 
 ```c#
+// 大数据别用这个查询卡死
 root.allcount = db.Queryable<Module.DemoTest.Database.Main.Entity.Models.urlitem>().Count();
 SELECT COUNT (*)   as   总计   FROM "main"."T_urls_guid"
 
@@ -146,13 +147,11 @@ var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Whe
 
 ### 特殊符号查询
 
-```c#
-SELECT
-T_urls.url
-FROM
-T_urls
-WHERE
-T_urls.url LIKE '%/NH79X/%'
+```SQL
+SELECT t_urls.url
+FROM   t_urls
+WHERE  t_urls.url LIKE '%/news/%'
+
 
 ```
 
@@ -162,25 +161,25 @@ T_urls.url LIKE '%/NH79X/%'
 
 ```c#
 //查询列表
-    SqlSugarClient db = SugarContext.GetInstance();
-    List<teacher> tList = db.Queryable<teacher>().ToList();
-    Console.WriteLine(tList.Count);
+SqlSugarClient db = SugarContext.GetInstance();
+List<teacher> tList = db.Queryable<teacher>().ToList();
+Console.WriteLine(tList.Count);
 
-    var studentDynamic = db.Queryable<student>().ToDynamic();
-    Console.WriteLine(studentDynamic);
+var studentDynamic = db.Queryable<student>().ToDynamic();
+Console.WriteLine(studentDynamic);
 
-    string teaJson = db.Queryable<teacher>().ToJson();
-    Console.WriteLine(teaJson);
+string teaJson = db.Queryable<teacher>().ToJson();
+Console.WriteLine(teaJson);
 
-    //Json序列化的DateTime处理
-    db.SerializerDateFormat = "yyyy年MM月dd日";
-    string teacher1 = db.Queryable<teacher>().OrderBy("tbirthday desc").Take(2).ToJson();
-    string teacher2 = db.Sqlable().From<teacher>("t").SelectToJson(" top 1 *");
-    string teacher3 = db.SqlQueryJson("select top 1 * from teacher;");
-    Console.WriteLine(teacher1);
-    Console.WriteLine(teacher2);
-    Console.WriteLine(teacher3);
-    Console.WriteLine(tList.First().tbirthday.Value.ToString("yyyy-MM-dd"));
+//Json序列化的DateTime处理
+db.SerializerDateFormat = "yyyy年MM月dd日";
+string teacher1 = db.Queryable<teacher>().OrderBy("tbirthday desc").Take(2).ToJson();
+string teacher2 = db.Sqlable().From<teacher>("t").SelectToJson(" top 1 *");
+string teacher3 = db.SqlQueryJson("select top 1 * from teacher;");
+Console.WriteLine(teacher1);
+Console.WriteLine(teacher2);
+Console.WriteLine(teacher3);
+Console.WriteLine(tList.First().tbirthday.Value.ToString("yyyy-MM-dd"));
 ```
 
 #### 2. 常用查询
@@ -441,11 +440,35 @@ ResultModel里面的属性无需和Select方法里面的列名字符串一一对
 */
 ```
 
+##### 4. 查询单条
+
+- [.Select 用法-SqlSugar4-文档园](http://www.codeisbug.com/Doc/8/1123)
+
+```c#
+// 查询单条没有数据返回NULL, Single超过1条会报错，First不会
+
+var getSingleOrDefault = db.Queryable<Student>().Single();
+var getFirstOrDefault = db.Queryable<Student>().First();
+```
+
 #### 10. 执行 SQL
 
 ```c#
+// (int pageIndex, int pageSize);
+
+Students = db.SqlQueryable<Student>("SELECT * FROM Student LIMIT 1 OFFSET ABS(RANDOM()) % MAX((SELECT COUNT(*) FROM Student), 1)").ToList();
+
+
 var t12 = db.SqlQueryable<Student>("select * from student").Where(it=>it.id>0).ToPageList(1, 2);
+
 var t12 = db.SqlQueryable<dynamic>("select * from student").ToPageList(1, 2);
+
+var t12 = db.SqlQueryable<Student>(Sql).Take(Amount).ToList();
+
+
+var t12 = db.SqlQueryable<dynamic>("SELECT COUNT (*)   as   cnt   FROM \"main\".\"T_urls\"").ToPageList(1, 2);
+root.allcount = Convert.ToInt32(t12[0].cnt);
+
 ```
 
 ##### 1. Like

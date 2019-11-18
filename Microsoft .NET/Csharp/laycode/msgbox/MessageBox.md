@@ -25,4 +25,16 @@ else
 {
     MessageBox("点击了按钮“否”");
 }
+
+
+var message = string.Format("确定在文件夹:{0} 创建吗?", tplitem.Path);
+
+if (MessageBox.Show(message, "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+{
+
+}
+else
+{
+
+}
 ```

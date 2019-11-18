@@ -32,7 +32,7 @@ style="display: none"
 
 #### 3. 图片自适应宽度
 
-- [div或img图片高度随宽度自适应](https://blog.csdn.net/chelen_jak/article/details/82781849)
+- [div 或 img 图片高度随宽度自适应](https://blog.csdn.net/chelen_jak/article/details/82781849)
 
 ```css
 <p><img style="width: 100%;" src="http://dingyue.ws.126.net/2019/06/27/5c95f1d5b37a4a40b7084ca5a9d5ab6e.jpeg"></p>
@@ -62,14 +62,14 @@ style="display: none"
 
 #### 7. 固定头部 不移动
 
-```html
-<div
-  class="header"
-  style="position: fixed;z-index: 1000;left: 0;top: 0;width: 100%;width: 100%;"
-></div>
-<div
-  style="position: fixed;z-index: 1000;left: 0;top: 0;width: 100%;width: 100%;"
-></div>
+```js
+<div  class="header"  style="position: fixed;z-index: 1000;left: 0;top: 0;width: 100%;width: 100%;"></div>
+<div style="position: fixed;z-index: 1000;left: 0;top: 0;width: 100%;width: 100%;"></div>
+
+<div style="position: fixed;z-index: 10000;left: 0;top: 0;width: 100%;width: 100%;">
+<div style="width: 480px;float: left;margin-left: 10px;margin-top: 10px;"></div>
+</div>
+
 ```
 
 #### 8. 居中显示
@@ -79,4 +79,25 @@ style="display: none"
   text-align: center;
   margin: 0 auto;
 }
+```
+
+```html
+<div class="elapsedTime">耗时:0</div></body>
+```
+
+#### 9. CSS 浮动
+
+- [CSS 浮动](https://www.w3school.com.cn/css/css_positioning_floating.asp)
+
+```css
+<div style="float: left;"></div>
+
+
+<div style="width: 400px;float: left;"></div>
+<div style="width: 400px;float: left;"></div>
+
+```
+
+```html
+
 ```

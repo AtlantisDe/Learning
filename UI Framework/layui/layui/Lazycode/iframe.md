@@ -50,7 +50,7 @@ parent.valText(JSON.stringify(data));
 
 //表单赋值 传入JSON字符串
 function valText(jsontexts) {
-  layui.form.val("Div_siteconfigitem_form", JSON.parse(jsontexts));
+  layui.form.val("Div_itemsdemo_form", JSON.parse(jsontexts));
   return true;
 }
 ```

@@ -31,5 +31,6 @@ db.Utilities.PageEach(demo_Guiditems, 500, list =>
 ### 更新或者插入
 
 ```c#
- db.Saveable<Student>(entity).ExecuteReturnEntity();
+db.Saveable<Student>(entity).ExecuteReturnEntity();
+var count = db.Saveable<Urlitem>(urlitem).ExecuteCommand();
 ```

@@ -6,38 +6,66 @@
 
 ```js
 // 赋值类
-layui.form.val("Div_regkeyitems_form", data);
+layui.form.val("Div_itemsdemo_form", data);
+
+// 错误用法
+layui.form.val("Div_itemsdemo_form", {
+  IsCompresswebpage: "false"
+});
+
+// 正确用法
+layui.form.val("Div_itemsdemo_form", {
+  IsCompresswebpage: false
+});
+
 // 取值类
-layuiFormdatafield2targetfiled(data.field, regkeyitem);
-layui.form.val("Div_regkeyitems_form");
+// 1. 推荐 本方法能保留原始对象其它未存在表单里的对象值
+
+layuiFormdatafield2targetfiled(data.field, Items);
+FunLayuiFormSetBoolValueToObjItems("Div_id_form", Items);
+
+// 开关正式版
+FunLayuiFormSetBoolValueToObjItems("Div_id_form", Items);
+
+// 覆盖版
+layuiFormdatafield2targetfiled(data.field, DemoItems);
+
+// 2. 常用调试获取测试方法
+layui.form.val("Div_itemsdemo_form");
+// 3. 获取值 直接覆盖
+subSiteconfig = data.field;
 ```
 
 ### 1. SET 赋值可实体类
 
 ```js
+清空;
+layui.form.val("divformname", { name: "" });
+layui.form.val('divformname', { name: '' });
+
 //时间控件必须格式化
-regkeyitem.expiretime = layui.util.toDateString(
-  regkeyitem.expiretime,
+DemoItems.expiretime = layui.util.toDateString(
+  DemoItems.expiretime,
   "yyyy-MM-dd HH:mm:ss"
 );
-layui.form.val("Div_regkeyitems_form", data);
+layui.form.val("Div_itemsdemo_form", data);
 
-layui.form.val("Div_regkeyitems_form", {
-  guid: regkeyitem.guid,
-  deviceFinger: regkeyitem.deviceFinger,
-  key: regkeyitem.key,
-  keyOwner: regkeyitem.keyOwner,
-  keyOwner: regkeyitem.keyOwner,
-  expiretime: regkeyitem.expiretime,
-  isenable: GetcheckboxValuetrueOrfalse_for_readUIshow(regkeyitem.isenable),
-  description: regkeyitem.description
+layui.form.val("Div_itemsdemo_form", {
+  guid: DemoItems.guid,
+  deviceFinger: DemoItems.deviceFinger,
+  key: DemoItems.key,
+  keyOwner: DemoItems.keyOwner,
+  keyOwner: DemoItems.keyOwner,
+  expiretime: DemoItems.expiretime,
+  isenable: GetcheckboxValuetrueOrfalse_for_readUIshow(DemoItems.isenable),
+  description: DemoItems.description
 });
 ```
 
 ### 2. GET 表格数据赋值到目标实体数据封装方法
 
 ```js
-layuiFormdatafield2targetfiled(data.field, regkeyitem);
+layuiFormdatafield2targetfiled(data.field, DemoItems);
 
 function layuiFormdatafield2targetfiled(datafield, targetfiled) {
   // 开始遍历
@@ -77,5 +105,20 @@ layui.form.on("submit(savelinks_save)", function(data) {
   var host = GetQueryString("host");
   savelinks(host, data.field.linksbody);
   return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+});
+```
+
+### 5. 枚举表单内开关关闭的值
+
+```js
+layui.$(".layui-form [class='layui-unselect layui-form-switch']").length;
+
+layui.$(".layui-form [class='layui-unselect layui-form-switch']");
+
+layui.$("#Div_id_form [class='layui-unselect layui-form-switch']");
+
+var divArr = $("#Div_id_form [class='layui-unselect layui-form-switch']");
+$.each(divArr, function(i, n) {
+  console.log(divArr[i]);
 });
 ```

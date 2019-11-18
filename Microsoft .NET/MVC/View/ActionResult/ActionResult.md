@@ -9,6 +9,6 @@
 ```c#
 //Response.ContentType = "text/javascript";
 Response.AddHeader("Server","Baidu");
-  return Content("参数有误");
+return Content("参数有误");
 
 ```

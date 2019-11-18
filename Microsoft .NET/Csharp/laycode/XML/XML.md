@@ -5,6 +5,7 @@
 - [C#操作 XML 方法集合](https://www.cnblogs.com/zery/p/3362480.html)
 - [C#读取和写入 XML 文件](https://www.cnblogs.com/fengxuehuanlin/p/5631664.html)
 - [Select XML Nodes by Name [C#]](http://www.csharp-examples.net/xml-nodes-by-name/)
+- XML 文档严格区分大小写
 
 ## XML 工具
 

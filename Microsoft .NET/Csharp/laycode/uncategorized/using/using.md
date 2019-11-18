@@ -3,7 +3,7 @@
 - [C#-using 用法详解](https://www.cnblogs.com/hejoy91/p/5518987.html)
 - [using 关键字在 C#中的 3 种用法 - xiaobiexi - 博客园](https://www.cnblogs.com/xiaobiexi/p/6179127.html)
 
-## using 关键字有两个主要用途：
+## using 关键字有两个主要用途
 
 - (一).作为指令，用于为命名空间创建别名或导入其他命名空间中定义的类型。
 - (二).作为语句，用于定义一个范围，在此范围的末尾将释放对象。

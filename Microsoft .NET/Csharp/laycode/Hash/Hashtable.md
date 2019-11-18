@@ -1,13 +1,56 @@
 # Hashtable
 
 - 线程安全推荐使用
+- 锁 hashtable 应该锁它的 SyncRoot 属性而不应该锁它的实例
 - [C#中 HashTable 的用法 - 璇狼之风 - 博客园](https://www.cnblogs.com/houlin/p/3512480.html)
 - [C#集合类(HashTable, Dictionary, ArrayList)与 HashTable 线程安全 - Mainz - 博客园](https://www.cnblogs.com/Mainz/archive/2008/04/06/CSharp_HashTable_Dictionary_ArrayList_Threadsafe.html)
 - [C# 集合 — Hashtable 线程安全 - 蓝远波 - 博客园](https://www.cnblogs.com/lanyuanbo/p/5857038.html)
+- [c# 变量，对象，静态类型，集合类的线程安全回顾 - NLazyo - 博客园](https://www.cnblogs.com/bile/p/6114506.html)
+- [https://blog.csdn.net/seamonkey/article/details/583613](https://blog.csdn.net/seamonkey/article/details/583613) -[C#的线程安全类为何还是得加 lock ?-CSDN 论坛](https://bbs.csdn.net/topics/391982454)
+- [Hashtable Class (System.Collections)](https://docs.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=netframework-4.8)
 
 ## DEMO
 
-### 线程安全再次解说
+```c#
+// 很高兴能解答这个问题。其实您只要记住一句话就好：线程安全和数据同步是两码事儿。
+// 您的程序是线程安全的，不会出错（起码计算机是这么认为的）
+// 但他的数据是不同步的，因为你是并发运行，速度太快，计算机也不确定谁先谁后。
+// 所以你需要同步一下。就是LOCK起来。。C#有很多线程同步的类 什么信号量互斥量 锁 自旋锁。
+// 看你需要选择合适的用。
+```
+
+### 1. 添加
+
+```c#
+root.hashtable.Add("aa", 123);
+```
+
+### 2. 读取
+
+```c#
+ string aaa = (string)hashtable["aa"];
+```
+
+### 3. 非局部变量原子操作
+
+```c#
+var ht = new System.Collections.Hashtable
+{
+    { "aa", AnalysisItem }
+};
+
+Parallel.For(0, 10000000, new ParallelOptions() { MaxDegreeOfParallelism = 5000 }, (i, loopState) =>
+{
+    lock (ht.SyncRoot)
+    {
+        var aaa = (AnalysisItem)ht["aa"];
+        aaa.RequestTotalTimes += 1;
+    }
+});
+
+```
+
+### 4. 线程安全再次解说
 
 ```c#
 var ht = new System.Collections.Hashtable();
@@ -32,7 +75,7 @@ System.Collections.Hashtable htSyn = System.Collections.Hashtable.Synchronized(n
 另外一种方法就是使用lock语句，但要lock的不是HashTable，而是其SyncRoot；虽然不推荐这种方法，但效果一样的，因为源代码就是这样实现的:
 ```
 
-### 多线程操作错误示例
+### 5. 多线程操作错误示例
 
 ```c#
 //任务队列DEMO
@@ -75,16 +118,4 @@ Thread Th2 = new Thread(delegate ()
 });
 Th2.IsBackground = true;
 Th2.Start();
-```
-
-### 添加
-
-```c#
-root.hashtable.Add("aa", 123);
-```
-
-### 读取
-
-```c#
- string aaa = (string)hashtable["aa"];
 ```

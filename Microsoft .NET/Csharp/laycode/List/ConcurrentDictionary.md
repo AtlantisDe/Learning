@@ -53,6 +53,7 @@ Domains.ContainsKey("");
 
 1.dictionary.Keys.Contains(key) //拿到所有key，在查询，复杂度：o(n)
 2.dictionary.ContainsKey(key) //hash查询，复杂度：o(1)
+
 ```
 
 ### 2. 安全线程字典修改操作

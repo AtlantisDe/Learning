@@ -51,4 +51,15 @@ myDelegate = new Module.RunAction.Main.Entity.actionitem.RunCode
     System.Console.WriteLine("World!");
     }
 )
+
+
+System.Timers.Timer aTimer = new System.Timers.Timer();
+aTimer.Elapsed += new System.Timers.ElapsedEventHandler(delegate (object sender, System.Timers.ElapsedEventArgs e)
+{
+
+}); //到达时间的时候执行事件；
+aTimer.Interval = 2 * 1000; // 设置引发时间的时间间隔 此处设置为1秒（1000毫秒）
+aTimer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+aTimer.Enabled = true; //是否执行System.Timers.Timer.Elapsed事件；
+
 ```

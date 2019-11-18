@@ -62,10 +62,28 @@ var classname_module = $(".lv").attr("class");
 $("#aaaa").removeAttr("style");
 ```
 
-###
+### 移除
 
 ```js
 $("#show").removeAttr("style"); //ie,ff均支持
 
 $("#show").attr("style", ""); //firefox支持，ie不支持
+```
+
+### JQuery 如何选择带有多个 class 的元素
+
+- [JQuery 如何选择带有多个 class 的元素 - 左正 - 博客园](https://www.cnblogs.com/soundcode/p/5042729.html)
+
+```js
+<div class="modal fade in"></div>;
+
+// 依次过滤
+
+$(".modal.fade").filter("in");
+
+// 属性选择
+$("[class='modal fade in']"); //此处顺序必须一致才行
+
+// 直接选择
+$(".modal.fade.in");
 ```

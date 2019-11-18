@@ -19,6 +19,8 @@
 
 <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+https://libs.baidu.com/fontawesome/4.0.3/css/font-awesome.css
+
 
 ```
 

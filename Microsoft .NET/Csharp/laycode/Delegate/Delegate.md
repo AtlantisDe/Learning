@@ -159,3 +159,52 @@ class Program
         }
     }
 ```
+
+### 6. delegate 用法（带参数）
+
+- [C#中 delegate 用法（带参数）](https://blog.csdn.net/zhouyingge1104/article/details/78344812)
+
+```C#
+//委托
+public delegate void delegate1(string str);
+
+//方法
+private void showUpdateProgress(string content)
+{
+    //...
+   rtbxUploadLog.Text += content;
+}
+
+//调用
+delegate1 change = new delegate1(showUpdateProgress);
+
+string resp = upload();
+if (resp.Equals("ok"))
+{
+   this.BeginInvoke(change, "上传完成");
+}else{
+   this.BeginInvoke(change, "上传失败");
+}
+```
+
+### 7. 匿名 委托 常用
+
+```c#
+// 那个委托返回值类型
+public delegate string ChangeEveryTimesNewwordDelegate();
+
+// 实例一个委托方法返回一个string值
+StringDemoExtenions.ChangeEveryTimesNewwordDelegate newwordDelegate = new StringDemoExtenions.ChangeEveryTimesNewwordDelegate(delegate ()
+{
+      return RandomExtenions.Xcharacter(8);
+});
+
+
+NewwordDelegate newwordDelegate = new NewwordDelegate(delegate ()
+{
+      return RandomExtenions.Xcharacter(8);
+});
+
+// 演示方法参数中传入这个委托实例 以便提供其再下面这个方法内,灵活使用
+tmp = StringDemoExtenions.ReplaceWithRegex(tmp, @"(\[随机字符\])", newwordDelegate);
+```

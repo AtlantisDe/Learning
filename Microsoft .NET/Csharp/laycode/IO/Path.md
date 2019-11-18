@@ -11,6 +11,12 @@
 ## 1. 常用代码
 
 ```c#
+
+DirectoryInfo TheFolder = new DirectoryInfo(Path);
+new FileInfo(item)
+
+
+
 // 1、文件名长度最大为255个英文字符，其中包括文件扩展名在内。一个汉字相当于两个英文字符。
 // 2、文件的全路径名长度最大为260个英文字符，包含扩展名在内。如路径为C:\Program Files\filename.txt，那么这28个字符都包含在此字符数值中。一个汉字相当于两个英文字符。
 
@@ -31,6 +37,8 @@ D:\Tmp\
 var CurrentPath = Environment.CurrentDirectory;
 var CurrentPath = System.Environment.CurrentDirectory;
 c:\windows\system32\inetsrv
+
+
 
 
 ```
@@ -331,6 +339,12 @@ System.AppDomain.CurrentDomain.FriendlyName
 string serviceFilePath = $"{Application.StartupPath}\\WindowsServiceDemo.exe";
 string serviceName = "Aaa-MyWindowsService-测试-001";
 string serviceFilePath = System.AppDomain.CurrentDomain.BaseDirectory + "\WindowsServiceDemo003ccweb.exe";
+```
+
+### 当前启动程序路径
+
+```c#
+System.Windows.Forms.Application.ExecutablePath
 ```
 
 ### 设置和获取环境变量
