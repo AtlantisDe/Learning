@@ -3,9 +3,24 @@
 - [Json.NET - Newtonsoft](https://www.newtonsoft.com/json)
 - [JamesNK/Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json/releases)
 
+## 1. 常用
+
+### 1. 常用代码
+
 ```C#
+- [C# 关于JArray和JObject封装JSON对象](https://www.jianshu.com/p/bd567de57308)
+// JObject：基本的json对象
+// JObject：嵌套子对象（JObject嵌JObject）
+// JArray：基本json对象中的数组
+// JArray： 多个json对象数组
+// JArray：json数组嵌套数组（一个学生对应多个课程分数）
+
 Newtonsoft.Json.JsonConvert.DeserializeObject<T>(config);
 Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+
+// 取值
+JObject["UserItem"]["Name"] = "Queen";
+var ccc = JObject["UserItem"].Value<string>("Phone") ?? "默认值";
 
 // Expando
 var jobj = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(config);
@@ -14,6 +29,11 @@ Newtonsoft.Json.JsonConvert.DeserializeObject<System.Dynamic.ExpandoObject>(get.
 System.IO.File.WriteAllText(ccc, Newtonsoft.Json.JsonConvert.SerializeObject(articleItem), Encoding.UTF8);
 
 var items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Main.Entity.tpl.tplitem>>(System.IO.File.ReadAllText("", System.Text.Encoding.UTF8));
+
+// 字符串
+[{"cnt":9305}]
+// 对象类型应该为
+Newtonsoft.Json.Linq.JArray
 
 var jobj = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JArray>(rdata);
 
@@ -31,6 +51,48 @@ var jobj = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JO
 host = jobj["host"].ToString();
 guid = jobj["guid"].ToString();
 
+```
+
+### 2. JObject 取值规范
+
+```c#
+var StrCode = "{\r\n  \"IsOpen\": \"true\",\r\n  \"Anums\": \"1\",\r\n  \"Bnums\": \"2\",\r\n  \"Cnums\": \"3\",\r\n  \"AText\": \"2\",\r\n  \"BText\": \"2\"\r\n}";
+var JObject = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(StrCode);
+var IsOpen1 = JObject["IsOpen"] ?? true;
+var IsOpen2 = JObject.Value<bool>("IsOpen");
+var IsOpen3 = JObject.Value<bool>("noKey");
+
+var aaa = JObject.Value<string>("Anums");
+var bbb = JObject.Value<string>("noKey") ?? "默认值";
+var ccc = JObject.Value<string>("Anums") ?? "默认值";
+
+
+
+// 常用API 常用JObject 与 实体类同步相互转换:
+var DemoItem = Newtonsoft.Json.JsonConvert.DeserializeObject<ConfigItem>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
+ JObject["UserItem"] = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(Newtonsoft.Json.JsonConvert.SerializeObject(new UserItem() { Age = 9, Name = "King" }));  
+```
+
+### 3. JSON 中 JObject 和 JArray 的修改
+
+```c#
+var JObject = new Newtonsoft.Json.Linq.JObject { };
+JObject.Add("IsOpen", true);
+JObject.Add("Anums", 1);
+JObject.Add("Bnums", 2);
+JObject.Add("Cnums", 3);
+
+JObject.Add("AText", "2");
+JObject.Add("BText", "3");
+
+JObject["CText"] = "C";
+JObject["CText"] = "C1";
+JObject["CText"] = new Newtonsoft.Json.Linq.JObject { { "Phone", "132****7777" }, { "Gender", "男" } };
+var info = new Newtonsoft.Json.Linq.JObject { { "Phone", "132****7777" }, { "Gender", "男" } };
+JObject.Add("Info", info);
+
+//修改
+JObject.Property("AText").Value="999";
 ```
 
 ## 1. Version (AssemblyVersion) (Runtime)

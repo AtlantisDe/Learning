@@ -7,7 +7,7 @@
 #### 1. 项目加载失败
 
 ```c#
-// 可能原因:Web 应用程序项目 AleseoRegmanagement 已配置为使用 IIS。  未能找到 Web 服务器“http://127.0.0.1:11201/”。
+// 可能原因:Web 应用程序项目 DemoRegmanagement 已配置为使用 IIS。  未能找到 Web 服务器“http://127.0.0.1:11201/”。
 // 解决方案: IIS上建立对应调试站点即可
 
 ```
@@ -15,7 +15,8 @@
 #### 2. VS 重置开发环境的方法
 
 ```c#
-devenv.exe /setup /resetuserdata /resetsettings，重置Visual Studio 即可
+// 重置Visual Studio 即可
+devenv.exe /setup /resetuserdata /resetsettings
 ```
 
 #### 3. VS 中 Release 模式下生成去掉生成 pdb 文件
@@ -33,4 +34,13 @@ devenv.exe /setup /resetuserdata /resetsettings，重置Visual Studio 即可
 // 而Debug编译的dll将显示：
 [assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)]
 
+```
+
+#### 5. 无法从 COM 上下文 0x7ca30ec0 转换为 COM 上下文 0x7ca30d98，这种状态已持续 60
+
+- [转换为 COM 上下文 0xece486f8， 这种状态已持续 60 秒” - 大型电灯泡 - 博客园](https://www.cnblogs.com/zhangne/p/10857481.html)
+- [ContextSwitchDeadlock](https://blog.csdn.net/qqq1994_0810/article/details/83151621)
+
+```c#
+托管调试助手 "ContextSwitchDeadlock":“CLR 无法从 COM 上下文 0x7ca30ec0 转换为 COM 上下文 0x7ca30d98，这种状态已持续 60
 ```

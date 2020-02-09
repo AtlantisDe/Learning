@@ -29,6 +29,8 @@
 ```c#
 StringBuilder sb = new StringBuilder();
 
+var sb = new  System.Text.StringBuilder();
+
 
 StringBuilder sb = new StringBuilder("ABC", 50);
 sb.Append(new char[] { 'D', 'E', 'F' });

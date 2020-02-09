@@ -127,21 +127,33 @@ public DemoCore.Module.DemoTest.Host.Main.Entity.apipublish linkitemAdd([FromBod
 
 #### 3. dynamic 设计
 
-- 要点本领:传送数据是 JSON 系化后对象的字符串
-- 要点: 发送不成功 原因是:数据类型设置没对
+> 1. 要点本领:传送数据是 JSON 系化后对象的字符串
+> 2. 要点: 发送不成功 原因是:数据类型设置没对
+> 3. contentType: "application/json", 必须配置原始数据类型是 JSON
+> 4. 接收参数设置为 (dynamic obj) 传递进入方法层参数配置为非弱类型参数: (object)obj
 
 ```js
 // 要点预览
-contentType: 'application/json',
+dataType: "json",
+contentType: "application/json",
 data: JSON.stringify({ NAME: "Jim",DES:"备注" }),
 ```
 
 ```c#
 // 后端设计
+[Route("api/demo/dynamic/set")]
+[HttpGet]
+[HttpPost]
+public Newtonsoft.Json.Linq.JObject Demo_Set(dynamic obj)
+{
+    var root = Demo.Set((object)obj).ObjToJObject();
+    return root;
+}
+
 [Route("api/demo/dynamic")]
 [HttpGet]
 [HttpPost]
-public async Task<Newtonsoft.Json.Linq.JObject> iamdemo(dynamic obj)
+public async Task<Newtonsoft.Json.Linq.JObject> IamDemo(dynamic obj)
 {
     return await Task.Run(() =>
     {

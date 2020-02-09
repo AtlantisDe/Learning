@@ -11,4 +11,5 @@
 
 
 文件.除此之外全部关闭 Ctrl+C Ctrl+O
+类视图上下文菜单.类视图项目.调试.启动新实例 Ctrl+Shift+S, Ctrl+Shift+S
 ```

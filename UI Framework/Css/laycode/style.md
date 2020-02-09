@@ -101,3 +101,9 @@ style="display: none"
 ```html
 
 ```
+
+#### 10. 一行自动缩进
+
+```css
+<div id="id" style="display:inline-block;"></div>
+```

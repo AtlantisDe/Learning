@@ -6,6 +6,32 @@
 - [C#获取当前时区 - zhlinos 的博客 - CSDN 博客](https://blog.csdn.net/m0_37521785/article/details/79789058)
 - [C# 获取系统时间及时间格式 - xjtrab - 博客园](https://www.cnblogs.com/xjtrab/articles/1878353.html)
 
+## 时间对比
+
+```c#
+DateTime dt1 = DateTime.Now.AddDays(-16); ;
+
+DateTime dt2 = DateTime.Now.AddDays(-15); ;
+
+if (dt1 >= dt2)
+{
+    Console.WriteLine(dt1);
+    Console.WriteLine(dt2);
+    Console.WriteLine("未锁定");
+}
+else
+{
+    Console.WriteLine(dt1);
+    Console.WriteLine(dt2);
+    Console.WriteLine("已锁定");
+
+}
+if (item.Createtime >= DateTime.Now.AddDays(-15))
+{
+
+}
+```
+
 ## 相关代码
 
 ```c#

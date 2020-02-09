@@ -35,4 +35,7 @@ Console.WriteLine("成功导入{0}条数据 ，用时{1}秒。", demo_Guiditems.
 
 
 Console.WriteLine("流程运行用时{0}秒。", stopwatch.Elapsed.TotalSeconds);
+
+Console.WriteLine("[{0}] 流程运行用时{1}秒。", "单次读词库", stopwatch.Elapsed.TotalSeconds);
+Console.WriteLine("[{0}] 流程运行用时{1}毫秒。", "单次读词库", stopwatch.Elapsed.TotalMilliseconds);
 ```

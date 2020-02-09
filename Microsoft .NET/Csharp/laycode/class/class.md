@@ -11,7 +11,11 @@ Classes
  public class Ucmain
 {
     public aaaa Root { get; set; }
-    public Ucmain(aaaa Root_)
+    public Ucmain()
+    {
+
+    }
+    public UcmainTwo(aaaa Root_):this()
     {
 
     }

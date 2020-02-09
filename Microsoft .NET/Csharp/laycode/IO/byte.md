@@ -4,6 +4,7 @@
 
 ```c#
 byte[] data = System.Text.Encoding.Default.GetBytes("Hello World!");
+System.Text.Encoding.UTF8.GetBytes(obj)
 
 
 // 申请内存缓冲区字节与长度

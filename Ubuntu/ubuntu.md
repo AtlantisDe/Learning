@@ -33,6 +33,16 @@ Distributor ID: Ubuntu
 Description:    Ubuntu 18.10
 Release:        18.10
 Codename:       cosmic
+
+# 当然可以通过已安装.net 查看
+dotnet --info
+
+Runtime Environment:
+ OS Name:     ubuntu
+ OS Version:  19.10
+ OS Platform: Linux
+ RID:         ubuntu.19.10-x64
+ Base Path:   /usr/share/dotnet/sdk/3.1.100/
 ```
 
 ### 2. 软件更新源 / 系统更新 [注意 IPv4 或者 IPv6]

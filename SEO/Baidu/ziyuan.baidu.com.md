@@ -7,6 +7,11 @@
 - [添加网站](https://ziyuan.baidu.com/site/index)
 - [批量添加子站](https://ziyuan.baidu.com/site/batchadd?mainsite=http://www.123.com)
 
+## Wiki
+
+- [C#实现百度 ping 功能 - 18236992212 - 博客园](https://www.cnblogs.com/qishun/p/5746899.html)
+- [百度博客搜索-提交博客](http://ping.baidu.com/ping.html)
+
 ## 常用
 
 ```c#

@@ -1,12 +1,16 @@
 # MongoDB
 
+- [MongoDB Download Center](https://www.mongodb.com/download-center)
 - [Build software better, together](https://github.com/topics/mongodb)
+- [meteor/meteor](https://github.com/meteor/meteor)
 
 ## 教程
 
 - [MongoDB 教程 | 菜鸟教程](http://www.runoob.com/mongodb/mongodb-tutorial.html)
 
 ## Windows 安装
+
+- [Install MongoDB Community Edition on Windows &mdash; MongoDB Manual](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
 1. Select the server you would like to run:
 

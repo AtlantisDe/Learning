@@ -6,7 +6,7 @@
 
 ## Buy VPN
 
-- [无日志的VPN服务提供商](https://whoer.net/zh/vpn)
+- [无日志的 VPN 服务提供商](https://whoer.net/zh/vpn)
 
 ## SoftEther VPN
 
@@ -26,3 +26,36 @@
 ## shadowsocks
 
 - [网,goldapple, - Powered by Sablog-X](http://www.goldapple.name/blog/?action=show&id=1583)
+
+## libQtShadowsocks
+
+- [shadowsocks/libQtShadowsocks](https://github.com/shadowsocks/libQtShadowsocks/)
+- [librehat/shadowsocks Copr](https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/)
+
+```c#
+windows版安装 :
+https://github.com/shadowsocks/libQtShadowsocks/releases
+下载出exe程序，在当前目录新建文件 config.json，写入下面代码
+
+{
+    "server":"127.0.0.1",
+    "server_port":59989,
+    "local_address":"127.0.0.1",
+    "local_port":59989,
+    "password":"59989!",
+    "timeout":600,
+    "method":"aes-256-cfb"
+}
+
+启动命令：
+shadowsocks-libqss.exe -c config.json -S
+
+
+ss://YWVzLTI1Ni1@127.0.0.1:9899
+
+```
+
+## outline-client
+
+- [Jigsaw-Code/outline-client](https://github.com/Jigsaw-Code/outline-client)
+- [https://github.com/Jigsaw-Code/outline-client/releases/download/daily-2020-01-04/app-armv7-debug.apk](https://github.com/Jigsaw-Code/outline-client/releases/download/daily-2020-01-04/app-armv7-debug.apk)

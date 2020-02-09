@@ -41,7 +41,7 @@ subSiteconfig = data.field;
 ```js
 清空;
 layui.form.val("divformname", { name: "" });
-layui.form.val('divformname', { name: '' });
+layui.form.val("divformname", { name: "" });
 
 //时间控件必须格式化
 DemoItems.expiretime = layui.util.toDateString(
@@ -97,13 +97,31 @@ function valFormTextWithjosn(formname, jsontexts) {
 }
 ```
 
-### 4. 提交事件
+### 4. 提交事件[layui.form.on submit]
 
 ```js
 layui.form.on("submit(savelinks_save)", function(data) {
   console.log(data);
   var host = GetQueryString("host");
   savelinks(host, data.field.linksbody);
+  return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+});
+
+layui.form.on("submit(demo_formsub)", function(data) {
+  logincheck();
+  layer.close(layer.index);
+  layui.$.ajax({
+    type: "POST",
+    url: "/api?Action=savedemo",
+    dataType: "json",
+    data: "Name=" + data.field.Name + "&Host=" + data.field.Age,
+    cache: false,
+    async: false,
+    success: function(data) {
+      layer.alert(data.Apimsg.Message, { icon: 6 });
+      worksites();
+    }
+  });
   return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
 });
 ```

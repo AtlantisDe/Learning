@@ -17,3 +17,7 @@
 ## c#应用程序生成的.application 和.exe.manifest 文件
 
 - [c#应用程序生成的.application 和.exe.manifest 文件-CSDN 论坛](https://bbs.csdn.net/topics/390661303?page=1)
+
+## 选项 配置
+
+- [https://blog.csdn.net/jinzhengxi/article/details/82190483](https://blog.csdn.net/jinzhengxi/article/details/82190483)

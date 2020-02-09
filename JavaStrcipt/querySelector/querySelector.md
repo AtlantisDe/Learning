@@ -79,3 +79,15 @@ document
 ```js
 document.querySelector("body");
 ```
+
+### 移除某 ID 对象下子元素
+
+```js
+document.querySelector("#id").innerHTML = "888";
+```
+
+### 元素显示修改
+
+```js
+document.querySelector("#tpls_count").innerText = "999";
+```

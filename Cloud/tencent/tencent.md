@@ -16,6 +16,7 @@
 ## SDK
 
 - [tencentyun/image-donet-sdk](https://github.com/tencentyun/image-donet-sdk)
+- [TencentCloud/tencentcloud-sdk-dotnet](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ## API
 

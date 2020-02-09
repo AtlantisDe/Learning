@@ -98,3 +98,25 @@ exit;
 ///代码1end
 
 ```
+
+## php 遍历数组键名
+
+- [php 遍历数组键名 - JackLiu 刘振东 - 博客园](https://www.cnblogs.com/zhendong/p/8481928.html)
+
+```php
+$menu = array('0' =>'常规管理','1'=>'模块管理','3'=>'用户管理','4'=>'系统设置' );
+foreach ($menu as $key => $value) {
+    echo $key;
+}
+
+
+
+foreach($BindDomains as $BindDomain)
+{
+  print_r($BindDomain);
+}
+
+foreach ($BindDomains as $key => $value) {
+  echo $key;
+}
+```

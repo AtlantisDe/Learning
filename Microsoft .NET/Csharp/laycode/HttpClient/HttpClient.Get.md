@@ -3,29 +3,32 @@
 ## GET Code 1
 
 ```C#
-try
+using (HttpClient client = new HttpClient())
 {
-    Task<HttpResponseMessage> response = client.GetAsync("http://www.demo.com");
-    response.Wait();
-    if (response.Result != null)
+    try
     {
-        var rst = response.Result;
-        if (rst.IsSuccessStatusCode)
+        Task<HttpResponseMessage> response = client.GetAsync("http://www.demo.com");
+        response.Wait();
+        if (response.Result != null)
         {
-            var contxt = rst.Content;
-            var aaa = contxt.ReadAsStringAsync();
-            if (aaa.Wait(5000))
+            var rst = response.Result;
+            if (rst.IsSuccessStatusCode)
             {
-                var ccc = aaa.Result;
-            }
+                var contxt = rst.Content;
+                var aaa = contxt.ReadAsStringAsync();
+                if (aaa.Wait(5000))
+                {
+                    var ccc = aaa.Result;
+                }
 
+            }
         }
     }
-}
-catch (HttpRequestException e)
-{
-    Console.WriteLine("\nException Caught!");
-    Console.WriteLine("Message :{0} ", e.Message);
+    catch (HttpRequestException e)
+    {
+        Console.WriteLine("\nException Caught!");
+        Console.WriteLine("Message :{0} ", e.Message);
+    }
 }
 ```
 

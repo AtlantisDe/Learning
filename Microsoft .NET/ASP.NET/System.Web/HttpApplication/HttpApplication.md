@@ -3,6 +3,7 @@
 - 全局类
 - 事件查看 System.Web.HttpApplication
 - [Global.asax 中的方法 - pinko - 博客园](https://www.cnblogs.com/pinko/archive/2013/05/02/3053965.html)
+- [ASP.NET： 正在中止线程 错误原及解决方法 - John_杰 - 博客园](https://www.cnblogs.com/johnblogs/p/8822096.html)
 
 ```c#
 namespace AleEngine

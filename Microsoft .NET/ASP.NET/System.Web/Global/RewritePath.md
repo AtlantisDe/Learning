@@ -22,7 +22,7 @@ Context.RewritePath("/index.html");
             }
 
             Context.RewritePath(
-                string.Format("/Api/CreatePage/PanType.aspx?Action={0}cc={1}msg={2}A3={3}"
+                string.Format("/Api/Custom/demo.aspx?Action={0}cc={1}msg={2}A3={3}"
                 , System.Web.HttpUtility.UrlEncode(this.Request.Url.AbsoluteUri)
                 , this.Request.Url.Host
                   , this.Request.Url.Port

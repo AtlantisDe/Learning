@@ -124,3 +124,10 @@
 ### CSharp
 
 - [C# (CSharp) Code Examples - HotExamples](https://csharp.hotexamples.com/)
+
+## 压力测试类
+
+### WEB 压力测试
+
+- [IKende/Beetle.DT](https://github.com/IKende/Beetle.DT)
+- [分享一个.NET 实现的简单高效 WEB 压力测试工具 - beetlex - 博客园](https://www.cnblogs.com/smark/archive/2013/05/16/3081606.html)

@@ -13,7 +13,7 @@
 ```c#
 var doc = new mshtml.HTMLDocument();
 var doc2 = (mshtml.IHTMLDocument2)doc;
-doc2.write(Aleseocore.Module.Collection.ReptileEngine.Scrapy.pstyle(itxt));
+doc2.write(Demo.Module.Collection.ReptileEngine.Scrapy.pstyle(itxt));
 var codehtml = doc.documentElement.outerHTML;
 ```
 

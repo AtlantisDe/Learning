@@ -61,16 +61,11 @@ HashTable与线程安全：
 
 为了保证在多线程的情况下的线程同步访问安全，微软提供了自动线程同步的HashTable:
 
-
 如果 HashTable要允许并发读但只能一个线程写, 要这么创建 HashTable实例:
-
-
 //Thread safe HashTable
 System.Collections.Hashtable htSyn = System.Collections.Hashtable.Synchronized(new System.Collections.Hashtable());
 
 这样, 如果有多个线程并发的企图写HashTable里面的 item, 则同一时刻只能有一个线程写, 其余阻塞; 对读的线程则不受影响。
-
-
 
 另外一种方法就是使用lock语句，但要lock的不是HashTable，而是其SyncRoot；虽然不推荐这种方法，但效果一样的，因为源代码就是这样实现的:
 ```
@@ -118,4 +113,16 @@ Thread Th2 = new Thread(delegate ()
 });
 Th2.IsBackground = true;
 Th2.Start();
+```
+
+### 6. foreach
+
+- [【C#】-哈希表（Hashtable）foreach 循环](https://blog.csdn.net/myxzxd/article/details/86908339)
+
+```c#
+StringBuilder sb = new StringBuilder();
+foreach (var item in ht.Keys)
+{
+    sb.Append(ht[item].ToString());
+}
 ```

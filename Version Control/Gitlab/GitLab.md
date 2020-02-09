@@ -24,6 +24,8 @@
 
 1. 安装依赖包，运行命令
 
+<!-- 安装并配置必要的依赖关系 -->
+
 ```shell
    > sudo apt-get update
    > sudo apt-get install -y curl openssh-server ca-certificates
@@ -51,6 +53,11 @@ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.de
 # vim /etc/apt/sources.list.d/gitlab_gitlab-ee.list
 vim /etc/apt/sources.list.d/gitlab_gitlab-ce.list
 
+# 新版这里修改
+/etc/apt/sources.list.d/git-core-ubuntu-ppa-eoan.list
+
+国内安装很容易出现 curl 22 或者  404 解决方案,就是修改上面这两个文件里镜像地址就行 自己修改为精华大学镜像成功!
+
 # 把原来的两行删除或者注释（#是行注释），然后增加
 
 # CE社区版 镜像
@@ -76,7 +83,13 @@ sudo apt-get update
 
 # 执行安装脚本
 # CE社区版
+sudo EXTERNAL_URL="http://gitlab.example.com" apt-get install gitlab-ce
 sudo EXTERNAL_URL="https://gitlab.example.com" apt-get install gitlab-ce
+
+# 这里若用Https安装请保证 ACMEv1 是 或者大于 该版本 ACMEv2 / RFC 8555. See https://community.letsencrypt.org/t/end-of-life-plan-for-acmev1/88430 for details.
+- [How do I enable ACMEv2 and retrieval of wildcard certificates? · Issue #5719 · certbot/certbot](https://github.com/certbot/certbot/issues/5719)
+
+
 # EE社区版
 sudo EXTERNAL_URL="https://gitlab.example.com" apt-get install gitlab-ee
 
@@ -84,7 +97,11 @@ sudo EXTERNAL_URL="http://aaa.com" apt-get install gitlab-ce
 sudo EXTERNAL_URL="http://demo.com" apt-get install gitlab-ce
 
 # 安装完毕访问
+http://gitlab.example.com/index
 https://gitlab.example.com
+
+http://127.0.0.1:9091/users/sign_in
+http://127.0.0.1:9091/profile
 
 # 初始密码
 # 默认超级管理员账户:root
@@ -109,6 +126,10 @@ cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
 ```shell
 # 修改 /etc/gitlab/gitlab.rb 文件如下，然后执行重新配置，重启命令后完成
 /etc/gitlab/gitlab.rb
+
+external_url 'https://gitlab.example.com'
+# 改成
+external_url 'http://127.0.0.1:9091'
 
 # 修改参数
 # - 访问地址端口只需要修改这句
@@ -157,11 +178,36 @@ vi gitlab.yml
     https: false
 ```
 
-### 5. 重启服务,就可以了
+### 5. 重启服务,就可以了 /状态
 
 ```shell
 gitlab-ctl restart
 gitlab-ctl status
+```
+
+### 6. HTTPs HTTP
+
+```c#
+external_url 'https://gitlab.example.com'
+# 改成
+external_url 'http://127.0.0.1:9091'
+
+  ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: gitlab.example.com
+    port: 443
+    https: true
+
+    // 改
+
+      ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: 127.0.0.1
+    port: 9091
+    https: false
+
 ```
 
 ## 4. 中文语言包

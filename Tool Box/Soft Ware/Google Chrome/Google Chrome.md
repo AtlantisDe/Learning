@@ -50,6 +50,7 @@ chrome://settings/languages
 - [Fatkun 图片批量下载](https://chrome.google.com/webstore/search/%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD?utm_source=chrome-ntp-icon)
 - [User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg?utm_source=chrome-ntp-icon)
 - [超级简单的自动刷新](https://chrome.google.com/webstore/search/refresh?utm_source=chrome-ntp-icon)
+- [Quick Note](https://chrome.google.com/webstore/detail/quick-note/eeoamaomfacmjfahcafjbflffklcfihk?utm_source=chrome-ntp-icon)
 
 ```shell
 Charset 修改网站的默认编码

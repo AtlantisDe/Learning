@@ -98,3 +98,30 @@ aTimer.AutoReset = true;//设置是执行一次（false）还是一直执行(tru
 aTimer.Enabled = true; //是否执行System.Timers.Timer.Elapsed事件；
 
 ```
+
+```c#
+System.Timers.Timer aTimer = new System.Timers.Timer();
+aTimer.Elapsed += new System.Timers.ElapsedEventHandler(delegate (object sender, System.Timers.ElapsedEventArgs e)
+{
+    var timetask = (System.Timers.Timer)sender;
+    timetask.Enabled = false;
+
+    try
+    {
+
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(string.Format("异常[{0}]:{1}", System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName, ex.Message));
+    }
+    finally
+    {
+        timetask.Enabled = true;
+    }
+
+
+});
+aTimer.Interval = 2 * 1000;
+aTimer.AutoReset = true;
+aTimer.Enabled = true;
+```

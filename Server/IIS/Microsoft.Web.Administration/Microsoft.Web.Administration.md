@@ -2,6 +2,7 @@
 
 - [How to Use Microsoft.Web.Administration](https://docs.microsoft.com/en-us/iis/manage/scripting/how-to-use-microsoftwebadministration)
 - [C# IIS 站点管理--Microsoft.Web.Administration.dll - Ｗ ǒ 々啊申々 - 博客园](https://www.cnblogs.com/zhaochengshen/p/7976894.html)
+- [Application.Path Property (Microsoft.Web.Administration)](https://docs.microsoft.com/en-us/dotnet/api/microsoft.web.administration.application.path?view=iis-dotnet)
 
 ## sites
 
@@ -85,7 +86,7 @@ The BindingInformation property values are maintained in the ApplicationHost.con
 
 ## site
 
-### site add demo 1
+### 1. site add demo 1
 
 ```c#
 ServerManager manager = new ServerManager();
@@ -100,7 +101,7 @@ enabled.Value = false;
 manager.CommitChanges();
 ```
 
-### site add demo 2
+### 2. site add demo 2
 
 ```c#
 try
@@ -143,10 +144,39 @@ finally
 
 ```
 
-### IdentityType
+### 3. IdentityType
 
 ```c#
 ServerManager iismanager = new ServerManager();
 ApplicationPool pool = iismanager.ApplicationPools["Seocontrol"];
 pool.ProcessModel.IdentityType = ProcessModelIdentityType.LocalSystem;
+```
+
+### 4. Bindings
+
+```c#
+  using (ServerManager serverManager = new ServerManager())
+            {
+                foreach (var site in serverManager.Sites)
+                {
+                    var a = site.Bindings.Count;
+                    if (site.Name == "Default Web Site")
+                    {
+                        site.Bindings[0].Protocol = "http";
+                        site.Bindings[0].BindingInformation = "*:80:www.baidu1.com";
+                    }
+                }
+                serverManager.CommitChanges();
+            }
+
+```
+
+### 5. PhysicalPath
+
+```c#
+var SitesLook = serverManager.Sites.Where(a => a.Name == "Default Web Site").ToList();
+var site1 = SitesLook[0];
+var Path1 = site1.Applications[0].VirtualDirectories[0].PhysicalPath;
+
+
 ```

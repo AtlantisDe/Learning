@@ -9,9 +9,20 @@ Pure-FTPd is a free (BSD), secure, production-quality and standard-conformant FT
 ## Wiki
 
 - [FTP 服务搭建（ftpd、pure-ftpd、vsftpd）](https://blog.csdn.net/frank_abagnale/article/details/79378609)
+- [Too many connections (5) from this IP 怎么解决 - Powered by Discuz!](https://bbs.vpser.net/thread-13263-1-1.html)
 
 ## 重启
 
 ```shell
 sudo /etc/init.d/pure-ftpd restart
+```
+
+## FAQ
+
+### 1.Too many connections (5) from this IP 怎么解决
+
+```c#
+/usr/local/pureftpd/pure-ftpd.conf
+// 修改MaxClientsPerIP 重启pureftpd
+
 ```

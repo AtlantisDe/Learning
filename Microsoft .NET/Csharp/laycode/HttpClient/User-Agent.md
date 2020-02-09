@@ -3,6 +3,18 @@
 - [How do I set a default User Agent on an HttpClient?](https://stackoverflow.com/questions/44076962/how-do-i-set-a-default-user-agent-on-an-httpclient)
 - [国内主流搜索引擎 UA 和对应的蜘蛛 IP 段 - 放放 SEO 博客](http://www.link356.com/seoshoucang/282.html)
 
+## 常用
+
+### 0. List of User Agents
+
+- [Browse our database of 23,404,126 User Agents](https://developers.whatismybrowser.com/useragents/explore/)
+- [UserAgentString.com - API](http://www.useragentstring.com/pages/api.php)
+- [What is Baiduspider?](https://chineseseoshifu.com/blog/what-is-baiduspider.html)
+- [tamimibrahim17/List-of-user-agents](https://github.com/tamimibrahim17/List-of-user-agents)
+- [List of User-Agents (Spiders, Robots, Browser)](http://www.user-agents.org/)
+
+### 1. C#重使用 UA
+
 ```c#
 HttpClient _client = new HttpClient();
 _client.DefaultRequestHeaders.Add("User-Agent", "C# App");

@@ -1,5 +1,12 @@
 # random
 
+- [个人觉得 C#中 random.Next()有 BUG。。望大神指点我！-CSDN 论坛](https://bbs.csdn.net/topics/392054644?list=64262378)
+- Random 类不是线程安全的。
+- 如果多个线程同时调用同一个 random 实例，是可能出现返回 0 的现象。
+- [RNGCryptoServiceProvider Class (System.Security.Cryptography)](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?redirectedfrom=MSDN&view=netframework-4.8)
+- [Is C# Random Number Generator thread safe?](https://stackoverflow.com/questions/3049467/is-c-sharp-random-number-generator-thread-safe)
+- [c#.net 利用 RNGCryptoServiceProvider 产生任意范围强随机数的办法 - #天行健# - 博客园](https://www.cnblogs.com/lcyuhe/p/7126405.html?utm_source=itdadao&utm_medium=referral)
+
 ```C#
 ///<summary>
     ///生成随机字符串
@@ -27,4 +34,27 @@
         }
         return s;
     }
+```
+
+```c#
+public static class RandomGen3
+{
+    private static RNGCryptoServiceProvider _global =
+        new RNGCryptoServiceProvider();
+    [ThreadStatic]
+    private static Random _local;
+
+    public static int Next()
+    {
+        Random inst = _local;
+        if (inst == null)
+        {
+            byte[] buffer = new byte[4];
+            _global.GetBytes(buffer);
+            _local = inst = new Random(
+                BitConverter.ToInt32(buffer, 0));
+        }
+        return inst.Next();
+    }
+}
 ```

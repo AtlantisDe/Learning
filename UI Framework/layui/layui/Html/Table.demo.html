@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.4/css/layui.css" media="all" />
+</head>
+
+<body>
+    <table class="layui-hide" id="test"></table>
+
+    <script src="https://www.layuicdn.com/layui-v2.5.4/layui.all.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+
+
+    <script>
+        //Demo
+        var tableIns = {};
+        var Items = [];
+
+        //20万数据需要分页显示
+        for (var i = 0; i < 20000; i++) {
+
+            Items.unshift({
+                Name: "http://" + i + ".baidu.com",
+                Beizhu: "打开可以写很多操作的."
+            });
+
+        }
+
+
+        tableIns.DemoIns = layui.table.render({
+            elem: "#test",
+            title: "演示分页",
+            cols: [
+                [{
+                        field: "id",
+                        width: 66,
+                        title: "编号",
+                        sort: false,
+                        templet: function (d) {
+                            return d.LAY_TABLE_INDEX + 1;
+                        }
+                    },
+                    {
+                        field: "Name",
+                        title: "演示名称",
+                        templet: function (d) {
+                            return '<div><a href="' +
+                                d.Name + '" class="layui-table-link"><font color="red">' +
+                                d.Name + '</font></a></div>';
+                        },
+
+                        width: 300
+                    },
+                    {
+                        field: "Beizhu",
+                        title: "备注",
+                        width: 500
+                    }
+                ]
+            ],
+            page: true,
+            limit: 20,
+            data: Items
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

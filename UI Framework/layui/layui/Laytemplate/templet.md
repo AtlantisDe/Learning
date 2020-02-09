@@ -5,10 +5,15 @@
 ## layui 代码
 
 ```js
-templet: function (d) {return taskitemStates(d.runtype);},
-templet: function (d) {return layui.util.toDateString(d.createTime, "yyyy-MM-dd HH:mm:ss");},
+,templet: function (d) {return functiondemo(d.runtype);},
+,templet: function (d) {return layui.util.toDateString(d.createTime, "yyyy-MM-dd HH:mm:ss");},
 ,templet: function (d) {return d.progress==100?"已刷新完成":"正在等待刷新中"}
 , templet: function (d) { return d.deployed == 0 ? '<font color="#FF0000">未部署</font>' : '<font color="#00ff00">已部署</font>' }
+,templet: function (d) {return '<font color="blue">'+d.id+'</font>';},
+,templet: function (d) {return '<font color="red">'+d.id+'</font>';},
+,templet: function (d) {return '<div><a href="{{d.Name}}" class="layui-table-link"><font color="red">'+d.Name+'</font>/a></div>';},
+
+
 
 <script type="text/html" id="xuhao">
     {{d.LAY_TABLE_INDEX+1}}

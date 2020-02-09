@@ -111,7 +111,7 @@ for (int i = 0; i < list.Count; i++)
 
                                     lock (ht.SyncRoot)
                                     {
-                                        //var aaa = (Aleseocore.Module.Log.Entity.AnalysisItem)ht["aa"];
+                                        //var aaa = (Demo.Module.Log.Entity.AnalysisItem)ht["aa"];
                                         var aaa = WebTrafficGlobal;
                                         aaa.RequestTotalTimes += 1;
                                         aaa.ResponseTotalAmount += 2;

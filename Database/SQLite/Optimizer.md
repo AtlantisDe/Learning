@@ -7,8 +7,54 @@
 - [SQLite 的性能优化 - Ming Tong - CSDN 博客](https://blog.csdn.net/cuit/article/details/21971225)
 - [sqlite3 多线程和锁 ，优化插入速度及性能优化 - majiakun1 的专栏 - CSDN 博客](https://blog.csdn.net/majiakun1/article/details/79193658)
 - [提升 SQLITE 插入、查询效率的方法 - 小麒麟的成长之路 - CSDN 博客](https://blog.csdn.net/lijinqi1987/article/details/51852721)
+- [SQLite 学习手册(临时文件) - Stephen_Liu - 博客园](https://www.cnblogs.com/stephen-liu74/archive/2012/01/21/2328483.html)
+- [https://blog.csdn.net/littletigerat/article/details/5412572](https://blog.csdn.net/littletigerat/article/details/5412572)
+- [解决 sqlite 删除记录后数据库文件大小不变 - 廖先生 - 博客园](https://www.cnblogs.com/liaocheng/p/6182976.html)
+- [关于 sqlite3 删除表内数据后，数据库大小仍然不 变的问题\_jutun5887 的博客-CSDN 博客](https://blog.csdn.net/jutun5887/article/details/78984814)
+- [SQLite3 开启事务和关闭事务模式下，性能测试对比](https://www.2cto.com/database/201504/390246.html)
+- [denghe/xxlib_cpp](https://github.com/denghe/xxlib_cpp/blob/master/xxlib/xx_logger.h)
+- [SQLite 插入数据效率最快的方式就是:开启事务+insert 语句 +关闭事务(提交)\_yqj234 的专栏-CSDN 博客](https://blog.csdn.net/yqj234/article/details/87461449)
+- [SQlite 极速插入数据，3 秒 100 万，32 秒 1000 万条数据 - 爱码网](http://www.likecs.com/show-21228.html)
+
+## 查询优化
+
+- [移动端 100 万数据 sqlite 语句的搜索查询优化(索引篇)](https://www.jianshu.com/p/f19b47a0ba67)
 
 ## 优化篇
+
+```c#
+// sqlite的优化，有2个参数很重要，
+// 1是 Synchronous=OFF，这个参数，突然断电的时候可能会导致数据损坏，但写入性能会提高很多；
+// 2是 Journal Mode=wal，这个参数，可以保证写入的同时可以读，对提高并发能力很有帮助
+
+
+
+PRAGMA synchronous = FULL; (2)
+PRAGMA synchronous = NORMAL; (1)
+PRAGMA synchronous = OFF; (0)
+
+PRAGMA synchronous;
+PRAGMA synchronous = 0;
+PRAGMA synchronous = 1;
+
+PRAGMA journal_mode
+PRAGMA journal_mode=WAL
+
+PRAGMA journal_mode = OFF
+
+PRAGMA default_cache_size
+PRAGMA default_cache_size = 0
+PRAGMA default_cache_size = -2000
+
+
+
+PRAGMA temp_store = DEFAULT; (0)
+PRAGMA temp_store = FILE; (1)
+PRAGMA temp_store = MEMORY; (2)
+
+PRAGMA temp_store;
+PRAGMA temp_store = 1;
+```
 
 ### 1. 写性能篇
 
@@ -126,6 +172,8 @@ PRAGMA cache_size = 8000
 // 永久配置
 PRAGMA default_cache_size
 PRAGMA default_cache_size = 8000
+PRAGMA default_cache_size = -2000
+
 
 ```
 
@@ -202,6 +250,7 @@ PRAGMA database.journal_mode = OFF;
 // 开启WAL模式的方法：
 sqlite3_exec(db, "PRAGMA journal_mode=WAL; ", 0,0,0);
 
+PRAGMA journal_mode
 PRAGMA journal_mode=WAL
 
 // WAL劣势
@@ -242,4 +291,44 @@ PRAGMA journal_mode=WAL
 | 5 | page_size           | 页面大小      | 1024                 |
 | 6 | synchronous         | 硬盘大小      | 2                    |
 | 7 | temp_store;         | 内存模式      | 0                    |
+```
+
+### 4. Sqlite 排序规则
+
+- [sqlite 排序规则 - 简约不简单 - ITeye 博客](https://www.iteye.com/blog/benworld-1874175)
+
+### 5. Sqlite 如何修改表结构字段类型
+
+- [Sqlite 如何修改表结构字段类型\_Android,sqlite,数据库\_chouchaos 的专栏-CSDN 博客](https://blog.csdn.net/chouchaos/article/details/38764349)
+
+```SQL
+-- 查询步序
+SELECT * FROM "main"."sqlite_sequence"
+
+
+-- 第一种:结构一样 无须理会自增长
+ALTER TABLE "main"."T_users" RENAME TO "_T_users_old_20200207";
+
+CREATE TABLE "main"."T_users" (
+  "Guid" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  "Value" text
+);
+
+INSERT INTO "main"."T_users" ("Guid", "Value") SELECT "Guid", "Value" FROM "main"."_T_users_old_20200207";
+
+DROP TABLE _T_users_old_20200207;
+
+VACUUM;
+
+-- 第一种:结构不一样 理会自增长
+ALTER TABLE "main"."T_users" RENAME TO "_T_users_old_20200207";
+
+CREATE TABLE "main"."T_users" (
+  "Id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  "Value" text
+);
+
+INSERT INTO "main"."sqlite_sequence" (name, seq) VALUES ("T_users", '123468');
+
+INSERT INTO "main"."T_users" ("Id", "Value") SELECT "Guid", "Value" FROM "main"."_T_users_old_20200207";
 ```

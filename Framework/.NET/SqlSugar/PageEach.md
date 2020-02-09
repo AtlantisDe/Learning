@@ -1,16 +1,37 @@
 # PageEach
 
 ```c#
+PageExtenions.PageEach(1000, 20, CurrentExecutCount =>
+{
+    try
+    {
+
+    }
+    catch (Exception ex)
+    {
+    }
+});
+
 CsharpLazycode.Module.Page.Utilities.PageEach
 
-  CsharpLazycode.Module.Page.Utilities.PageEach(urlsguiditems, 2, list =>
-    {
-        try
-        {
+CsharpLazycode.Module.Page.Utilities.PageEach(urlsguiditems, 2, list =>
+  {
+      try
+      {
 
-        }
-        catch (Exception ex)
-        {
-        }
-    });
+      }
+      catch (Exception ex)
+      {
+      }
+  });
+
+
+
+PageExtenions.PageEach(GoCount, 1000, CurrentExecutCount =>
+{
+  ListStrings = new List<string>();
+  for (int i = 0; i < CurrentExecutCount; i++)
+  { }
+});
+
 ```

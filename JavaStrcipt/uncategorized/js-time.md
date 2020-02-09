@@ -53,6 +53,9 @@ alert(nowTime.Format("yyyy-MM-dd HH:mm:ss");)//上月当前时间
 ## Layui 时间
 
 ```js
+layui.util.toDateString(new Date(), "yyyy-MM-dd HH:mm:ss");
+layui.util.toDateString(new Date(), "yyyyMMdd");
+
 layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss");
 layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss.ffff");
 layui.util.toDateString(d.evtdatetime, "yyyy-MM-dd HH:mm:ss.fff");

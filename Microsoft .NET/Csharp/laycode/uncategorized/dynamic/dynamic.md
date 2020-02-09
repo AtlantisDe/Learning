@@ -38,7 +38,20 @@ dynamic说：我类型要等到运行时才能知晓。
 
 ```
 
-## 常用
+## 1. 常用
+
+### 0. 常用解决方案
+
+- [C# dynamic 类型报错：“object”不包含“xxx”的定义\_weixin_30502157 的博客-CSDN 博客](https://blog.csdn.net/weixin_30502157/article/details/99497379)
+
+```c#
+问题:
+// 原来是匿名类型在编译后，访问修饰符是internal级别的，当跨程序集访问时就会出现如题错误（apiTL.ProductList()返回的是一个匿名类型）。这也就是为什么在抽离前程序运行是正常的（因为在同一程序集中），而抽离后报错的原因。知道了原因，就来解决它。
+
+解决:
+dynamic ToJson 然后转成 
+
+```
 
 ### 1. dynamic 与反射
 
@@ -125,7 +138,7 @@ return data.GetType().GetProperty(propertyname) != null;
 }
 ```
 
-## 示例
+## 3. 示例
 
 ### 0. 通过字典来添加属性和赋值
 
@@ -232,7 +245,7 @@ foreach (var item in obj1.list)
 
 ```
 
-## 3. ToExpando
+## 4. ToExpando
 
 ```c#
 public static class ExtensionMethods

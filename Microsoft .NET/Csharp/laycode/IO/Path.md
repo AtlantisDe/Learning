@@ -15,6 +15,21 @@
 DirectoryInfo TheFolder = new DirectoryInfo(Path);
 new FileInfo(item)
 
+绝对路径:
+this.Request.Url.AbsolutePath
+/LuJJi62j0vSO946dL7Qa04ob.png
+
+带参数:
+this.Request.Url.PathAndQuery
+/LuJJi62j0vSO946dL7Qa04ob.png?ewww
+
+正确用法:
+var Extension1 = new FileInfo(this.Request.Url.AbsolutePath);
+
+
+错误用法:
+var Extension1 = new FileInfo(this.Request.Url.PathAndQuery);
+
 
 
 // 1、文件名长度最大为255个英文字符，其中包括文件扩展名在内。一个汉字相当于两个英文字符。

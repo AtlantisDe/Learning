@@ -105,9 +105,9 @@ C:\Program Files (x86)\LogicNP Software\Crypto Obfuscator For .Net 2018\co.exe p
 ### 4. 秘钥文件提示
 
 ```c#
-Error occurred while obfuscation:  - Unable to load specified key file for assembly 'Aleseocore' - the path may be incorrect or password for pfx file may be incorrect.
+Error occurred while obfuscation:  - Unable to load specified key file for assembly 'Demo' - the path may be incorrect or password for pfx file may be incorrect.
 
-混淆时发生错误：-无法为程序集“ Aleseocore”加载指定的密钥文件-路径可能不正确，或者pfx文件的密码可能不正确。
+混淆时发生错误：-无法为程序集“ Demo”加载指定的密钥文件-路径可能不正确，或者pfx文件的密码可能不正确。
 ```
 
 ### 5. SN.exe 文件找不到 在升级 VS 以后情况

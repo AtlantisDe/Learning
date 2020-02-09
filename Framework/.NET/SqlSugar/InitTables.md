@@ -125,3 +125,11 @@ public bool active { get; set; }
 [SugarColumn(IsNullable = true, Length = 5)]
 public bool active { get; set; }
 ```
+
+### SugarColumn 忽略
+
+```c#
+[SugarColumn(IsIgnore=true)]
+public bool active { get; set; }
+
+```

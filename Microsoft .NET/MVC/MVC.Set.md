@@ -1,7 +1,7 @@
 # MVC.Set
 
 ```c#
-Visual Studio 已向项目“AleseoEngine”添加 ASP.NET MVC 5 的 全部集合 个依赖项。
+Visual Studio 已向项目“DemoEngine”添加 ASP.NET MVC 5 的 全部集合 个依赖项。
 
 项目中的 Global.asax.cs 文件可能需要其他更改才能启用 ASP.NET MVC。
 

@@ -118,7 +118,7 @@ SELECT `ID`,`Name` FROM `Student`  WHERE (( `ID` = @ID0 ) OR ( `Name` = @Name1 )
 ```c#
 // 大数据别用这个查询卡死
 root.allcount = db.Queryable<Module.DemoTest.Database.Main.Entity.Models.urlitem>().Count();
-SELECT COUNT (*)   as   总计   FROM "main"."T_urls_guid"
+SELECT COUNT (*)   as   总计   FROM "main"."T_demousers_guid"
 
 ```
 
@@ -148,9 +148,9 @@ var urlitems = db.Queryable<Module.siteitem.Main.Entity.DB.Models.urlitem>().Whe
 ### 特殊符号查询
 
 ```SQL
-SELECT t_urls.url
-FROM   t_urls
-WHERE  t_urls.url LIKE '%/news/%'
+SELECT T_demos.url
+FROM   T_demousers
+WHERE  T_demos.url LIKE '%/news/%'
 
 
 ```
@@ -456,8 +456,13 @@ var getFirstOrDefault = db.Queryable<Student>().First();
 ```c#
 // (int pageIndex, int pageSize);
 
+卡:随机值不要sql里做:
 Students = db.SqlQueryable<Student>("SELECT * FROM Student LIMIT 1 OFFSET ABS(RANDOM()) % MAX((SELECT COUNT(*) FROM Student), 1)").ToList();
 
+分布操作获取偏移值:
+SELECT  *  FROM T_demousers WHERE T_demos.used = 0 LIMIT 1 OFFSET r
+SELECT  *  FROM T_demousers WHERE T_demos.used = 0 LIMIT 1 OFFSET 2
+SELECT  *  FROM T_demousers WHERE T_demos.used = 0 LIMIT 1 OFFSET 3
 
 var t12 = db.SqlQueryable<Student>("select * from student").Where(it=>it.id>0).ToPageList(1, 2);
 
@@ -466,7 +471,7 @@ var t12 = db.SqlQueryable<dynamic>("select * from student").ToPageList(1, 2);
 var t12 = db.SqlQueryable<Student>(Sql).Take(Amount).ToList();
 
 
-var t12 = db.SqlQueryable<dynamic>("SELECT COUNT (*)   as   cnt   FROM \"main\".\"T_urls\"").ToPageList(1, 2);
+var t12 = db.SqlQueryable<dynamic>("SELECT COUNT (guid)   as   cnt   FROM \"main\".\"T_demousers\"").ToPageList(1, 2);
 root.allcount = Convert.ToInt32(t12[0].cnt);
 
 ```
@@ -476,8 +481,8 @@ root.allcount = Convert.ToInt32(t12[0].cnt);
 ```c#
 
 // Sqlite like
-SELECT * FROM T_urls_guid WHERE T_urls_guid.url LIKE '%163.com%' AND
-T_urls_guid.url LIKE '%.html%' AND
-T_urls_guid.url LIKE '%/%'
+SELECT * FROM T_demousers_guid WHERE T_demousers_guid.url LIKE '%163.com%' AND
+T_demousers_guid.url LIKE '%.html%' AND
+T_demousers_guid.url LIKE '%/%'
 
 ```

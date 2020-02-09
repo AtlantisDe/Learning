@@ -204,3 +204,27 @@ Console.ReadKey();
 muluclassitems.OrderBy(it => it.BindingFolder.Length);
 
 ```
+
+### 8. List 中 Find 的用法
+
+```c#
+
+
+public class UserItem
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+List<UserItem> UserItems = new List<UserItem>();
+UserItems.Add(new UserItem { Name = "1" });
+UserItems.Add(new UserItem { Name = "2" });
+UserItems.Add(new UserItem { Name = "3" });
+
+//存在：返回 对象，不存在：返回Null。
+var aa = UserItems.Find(s => s.Name.Contains("2"));
+var bb = UserItems.Find(s => s.Name.Contains("99"));
+
+ //不存在：返回-1，存在：返回位置。
+var cc = UserItems.FindIndex(s => s.Name.Contains("3"));
+var dd = UserItems.FindIndex(s => s.Name.Contains("99"));
+```

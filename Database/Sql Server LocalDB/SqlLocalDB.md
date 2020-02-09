@@ -1,5 +1,9 @@
 # SqlLocalDB
 
+- [SQL Server Express LocalDB - SQL Server](https://docs.microsoft.com/zh-cn/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15)
+- [SqlLocalDB Utility - SQL Server](https://docs.microsoft.com/en-us/sql/tools/sqllocaldb-utility?view=sql-server-ver15)
+- [LocalDB 介绍 - LoveTomato - 博客园](https://www.cnblogs.com/LoveTomato/p/9838210.html)
+
 ## 操作命令
 
 ```C#
