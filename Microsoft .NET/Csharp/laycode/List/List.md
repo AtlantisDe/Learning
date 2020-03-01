@@ -228,3 +228,12 @@ var bb = UserItems.Find(s => s.Name.Contains("99"));
 var cc = UserItems.FindIndex(s => s.Name.Contains("3"));
 var dd = UserItems.FindIndex(s => s.Name.Contains("99"));
 ```
+
+### 9. List 中 Any 的用法
+
+- [Coding Games and Programming Challenges to Code Better](https://www.codingame.com/playgrounds/213/using-c-linq---a-practical-overview/any-and-all)
+- [C# | How to get all elements of a List that match the conditions specified by the predicate - GeeksforGeeks](https://www.geeksforgeeks.org/c-sharp-how-to-get-all-elements-of-a-list-that-match-the-conditions-specified-by-the-predicate/)
+
+```c#
+
+```

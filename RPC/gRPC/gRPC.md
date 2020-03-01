@@ -9,3 +9,4 @@
 - [grpc/grpc](https://github.com/grpc/grpc)
 - [https://packages.grpc.io/](https://packages.grpc.io/)
 - [C#调用 gRPC 的步骤及详细说明（踩坑后总结）\_img_Guo 的博客-CSDN 博客](https://blog.csdn.net/img_Guo/article/details/86096604)
+- [ASP.NET Core 3.0 gRPC 身份认证和授权 - 晓晨 Master - 博客园](https://www.cnblogs.com/stulzq/p/11897628.html#4504768)

@@ -76,8 +76,9 @@ void exep_Exited(object sender, EventArgs e)
 - [C#如何判断程序调用的 exe 已结束 - - ITeye 博客](https://dnanhui.iteye.com/blog/883323)
 - [c#调用 exe 捕获返回值 - 积水成渊，蛟龙生焉。 - CSDN 博客](https://blog.csdn.net/u013230291/article/details/80615828)
 - [https://www.itsvse.com/thread-2813-1-24.html](https://www.itsvse.com/thread-2813-1-24.html)
+- [C# 运行控制台程序中文乱码 - 张&amp;娟 - 博客园](https://www.cnblogs.com/zjxyz2008zhangjuan/p/7246646.html)
 
-#### 方法一：获取返回值
+#### 1. 方法一：获取返回值
 
 ```c#
 string path = @"C:\GateWay\PrjCheck.exe";
@@ -88,8 +89,80 @@ p.StartInfo.RedirectStandardOutput = true;
 p.StartInfo.FileName = fileName;
 p.StartInfo.CreateNoWindow = true;
 p.StartInfo.Arguments = "IHSUSAA_1508211711";//参数以空格分隔，如果某个参数为空，可以传入””
+p.StartInfo.StandardOutputEncoding = Encoding.UTF8;
 p.Start();
 p.WaitForExit();
 //此处可以返回一个字符串，此例是返回压缩成功之后的一个文件路径
 string output = p.StandardOutput.ReadToEnd();
+```
+
+#### 2. 方法二：获取返回值
+
+```c#
+try
+{
+    var ProcessStartInfo = new ProcessStartInfo() { };
+    ProcessStartInfo.FileName = @"C:\Windows\System32\curl.exe";
+    ProcessStartInfo.Arguments = "-H 'Content-Type:text/plain' --data-binary @D:\\Tmp\\T\\urls.site.txt \"http://data.zz.baidu.com/urls?site=www.0.com&token=Mc3V999EjBSI0Ip\"";
+
+    ProcessStartInfo.UseShellExecute = false;
+    ProcessStartInfo.RedirectStandardInput = true;
+    ProcessStartInfo.RedirectStandardOutput = true;
+    ProcessStartInfo.RedirectStandardError = false;
+    ProcessStartInfo.CreateNoWindow = true;
+    ProcessStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+    var process = Process.Start(ProcessStartInfo);
+
+    string resaultValue = process.StandardOutput.ReadToEnd();
+    process.WaitForExit();
+    process.Close();
+
+}
+catch
+{
+
+}
+
+
+
+ Process p = new Process();
+bool returnvalue = false;
+
+try
+{
+
+    p.StartInfo.FileName = "cmd.exe";//设定程序名
+    p.StartInfo.UseShellExecute = false; //关闭Shell的使用
+    p.StartInfo.RedirectStandardInput = true;//重定向标准输入
+    p.StartInfo.RedirectStandardOutput = true;//重定向标准输出
+    p.StartInfo.RedirectStandardError = true;//重定向错误输出
+    p.StartInfo.CreateNoWindow = true;//设置不显示窗口
+    p.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+    p.StartInfo.StandardOutputEncoding = Encoding.Default;
+    string pingrst; p.Start(); p.StandardInput.WriteLine("ping -n 2 -w 1 -S " + strIp + " " + "www.baidu.com");
+    p.StandardInput.WriteLine("exit");
+
+    string strRst = p.StandardOutput.ReadToEnd();
+    //Console.WriteLine(strRst);
+    if (strRst.IndexOf("(100% 丢失)") != -1 || strRst.IndexOf("(100% loss)") != -1)
+    {
+        pingrst = "无法连接互联网";
+        returnvalue = false;
+    }
+    else
+    {
+        pingrst = "连接";
+        returnvalue = true;
+    }
+    Console.WriteLine($"IP: {strIp} 状态:{pingrst}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine(string.Format("异常[{0}]:{1}", System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName, ex.Message));
+}
+finally
+{
+    p.Close();
+}
 ```

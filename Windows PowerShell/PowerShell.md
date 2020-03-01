@@ -1,7 +1,8 @@
 # Windows PowerShell
 
 - C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)\
+- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [Get-NetAdapter (netadapter)](https://docs.microsoft.com/en-us/powershell/module/netadapter/get-netadapter?view=win10-ps)
 - [PowerShell 脚本](https://docs.microsoft.com/zh-cn/powershell/scripting/overview?view=powershell-6)
 - [PowerShell/PowerShell](https://github.com/powershell/powershell)
 - [Windows PowerShell 基本语法及常用命令 - 風之子 - 博客园](https://www.cnblogs.com/feng-zhizi/p/9935874.html)

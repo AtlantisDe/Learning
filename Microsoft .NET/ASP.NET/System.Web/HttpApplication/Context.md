@@ -6,6 +6,11 @@
 - [ASP.NET： 正在中止线程 错误原及解决方法 - John\_杰 - 博客园](https://www.cnblogs.com/johnblogs/p/8822096.html)
 
 ```c#
+- [try catch中用了 Response.Redirect 引发的线程异常终止 - LoveCoder - 博客园](https://www.cnblogs.com/Jerseyblog/p/5962766.html)
+- [HttpResponse.Redirect 方法](https://docs.microsoft.com/zh-cn/dotnet/api/system.web.httpresponse.redirect?redirectedfrom=MSDN&view=netframework-4.8)
+// 调用 Redirect 等效于调用 Redirect 并将第二个参数设置为 true。
+// Redirect 调用 End 在完成时引发 ThreadAbortException 异常。 此例外会对 Web 应用程序性能产生不利影响。 因此，建议不要使用此重载，而应使用 HttpResponse.Redirect(String, Boolean) 重载，并为 endResponse 参数传递 false，然后调用 CompleteRequest 方法。 有关更多信息，请参见 End 方法。
+
 Context.RewritePath("/index.html");
 
 Context.Response.StatusCode = 301;

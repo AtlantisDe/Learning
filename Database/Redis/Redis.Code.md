@@ -3,6 +3,7 @@
 - [redis 命令手册](https://www.redis.net.cn/order/)
 - [Sentinel &mdash; Redis 命令参考](http://redisdoc.com/topic/sentinel.html)
 - [Redis 性能问题排查解决手册(七) - 蘑菇先生 - 博客园](https://www.cnblogs.com/mushroom/p/4738170.html#three)
+- [redis cli 命令 - Time。时光 - 博客园](https://www.cnblogs.com/helloworld6379/p/9976264.html)
 
 ```c#
 // Redis 管道技术
@@ -102,8 +103,20 @@ EXPIRE runooobkey 60
 KEYS *
 KEYS w3c*
 
+SET key "value"
+GET key
+SET key "new-value"
 ```
 
 ### 1. 发布订阅机制
 
 - [Redis 发布订阅机制 - yitudake - 博客园](https://www.cnblogs.com/yitudake/p/6747995.html)
+
+### 2. CLI
+
+```c#
+redis-cli -h 127.0.0.1 -p 6379 get hello
+redis-cli -h 127.0.0.1 -p 6379 -n 0 get hello
+redis-cli -h 127.0.0.1 -p 6379 -n 3 get hello
+redis-cli -h 127.0.0.1 -p 6379 GET db_number
+```

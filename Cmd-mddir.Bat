@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 chcp 65001
 echo Hello world....
 echo you will make mddir Doc

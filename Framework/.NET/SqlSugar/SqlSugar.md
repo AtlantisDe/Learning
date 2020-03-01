@@ -31,6 +31,9 @@ using (var db = GetInstance())
             new SugarParameter("@Id0",0)
         }, join1.Key, join1.Value, "join 1 Error");
 }
+
+db.Ado.GetDataTable("select * from student");
+db.Ado.SqlQueryDynamic
 ```
 
 ## 依赖 dll 版本不一致

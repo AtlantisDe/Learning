@@ -9,6 +9,7 @@
 - [How to clear MemoryCache?](https://stackoverflow.com/questions/4183270/how-to-clear-memorycache)
 - [c# – MemoryCache 不遵守配置中的内存限制](https://codeday.me/bug/20170713/36818.html)
 - [https://blog.csdn.net/qq_36051316/article/details/83789301](https://blog.csdn.net/qq_36051316/article/details/83789301)
+- [.NET Core MemoryCache缓存获取全部缓存键 - ♀影☆响 - 博客园](https://www.cnblogs.com/dangzhensheng/p/8862567.html)
 
 ## 线程安全
 
@@ -56,4 +57,13 @@ foreach (string cacheKey in cacheKeys)
 {
     MemoryCache.Default.Remove(cacheKey);
 }
+
+
+
+    var allKeys = MemoryCache.Default.Select(o => o.Key);
+    Parallel.ForEach(allKeys, key =>
+
+    Console.WriteLine(key)
+
+    );
 ```

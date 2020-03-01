@@ -6,6 +6,13 @@
 - [SqlSugar 常用查询实例-拉姆达表达式 - 天马 3798 - 博客园](https://www.cnblogs.com/tianma3798/p/6093088.html)
 
 ```C#
+string sql;
+var JArray1 = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JArray>(Newtonsoft.Json.JsonConvert.SerializeObject(db.Ado.SqlQuery<dynamic>(sql)));
+var ILogsItems = db.Ado.SqlQuery<ILogsItem>(sql).ToList();
+var ILogsItem = db.Ado.SqlQuerySingle<ILogsItem>(sql);
+
+db.Ado.GetDataTable("select * from student");
+
 var data = db.Queryable<Student>()
     .Select(f => new
     {

@@ -12,4 +12,9 @@ dotnet-build
 dotnet-test
 dotnet-pack
 dotnet-publish
+
+dotnet new
+dotnet run
+dotnet run -urls "http://localhost:5000"
+dotnet watch run -urls "http://localhost:5000"
 ```

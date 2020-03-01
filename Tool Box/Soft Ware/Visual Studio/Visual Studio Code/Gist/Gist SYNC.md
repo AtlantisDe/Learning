@@ -1,5 +1,13 @@
 # GitHub Gist
 
+## 常用
+
+```c#
+// Settings
+Settings can be changed through the settings page, which can be accessed through "> Sync : Advanced Options > Open Settings Page"
+
+```
+
 ```c#
 CODE SETTINGS SYNC UPLOAD SUMMARY
 Version: 3.4.3

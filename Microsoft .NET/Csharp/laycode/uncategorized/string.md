@@ -1,5 +1,27 @@
 # C# string
 
+- [[C#] String 与 string 的区别 - 笑笑小白 - 博客园](https://www.cnblogs.com/rosesmall/p/8351808.html)
+- [C#中 bool 与 Boolean 有什么区别*C#*码农橙子 Yang-CSDN 博客](https://blog.csdn.net/yang8421/article/details/23588719)
+
+## 占位符
+
+- [.net core 中 String 常量前 @和\$符号的用法](https://www.jianshu.com/p/069537ec3003)
+- [c#字符串占位符使用方法\_C#\_Txwtech 笛科思-CSDN 博客](https://blog.csdn.net/txwtech/article/details/83039071)
+
+```c#
+// 4.5.1的语法糖。
+// String 用法。
+// @表示不进行转义。比如
+String testStr= @" line1 \'
+this is line2 \j
+this is line3
+"
+// 除了双引号，所有字符都不会被转义
+var name = "Chilly";
+Console.WriteLine($"Hello,{name}. It's a pleasure to meet you!");
+// $表示启用占位符{},这里 {name} 会被替换成Chilly.(和StringFormat() 用法相似)
+```
+
 ## 取文本中间
 
 ```c#

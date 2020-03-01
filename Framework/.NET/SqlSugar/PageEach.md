@@ -1,6 +1,14 @@
 # PageEach
 
 ```c#
+// Redis
+var startIndex = (root.Pagination.PageIndex - 1) * root.Pagination.PageSize;
+var endIndex = startIndex + root.Pagination.PageSize;
+
+// SQL
+var startIndex = (root.Pagination.PageIndex - 1) * root.Pagination.PageSize;
+var endIndex = root.Pagination.PageSize;
+
 PageExtenions.PageEach(1000, 20, CurrentExecutCount =>
 {
     try

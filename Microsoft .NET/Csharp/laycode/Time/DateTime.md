@@ -5,13 +5,23 @@
 - [C# .Net 计算函数执行的时间](https://www.cnblogs.com/sntetwt/p/4612992.html)
 - [C#获取当前时区 - zhlinos 的博客 - CSDN 博客](https://blog.csdn.net/m0_37521785/article/details/79789058)
 - [C# 获取系统时间及时间格式 - xjtrab - 博客园](https://www.cnblogs.com/xjtrab/articles/1878353.html)
+- [[C#]将 yyyyMMdd 格式的字符转成日期 DateTime 格式 - conan_lin - 博客园](https://www.cnblogs.com/lyl6796910/archive/2012/07/04/2576273.html)
+- [Convert 20121004 (yyyyMMdd) to a valid date time?](https://stackoverflow.com/questions/11053887/convert-20121004-yyyymmdd-to-a-valid-date-time/11054144)
 
 ## 时间对比
 
 ```c#
-DateTime dt1 = DateTime.Now.AddDays(-16); ;
+date.Insert(6, "-").Insert(4, "-");
+Console.WriteLine("20200223".Insert(6, "-").Insert(4, "-"));
+Console.WriteLine(Convert.ToDateTime("20200223".Insert(6, "-").Insert(4, "-")));
 
-DateTime dt2 = DateTime.Now.AddDays(-15); ;
+
+var Today = DateTime.ParseExact(yyyyMMdd, "yyyyMMdd", System.Threading.Thread.CurrentThread.CurrentCulture);
+
+DateTime dt1 = DateTime.Now.AddDays(-16);
+DateTime dt2 = DateTime.Now.AddDays(-15);
+dt1.ToString("yyyy-MM-dd HH:mm:ss")
+dt2.ToString("yyyy-MM-dd HH:mm:ss")
 
 if (dt1 >= dt2)
 {
@@ -35,6 +45,9 @@ if (item.Createtime >= DateTime.Now.AddDays(-15))
 ## 相关代码
 
 ```c#
+date = DateTime.ParseExact("20110720", "yyyyMMdd", Thread.CurrentThread.CurrentCulture);
+var Today = DateTime.ParseExact(yyyyMMdd, "yyyyMMdd", System.Threading.Thread.CurrentThread.CurrentCulture);
+
 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:ffff"); // => 2016-05-09 13:09:55:2350
 DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:ffff"); // => 2016/05/09 13:09:55:2350
 DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:ffff dddd"); // => 2016/05/09 13:09:55:2350 星期一

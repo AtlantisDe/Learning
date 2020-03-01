@@ -105,6 +105,13 @@ switch (guid) {
 }
 return vue
 }
+
+
+, templet: function (d) {
+var guid = d.state;
+
+return vue
+}
 ```
 
 ### 模板方法 switch int

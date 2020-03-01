@@ -2,6 +2,7 @@
 
 - [PHP: Downloads](https://www.php.net/downloads.php)
 - [PHP For Windows: Binaries and sources Releases](https://windows.php.net/download/)
+- [windows.php.net - /downloads/releases/archives/](https://windows.php.net/downloads/releases/archives/)
 
 ## 常用
 

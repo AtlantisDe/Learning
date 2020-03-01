@@ -2,6 +2,11 @@
 
 ## 代码示例一
 
+```js
+// 注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.element.init();
+```
+
 ```html
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
   <legend>导航带徽章和图片</legend>

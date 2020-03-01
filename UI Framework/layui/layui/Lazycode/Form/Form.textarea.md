@@ -13,3 +13,9 @@
   style="height: 300px;"
 ></textarea>
 ```
+
+### 2. JS
+
+```js
+document.querySelector("#ID").value = "111231";
+```

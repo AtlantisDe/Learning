@@ -4,7 +4,9 @@
 - [http 请求是如何先建立的三次握手?\_慕课手记](https://www.imooc.com/article/71293)
 - [HTTP 请求过程-域名解析和 TCP 三次握手建立链接 - 小 Cai 先森 - 博客园](https://www.cnblogs.com/caijh/p/7698819.html)
 - [关于三次握手与四次挥手你要知道这些 - 经验 - 皮皮看书](https://www.ppkanshu.com/index.php/post/4453.html)
-- [Http协议再理解（一）经典模型、三次握手、四次挥手](https://www.jianshu.com/p/bd31d3b23725)
+- [Http 协议再理解（一）经典模型、三次握手、四次挥手](https://www.jianshu.com/p/bd31d3b23725)
+- [C#中 HttpWebRequest、WebClient、HttpClient 的使用 - 麦克斯雪碧 - 博客园](https://www.cnblogs.com/MrZheng/p/11636254.html)
+- [How to get internet speed in C#? - CodeProject](https://www.codeproject.com/Questions/852339/How-to-get-internet-speed-in-Csharp)
 
 ## 状态码
 
@@ -59,4 +61,23 @@ else
 syn flood 是一种经典的 ddos 攻击手段，这里面用到了 TCP 三次握手存在的漏洞。当服务端接收到 SYN 后进入 SYN-RECV 状态，此时的连接称为半连接，同时会被服务端写入一个半连接队列。如果攻击者在短时间内不断的向服务端发送大量的 SYN 包而不响应，那么服务器的半连接队列很快会被写满，从而导致无法工作。 实现 syn flood 的手段，可以通过伪造源 IP 的方式，这样服务器的响应就永远到达不了客户端(握手无法完成)；当然，通过设定客户端防火墙规则也可以达到同样的目的。对 syn flood 实现拦截是比较困难的，可以通过启用 syn_cookies 的方式实现缓解，但这通常不是最佳方案。最好的办法是通过专业的防火墙来解决，基本上所有的云计算大 都具备这个能力。
 
 四次挥手
+```
+
+### 2. 选择具有多个 IP 时 HTTP 请求使用的 IP(.NET)
+
+- [选择具有多个 IP 时 HTTP 请求使用的 IP(.NET)？ - 问答 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/ask/148243)
+- [HttpRequestMessage 在多 IP 环境中配置 IP - Thinbug](https://www.thinbug.com/q/34950061)
+
+```c#
+string sendingIp = "192.168.0.1";
+int sendingPort = 5000;
+Uri uri = new Uri("http://google.com");
+HttpWebRequest wr = (HttpWebRequest)WebRequest.Create(uri);
+ServicePoint sp = ServicePointManager.FindServicePoint(uri);
+sp.BindIPEndPointDelegate =
+    (servicePoint,remoteEp,retryCount) =>
+         {
+             return new IPEndPoint(IPAddress.Parse(sendingIp),sendingPort);
+         };
+var data = new StreamReader(wr.GetResponse().GetResponseStream()).ReadToEnd();
 ```

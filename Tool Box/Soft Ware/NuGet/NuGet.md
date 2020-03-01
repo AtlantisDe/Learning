@@ -1,5 +1,14 @@
 # Nuget
 
+- [发布你的程序包到 Nuget - 晓晨 Master - 博客园](https://www.cnblogs.com/stulzq/p/8874426.html)
+
+## nuget.exe
+
+- [NuGet Gallery | Downloads](https://www.nuget.org/downloads)
+- [安装 NuGet 客户端工具](https://docs.microsoft.com/zh-cn/nuget/install-nuget-client-tools)
+
+## WIki
+
 ```txt
 NuGet（读作New Get）是用于微软.NET开发平台的软件包管理器，是一个Visual Studio的扩展。
 

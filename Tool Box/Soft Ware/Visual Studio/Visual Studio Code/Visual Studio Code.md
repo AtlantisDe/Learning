@@ -2,6 +2,12 @@
 
 - 前端最好用的 IDE
 
+## Visual Studio Code 甜点
+
+```c#
+code .
+```
+
 ## 下载安装
 
 - [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)

@@ -9,6 +9,7 @@
 
 %windir%\system32\WF.msc
 
+netsh advfirewall firewall delete rule name="3proxy Server for Inbound TCP/1235"
 
 // windows添加端口规则（入站规则）:
 

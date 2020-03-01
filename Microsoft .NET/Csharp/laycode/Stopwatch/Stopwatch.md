@@ -8,34 +8,34 @@
 ### demo
 
 ```c#
-System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
-stopwatch.Reset();
-stopwatch.Start();
+System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
+Stopwatch.Reset();
+Stopwatch.Start();
 // Here: 需要计算耗时的过程/方法
-stopwatch.Stop();
-stopwatch.Elapsed.TotalSeconds //这里是输出的总运行秒数,精确到毫秒的
+Stopwatch.Stop();
+Stopwatch.Elapsed.TotalSeconds //这里是输出的总运行秒数,精确到毫秒的
 
 //当然也可以输出分钟，小时等等。。。。。。
 
-stopwatch.Elapsed.TotalHours;//以小时为单位
-stopwatch.Elapsed.TotalMilliseconds；//以毫秒为单位
-stopwatch.Elapsed.TotalMinutes；//以分钟为单位
-stopwatch.Elapsed.TotalDays；//以天为单位
+Stopwatch.Elapsed.TotalHours;//以小时为单位
+Stopwatch.Elapsed.TotalMilliseconds；//以毫秒为单位
+Stopwatch.Elapsed.TotalMinutes；//以分钟为单位
+Stopwatch.Elapsed.TotalDays；//以天为单位
 
 ```
 
 ### demo1
 
 ```c#
-System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
-stopwatch.Reset();
-stopwatch.Start();
-stopwatch.Stop();
-Console.WriteLine("成功导入{0}条数据 ，用时{1}秒。", demo_Guiditems.Count, stopwatch.Elapsed.TotalSeconds);
+System.Diagnostics.Stopwatch Stopwatch = new System.Diagnostics.Stopwatch();
+Stopwatch.Reset();
+Stopwatch.Start();
+Stopwatch.Stop();
+Console.WriteLine("成功导入{0}条数据 ，用时{1}秒。", demo_Guiditems.Count, Stopwatch.Elapsed.TotalSeconds);
 
 
-Console.WriteLine("流程运行用时{0}秒。", stopwatch.Elapsed.TotalSeconds);
+Console.WriteLine("流程运行用时{0}秒。", Stopwatch.Elapsed.TotalSeconds);
 
-Console.WriteLine("[{0}] 流程运行用时{1}秒。", "单次读词库", stopwatch.Elapsed.TotalSeconds);
-Console.WriteLine("[{0}] 流程运行用时{1}毫秒。", "单次读词库", stopwatch.Elapsed.TotalMilliseconds);
+Console.WriteLine("[{0}] 流程运行用时{1}秒。", "单次读词库", Stopwatch.Elapsed.TotalSeconds);
+Console.WriteLine("[{0}] 流程运行用时{1}毫秒。", "单次读词库", Stopwatch.Elapsed.TotalMilliseconds);
 ```

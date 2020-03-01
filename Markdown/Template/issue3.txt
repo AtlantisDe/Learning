@@ -1,0 +1,41 @@
+## help me ,plz I Need the Post Demo
+
+
+<!-- If this issue is a feature request remove text below -->
+## Original official document
+```c#
+POST /urls?site=www.58.com&token=edk7ychrEZP9pDQD HTTP/1.1
+User-Agent: curl/7.12.1 
+Host: data.zz.baidu.com 
+Content-Length: 83
+http://www.example.com/1.html
+http://www.example.com/2.html
+```
+
+## I use the HttpClient Demo
+```c#
+HttpClient httpClient = new HttpClient();
+httpClient.DefaultRequestHeaders.Add("User-Agent", "curl/7.12.1");
+var stringContent = new StringContent("http://www.example.com/1.html\r\nhttp://www.example.com/2.html");
+var response = httpClient.PostAsync("http://data.zz.baidu.com/urls?site=www.example.com&token=011QuJ3lXpE39bEd", stringContent).Result.Content.ReadAsStringAsync().Result;
+```
+
+## I Need The RestSharp Demo,Now 
+- I wrote something wrong, please help me fix it
+```c#
+// I wrote something wrong, please help me fix it
+var client = new RestClient("http://data.zz.baidu.com/urls?site=www.example.com&token=011QuJ3lXpE39bEd");
+client.AddDefaultHeader("User-Agent", "curl/7.12.1");
+RestSharp.Parameter parameter = new Parameter("", "http://www.example.com/1.html\r\nhttp://www.example.com/2.html", ParameterType.RequestBody);
+client.AddOrUpdateDefaultParameter(parameter);
+var request = new RestRequest("statuses/home_timeline.json", DataFormat.Json);
+var response = client.Post(request);
+```
+
+## pls help me 
+ 
+```html
+tks very much
+```
+
+</details>

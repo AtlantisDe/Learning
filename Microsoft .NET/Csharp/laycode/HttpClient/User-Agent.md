@@ -12,6 +12,7 @@
 - [What is Baiduspider?](https://chineseseoshifu.com/blog/what-is-baiduspider.html)
 - [tamimibrahim17/List-of-user-agents](https://github.com/tamimibrahim17/List-of-user-agents)
 - [List of User-Agents (Spiders, Robots, Browser)](http://www.user-agents.org/)
+- [Yandex 搜索引擎蜘蛛 (Yandexbot) 代码与 IP 大全](https://ie.icoa.cn/bot/yandexbot)
 
 ### 1. C#重使用 UA
 
@@ -73,4 +74,73 @@ Baiduspider-image+(+http://www.baidu.com/search/spider.htm)
 这个ip段出现在新站及站点有不正常现象后。
 183.91.40.144
 203.208.60.*
+```
+
+### 2. 整理
+
+```c#
+1. 顶级仅仅通过名称识别的搜索引擎蜘蛛类型
+-----------------------------------------------------------------------------------------------
+BLEXBot
+Scrapy
+MegaIndex
+Yahoo
+DNSPod-Monitor
+The Knowledge AI
+python-requests
+okhttp
+-----------------------------------------------------------------------------------------------
+
+2. 顶级关键词:bot 在查找识别的搜索引擎蜘蛛类型
+-----------------------------------------------------------------------------------------------
+bingbot
+MJ12bot
+DotBot
+AhrefsBot
+SemrushBot
+YandexBot
+zoominfobot
+CCBot
+Mail.RU_Bot
+serpstatbot
+SeznamBot
+msnbot
+Clarabot
+Nimbostratus-Bot
+-----------------------------------------------------------------------------------------------
+
+3. 顶级关键词:Spider 在查找识别的搜索引擎蜘蛛类型
+-----------------------------------------------------------------------------------------------
+YisouSpider
+Bytespider
+Baiduspider
+
+
+-----------------------------------------------------------------------------------------------
+
+4. 顶级关键词:crawler 在查找识别的搜索引擎蜘蛛类型
+-----------------------------------------------------------------------------------------------
+Virusdie crawler
+MegaIndex.ru
+Barkrowler
+-----------------------------------------------------------------------------------------------
+
+5. 常用识别蜘蛛
+-----------------------------------------------------------------------------------------------
+Baiduspider 百度搜索
+Googlebot 谷歌
+360Spider 360搜索
+
+bingbot Bing必应
+Bytespider 今日头条
+Sogou web spider 搜狗搜索
+Sogou Push Spider 搜狗搜索
+Sogou Pic Spider 搜狗搜索
+YoudaoBot 网易有道
+Sosospider Sosospider
+msnbot MSN爬虫
+YisouSpider 神马搜索
+Yandexbot Yandex
+Yahoo! Slurp Yahoo 雅虎
+-----------------------------------------------------------------------------------------------
 ```

@@ -15,4 +15,14 @@ long a = 1;
 long b = 2;
 System.out.println(a/b);      //结果为 0
 System.out.println(a*1.0/b);  //结果为  0.5
+
+long a = 50000000000000;
+long b = 11762190476226;
+Console.WriteLine(b * 1.0 / a);  
+
+var a = 50000000000000;
+var b = 11762190476226;
+console.log(b * 1.0 / a);
+
+
 ```

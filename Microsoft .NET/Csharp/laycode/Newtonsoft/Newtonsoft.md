@@ -15,6 +15,12 @@
 // JArray： 多个json对象数组
 // JArray：json数组嵌套数组（一个学生对应多个课程分数）
 
+// JObject  用于操作JSON对象
+// JArray    用语操作JSON数组
+// JValue   表示数组中的值
+// JProperty 表示对象中的属性,以"key/value"形式
+// JToken  用于存放Linq to JSON查询后的结果
+
 Newtonsoft.Json.JsonConvert.DeserializeObject<T>(config);
 Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 
@@ -56,6 +62,9 @@ guid = jobj["guid"].ToString();
 ### 2. JObject 取值规范
 
 ```c#
+Newtonsoft.Json.Linq.JObject JObject = null;
+var nnn = JObject?.Value<string>("noKey") ?? "默认值";
+
 var StrCode = "{\r\n  \"IsOpen\": \"true\",\r\n  \"Anums\": \"1\",\r\n  \"Bnums\": \"2\",\r\n  \"Cnums\": \"3\",\r\n  \"AText\": \"2\",\r\n  \"BText\": \"2\"\r\n}";
 var JObject = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(StrCode);
 var IsOpen1 = JObject["IsOpen"] ?? true;
@@ -70,7 +79,7 @@ var ccc = JObject.Value<string>("Anums") ?? "默认值";
 
 // 常用API 常用JObject 与 实体类同步相互转换:
 var DemoItem = Newtonsoft.Json.JsonConvert.DeserializeObject<ConfigItem>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
- JObject["UserItem"] = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(Newtonsoft.Json.JsonConvert.SerializeObject(new UserItem() { Age = 9, Name = "King" }));  
+ JObject["UserItem"] = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(Newtonsoft.Json.JsonConvert.SerializeObject(new UserItem() { Age = 9, Name = "King" }));
 ```
 
 ### 3. JSON 中 JObject 和 JArray 的修改

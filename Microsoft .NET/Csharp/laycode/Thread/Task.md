@@ -150,7 +150,12 @@ for (int i = 0; i < list.Count; i++)
 ## 5. void 返回值
 
 ```c#
+Task<bool>.Run(() =>
+{
 
+
+    return true;
+}).Wait(15 * 1000);
 
 Task.Run(() =>
 {

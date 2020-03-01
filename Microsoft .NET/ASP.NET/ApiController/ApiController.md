@@ -109,9 +109,11 @@ layui.$.ajax({
 
 ```js
 
+
 // 通过dynamic动态类型能顺利得到多个参数，省掉了[FromBody]这个累赘，并且ajax参数的传递不用使用"无厘头"的{"":"value"}这种写法，有没有一种小清新的感觉~~有一点需要注意的是这里在ajax的请求里面需要加上参数类型为Json，即contentType: 'application/json',这个属性。
 
 data: { '': host },
+// 形式太难看直接推荐 JObject设计
 
 ```
 
@@ -306,4 +308,11 @@ else
 public class WeatherForecastController : ControllerBase
 {
 }
+```
+
+#### 6. JObject 设计使用
+
+```C#
+1. API 参数接口:(Newtonsoft.Json.Linq.JObject JObject)
+2. AJAX端口发送参数直接发送对象:dataType: "json", data: AppConfigs, 样本: dataType: "Json",data: { Path: obj.data.Path },
 ```

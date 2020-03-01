@@ -1,6 +1,17 @@
 # VMware Workstation
 
+- [Workstation Pro - VMware Products : Windows Virtualization for Everyone](https://www.vmware.com/asean/products/workstation-pro.html)
+- [Workstation 15.5 Pro for Windows](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html)
+  )
 - [VM ware 无法关机 虚拟机繁忙](https://blog.csdn.net/qq_34646546/article/details/86561183)
+
+## Workstation for Windows
+
+```c#
+https://www.vmware.com/go/getworkstation-win
+```
+
+## Workstation for Linux
 
 ## 1. 常见虚拟机问题与解决方案
 

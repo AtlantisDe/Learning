@@ -2,6 +2,7 @@
 
 - [C# byte[]数组和 string 的互相转化 (四种方法)](https://www.cnblogs.com/hbtmwangjin/articles/9141275.html)
 - [C#：文件、byte[]、Stream 相互转换 - Cch。 - 博客园](https://www.cnblogs.com/Cchblogs/p/6946709.html)
+- [C#保存文件为无 BOM 的 utf8 格式\_rztyfx 的专栏-CSDN 博客](https://blog.csdn.net/rztyfx/article/details/94165786)
 
 ## 1. 对话框操作
 
@@ -263,6 +264,10 @@ file.Dispose();
 System.IO.File.WriteAllText("e:\\asp_1.txt", "I LOVE YOU!");
 System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!");
 System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!", Encoding.UTF8);
+System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!",  System.Text.Encoding.UTF8);
+System.IO.File.WriteAllText("d:/Work/Doc/tmp/2.txt", "I LOVE YOU!",  new System.Text.UTF8Encoding(false));
+
+File.WriteAllText(strLuaFilePath, string.Join("\n", fileContentList.ToArray()), new System.Text.UTF8Encoding(false));
 
 //Link
 try { System.IO.File.WriteAllText(root.urllinkspath, "", Encoding.UTF8); } catch (Exception) { }
@@ -278,6 +283,7 @@ using (var aleDB = new DemoCore.Module.Aledb.Class.aleDB(root.fileslinkspath)) {
 File.ReadAllText(ofd.FileName);
 File.ReadAllText(ofd.FileName,Encoding.UTF8);
 System.IO.File.ReadAllText("", System.Text.Encoding.UTF8);
+var JObject = Newtonsoft.Json.JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(System.IO.File.ReadAllText("", System.Text.Encoding.UTF8));
  ViewBag.main = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + @"/Views/1.html", System.Text.Encoding.UTF8);
 ```
 
