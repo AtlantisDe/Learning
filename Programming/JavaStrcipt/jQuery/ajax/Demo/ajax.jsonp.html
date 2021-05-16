@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Ajax 请求演示</title>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        /**发送跨域 Get Json 普通正常请求方式演示*/
+        function FunCrossDomainGetJSON() {
+            $.getJSON("https://reqbin.com/echo/get/json?", "uid=111",
+                function (data) {
+                    var str = JSON.stringify(data);
+                    alert(str);
+                });
+        }
+
+        /**发送跨域 Ajax 普通正常请求方式演示*/
+        function FunCrossDomainAjax() {
+            $.ajax({
+                type: "get",
+                url: "https://reqbin.com/echo/get/json",
+                //期望服务端返回的数据类型
+                dataType: "json",
+                success: function (data) {
+                    console.log("success");
+                },
+                error: function (e) {
+                    console.log("error");
+                }
+            });
+
+        }
+
+        /**发送跨域 Ajax Post方式多参数传参 普通正常请求方式演示*/
+        function FunCrossDomainPostParaAjax() {
+            var uri = 'https://reqbin.com/echo/post/json';
+
+            var para = {
+                id: "111",
+                name: "namesadsa"
+            };
+            para = JSON.stringify(para); //js对象转化为字符传递
+            $.ajax({
+                url: uri,
+                type: 'post',
+                async: true,
+                data: para,
+                dataType: 'text',
+                contentType: "application/json",
+                success: function (r) {
+                    $('#get_result_post').html(r);
+                },
+                error: function (r) {
+                    console.log(r);
+                }
+            });
+        }
+
+        /**发送跨域 Ajax Jsonp方式 普通正常请求方式演示*/
+        function FunCrossDomainAjaxGetJsonp() {
+            $.ajax({
+                url: 'https://reqbin.com/echo/get/json',
+                dataType: 'jsonp',
+                success: function onSuccess() {}
+            });
+        }
+
+
+        /**发送跨域 Ajax Jsonp方式 普通正常请求方式演示 jsonpCallback*/
+        function FunCrossDomainAjaxGetJsonpCallback() {
+            $.ajax({
+                url: 'https://reqbin.com/echo/get/json',
+                dataType: 'jsonp',
+                jsonpCallback: "logResults",
+                success: function onSuccess() {}
+            });
+        }
+        /**发送跨域 Ajax Jsonp方式 普通正常请求方式演示 jsonpCallback*/
+
+        function logResults(json) {
+            console.log(json);
+        }
+    </script>
+</head>
+
+<body>
+    01. <a href="javascript:FunCrossDomainGetJSON();">发送跨域 Get Json 普通正常请求方式演示</a><br>
+    02. <a href="javascript:FunCrossDomainAjax();">发送跨域 Ajax 普通正常请求方式演示</a><br>
+    03. <a href="javascript:FunCrossDomainPostParaAjax();">发送跨域 Ajax Post方式多参数传参 普通正常请求方式演示</a><br>
+    <br>
+
+    04. <a href="javascript:FunCrossDomainAjaxGetJsonp();">发送跨域 Ajax Jsonp方式 普通正常请求方式演示</a><br>
+    05. <a href="javascript:FunCrossDomainAjaxGetJsonpCallback();">发送跨域 Ajax Jsonp方式 普通正常请求方式演示 jsonpCallback</a><br>
+    <br>
+    <a href="https://www.chromestatus.com/feature/5629709824032768">跨域读取阻止（CORB）</a><br>
+
+
+</body>
+
+</html>

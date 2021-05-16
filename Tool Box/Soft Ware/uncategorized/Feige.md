@@ -8,6 +8,6 @@
 ```c#
 netsh advfirewall firewall add rule name="Feige Server for Inbound TCP/2425" protocol=TCP dir=in localport=2425 action=allow
 
-netsh advfirewall firewall add rule name ="Feige Server for Inbound TCP/2425" dir=in localport=2425 protocol=tcp action=allow
+netsh advfirewall firewall add rule name="Feige Server for Inbound TCP/2425" dir=in localport=2425 protocol=tcp action=allow
 
 ```

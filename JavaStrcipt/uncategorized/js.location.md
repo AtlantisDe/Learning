@@ -1,5 +1,0 @@
-# location
-
-```js
-location
-```

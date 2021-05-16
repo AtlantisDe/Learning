@@ -1,0 +1,219 @@
+# GitLab
+
+- [清华大学开源软件镜像站 Gitlab Community Edition 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/gitlab-ce/)
+- [官方安装教程](https://about.gitlab.com/install/#ubuntu)
+- [阿里云 GitLab 的安装及使用](https://blog.csdn.net/anaitudou/article/details/80388161)
+- [在 Ubuntu18.04 安装 gitlab 国内镜像加速](http://ccimage.cn/2018-05/ubuntu18-04-install-gitlab-chinese-mirror.html#comment-115)
+- [ubuntu18.04 下安装 gitlab](https://blog.csdn.net/u012838045/article/details/80881243)
+- [GitLab 安装后修改 IP/域名 - LiShiChao - 博客园](https://www.cnblogs.com/root0/p/10191418.html)
+
+## 1. wiki
+
+- [GitLab - 维基百科](https://zh.wikipedia.org/wiki/GitLab)
+
+## 2. 社区版
+
+- [Gitlab 社区版的源代码](https://gitlab.com/gitlab-org/gitlab-ce/)
+
+## 3. Gitlab
+
+### 1. Ubuntu-安装
+
+- 官方文档里的 ee 改成 ce。收费版和免费版的区别。gitlab-ee 属于企业版
+- 产品被拆分为：GitLab CE（社区版）和 GitLab EE（企业版），当时，GitLab CE 和 GitLab EE 的许可仍然是根据 MIT 许可分发的免费和开源软件。
+
+1. 安装依赖包，运行命令
+
+<!-- 安装并配置必要的依赖关系 -->
+
+```shell
+   > sudo apt-get update
+   > sudo apt-get install -y curl openssh-server ca-certificates
+   > sudo apt-get install -y postfix
+```
+
+> 执行完成后，出现邮件配置，选择 Internet 那一项（不带 Smarthost 的）
+
+1. 2.首先信任 GitLab 的 GPG 公钥
+
+```shell
+# 首先信任 GitLab 的 GPG 公钥:
+curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
+
+# 添加GitLab软件包存储库(下载安装脚本)
+# curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+
+## 社区版
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+
+## 企业版
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+
+# 修改安装脚本
+# vim /etc/apt/sources.list.d/gitlab_gitlab-ee.list
+vim /etc/apt/sources.list.d/gitlab_gitlab-ce.list
+
+# 新版这里修改
+/etc/apt/sources.list.d/git-core-ubuntu-ppa-eoan.list
+
+国内安装很容易出现 curl 22 或者  404 解决方案,就是修改上面这两个文件里镜像地址就行 自己修改为精华大学镜像成功!
+
+# 把原来的两行删除或者注释（#是行注释），然后增加
+
+# CE社区版 镜像
+# 0. [似乎已失效请官方拿这个地址] 清华大学的镜像
+deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
+deb-src https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
+
+# 1. 官方社区版安装脚本
+deb https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/ cosmic main
+deb-src https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/ cosmic main
+
+# ee版本镜像 企业版::
+deb https://XX bionic main
+deb-src https://mirrors.XX bionic main
+
+
+# 清华大学的镜像文件 ce 社区版
+deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu trusty main
+deb-src https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu trusty main
+
+# 再次执行
+sudo apt-get update
+
+# 执行安装脚本
+# CE社区版
+sudo EXTERNAL_URL="http://gitlab.example.com" apt-get install gitlab-ce
+sudo EXTERNAL_URL="https://gitlab.example.com" apt-get install gitlab-ce
+
+# 这里若用Https安装请保证 ACMEv1 是 或者大于 该版本 ACMEv2 / RFC 8555. See https://community.letsencrypt.org/t/end-of-life-plan-for-acmev1/88430 for details.
+- [How do I enable ACMEv2 and retrieval of wildcard certificates? · Issue #5719 · certbot/certbot](https://github.com/certbot/certbot/issues/5719)
+
+
+# EE社区版
+sudo EXTERNAL_URL="https://gitlab.example.com" apt-get install gitlab-ee
+
+sudo EXTERNAL_URL="http://aaa.com" apt-get install gitlab-ce
+sudo EXTERNAL_URL="http://demo.com" apt-get install gitlab-ce
+
+# 安装完毕访问
+http://gitlab.example.com/index
+https://gitlab.example.com
+
+http://127.0.0.1:9091/users/sign_in
+http://127.0.0.1:9091/profile
+
+# 初始密码
+# 默认超级管理员账户:root
+
+
+# 修改端口和密码
+
+```
+
+### 2. 查看版本
+
+```shell
+cat /opt/gitlab/embedded/service/gitlab-rails/VERSION
+```
+
+```c#
+11.10.4
+```
+
+### 3. Gitlab 默认端口修改
+
+```shell
+# 修改 /etc/gitlab/gitlab.rb 文件如下，然后执行重新配置，重启命令后完成
+/etc/gitlab/gitlab.rb
+
+external_url 'https://gitlab.example.com'
+# 改成
+external_url 'http://127.0.0.1:9091'
+
+# 修改参数
+# - 访问地址端口只需要修改这句
+nginx['listen_port'] = 9091
+
+# 下面忘记是啥暂时不要改
+unicorn['port'] = 9092
+
+# 让配置生效，重新执行此命令时间也比较长
+gitlab-ctl reconfigure
+gitlab-ctl restart
+
+# 重启动机器暂时不用
+reboot
+
+# Gitlab 服务器url修改后，项目path的修改
+
+cd /opt/gitlab/embedded/service/gitlab-rails/config
+# 修改 gitlab.yml
+host: www.aaa.com
+    port: 9091
+    https: true
+
+# gitlab启用https ;修改配置文件  生成秘钥与证书 参考上面文章链接
+./ssl_genKey.sh
+openssl req -nodes -newkey rsa:2048 -keyout gitlab.domain.com.key -out gitlab.domain.com.csr
+```
+
+### 4. 项目地址域名或 IP 更改方法
+
+- [修改 gitlab 上 git 服务器的地址 - 我不想秃头的博客 - CSDN 博客](https://blog.csdn.net/qq_41838901/article/details/95349670)
+
+```shell
+# 进入安装目录
+cd /opt/gitlab/embedded/service/gitlab-rails/config
+
+# 修改 gitlab.yml 文件
+vi gitlab.yml
+
+# .将gitlab节点下的host改成对应的ip/域名
+  ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: gitlab.example.com
+    port: 9091
+    https: false
+```
+
+### 5. 重启服务,就可以了 /状态
+
+```shell
+gitlab-ctl restart
+gitlab-ctl status
+```
+
+### 6. HTTPs HTTP
+
+```c#
+external_url 'https://gitlab.example.com'
+# 改成
+external_url 'http://127.0.0.1:9091'
+
+  ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: gitlab.example.com
+    port: 443
+    https: true
+
+    // 改
+
+      ## GitLab settings
+  gitlab:
+    ## Web server settings (note: host is the FQDN, do not include http://)
+    host: 127.0.0.1
+    port: 9091
+    https: false
+
+```
+
+## 4. 中文语言包
+
+```c#
+The Auto DevOps pipeline has been enabled and will be used if no alternative CI configuration file is found. More information
+Auto DevOps管道已启用，如果未找到备用CI配置文件，将使用该管道。 更多信息
+
+```

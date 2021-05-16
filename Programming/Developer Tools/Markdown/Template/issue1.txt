@@ -1,0 +1,30 @@
+### Description
+Loads  ....
+
+### before
+- LoadHtml(string html);
+- here is html 
+```C#
+
+```
+
+### after
+- document.DocumentNode.OuterHtml;
+- here is html 
+```C#
+
+```
+
+
+### Was changed
+- Title content has been changed
+```C#
+
+```
+
+
+### pls help me 
+ 
+```C#
+tks very much
+```

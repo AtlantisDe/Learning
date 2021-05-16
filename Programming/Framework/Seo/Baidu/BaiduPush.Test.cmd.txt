@@ -1,0 +1,25 @@
+:start
+@echo off
+color 0A
+title 查询域名是否支持推送
+@echo 【查询域名是否支持推送】
+@echo 请输入网址：
+set /P url=""
+@echo 请输入token：
+set /P token=""
+@echo.
+@echo 查询%url%是否支持普通推送,Token为：%token%
+curl -H 'Content-Type:text/plain' --data-binary "https://%url%/index.html" "http://data.zz.baidu.com/urls?site=https://%url%&token=%token%"
+@echo.
+@echo 查询%url%是否支持MIP推送,Token为：%token%
+curl -H 'Content-Type:text/plain' --data-binary "https://%url%/index.html" "http://data.zz.baidu.com/urls?site=https://%url%&token=%token%&type=mip"
+@echo.
+@echo https://%url%----%token%>>D:token.txt
+if  %errorlevel%==0 (
+   echo  保存成功!
+)  else  (
+   echo  保存失败!
+)
+@echo.
+pause
+goto start

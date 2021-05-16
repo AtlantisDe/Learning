@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.7/css/layui.css" media="all" />
+</head>
+
+<body>
+
+
+    <div class="layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+            <li class="layui-this">网站设置</li>
+            <li>用户管理</li>
+            <li>权限分配</li>
+            <li>商品管理</li>
+            <li>订单管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <!-- begin -->
+
+                <table class="layui-hide" id="testB"></table>
+                <!-- end -->
+
+            </div>
+            <div class="layui-tab-item">
+
+                <!-- begin -->
+
+                <div class="layui-tab layui-tab-card" lay-filter="gggg">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">测试问题</li>
+                        <li lay-id="TabIdJglhbV2Items">
+                            解决方案
+
+                        </li>
+
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+
+
+
+
+                            <div class="layui-fluid">
+
+                                <div class="layui-row layui-col-space10">
+                                    <div class="layui-col-md7">
+                                        <table class="layui-hide" id="test"></table>
+                                    </div>
+                                    <div class="layui-col-md5">
+                                        <table class="layui-hide" id="test2222"></table>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="layui-tab-item">
+
+                            <table class="layui-hide" id="test3333"></table>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+
+
+            </div>
+            <div class="layui-tab-item">3</div>
+            <div class="layui-tab-item">4</div>
+            <div class="layui-tab-item">5</div>
+            <div class="layui-tab-item">6</div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://www.layuicdn.com/layui-v2.5.7/layui.all.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+
+
+    <script>
+        //Demo
+        var tableIns = {};
+        var Items = [];
+
+        //20万数据需要分页显示
+        for (var i = 0; i < 20000; i++) {
+
+            Items.unshift({
+                Name: "http://" + i + ".baidu.com",
+                Beizhu: "打开可以写很多操作的."
+            });
+
+        }
+
+
+        tableIns.DemoIns = layui.table.render({
+            height: 'full-257',
+            elem: "#test",
+            title: "演示分页",
+            cols: [
+                [{
+                        field: "id",
+                        width: 66,
+                        title: "编号",
+                        sort: false,
+                        templet: function (d) {
+                            return d.LAY_TABLE_INDEX + 1;
+                        }
+                    },
+                    {
+                        field: "Name",
+                        title: "演示名称",
+                        templet: function (d) {
+                            return '<div><a href="' +
+                                d.Name + '" class="layui-table-link"><font color="red">' +
+                                d.Name + '</font></a></div>';
+                        },
+
+                        width: 300
+                    },
+                    {
+                        field: "Beizhu",
+                        title: "备注",
+                        width: 500
+                    }
+                ]
+            ],
+            page: true,
+            limit: 20,
+            data: Items
+        });
+   
+        tableIns.DemoInsB = layui.table.render({
+            height: 'full-257',
+            elem: "#testB",
+            title: "演示分页",
+            cols: [
+                [{
+                        field: "id",
+                        width: 66,
+                        title: "编号",
+                        sort: false,
+                        templet: function (d) {
+                            return d.LAY_TABLE_INDEX + 1;
+                        }
+                    },
+                    {
+                        field: "Name",
+                        title: "演示名称",
+                        templet: function (d) {
+                            return '<div><a href="' +
+                                d.Name + '" class="layui-table-link"><font color="red">' +
+                                d.Name + '</font></a></div>';
+                        },
+
+                        width: 300
+                    },
+                    {
+                        field: "Beizhu",
+                        title: "备注",
+                        width: 500
+                    }
+                ]
+            ],
+            page: true,
+            limit: 20,
+            data: Items
+        });
+   
+    </script>
+
+
+
+
+</body>
+
+</html>
