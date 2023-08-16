@@ -1,7 +1,7 @@
 # Ookii.Dialogs
 
 - [How to use Open File Dialog to Select a Folder](https://stackoverflow.com/questions/9227917/how-to-use-open-file-dialog-to-select-a-folder)
-- [Ookii.Dialogs - Ookii.org](http://www.ookii.org/software/dialogs/)
+- [Ookii.Dialogs.WinForms](https://github.com/augustoproiete/ookii-dialogs-winforms)
 
 ## Ookii.Dialogs 常用
 
